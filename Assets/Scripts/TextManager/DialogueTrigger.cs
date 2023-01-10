@@ -8,6 +8,9 @@ public class DialogueTrigger : MonoBehaviour
         DialogueManager.instance.ChangeTextstate(DialogueManager.TextState.onDisplay, dialogue);
     }
 
+
+    //TESTING PURPOSE ONLY
+    /*
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -15,4 +18,5 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
         }
     }
+    */
 }

@@ -98,7 +98,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentTextstate != TextState.onDisplay) return;
 
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1"))
         {
             DisplayNextSentence();
         }
