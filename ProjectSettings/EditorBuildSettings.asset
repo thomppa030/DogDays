@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LowPolyInterior/Scenes/LowPolyInterior_Demo.unity
-    guid: be7da2d78e467814186fe24a4e542b91
+    path: Assets/Scenes/Game/Scene#00_Menu.unity
+    guid: 7305756f168716f4ebedaf7694a6a755
+  - enabled: 1
+    path: Assets/Scenes/Game/Scene#01_Game.unity
+    guid: 8f6204ff900d3d74884a120364fa9c2d
   m_configObjects:
-    com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 3888fd7beaf010d00aa73ad9b34cbbbf, type: 2}
