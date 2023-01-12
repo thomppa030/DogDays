@@ -1,14 +1,23 @@
 {
-    "name": "Player_Dog_Inputs",
+    "name": "DogDaysInput",
     "maps": [
         {
             "name": "Player",
-            "id": "b3a8c578-abef-4346-b76a-762676f0a6cf",
+            "id": "da82e770-8bbc-40ad-b16a-1dc0e0e2b5f0",
             "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "88b107cf-c186-491c-a5f6-b1190cba8f73",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "6aa91b4a-217e-4aca-b751-30df16e09657",
+                    "id": "58e8ed99-c961-4005-9993-bb700b18a9b1",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -17,7 +26,7 @@
                 {
                     "name": "Look",
                     "type": "Value",
-                    "id": "1d662e76-670a-4d8b-9bdb-3cf445286229",
+                    "id": "8b5068ba-9eca-467a-b847-3eaa590db91c",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -26,8 +35,19 @@
             ],
             "bindings": [
                 {
-                    "name": "WASD",
-                    "id": "327b8aa6-9639-4dd7-94fe-4b94ac79c090",
+                    "name": "",
+                    "id": "fd7bc63d-79d0-4fe9-878b-82c5cef85578",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "2D Vector",
+                    "id": "5ae29d3c-75ff-4200-85f9-fb454ff68f80",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
@@ -38,55 +58,55 @@
                 },
                 {
                     "name": "up",
-                    "id": "a7d28dfd-d293-4683-a2ef-251860667a6c",
+                    "id": "d649092d-ea06-49ec-a572-8bf36204a668",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard & Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "9c003c0d-1f76-4a0d-a08b-d6e4b9a4fc7b",
+                    "id": "252dcf67-07f4-4e0b-8772-e96d29a0c8f4",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard & Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "a6afbef0-69bc-4501-828a-a109848a6b9f",
+                    "id": "b9a8f77c-26a4-47ac-8802-23beb0acd614",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard & Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "34e3490b-0a88-4c54-ba53-6703e886422c",
+                    "id": "1f3332e7-b7c0-4e87-a7eb-787bfce7a339",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard & Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "3eb537d1-3e71-49f3-9e30-ffb7a6f39f0b",
-                    "path": "<Pointer>/delta",
+                    "id": "8d178e03-3be0-48c8-bea8-7453ec7c31d8",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=0.05,y=0.05)",
-                    "groups": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -94,5 +114,22 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Keyboard & Mouse",
+            "bindingGroup": "Keyboard & Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
