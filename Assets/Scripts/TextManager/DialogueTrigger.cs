@@ -3,20 +3,14 @@
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+
+    private void Start()
+    {
+        //Setting layer to Dialogue Layer;
+        gameObject.layer = 6;
+    }
     public void TriggerDialogue()
     {
         DialogueManager.instance.ChangeTextstate(DialogueManager.TextState.onDisplay, dialogue);
     }
-
-
-    //TESTING PURPOSE ONLY
-    /*
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TriggerDialogue();
-        }
-    }
-    */
 }
