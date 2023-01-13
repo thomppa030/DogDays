@@ -9419,6 +9419,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8446088109260137507, guid: cd2732c0a3f49584db67f1ca8f164102, type: 3}
   m_PrefabInstance: {fileID: 528182792}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &528692088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8252317105005391829, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
+  m_PrefabInstance: {fileID: 797393167}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &529547650
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16969,6 +16974,19 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1307974164294253324, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
   m_PrefabInstance: {fileID: 797393167}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &999813700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528692088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76abc67444956094d9a7179da499a28a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 2065554784}
 --- !u!1001 &999826448
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35692,7 +35710,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 32.96973
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0

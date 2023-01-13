@@ -50,7 +50,7 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""8b5068ba-9eca-467a-b847-3eaa590db91c"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""InvertVector2"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 }
