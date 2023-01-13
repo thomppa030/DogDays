@@ -4,5 +4,8 @@
 public class Dialogue : ScriptableObject
 {
     [TextArea(3, 10)]
-    public string[] sentences;
+    public string[] ger_sentences;
+
+    [TextArea(3, 10)]
+    public string[] eng_sentences;
 }

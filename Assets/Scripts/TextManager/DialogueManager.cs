@@ -9,6 +9,13 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public static DialogueManager instance;
 
+    public Language selectedLanguage = Language.german;
+    public enum Language
+    {
+        german,
+        english
+    }
+
     private void Awake()
     {
         instance = this;
@@ -17,14 +24,16 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         sentences = new Queue<string>();
-        dialogueText.text = "";
+
+        if(dialogueText != null)
+            dialogueText.text = "";
     }
 
     private void StartDialogue (Dialogue dialogue)
     {
         sentences.Clear();
 
-        foreach(string sentence in dialogue.sentences)
+        foreach(string sentence in GetSentence(dialogue))
         {
             sentences.Enqueue(sentence);
         }
@@ -61,6 +70,19 @@ public class DialogueManager : MonoBehaviour
         ChangeTextstate(TextState.none, null);
     }
 
+    private string[] GetSentence(Dialogue d)
+    {
+        switch (selectedLanguage)
+        {
+            case Language.german:
+                return d.ger_sentences;
+            case Language.english:
+                return d.eng_sentences;
+            default:
+                return d.ger_sentences;
+        }
+    }
+
     public enum TextState
     {
         none,
@@ -77,7 +99,7 @@ public class DialogueManager : MonoBehaviour
             //Start Dialogue
             if (tS == TextState.onDisplay)
             {
-                
+                dialogueText.gameObject.SetActive(true);
                 currentTextstate = tS;
                 StartDialogue(d);
             }
@@ -87,6 +109,7 @@ public class DialogueManager : MonoBehaviour
             //End Dialogue
             if (tS == TextState.none)
             {
+                dialogueText.gameObject.SetActive(false);
                 dialogueText.text = "";
                 currentTextstate = tS;
             }
@@ -101,5 +124,11 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayNextSentence();
         }
+    }
+
+    public void ChangeLanguage(int id)
+    {        
+        selectedLanguage = (Language)id;
+        Debug.Log("Changed Language to: " + selectedLanguage);
     }
 }

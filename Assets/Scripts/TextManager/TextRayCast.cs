@@ -35,9 +35,14 @@ public class TextRayCast : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Debug.Log("Interacting with: " + hit.collider.gameObject.name);
                 if (hit.collider.gameObject.TryGetComponent<DialogueTrigger>(out DialogueTrigger dT))
                 {
                     dT.TriggerDialogue();
+                }
+                else
+                {
+                    Debug.LogError("No Dialogue attached to: " + hit.collider.gameObject.name);
                 }
             }
         }

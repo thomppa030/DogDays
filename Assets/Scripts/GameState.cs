@@ -59,7 +59,7 @@ public class GameState : MonoBehaviour
                 Debug.Log("Change current state " + currentState + " to " + requestedState);
                 currentState = requestedState;
 
-                //Implement Option menu
+                MenuHandler.singleton.EnableMenuButtons(true);
             }
             
         }
@@ -72,8 +72,7 @@ public class GameState : MonoBehaviour
                 Debug.Log("Change current state " + currentState + " to " + requestedState);
                 currentState = requestedState;
 
-                //Implement Logic
-                //Option Menu needed
+                MenuHandler.singleton.EnableMenuButtons(false);
             }
             else if (requestedState == GameStates.Menu)
             {
@@ -95,5 +94,29 @@ public class GameState : MonoBehaviour
     private void LoadScene(int sceneID)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneID);
+    }
+
+    public GameStates GetCurrentGameState()
+    {
+        return currentState;
+    }
+
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            switch (currentState)
+            {
+                case GameStates.Game:
+                    TryChangeState(GameStates.Pause);
+                    break;
+                case GameStates.Pause:
+                    TryChangeState(GameStates.Game);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }
