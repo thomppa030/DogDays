@@ -10,6 +10,9 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager instance;
 
     public Language selectedLanguage = Language.german;
+
+    [Header("Insert all Dialogue Data here!")]
+    public List<Dialogue> DialogueData = new List<Dialogue>();
     public enum Language
     {
         german,
@@ -19,6 +22,11 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+
+        if(DialogueData.Count <= 0)
+        {
+            Debug.LogWarning("No dialogue Data found for reseting booleans.");
+        }
     }
 
     private void Start()
@@ -27,6 +35,12 @@ public class DialogueManager : MonoBehaviour
 
         if(dialogueText != null)
             dialogueText.text = "";
+
+        //Setting booleans of dialogues to false;
+        foreach(Dialogue d in DialogueData)
+        {
+            d.newTextUnlocked = false;
+        }
     }
 
     private void StartDialogue (Dialogue dialogue)
@@ -36,6 +50,11 @@ public class DialogueManager : MonoBehaviour
         foreach(string sentence in GetSentence(dialogue))
         {
             sentences.Enqueue(sentence);
+        }
+
+        foreach(Dialogue d in dialogue.UnlockableDialogues)
+        {
+            d.newTextUnlocked = true;
         }
         DisplayNextSentence();
     }
@@ -70,17 +89,28 @@ public class DialogueManager : MonoBehaviour
         ChangeTextstate(TextState.none, null);
     }
 
-    private string[] GetSentence(Dialogue d)
+    private List<string> GetSentence(Dialogue d)
     {
+        List<string> sentence = new List<string>();
         switch (selectedLanguage)
         {
             case Language.german:
-                return d.ger_sentences;
+                if (!d.newTextUnlocked)
+                    sentence = d.ger_default;
+                else
+                    sentence = d.ger_unlocked;
+                break;
             case Language.english:
-                return d.eng_sentences;
+                if (!d.newTextUnlocked)
+                    sentence = d.eng_default;
+                else
+                    sentence = d.eng_unlocked;
+                break;
             default:
-                return d.ger_sentences;
+                return d.ger_default;
         }
+
+        return sentence;
     }
 
     public enum TextState
