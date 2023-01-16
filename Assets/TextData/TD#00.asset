@@ -12,7 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: TD#00
   m_EditorClassIdentifier: 
-  sentences:
-  - This is a test text file. Click MB Left or press SPACE to continue.
-  - A new text should be displayed now.
-  - Thank you for testing.
+  ger_default:
+  - "Hallo, dies ist eine Testnachricht. Dr\xFCcke die linke Maustaste um fortzufahren."
+  - Dies ist die Standardnachricht dieses Objektes. Beim Interagieren mit diesem
+    Objekt kann optional ein neuer Text freigeschaltet werden.
+  - Probiere es mal aus.
+  eng_default:
+  - Sorry to lazy to translate, lets count to 3.
+  - 1...
+  - 2...Args I dont know.
+  ger_unlocked:
+  - Dies ist der unlocked Text, juhu! haste toll gemacht, kriegst nen keks.
+  eng_unlocked:
+  - Insert English language here.
+  - "Pumuckel tr\xE4gt keinen schl\xFCppa."
+  UnlockableDialogues:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
+  newTextUnlocked: 1

@@ -9,24 +9,52 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public static DialogueManager instance;
 
+    public Language selectedLanguage = Language.german;
+
+    [Header("Insert all Dialogue Data here!")]
+    public List<Dialogue> DialogueData = new List<Dialogue>();
+    public enum Language
+    {
+        german,
+        english
+    }
+
     private void Awake()
     {
         instance = this;
+
+        if(DialogueData.Count <= 0)
+        {
+            Debug.LogWarning("No dialogue Data found for reseting booleans.");
+        }
     }
 
     private void Start()
     {
         sentences = new Queue<string>();
-        dialogueText.text = "";
+
+        if(dialogueText != null)
+            dialogueText.text = "";
+
+        //Setting booleans of dialogues to false;
+        foreach(Dialogue d in DialogueData)
+        {
+            d.newTextUnlocked = false;
+        }
     }
 
     private void StartDialogue (Dialogue dialogue)
     {
         sentences.Clear();
 
-        foreach(string sentence in dialogue.sentences)
+        foreach(string sentence in GetSentence(dialogue))
         {
             sentences.Enqueue(sentence);
+        }
+
+        foreach(Dialogue d in dialogue.UnlockableDialogues)
+        {
+            d.newTextUnlocked = true;
         }
         DisplayNextSentence();
     }
@@ -61,6 +89,30 @@ public class DialogueManager : MonoBehaviour
         ChangeTextstate(TextState.none, null);
     }
 
+    private List<string> GetSentence(Dialogue d)
+    {
+        List<string> sentence = new List<string>();
+        switch (selectedLanguage)
+        {
+            case Language.german:
+                if (!d.newTextUnlocked)
+                    sentence = d.ger_default;
+                else
+                    sentence = d.ger_unlocked;
+                break;
+            case Language.english:
+                if (!d.newTextUnlocked)
+                    sentence = d.eng_default;
+                else
+                    sentence = d.eng_unlocked;
+                break;
+            default:
+                return d.ger_default;
+        }
+
+        return sentence;
+    }
+
     public enum TextState
     {
         none,
@@ -77,7 +129,7 @@ public class DialogueManager : MonoBehaviour
             //Start Dialogue
             if (tS == TextState.onDisplay)
             {
-                
+                dialogueText.gameObject.SetActive(true);
                 currentTextstate = tS;
                 StartDialogue(d);
             }
@@ -87,6 +139,7 @@ public class DialogueManager : MonoBehaviour
             //End Dialogue
             if (tS == TextState.none)
             {
+                dialogueText.gameObject.SetActive(false);
                 dialogueText.text = "";
                 currentTextstate = tS;
             }
@@ -101,5 +154,11 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayNextSentence();
         }
+    }
+
+    public void ChangeLanguage(int id)
+    {        
+        selectedLanguage = (Language)id;
+        Debug.Log("Changed Language to: " + selectedLanguage);
     }
 }
