@@ -21,4 +21,4 @@ MonoBehaviour:
   eng_unlocked:
   - Unlocked Text.
   UnlockableDialogues: []
-  newTextUnlocked: 1
+  newTextUnlocked: 0

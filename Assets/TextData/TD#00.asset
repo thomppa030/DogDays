@@ -29,4 +29,4 @@ MonoBehaviour:
   UnlockableDialogues:
   - {fileID: 11400000}
   - {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
-  newTextUnlocked: 1
+  newTextUnlocked: 0
