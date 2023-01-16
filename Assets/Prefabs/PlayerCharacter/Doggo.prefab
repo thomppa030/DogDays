@@ -524,6 +524,7 @@ GameObject:
   - component: {fileID: 1990326144191762594}
   - component: {fileID: 1990326144277739423}
   - component: {fileID: 3106571228400802251}
+  - component: {fileID: 4946270562110072564}
   m_Layer: 0
   m_Name: Doggo
   m_TagString: Untagged
@@ -599,6 +600,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5f17936ea3401baeb83d805731b352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <InputReader>k__BackingField: {fileID: 0}
+  <Controller>k__BackingField: {fileID: 0}
+  <ForceReceiver>k__BackingField: {fileID: 0}
+  <Animator>k__BackingField: {fileID: 0}
+  <MovementSpeed>k__BackingField: 0
+  <RotationDampening>k__BackingField: 0
+  <MainCameraTransform>k__BackingField: {fileID: 0}
+--- !u!114 &4946270562110072564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990326144182344986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3573c37d1603242b8fcfff5508828d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1990326144277739423}
 --- !u!1 &1990326144182345458
 GameObject:
   m_ObjectHideFlags: 0

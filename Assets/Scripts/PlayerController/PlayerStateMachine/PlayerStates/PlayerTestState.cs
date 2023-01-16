@@ -19,7 +19,8 @@ public class PlayerTestState : PlayerStateBase
     public override void Tick(float deltaTime)
     {
         Vector3 movement = CalculateMovement();
-        PlayerStateMachine.Controller.Move(movement * (PlayerStateMachine.MovementSpeed * deltaTime));
+        
+        Move(movement * PlayerStateMachine.MovementSpeed, deltaTime);
 
         if (PlayerStateMachine.InputReader.MovementValue == Vector2.zero)
         {
