@@ -12,8 +12,8 @@ namespace Cinematics
             // Check if the collider is the player
             if (other.CompareTag("Player"))
             {
-                PlayerStateMachine.SwitchState(new WatchCinematicState());
-                Cinematic.Play();
+                PlayerStateMachine.SwitchState(new WatchCinematicState(PlayerStateMachine));
+                Cinematic.StartTimeLine();
             }
         }
     }

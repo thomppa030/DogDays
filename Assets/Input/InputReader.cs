@@ -8,6 +8,8 @@ using UnityEngine.InputSystem;
         public Vector2 MovementValue { get; private set; }
         
         public event Action JumpEvent; 
+        
+        public event Action SkipCinematicEvent;
 
         private DogDaysInput _input;
         private void Start()
@@ -33,6 +35,13 @@ using UnityEngine.InputSystem;
         public void OnMove(InputAction.CallbackContext context)
         {
              MovementValue = context.ReadValue<Vector2>();
+        }
+        
+        public void OnSkipCinematic(InputAction.CallbackContext context)
+        {
+            if (!context.performed) return;
+            
+            SkipCinematicEvent?.Invoke();
         }
 
         public void OnLook(InputAction.CallbackContext context)

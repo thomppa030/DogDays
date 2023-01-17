@@ -1,33 +1,34 @@
+using System;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
 namespace Cinematics
 {
     public class Cinematic : MonoBehaviour
     {
-        [field: SerializeField] public TimelineAsset CinematicTimeline { get; private set; }
-        [field: SerializeField] public float CinematicDuration { get; private set; }
-        
-        /*
-         * Subtitle Object maybe usable from Dialogue System?
-         * not sure if it's a good idea to use it here
-         */
-    
-        // Event that triggers when the cinematic is finished
-        public delegate void CinematicFinished();
-        public static event CinematicFinished OnCinematicFinished;
+        [field: SerializeField] private PlayableDirector Director { get; set; }
+        [field: SerializeField] private GameObject ControlPanel { get; set; }
 
-        public void Play()
+        private void Awake()
         {
-            // Make the Timeline play somehow
-            // ...
-            // ...
+            Director.played += Director_Played;
+            Director.stopped += Director_Stopped;
+        }
+        
+        private void Director_Played(PlayableDirector obj)
+        {
+            ControlPanel.SetActive(false);
+        }
+        
+        private void Director_Stopped(PlayableDirector obj)
+        {
+            ControlPanel.SetActive(true);
+        }
 
-            // Trigger the event when the Timeline is finished
-            if (CinematicTimeline.duration >= CinematicDuration)
-            {
-                OnCinematicFinished?.Invoke();
-            }
+        public void StartTimeLine()
+        {
+            Director.Play();
         }
     }
 }
