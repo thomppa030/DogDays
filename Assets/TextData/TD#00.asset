@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: TD#00
   m_EditorClassIdentifier: 
   ger_default:
-  - "Hallo, dies ist eine Testnachricht. Dr\xFCcke die linke Maustaste um fortzufahren."
+  - "<b>Hallo</b>, dies ist eine Testnachricht. Dr\xFCcke die linke Maustaste um
+    fortzufahren."
   - Dies ist die Standardnachricht dieses Objektes. Beim Interagieren mit diesem
     Objekt kann optional ein neuer Text freigeschaltet werden.
   - Probiere es mal aus.
@@ -29,4 +30,4 @@ MonoBehaviour:
   UnlockableDialogues:
   - {fileID: 11400000}
   - {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
-  newTextUnlocked: 0
+  newTextUnlocked: 1

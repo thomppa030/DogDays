@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
+    [SerializeField] private int menuID = 0;
+    [SerializeField] private int gameID = 1;
+
     public enum GameStates
     {
         Menu,
@@ -47,7 +50,7 @@ public class GameState : MonoBehaviour
                 currentState = requestedState;
 
                 //Loading Game Scene from Menu.
-                LoadScene(1);
+                LoadScene(gameID);
             }
         }
         #endregion
@@ -80,7 +83,7 @@ public class GameState : MonoBehaviour
                 currentState = requestedState;
 
                 //Loading Menu Scene from Pause.
-                LoadScene(0);
+                LoadScene(menuID);
             }
         }
         #endregion
