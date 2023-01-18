@@ -5,6 +5,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {   
     [SerializeField] TMP_Text dialogueText;
+    [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
     private Queue<string> sentences;
     public static DialogueManager instance;
@@ -73,14 +74,15 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypeSentence(sentence));
 
     }
-
+    
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
-        foreach(char letter in sentence.ToCharArray())
+
+        foreach (var letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(textSpeed);
         }
     }
 
