@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "NewText", order = 1)]
+[HelpURL("https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html")]
 public class Dialogue : ScriptableObject
 {
     [Header("Default Text")]
@@ -21,6 +21,8 @@ public class Dialogue : ScriptableObject
     public List<Dialogue> UnlockableDialogues = new List<Dialogue>();
     public bool newTextUnlocked = false;
 
+    
 
-    //ttps://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html
+
+
 }
