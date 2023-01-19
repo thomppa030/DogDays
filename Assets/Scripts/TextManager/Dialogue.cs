@@ -20,4 +20,7 @@ public class Dialogue : ScriptableObject
     [Header("Unlocking Dialogues for")]
     public List<Dialogue> UnlockableDialogues = new List<Dialogue>();
     public bool newTextUnlocked = false;
+
+
+    //ttps://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html
 }
