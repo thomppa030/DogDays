@@ -9,6 +9,8 @@ namespace Cinematics
     {
         [field: SerializeField] private PlayableDirector Director { get; set; }
         [field: SerializeField] private GameObject ControlPanel { get; set; }
+        
+        [field: SerializeField] public DialogueTrigger DialogueTrigger { get; set; }
 
         private void Awake()
         {
