@@ -15,6 +15,8 @@ public class Dialogue : ScriptableObject
     public List<string> ger_sentences = new List<string>();
     [TextArea(3, 10)]
     public List<string> eng_sentences = new List<string>();
+
+    [field: SerializeField] public float[] waitTime { get; set; }
     [Space]
     [Header("SFX")]
     [SerializeField] private AudioClip[] Audioclips;

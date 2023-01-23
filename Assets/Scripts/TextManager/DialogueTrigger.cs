@@ -6,12 +6,13 @@ using System;
 public class DialogueTrigger : MonoBehaviour
 {
     public TriggerState triggerState = TriggerState.enabled;
-
     public Dialogue defaultDialogue;
     public Dialogue unlockedDialogue;
 
     private Dialogue displayedDialogue;
     BoxCollider bc;
+
+    [SerializeField] private bool playOnTrigger = false;
 
     private void OnEnable()
     {
@@ -29,6 +30,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
+        if (playOnTrigger) bc.isTrigger = true;
         //Setting layer to Dialogue Layer;
         gameObject.layer = 6;
         bc = GetComponent<BoxCollider>();
@@ -95,5 +97,13 @@ public class DialogueTrigger : MonoBehaviour
             SetTriggerState(TriggerState.setUnlockedText);
         }
             
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player" && playOnTrigger)
+        {
+            TriggerDialogue();
+        }
     }
 }
