@@ -1,26 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Data", menuName = "NewText", order = 1)]
+[HelpURL("https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html")]
 public class Dialogue : ScriptableObject
 {
-    [Header("Default Text")]
-    [TextArea(3,10)]
-    public List<string> ger_default = new List<string>();
+    [SerializeField] private string Title = "default Title";
+
+    [field: SerializeField] public bool startOnAwake { get; set; }
+    [field: SerializeField] public Action[] Actions { get; set; }
+    [Space]
+    [Header("Sentences")]
     [TextArea(3, 10)]
-    public List<string> eng_default = new List<string>();
-
-    [Header("Unlocked Text")]
+    public List<string> ger_sentences = new List<string>();
     [TextArea(3, 10)]
-    public List<string> ger_unlocked = new List<string>();
-    [TextArea(3, 10)]
-    public List<string> eng_unlocked = new List<string>();
+    public List<string> eng_sentences = new List<string>();
+    [Space]
+    [Header("TextData References")]
+    public List<Dialogue> textToUnlock = new List<Dialogue>();
+    public List<Dialogue> textToEnable = new List<Dialogue>();
+    public List<Dialogue> textToDisable = new List<Dialogue>();
 
-    [Header("Unlocking Dialogues for")]
-    public List<Dialogue> UnlockableDialogues = new List<Dialogue>();
-    public bool newTextUnlocked = false;
 
+    public enum Action
+    {
+        nextSentence,
+        enableTextDisplay,
+        disableTextDisplay,
+        wait,
+        fadeIn,
+        fadeOut,
+        shakeCamera,
+        endDialogue
+    }
 
-    //ttps://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html
+    
 }

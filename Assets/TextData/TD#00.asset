@@ -12,30 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: TD#00
   m_EditorClassIdentifier: 
-  ger_default:
-  - '<b>Hallo</b>,Oh! They are up already? How did I miss them?
-
-    I better look
-    around to find them.
-
-'
-  - "I better look around to find them.\r"
-  - Probiere es mal aus.
-  eng_default:
-  - '<b>Hallo</b>,Oh! They are up already? How did I miss them?
-
-    I better look
-    around to find them.
-
-'
-  - 1...
-  - 2...Args I dont know.
-  ger_unlocked:
-  - Dies ist der unlocked Text, juhu! haste toll gemacht, kriegst nen keks.
-  eng_unlocked:
-  - Insert English language here.
-  - "Pumuckel tr\xE4gt keinen schl\xFCppa."
-  UnlockableDialogues:
-  - {fileID: 11400000}
+  Title: default Title
+  <startOnAwake>k__BackingField: 1
+  <Actions>k__BackingField: 0300000000000000020000000300000001000000000000000000000007000000
+  ger_sentences:
+  - 1
+  - 2
+  - 3
+  eng_sentences:
+  - one
+  - two
+  - three
+  textToUnlock: []
+  textToEnable:
   - {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
-  newTextUnlocked: 1
+  textToDisable: []

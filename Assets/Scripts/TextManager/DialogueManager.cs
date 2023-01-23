@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 public class DialogueManager : MonoBehaviour
 {   
     [SerializeField] TMP_Text dialogueText;
@@ -12,8 +13,8 @@ public class DialogueManager : MonoBehaviour
 
     public Language selectedLanguage = Language.german;
 
-    [Header("Insert all Dialogue Data here!")]
-    public List<Dialogue> DialogueData = new List<Dialogue>();
+    public Dialogue currentDialogue { get; set; }
+
     public enum Language
     {
         german,
@@ -23,11 +24,6 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
-
-        if(DialogueData.Count <= 0)
-        {
-            Debug.LogWarning("No dialogue Data found for reseting booleans.");
-        }
     }
 
     private void Start()
@@ -36,37 +32,10 @@ public class DialogueManager : MonoBehaviour
 
         if(dialogueText != null)
             dialogueText.text = "";
-
-        //Setting booleans of dialogues to false;
-        foreach(Dialogue d in DialogueData)
-        {
-            d.newTextUnlocked = false;
-        }
-    }
-
-    private void StartDialogue (Dialogue dialogue)
-    {
-        sentences.Clear();
-
-        foreach(string sentence in GetSentence(dialogue))
-        {
-            sentences.Enqueue(sentence);
-        }
-
-        foreach(Dialogue d in dialogue.UnlockableDialogues)
-        {
-            d.newTextUnlocked = true;
-        }
-        DisplayNextSentence();
     }
 
     private void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
-        {
-            EndDialogue();
-            return;
-        }
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         dialogueText.text = sentence;
@@ -86,33 +55,31 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public static Action<List<Dialogue>> EnableTextTrigger;
+    public static Action<List<Dialogue>> DisableTextTrigger;
+    public static Action<List<Dialogue>> UnlockText;
     void EndDialogue()
     {
+        EnableTextTrigger?.Invoke(currentDialogue.textToEnable);
+        DisableTextTrigger?.Invoke(currentDialogue.textToDisable);
+        UnlockText?.Invoke(currentDialogue.textToUnlock);
+
         ChangeTextstate(TextState.none, null);
     }
 
     private List<string> GetSentence(Dialogue d)
     {
-        List<string> sentence = new List<string>();
+
         switch (selectedLanguage)
         {
-            case Language.german:
-                if (!d.newTextUnlocked)
-                    sentence = d.ger_default;
-                else
-                    sentence = d.ger_unlocked;
-                break;
             case Language.english:
-                if (!d.newTextUnlocked)
-                    sentence = d.eng_default;
-                else
-                    sentence = d.eng_unlocked;
-                break;
+                return d.eng_sentences;
+            case Language.german:
+                return d.ger_sentences;
             default:
-                return d.ger_default;
-        }
+                return d.eng_sentences;
 
-        return sentence;
+        }
     }
 
     public enum TextState
@@ -144,6 +111,8 @@ public class DialogueManager : MonoBehaviour
                 dialogueText.gameObject.SetActive(false);
                 dialogueText.text = "";
                 currentTextstate = tS;
+                currentDialogue = null;
+                actionID = 0;
             }
         }
     }
@@ -152,9 +121,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentTextstate != TextState.onDisplay) return;
 
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && 
+            currentDialogue.Actions[actionID] == Dialogue.Action.nextSentence)
         {
-            DisplayNextSentence();
+            actionID++;
+            SetNextAction(currentDialogue, actionID);
         }
     }
 
@@ -163,4 +134,67 @@ public class DialogueManager : MonoBehaviour
         selectedLanguage = (Language)id;
         Debug.Log("Changed Language to: " + selectedLanguage);
     }
+
+ 
+    public void StartDialogue(Dialogue d)
+    {
+        actionID = 0;
+        currentDialogue = d;
+        sentences.Clear();
+
+        foreach (string sentence in GetSentence(d))
+        {
+            sentences.Enqueue(sentence);
+        }
+
+        SetNextAction(d, actionID);
+    }
+
+    private void EnableText(bool enable)
+    {
+        Debug.Log("Setting TextDisplay to: " + enable);
+        dialogueText.gameObject.SetActive(enable);
+    }
+
+    private int actionID = 0;
+    private void SetNextAction(Dialogue d, int id)
+    {
+        switch (d.Actions[id])
+        {
+            case Dialogue.Action.nextSentence:
+                DisplayNextSentence();
+                break;
+            case Dialogue.Action.enableTextDisplay:
+                EnableText(true);
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
+            case Dialogue.Action.disableTextDisplay:
+                EnableText(false);
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
+            case Dialogue.Action.wait:
+                StartCoroutine(Wait(1f));
+                break;
+            case Dialogue.Action.endDialogue:
+                EndDialogue();
+                break;
+        }
+    }
+
+
+
+    IEnumerator Wait(float time)
+    {
+        Debug.Log($"Wait for {time} seconds.");
+        yield return new WaitForSeconds(time);
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+
+    }
+
+
+
 }
+
