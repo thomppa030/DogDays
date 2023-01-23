@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e8f7172295f72f346862baaf93dd2825
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Aracne Reg It
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c1541394e2e90f840b7d0dcaf9c1ce76, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

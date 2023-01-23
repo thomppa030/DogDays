@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f9977f7ea491bd545853c9c2a63cc99a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Aracne Stamp Lig It
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f8071dfbb891bc546a1908be6dab2ef6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
