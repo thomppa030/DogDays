@@ -5,5 +5,8 @@ namespace Interfaces
     {
         void OnInteract();
         void OnInteractCancel();
+        
+        void Lock();
+        void Unlock();
     }
 }

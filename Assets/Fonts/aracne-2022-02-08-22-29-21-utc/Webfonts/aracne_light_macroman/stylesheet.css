@@ -1,0 +1,37 @@
+/*
+ * Web Fonts from fontspring.com
+ *
+ * All OpenType features and all extended glyphs have been removed.
+ * Fully installable fonts can be purchased at http://www.fontspring.com
+ *
+ * The fonts included in this stylesheet are subject to the End User License you purchased
+ * from Fontspring. The fonts are protected under domestic and international trademark and 
+ * copyright law. You are prohibited from modifying, reverse engineering, duplicating, or
+ * distributing this font software.
+ *
+ * (c) 2010-2017 Fontspring
+ *
+ *
+ *
+ *
+ * The fonts included are copyrighted by the vendor listed below.
+ *
+ * Vendor:      Antipixel
+ * License URL: https://www.fontspring.com/licenses/antipixel/webfont
+ *
+ *
+ */
+
+@font-face {
+    font-family: 'aracne_liglight';
+    src: url('ARACNE-Light-webfont.eot');
+    src: url('ARACNE-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('ARACNE-Light-webfont.woff2') format('woff2'),
+         url('ARACNE-Light-webfont.woff') format('woff'),
+         url('ARACNE-Light-webfont.ttf') format('truetype'),
+         url('ARACNE-Light-webfont.svg#aracne_liglight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+

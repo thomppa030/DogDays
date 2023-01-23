@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e103f5c96264b9d4792dd4c89ecc3cd5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Aracne Reg
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 018b0f026ed48dd4bbb12521f2bbbc10, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
