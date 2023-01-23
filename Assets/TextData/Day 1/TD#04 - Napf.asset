@@ -31,6 +31,8 @@ MonoBehaviour:
   Audioclips: []
   textToUnlock:
   - {fileID: 11400000, guid: b5dc092b425abba479140bb85d751cfd, type: 2}
+  - {fileID: 11400000, guid: 51159152c45993f4ca591cb1b2f211a2, type: 2}
+  - {fileID: 11400000, guid: ecef194ce934e9a4b99172a671bdeb80, type: 2}
   textToEnable:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 51159152c45993f4ca591cb1b2f211a2, type: 2}
   textToDisable: []
