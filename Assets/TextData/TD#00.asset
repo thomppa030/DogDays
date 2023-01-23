@@ -13,13 +13,21 @@ MonoBehaviour:
   m_Name: TD#00
   m_EditorClassIdentifier: 
   ger_default:
-  - "<b>Hallo</b>, dies ist eine Testnachricht. Dr\xFCcke die linke Maustaste um
-    fortzufahren."
-  - Dies ist die Standardnachricht dieses Objektes. Beim Interagieren mit diesem
-    Objekt kann optional ein neuer Text freigeschaltet werden.
+  - '<b>Hallo</b>,Oh! They are up already? How did I miss them?
+
+    I better look
+    around to find them.
+
+'
+  - "I better look around to find them.\r"
   - Probiere es mal aus.
   eng_default:
-  - Sorry to lazy to translate, lets count to 3.
+  - '<b>Hallo</b>,Oh! They are up already? How did I miss them?
+
+    I better look
+    around to find them.
+
+'
   - 1...
   - 2...Args I dont know.
   ger_unlocked:

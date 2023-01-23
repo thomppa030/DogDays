@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: TD#01
   m_EditorClassIdentifier: 
   ger_default:
-  - "Standarttext f\xFCr dieses Objekt"
+  - "Hmm\u2026 No one is here.\r\nThey might be out in the city. But they always
+    come back! Will have to wait\r\n"
   eng_default:
   - Standart text for this object.
   ger_unlocked:
