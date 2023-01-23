@@ -22,7 +22,7 @@ public class MenuHandler : MonoBehaviour
 
     #region UIHandling
     private void Start()
-    {
+    { 
         if (GameState.Instance.GetCurrentState() == GameState.GameStates.Menu
             || GameState.Instance.GetCurrentState() == GameState.GameStates.Pause)
         {

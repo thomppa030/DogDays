@@ -38,6 +38,11 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = "";
     }
 
+    public TextState GetCurrentTextState()
+    {
+        return currentTextstate;
+    }
+
     private void DisplayNextSentence()
     {
         string sentence = sentences.Dequeue();
