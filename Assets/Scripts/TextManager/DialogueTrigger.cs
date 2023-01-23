@@ -89,6 +89,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     private void UnlockText(List<Dialogue> dList)
     {
+        
         if (dList.Contains(unlockedDialogue))
         {
             SetTriggerState(TriggerState.setUnlockedText);

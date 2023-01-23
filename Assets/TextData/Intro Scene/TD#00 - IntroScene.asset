@@ -34,6 +34,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 35a79804cedbcb04786948417e356e59, type: 3}
   - {fileID: 8300000, guid: 5669d21937fe98943b9c3b0a30169b35, type: 3}
   - {fileID: 8300000, guid: 853260067dd486d458bd91b7855fcfe3, type: 3}
-  textToUnlock: []
+  textToUnlock:
+  - {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
   textToEnable: []
   textToDisable: []

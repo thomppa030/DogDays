@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: test00
+  m_Name: unlockedTest
   m_EditorClassIdentifier: 
   Title: default Title
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0300000005000000030000000000000002000000030000000100000000000000040000000000000008000000
+  <Actions>k__BackingField: 0500000000000000020000000700000001000000000000000400000008000000
   ger_sentences:
-  - 1
-  - 2
-  - 3
+  - unlock the text
+  - das wars
   eng_sentences:
-  - one
-  - two
-  - three
-  Audioclips: []
+  - 'bla bla '
+  - 'this was english '
+  Audioclips:
+  - {fileID: 8300000, guid: 5669d21937fe98943b9c3b0a30169b35, type: 3}
   textToUnlock: []
-  textToEnable:
-  - {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
+  textToEnable: []
   textToDisable: []

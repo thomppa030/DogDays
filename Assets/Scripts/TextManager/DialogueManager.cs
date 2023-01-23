@@ -64,10 +64,6 @@ public class DialogueManager : MonoBehaviour
     public static Action<List<Dialogue>> UnlockText;
     void EndDialogue()
     {
-        EnableTextTrigger?.Invoke(currentDialogue.textToEnable);
-        DisableTextTrigger?.Invoke(currentDialogue.textToDisable);
-        UnlockText?.Invoke(currentDialogue.textToUnlock);
-
         ChangeTextstate(TextState.none, null);
     }
 
@@ -94,6 +90,7 @@ public class DialogueManager : MonoBehaviour
 
     public void ChangeTextstate(TextState tS, Dialogue d)
     {
+        Debug.Log("Change dialogue state from " + currentTextstate + " to " + tS);
         if (tS == currentTextstate) return;
 
         //Current State: None
@@ -115,9 +112,13 @@ public class DialogueManager : MonoBehaviour
                 dialogueText.gameObject.SetActive(false);
                 dialogueText.text = "";
                 currentTextstate = tS;
-                currentDialogue = null;
+                
                 actionID = 0;
                 audioID = 0;
+
+                EnableTextTrigger?.Invoke(currentDialogue.textToEnable);
+                DisableTextTrigger?.Invoke(currentDialogue.textToDisable);
+                UnlockText?.Invoke(currentDialogue.textToUnlock);
             }
         }
     }
