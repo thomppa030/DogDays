@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: Data 1
+  m_Name: TD#05 - Napf Kein Hunger
   m_EditorClassIdentifier: 
-  Title: default Title
+  Title: Interaktion mit dem Napf - Kein Hunger
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 03000000
-  ger_sentences: []
-  eng_sentences: []
+  <Actions>k__BackingField: 0000000008000000
+  ger_sentences:
+  - 'XXX: Ich habe keinen Hunger mehr.'
+  eng_sentences:
+  - 'XXX: I am finished eating.'
   <waitTime>k__BackingField:
-  - 0.56
+  - 1
+  - 2
   Audioclips: []
   textToUnlock: []
   textToEnable: []

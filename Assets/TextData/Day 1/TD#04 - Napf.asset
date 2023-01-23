@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#04 - Napf
+  m_EditorClassIdentifier: 
+  Title: Interaktion mit dem Napf
+  <startOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 0000000002000000030000000100000000000000020000000300000001000000000000000000000008000000
+  ger_sentences:
+  - 'XXX: Mmmh. Mein Lieblingsfutter!'
+  - Yum yum yum yum!
+  - 'XXX: Ah, das war so lecker!'
+  - 'XXX: Wo ist mein Spielzeug? Ich will Ball spielen!'
+  eng_sentences:
+  - 'XXX: My favorite!'
+  - Yum yum yum yum!
+  - 'XXX: That was so good!'
+  - 'XXX: Where is my toy? I wanna play with the ball!'
+  <waitTime>k__BackingField:
+  - 1
+  - 2
+  Audioclips: []
+  textToUnlock:
+  - {fileID: 11400000, guid: b5dc092b425abba479140bb85d751cfd, type: 2}
+  textToEnable:
+  - {fileID: 0}
+  textToDisable: []

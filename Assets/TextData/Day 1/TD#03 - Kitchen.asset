@@ -12,12 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: TD#03 - Kitchen
   m_EditorClassIdentifier: 
-  Title: default Title
+  Title: OnTrigger Kitchen
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 
-  ger_sentences: []
-  eng_sentences: []
+  <Actions>k__BackingField: 00000000000000000000000008000000
+  ger_sentences:
+  - 'XXX: Hm...Niemand da.'
+  - "XXX: Vielleicht sind sie au\xDFer Haus? Sie kommen sicher bald zur\xFCck. Dann
+    hei\xDFt es wohl warten."
+  - "XXX: Wie w\xE4re es mit einem kleinen Snack zwischendurch!"
+  eng_sentences:
+  - 'XXX: Hm...No one is here.'
+  - 'XXX: They might be out in the city. But they always come back. Will have to
+    wait.'
+  - 'XXX: They might be out in the city. But they always come back. Will have to
+    wait...'
+  - 'XXX: In the meantime, I could use a snack.'
+  <waitTime>k__BackingField: []
   Audioclips: []
   textToUnlock: []
-  textToEnable: []
-  textToDisable: []
+  textToEnable:
+  - {fileID: 11400000, guid: e9e89642885e7e749abb309cb338bf70, type: 2}
+  textToDisable:
+  - {fileID: 11400000}

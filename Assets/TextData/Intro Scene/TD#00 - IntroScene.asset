@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Intro Scene
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 050000000700000007000000070000000000000000000000000000000700000000000000020000000700000007000000070000000400000008000000
+  <Actions>k__BackingField: 0500000007000000070000000700000000000000000000000000000007000000000000000200000007000000070000000700000008000000
   ger_sentences:
   - 'Kind: Was ist mit <b>XXX</b>?'
   - 'Kind: Warum haben wir keine seiner Sachen eingepackt?'
@@ -26,6 +26,7 @@ MonoBehaviour:
   - 'Mom: We won''t be gone for long. He has everything he needs for a couple of
     days.'
   - 'Dad: We will pick him up when it''s safe. Now let''s go!'
+  <waitTime>k__BackingField: []
   Audioclips:
   - {fileID: 8300000, guid: 7c45f285fdea76d47aeb5218d76fe917, type: 3}
   - {fileID: 8300000, guid: c2989422ed9c7734aba7209b73821ebd, type: 3}
@@ -35,6 +36,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5669d21937fe98943b9c3b0a30169b35, type: 3}
   - {fileID: 8300000, guid: 853260067dd486d458bd91b7855fcfe3, type: 3}
   textToUnlock:
-  - {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
+  - {fileID: 11400000, guid: dba75940252756e4599a6b8e0180fe8e, type: 2}
   textToEnable: []
   textToDisable: []

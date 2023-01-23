@@ -221,82 +221,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &348584198
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 348584199}
-  - component: {fileID: 348584201}
-  - component: {fileID: 348584200}
-  m_Layer: 0
-  m_Name: Image
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &348584199
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348584198}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 605196120}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &348584200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348584198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.29803923}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &348584201
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348584198}
-  m_CullTransparentMesh: 1
 --- !u!1 &358610416
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,6 +303,7 @@ MonoBehaviour:
   triggerState: 1
   defaultDialogue: {fileID: 11400000, guid: 88fe8da5f9f4ec64ca1396780c19a358, type: 2}
   unlockedDialogue: {fileID: 11400000, guid: 6a49172b13db1a841807aef6aea2708c, type: 2}
+  playOnTrigger: 0
 --- !u!65 &403107624
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -638,11 +563,6 @@ Transform:
   m_Father: {fileID: 1396702010}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &605196120 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7522961385274638005, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
-  m_PrefabInstance: {fileID: 912114635}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &757808017 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1095032886737334589, guid: 1591870f0c9c55744a72c9c51d0bd9d1, type: 3}
@@ -669,30 +589,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2146839048179047169, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7522961385274638002, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7522961386100405257, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
-      propertyPath: letterPause
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7522961386100405257, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
-      propertyPath: DialogueData.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7522961386100405257, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
-      propertyPath: DialogueData.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 75b0008c4e957704f9f6c87341f1e398, type: 2}
-    - target: {fileID: 7522961386100405257, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
-      propertyPath: DialogueData.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
     - target: {fileID: 7522961386335902883, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1056,7 +952,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerState: 1
   defaultDialogue: {fileID: 11400000, guid: d3e63bfcb230c1748884401d2f173739, type: 2}
-  unlockedDialogue: {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
+  unlockedDialogue: {fileID: 11400000, guid: dba75940252756e4599a6b8e0180fe8e, type: 2}
+  playOnTrigger: 0
 --- !u!65 &1491971669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1264,6 +1161,7 @@ MonoBehaviour:
   triggerState: 1
   defaultDialogue: {fileID: 11400000, guid: 75b0008c4e957704f9f6c87341f1e398, type: 2}
   unlockedDialogue: {fileID: 11400000, guid: 75b0008c4e957704f9f6c87341f1e398, type: 2}
+  playOnTrigger: 0
 --- !u!65 &2090648871
 BoxCollider:
   m_ObjectHideFlags: 0

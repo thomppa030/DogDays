@@ -12,12 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: TD#02 - Bed
   m_EditorClassIdentifier: 
-  Title: default Title
+  Title: Bed Interaction Day 1
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 
-  ger_sentences: []
-  eng_sentences: []
+  <Actions>k__BackingField: 000000000000000008000000
+  ger_sentences:
+  - Oh, sind denn alle schon wach? Wie hab' ich das denn verpasst?
+  - Ich schaue mal besser nach ihnen.
+  eng_sentences:
+  - Oh, they are up already? How did I miss them?
+  - I better look around to find them.
+  <waitTime>k__BackingField:
+  - 2
   Audioclips: []
   textToUnlock: []
-  textToEnable: []
+  textToEnable:
+  - {fileID: 11400000, guid: c5dcdde8efaa0fa4fbe6729ed2e08479, type: 2}
   textToDisable: []

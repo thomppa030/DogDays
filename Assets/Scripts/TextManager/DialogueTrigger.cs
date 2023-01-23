@@ -30,10 +30,12 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
+        bc = GetComponent<BoxCollider>();
+
         if (playOnTrigger) bc.isTrigger = true;
         //Setting layer to Dialogue Layer;
         gameObject.layer = 6;
-        bc = GetComponent<BoxCollider>();
+        
 
         displayedDialogue = defaultDialogue;
         SetTriggerState(triggerState);
