@@ -16,11 +16,13 @@ public class Dialogue : ScriptableObject
     [TextArea(3, 10)]
     public List<string> eng_sentences = new List<string>();
     [Space]
+    [Header("SFX")]
+    [SerializeField] private AudioClip[] Audioclips;
+    [Space]
     [Header("TextData References")]
     public List<Dialogue> textToUnlock = new List<Dialogue>();
     public List<Dialogue> textToEnable = new List<Dialogue>();
     public List<Dialogue> textToDisable = new List<Dialogue>();
-
 
     public enum Action
     {
@@ -31,7 +33,13 @@ public class Dialogue : ScriptableObject
         fadeIn,
         fadeOut,
         shakeCamera,
+        playSFX,
         endDialogue
+    }
+
+    public AudioClip GetAudioClip(int id)
+    {
+        return Audioclips[id];
     }
 
     

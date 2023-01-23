@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: TD#01
+  m_Name: test01
   m_EditorClassIdentifier: 
   Title: default Title
   <startOnAwake>k__BackingField: 0

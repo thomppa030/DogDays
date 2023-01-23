@@ -556,6 +556,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2146839048179047169, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7522961385274638002, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -938,7 +942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerState: 1
-  defaultDialogue: {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
+  defaultDialogue: {fileID: 11400000, guid: d3e63bfcb230c1748884401d2f173739, type: 2}
   unlockedDialogue: {fileID: 11400000, guid: 8f99150c9daedd0479bc751d7ea564e9, type: 2}
 --- !u!65 &1491971669
 BoxCollider:

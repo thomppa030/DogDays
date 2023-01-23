@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#00 - IntroScene
+  m_EditorClassIdentifier: 
+  Title: Intro Scene
+  <startOnAwake>k__BackingField: 1
+  <Actions>k__BackingField: 050000000700000007000000070000000000000000000000000000000700000000000000020000000700000007000000070000000400000008000000
+  ger_sentences:
+  - 'Kind: Was ist mit <b>XXX</b>?'
+  - 'Kind: Warum haben wir keine seiner Sachen eingepackt?'
+  - "Mum: Wir sind nicht lange weg. Er hat alles was er braucht. F\xFCr einige Zeit..."
+  - 'Dad: Wir holen ihn, wenn es sicher ist...Lasst uns jetzt gehen!'
+  eng_sentences:
+  - 'Child: What about <b>XXX</b>?'
+  - 'Child: Why didn''t we pack any of his toys?'
+  - 'Mom: We won''t be gone for long. He has everything he needs for a couple of
+    days.'
+  - 'Dad: We will pick him up when it''s safe. Now let''s go!'
+  Audioclips:
+  - {fileID: 8300000, guid: 7c45f285fdea76d47aeb5218d76fe917, type: 3}
+  - {fileID: 8300000, guid: c2989422ed9c7734aba7209b73821ebd, type: 3}
+  - {fileID: 8300000, guid: c141335845424ad4abb9d27cbde2b97a, type: 3}
+  - {fileID: 8300000, guid: e78f7535373359b4c9bb0402b57f5aac, type: 3}
+  - {fileID: 8300000, guid: 35a79804cedbcb04786948417e356e59, type: 3}
+  - {fileID: 8300000, guid: 5669d21937fe98943b9c3b0a30169b35, type: 3}
+  - {fileID: 8300000, guid: 853260067dd486d458bd91b7855fcfe3, type: 3}
+  textToUnlock: []
+  textToEnable: []
+  textToDisable: []

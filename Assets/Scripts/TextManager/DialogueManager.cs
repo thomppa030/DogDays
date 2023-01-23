@@ -4,11 +4,13 @@ using UnityEngine;
 using TMPro;
 using System;
 public class DialogueManager : MonoBehaviour
-{   
+{
+    [SerializeField] private Animator fader;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
     private Queue<string> sentences;
+    AudioSource audioSource;
     public static DialogueManager instance;
 
     public Language selectedLanguage = Language.german;
@@ -24,10 +26,12 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
     {
+
         sentences = new Queue<string>();
 
         if(dialogueText != null)
@@ -113,6 +117,7 @@ public class DialogueManager : MonoBehaviour
                 currentTextstate = tS;
                 currentDialogue = null;
                 actionID = 0;
+                audioID = 0;
             }
         }
     }
@@ -139,6 +144,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue d)
     {
         actionID = 0;
+        audioID = 0;
         currentDialogue = d;
         sentences.Clear();
 
@@ -157,8 +163,10 @@ public class DialogueManager : MonoBehaviour
     }
 
     private int actionID = 0;
+    private int audioID = 0;
     private void SetNextAction(Dialogue d, int id)
     {
+        Debug.Log($"Play Action {d.Actions[id]} with ID {actionID}.");
         switch (d.Actions[id])
         {
             case Dialogue.Action.nextSentence:
@@ -177,6 +185,17 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.wait:
                 StartCoroutine(Wait(1f));
                 break;
+            case Dialogue.Action.playSFX:
+                AudioClip ac = d.GetAudioClip(audioID);
+                float waitTime = ac.length;
+                StartCoroutine(PlaySFX(ac, waitTime));
+                break;
+            case Dialogue.Action.fadeIn:
+                StartCoroutine(PlayFadeAnimation("FadeIn"));
+                break;
+            case Dialogue.Action.fadeOut:
+                StartCoroutine(PlayFadeAnimation("FadeOut"));
+                break;
             case Dialogue.Action.endDialogue:
                 EndDialogue();
                 break;
@@ -184,6 +203,23 @@ public class DialogueManager : MonoBehaviour
     }
 
 
+    IEnumerator PlaySFX(AudioClip ac, float waitTime)
+    {
+        Debug.Log($"Playing {ac.name} with ID ${audioID} and wait time of {waitTime} seconds.");
+        audioSource.clip = ac;      
+        audioSource.Play();
+        yield return new WaitForSeconds(waitTime);
+        actionID++;
+        audioID++;
+        SetNextAction(currentDialogue, actionID);
+    }
+    IEnumerator PlayFadeAnimation(string animName)
+    {
+        fader.Play(animName);
+        yield return new WaitForSeconds(1);
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+    }
 
     IEnumerator Wait(float time)
     {
