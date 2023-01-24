@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 public class DialogueManager : MonoBehaviour
-{
+{    
     [SerializeField] private Animator fader;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] float textSpeed = 0.03f;
@@ -36,6 +36,11 @@ public class DialogueManager : MonoBehaviour
 
         if(dialogueText != null)
             dialogueText.text = "";
+    }
+
+    public TextState GetCurrentTextState()
+    {
+        return currentTextstate;
     }
 
     private void DisplayNextSentence()
@@ -112,9 +117,8 @@ public class DialogueManager : MonoBehaviour
                 dialogueText.gameObject.SetActive(false);
                 dialogueText.text = "";
                 currentTextstate = tS;
-                
-                actionID = 0;
-                audioID = 0;
+
+                ResetIDs();
 
                 EnableTextTrigger?.Invoke(currentDialogue.textToEnable);
                 DisableTextTrigger?.Invoke(currentDialogue.textToDisable);
@@ -144,8 +148,7 @@ public class DialogueManager : MonoBehaviour
  
     public void StartDialogue(Dialogue d)
     {
-        actionID = 0;
-        audioID = 0;
+        ResetIDs();
         currentDialogue = d;
         sentences.Clear();
 
@@ -165,6 +168,7 @@ public class DialogueManager : MonoBehaviour
 
     private int actionID = 0;
     private int audioID = 0;
+    private int waitID = 0;
     private void SetNextAction(Dialogue d, int id)
     {
         Debug.Log($"Play Action {d.Actions[id]} with ID {actionID}.");
@@ -184,7 +188,7 @@ public class DialogueManager : MonoBehaviour
                 SetNextAction(d, actionID);
                 break;
             case Dialogue.Action.wait:
-                StartCoroutine(Wait(1f));
+                StartCoroutine(Wait(d.waitTime[waitID]));
                 break;
             case Dialogue.Action.playSFX:
                 AudioClip ac = d.GetAudioClip(audioID);
@@ -227,10 +231,17 @@ public class DialogueManager : MonoBehaviour
         Debug.Log($"Wait for {time} seconds.");
         yield return new WaitForSeconds(time);
         actionID++;
+        waitID++;
         SetNextAction(currentDialogue, actionID);
 
     }
 
+    private void ResetIDs()
+    {
+        waitID = 0;
+        audioID = 0;
+        actionID = 0;
+    }
 
 
 }

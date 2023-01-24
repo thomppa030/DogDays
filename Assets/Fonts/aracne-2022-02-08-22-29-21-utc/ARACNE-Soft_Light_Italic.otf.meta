@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 75b3d0e49c6a6514fa5b33ab6dd2b197
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Aracne Soft Lig It
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f48dba932e232fd4e8d7a5d27e587f8a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
