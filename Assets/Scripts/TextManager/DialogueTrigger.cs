@@ -108,4 +108,9 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
         }
     }
+
+    public TriggerState GetTriggerState()
+    {
+        return triggerState;
+    }
 }

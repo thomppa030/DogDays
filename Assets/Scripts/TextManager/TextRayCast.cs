@@ -30,7 +30,7 @@ public class TextRayCast : MonoBehaviour
         int layerMask = 1 << 6;
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayDistance, layerMask))
-        {        
+        {
             EnableIcon(true);
 
             if (Input.GetKeyDown(KeyCode.E))

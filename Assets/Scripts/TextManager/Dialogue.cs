@@ -36,7 +36,8 @@ public class Dialogue : ScriptableObject
         fadeOut,
         shakeCamera,
         playSFX,
-        endDialogue
+        endDialogue,
+        loadNextScene
     }
 
     public AudioClip GetAudioClip(int id)

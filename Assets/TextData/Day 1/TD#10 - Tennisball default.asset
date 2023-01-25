@@ -10,19 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: TD#08 - Bedroom
+  m_Name: TD#10 - Tennisball default
   m_EditorClassIdentifier: 
-  Title: Bedroom - Ball must be here
+  Title: Tennisball default
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - 'XXX: Mein Ball muss hier irgendwo sein. Ich kann es riechen!'
+  - "Genug gespielt f\xFCr heute."
   eng_sentences:
-  - 'XXX: My ball must be here somewhere! I can sniff it!'
+  - Enough playing for today.
   <waitTime>k__BackingField: []
   Audioclips: []
   textToUnlock: []
-  textToEnable:
-  - {fileID: 11400000, guid: 45047fa89041d6648a91aab5480bfe2a, type: 2}
-  textToDisable:
-  - {fileID: 11400000}
+  textToEnable: []
+  textToDisable: []

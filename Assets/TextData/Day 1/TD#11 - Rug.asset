@@ -10,19 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: TD#08 - Bedroom
+  m_Name: TD#11 - Rug
   m_EditorClassIdentifier: 
-  Title: Bedroom - Ball must be here
+  Title: Rug
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000008000000
+  <Actions>k__BackingField: 000000000000000008000000
   ger_sentences:
-  - 'XXX: Mein Ball muss hier irgendwo sein. Ich kann es riechen!'
+  - 'XXX: Der Teppich ist nicht so warm wie sonst...'
+  - 'XXX: Ich habe hier immer gerne ein Nickerchen gehalten, aber so kalt wie es
+    gerade ist, wird er mich nicht warm halten.'
   eng_sentences:
-  - 'XXX: My ball must be here somewhere! I can sniff it!'
+  - 'XXX: The rug is not as warm as I remember it to be...'
+  - 'XXX: I did enjoy a nice nap here in winter, but it won''t keep me warm this
+    time.'
   <waitTime>k__BackingField: []
   Audioclips: []
   textToUnlock: []
-  textToEnable:
-  - {fileID: 11400000, guid: 45047fa89041d6648a91aab5480bfe2a, type: 2}
+  textToEnable: []
   textToDisable:
   - {fileID: 11400000}
