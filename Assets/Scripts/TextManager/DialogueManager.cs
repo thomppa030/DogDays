@@ -213,12 +213,21 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.showInfoDisplay:
                 ShowInfoDisplay();
                 break;
+            case Dialogue.Action.disableInfoDisplay:
+                DisableInfoDisplay();
+                break;
         }
     }
 
     private void ShowInfoDisplay()
     {
         infoDisplayer.ShowInfo(currentDialogue.InfoText, currentDialogue.InfoDisplayTime);
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+    }
+    private void DisableInfoDisplay()
+    {
+        infoDisplayer.DisableInfo();
         actionID++;
         SetNextAction(currentDialogue, actionID);
     }

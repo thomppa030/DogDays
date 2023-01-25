@@ -38,7 +38,7 @@ public class InfoDisplayer : MonoBehaviour
         }
     }
 
-    private void DisableInfo()
+    public void DisableInfo()
     {
         anim.Play("DisableInfo");
     }

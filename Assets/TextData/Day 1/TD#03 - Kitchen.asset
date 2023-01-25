@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: OnTrigger Kitchen
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 00000000000000000000000008000000
+  <Actions>k__BackingField: 0c0000000000000000000000000000000b00000008000000
   ger_sentences:
   - 'XXX: Hm...Niemand da.'
   - "XXX: Vielleicht sind sie au\xDFer Haus? Sie kommen sicher bald zur\xFCck. Dann
@@ -27,8 +27,8 @@ MonoBehaviour:
   - 'XXX: They might be out in the city. But they always come back. Will have to
     wait...'
   - 'XXX: In the meantime, I could use a snack.'
-  <InfoText>k__BackingField: 
-  <InfoDisplayTime>k__BackingField: 0
+  <InfoText>k__BackingField: Find something to eat.
+  <InfoDisplayTime>k__BackingField: 5
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
   Audioclips: []
