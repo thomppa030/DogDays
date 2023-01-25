@@ -7,8 +7,10 @@ using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
-{    
+{
+    [SerializeField] private Animator playerAnim;
     [SerializeField] private Animator fader;
+    [SerializeField] private InfoDisplayer infoDisplayer;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
@@ -38,7 +40,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-
+        playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         sentences = new Queue<string>();
 
         if(dialogueText != null)
@@ -187,9 +189,13 @@ public class DialogueManager : MonoBehaviour
     private int actionID = 0;
     private int audioID = 0;
     private int waitID = 0;
+<<<<<<< HEAD
     
     [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
 
+=======
+    private int charAnimID = 0;
+>>>>>>> origin/main
     private void SetNextAction(Dialogue d, int id)
     {
         Debug.Log($"Play Action {d.Actions[id]} with ID {actionID}.");
@@ -225,7 +231,31 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.endDialogue:
                 EndDialogue();
                 break;
+            case Dialogue.Action.playCharAnim:
+                PlayCharacterAnimation();
+                break;
+            case Dialogue.Action.showInfoDisplay:
+                ShowInfoDisplay();
+                break;
         }
+    }
+
+    private void ShowInfoDisplay()
+    {
+        infoDisplayer.ShowInfo(currentDialogue.InfoText, currentDialogue.InfoDisplayTime);
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+    }
+
+    private void PlayCharacterAnimation()
+    {
+        string ac = currentDialogue.characterAnim[charAnimID].name.ToString();
+        Debug.Log("Playing animation: " + ac);
+        playerAnim.Play(ac);
+        charAnimID++;
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+
     }
 
 
@@ -262,6 +292,7 @@ public class DialogueManager : MonoBehaviour
         waitID = 0;
         audioID = 0;
         actionID = 0;
+        charAnimID = 0;
     }
 
 

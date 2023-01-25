@@ -19,9 +19,12 @@ MonoBehaviour:
   - 'XXX: Ich habe keinen Hunger mehr.'
   eng_sentences:
   - 'XXX: I am finished eating.'
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
   - 1
   - 2
+  <characterAnim>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

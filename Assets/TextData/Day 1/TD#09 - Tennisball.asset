@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#09 - Tennisball
+  m_EditorClassIdentifier: 
+  Title: Tennisball
+  <startOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000
+  ger_sentences:
+  - 'XXX: Da ist er ja!'
+  - 'XXX: ...'
+  - 'XXX: Es ist schon eine Weile her, seit sie gegangen sind. Normalerweise sind
+    sie den ganzen Tag Zuhause...'
+  - "XXX: Vielleicht machen sie einen Gro\xDFeinkauf? "
+  - 'XXX: Mmmmhh...Ich hoffe sie bringen mir was leckeres mit!'
+  - 'XXX: Ich erinnere mich an dem Tag, als ich diesen Ball gefunden habe.'
+  - 'XXX: Mein alter Ball ging verloren und ich war ganz traurig.'
+  - 'XXX: Den hier hab'' ich beim Spazieren unter einem Baum gefunden.'
+  - "XXX: Ich war ganz aufgeregt. Endlich hatte ich einen neuen Ball. Meine Familie
+    schien auch ganz gl\xFCcklich dar\xFCber zu sein."
+  - 'XXX: Hm...'
+  - "XXX: Das ganze Kauen hat mich m\xFCde gemacht, Zeit f\xFCr ein Nickerchen!"
+  - "XXX: Es ist ganz sch\xF6n <i>k\xFChl</i> geworden...Ich sollte einen <color=#ff0000ff>warmen</color>
+    Platz zum Schlafen suchen."
+  eng_sentences:
+  - 'XXX: There it is!'
+  - 'XXX: ...'
+  - 'XXX: It''s been a while since they left. They are home the whole day usually!'
+  - 'XXX: They must be away on some big shopping... I '
+  - 'XXX: I hope they bring me some delicious bone!'
+  - 'XXX: I remember the day I got this ball.'
+  - 'XXX: My old one got lost a couple of days before and I was feeling very down.'
+  - 'XXX: This one I got found under a tree all wrapped up in some paper...'
+  - 'XXX:  I got so excited to get a new ball. My family was so happy at that moment.'
+  - 'XXX: Hm...'
+  - 'XXX: All this chewing made me tired up. A nap would be nice now!'
+  - 'XXX: But it got quite <i>chilly</i>. I should find a <color=#ff0000ff>warm</color>
+    spot to sleep.'
+  <waitTime>k__BackingField: []
+  Audioclips: []
+  textToUnlock:
+  - {fileID: 11400000, guid: df178c7cdd011e24f8a7b34008fa42ae, type: 2}
+  - {fileID: 11400000, guid: 76b9f427a57e57a48bb699b557b1c64d, type: 2}
+  textToEnable:
+  - {fileID: 11400000, guid: 7c16b29d2c0ea8846b438431fc8dd800, type: 2}
+  - {fileID: 11400000, guid: f63aa1cc5e197ea41ab6b54e9c7c4453, type: 2}
+  textToDisable:
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: ecef194ce934e9a4b99172a671bdeb80, type: 2}
+  - {fileID: 11400000, guid: b39bd665fa8580c4aa3368f0e69e6852, type: 2}

@@ -23,9 +23,12 @@ MonoBehaviour:
   - 'XXX: That squirrel got away from me this time. '
   - 'XXX: I am gonna get it someday!'
   - 'XXX: A fun day ahead. Time to greet my family.'
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
   - 3
   - 2
+  <characterAnim>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:

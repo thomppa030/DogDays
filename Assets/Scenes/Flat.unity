@@ -21007,6 +21007,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 167216504}
     m_Modifications:
+    - target: {fileID: 4966731299107604021, guid: 4356324233a18dd46af69751c0460ffe, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966731299107604021, guid: 4356324233a18dd46af69751c0460ffe, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 89a366947133f7a49a722056d2a2e0c4, type: 2}
     - target: {fileID: 4966731299109373141, guid: 4356324233a18dd46af69751c0460ffe, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -21720,6 +21728,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -21804,6 +21813,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1001 &705970371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32001,6 +32030,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 167216504}
     m_Modifications:
+    - target: {fileID: 8160103459371338229, guid: d83dae319b796214e93203889b8ae378, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160103459371338229, guid: d83dae319b796214e93203889b8ae378, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0054cbb2942940f46a8872a0c6f7e495, type: 2}
     - target: {fileID: 8160103459373274933, guid: d83dae319b796214e93203889b8ae378, type: 3}
       propertyPath: m_Name
       value: ShowerTable_01
