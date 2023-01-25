@@ -25,9 +25,12 @@ MonoBehaviour:
   - 'XXX: But I am not allowed on the bed!'
   - 'XXX: ...'
   - 'XXX: No, I am a good boy. Better find another place...'
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
   Audioclips: []
   textToUnlock:
-  - {fileID: 11400000, guid: ecef194ce934e9a4b99172a671bdeb80, type: 2}
+  - {fileID: 11400000, guid: 10c9d9688de18ec4a8d24c2547a122a0, type: 2}
   textToEnable: []
   textToDisable: []
