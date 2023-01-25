@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private Animator playerAnim;
     [SerializeField] private Animator fader;
+    [SerializeField] private InfoDisplayer infoDisplayer;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
@@ -209,7 +210,17 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.playCharAnim:
                 PlayCharacterAnimation();
                 break;
+            case Dialogue.Action.showInfoDisplay:
+                ShowInfoDisplay();
+                break;
         }
+    }
+
+    private void ShowInfoDisplay()
+    {
+        infoDisplayer.ShowInfo(currentDialogue.InfoText, currentDialogue.InfoDisplayTime);
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
     }
 
     private void PlayCharacterAnimation()

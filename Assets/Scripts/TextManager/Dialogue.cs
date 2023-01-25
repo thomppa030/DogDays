@@ -16,6 +16,9 @@ public class Dialogue : ScriptableObject
     [TextArea(3, 10)]
     public List<string> eng_sentences = new List<string>();
 
+    [field: SerializeField] public string InfoText { get; set; }
+    [field: SerializeField] public float InfoDisplayTime { get; set; }
+
     [field: SerializeField] public float[] waitTime { get; set; }
     [field: SerializeField] public AnimationClip[] characterAnim { get; set; }
     [Space]
@@ -39,7 +42,8 @@ public class Dialogue : ScriptableObject
         playSFX,
         endDialogue,
         loadNextScene,
-        playCharAnim
+        playCharAnim,
+        showInfoDisplay
     }
 
     public AudioClip GetAudioClip(int id)

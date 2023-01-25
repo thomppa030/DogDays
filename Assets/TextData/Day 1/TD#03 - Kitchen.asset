@@ -27,7 +27,10 @@ MonoBehaviour:
   - 'XXX: They might be out in the city. But they always come back. Will have to
     wait...'
   - 'XXX: In the meantime, I could use a snack.'
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:

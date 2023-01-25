@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Interaktion mit dem Napf
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000002000000030000000100000000000000020000000300000001000000000000000000000008000000
+  <Actions>k__BackingField: 00000000020000000a000000030000000100000000000000020000000300000001000000000000000000000008000000
   ger_sentences:
   - 'XXX: Mmmh. Mein Lieblingsfutter!'
   - Yum yum yum yum!
@@ -25,9 +25,13 @@ MonoBehaviour:
   - Yum yum yum yum!
   - 'XXX: That was so good!'
   - 'XXX: Where is my toy? I wanna play with the ball!'
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
-  - 1
+  - 5
   - 2
+  <characterAnim>k__BackingField:
+  - {fileID: -500353978738215223, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
   Audioclips: []
   textToUnlock:
   - {fileID: 11400000, guid: b5dc092b425abba479140bb85d751cfd, type: 2}
