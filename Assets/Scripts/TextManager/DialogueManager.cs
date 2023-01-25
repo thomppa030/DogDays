@@ -8,10 +8,11 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private Animator playerAnim;
+    private Animator playerAnim;
     [SerializeField] private Animator fader;
     [SerializeField] private InfoDisplayer infoDisplayer;
     [SerializeField] TMP_Text dialogueText;
+    [SerializeField] Image dialogueFrame;
     [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
     private Queue<string> sentences;
@@ -183,6 +184,7 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("Setting TextDisplay to: " + enable);
         dialogueText.gameObject.SetActive(enable);
+        dialogueFrame.gameObject.SetActive(enable);
     }
 
     private int actionID = 0;
