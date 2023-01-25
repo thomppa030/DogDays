@@ -26,7 +26,11 @@ MonoBehaviour:
   - 'Mom: We won''t be gone for long. He has everything he needs for a couple of
     days.'
   - 'Dad: We will pick him up when it''s safe. Now let''s go!'
-  <waitTime>k__BackingField: []
+  <waitTime>k__BackingField:
+  - 1
+  - 1
+  - 1
+  - 1
   Audioclips:
   - {fileID: 8300000, guid: 7c45f285fdea76d47aeb5218d76fe917, type: 3}
   - {fileID: 8300000, guid: c2989422ed9c7734aba7209b73821ebd, type: 3}

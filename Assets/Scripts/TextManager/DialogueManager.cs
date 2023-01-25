@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
 public class DialogueManager : MonoBehaviour
 {    
     [SerializeField] private Animator fader;
@@ -12,6 +15,10 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     AudioSource audioSource;
     public static DialogueManager instance;
+    
+    [field: SerializeField] private PlayerStateMachine playerStateMachine { get; set; }
+
+    [field: SerializeField] private Image TextFieldImage {get; set; }
 
     public Language selectedLanguage = Language.german;
 
@@ -70,6 +77,15 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         ChangeTextstate(TextState.none, null);
+        LevelHandler.Instance.LockInteractables();
+        InteractComponent interactComponent = GetComponent<InteractComponent>();
+        
+        playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
+        
+        if (interactComponent)
+        {
+            interactComponent.Unlock();
+        }
     }
 
     private List<string> GetSentence(Dialogue d)
@@ -104,6 +120,7 @@ public class DialogueManager : MonoBehaviour
             //Start Dialogue
             if (tS == TextState.onDisplay)
             {
+                TextFieldImage.gameObject.SetActive(true);
                 dialogueText.gameObject.SetActive(true);
                 currentTextstate = tS;
                 StartDialogue(d);
@@ -115,6 +132,7 @@ public class DialogueManager : MonoBehaviour
             if (tS == TextState.none)
             {
                 dialogueText.gameObject.SetActive(false);
+                TextFieldImage.gameObject.SetActive(false);
                 dialogueText.text = "";
                 currentTextstate = tS;
 
@@ -169,6 +187,9 @@ public class DialogueManager : MonoBehaviour
     private int actionID = 0;
     private int audioID = 0;
     private int waitID = 0;
+    
+    [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
+
     private void SetNextAction(Dialogue d, int id)
     {
         Debug.Log($"Play Action {d.Actions[id]} with ID {actionID}.");
@@ -188,7 +209,7 @@ public class DialogueManager : MonoBehaviour
                 SetNextAction(d, actionID);
                 break;
             case Dialogue.Action.wait:
-                StartCoroutine(Wait(d.waitTime[waitID]));
+                StartCoroutine(waitID >= d.waitTime.Length ? Wait(DefaultWaitingtime) : Wait(d.waitTime[waitID]));
                 break;
             case Dialogue.Action.playSFX:
                 AudioClip ac = d.GetAudioClip(audioID);

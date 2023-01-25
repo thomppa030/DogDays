@@ -24,10 +24,11 @@ MonoBehaviour:
   - 'XXX: Hm...No one is here.'
   - 'XXX: They might be out in the city. But they always come back. Will have to
     wait.'
-  - 'XXX: They might be out in the city. But they always come back. Will have to
-    wait...'
   - 'XXX: In the meantime, I could use a snack.'
-  <waitTime>k__BackingField: []
+  <waitTime>k__BackingField:
+  - 1
+  - 1
+  - 1
   Audioclips: []
   textToUnlock: []
   textToEnable:
