@@ -17,6 +17,7 @@ public class Dialogue : ScriptableObject
     public List<string> eng_sentences = new List<string>();
 
     [field: SerializeField] public float[] waitTime { get; set; }
+    [field: SerializeField] public AnimationClip[] characterAnim { get; set; }
     [Space]
     [Header("SFX")]
     [SerializeField] private AudioClip[] Audioclips;
@@ -37,7 +38,8 @@ public class Dialogue : ScriptableObject
         shakeCamera,
         playSFX,
         endDialogue,
-        loadNextScene
+        loadNextScene,
+        playCharAnim
     }
 
     public AudioClip GetAudioClip(int id)
