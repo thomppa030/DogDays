@@ -38,10 +38,7 @@ public class DialogueTrigger : MonoBehaviour
         
 
         displayedDialogue = defaultDialogue;
-        SetTriggerState(triggerState);
-
-        if (displayedDialogue.startOnAwake) TriggerDialogue();
-
+        SetTriggerState(triggerState);    
     }
     public void TriggerDialogue()
     {
@@ -63,6 +60,7 @@ public class DialogueTrigger : MonoBehaviour
             case TriggerState.enabled:              
                 bc.enabled = true;
                 triggerState = tS;
+                if (displayedDialogue.startOnAwake) TriggerDialogue();
                 break;
             case TriggerState.hidden:
                 bc.enabled = false;
@@ -71,6 +69,7 @@ public class DialogueTrigger : MonoBehaviour
             case TriggerState.setDefaultText:
                 displayedDialogue = defaultDialogue;
                 triggerState = tS;
+                if (displayedDialogue.startOnAwake) TriggerDialogue();
                 break;
             case TriggerState.setUnlockedText:
                 displayedDialogue = unlockedDialogue;

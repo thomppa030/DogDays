@@ -216,6 +216,12 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.disableInfoDisplay:
                 DisableInfoDisplay();
                 break;
+            case Dialogue.Action.loadNextScene:
+                EndDialogue();
+                int sceneID = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1;
+                Debug.Log("Loading scene of index: " + sceneID);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneID);
+                break;
         }
     }
 

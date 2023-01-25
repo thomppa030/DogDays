@@ -14,6 +14,7 @@ public class InfoDisplayer : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         description = GetComponent<TMP_Text>();
+        isActive = false;
     }
 
     public void ShowInfo(string text, float showTime)
