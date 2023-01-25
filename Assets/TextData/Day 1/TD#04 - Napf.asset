@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Interaktion mit dem Napf
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 00000000020000000a000000030000000100000000000000020000000300000001000000000000000000000008000000
+  <Actions>k__BackingField: 0c00000000000000020000000a00000003000000010000000000000002000000030000000100000000000000000000000b00000008000000
   ger_sentences:
   - 'XXX: Mmmh. Mein Lieblingsfutter!'
   - Yum yum yum yum!
@@ -25,8 +25,8 @@ MonoBehaviour:
   - Yum yum yum yum!
   - 'XXX: That was so good!'
   - 'XXX: Where is my toy? I wanna play with the ball!'
-  <InfoText>k__BackingField: 
-  <InfoDisplayTime>k__BackingField: 0
+  <InfoText>k__BackingField: Find the ball!
+  <InfoDisplayTime>k__BackingField: 10
   <waitTime>k__BackingField:
   - 5
   - 2

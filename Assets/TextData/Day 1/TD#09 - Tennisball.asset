@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Tennisball
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008000000
+  <Actions>k__BackingField: 0c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b00000008000000
   ger_sentences:
   - 'XXX: Da ist er ja!'
   - 'XXX: ...'
@@ -45,7 +45,10 @@ MonoBehaviour:
   - 'XXX: All this chewing made me tired up. A nap would be nice now!'
   - 'XXX: But it got quite <i>chilly</i>. I should find a <color=#ff0000ff>warm</color>
     spot to sleep.'
+  <InfoText>k__BackingField: Find a place to sleep.
+  <InfoDisplayTime>k__BackingField: 10
   <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
   Audioclips: []
   textToUnlock:
   - {fileID: 11400000, guid: df178c7cdd011e24f8a7b34008fa42ae, type: 2}

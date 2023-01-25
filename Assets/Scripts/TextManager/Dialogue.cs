@@ -43,7 +43,8 @@ public class Dialogue : ScriptableObject
         endDialogue,
         loadNextScene,
         playCharAnim,
-        showInfoDisplay
+        showInfoDisplay,
+        disableInfoDisplay
     }
 
     public AudioClip GetAudioClip(int id)
