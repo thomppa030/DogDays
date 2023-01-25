@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#11 - Rug
+  m_EditorClassIdentifier: 
+  Title: Rug
+  <startOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 000000000000000008000000
+  ger_sentences:
+  - 'XXX: Der Teppich ist nicht so warm wie sonst...'
+  - 'XXX: Ich habe hier immer gerne ein Nickerchen gehalten, aber so kalt wie es
+    gerade ist, wird er mich nicht warm halten.'
+  eng_sentences:
+  - 'XXX: The rug is not as warm as I remember it to be...'
+  - 'XXX: I did enjoy a nice nap here in winter, but it won''t keep me warm this
+    time.'
+  <waitTime>k__BackingField: []
+  Audioclips: []
+  textToUnlock: []
+  textToEnable: []
+  textToDisable:
+  - {fileID: 11400000}

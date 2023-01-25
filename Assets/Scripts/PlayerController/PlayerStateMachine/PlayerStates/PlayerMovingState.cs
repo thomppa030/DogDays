@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public class PlayerTestState : PlayerStateBase
+public class PlayerMovingState : PlayerStateBase
 {
     private static readonly int SpeedF = Animator.StringToHash("Speed_f");
 
     private const float AnimationDampTime = 0.1f;
 
-    public PlayerTestState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
+    public PlayerMovingState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
     {
     }
 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Day 1 Beginning
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 03000000000000000000000000000000040000000300000008000000
+  <Actions>k__BackingField: 0300000000000000000000000000000004000000030000000b00000008000000
   ger_sentences:
   - "XXX: Das Eichh\xF6rnchen ist mir schon wieder entwischt!"
   - "XXX: Das n\xE4chste mal kriege ich dich!"
@@ -23,9 +23,12 @@ MonoBehaviour:
   - 'XXX: That squirrel got away from me this time. '
   - 'XXX: I am gonna get it someday!'
   - 'XXX: A fun day ahead. Time to greet my family.'
+  <InfoText>k__BackingField: Search the appartment.
+  <InfoDisplayTime>k__BackingField: 10
   <waitTime>k__BackingField:
   - 3
   - 2
+  <characterAnim>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:

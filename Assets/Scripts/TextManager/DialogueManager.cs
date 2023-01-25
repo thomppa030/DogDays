@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
+
 public class DialogueManager : MonoBehaviour
-{    
+{
+    [SerializeField] private Animator playerAnim;
     [SerializeField] private Animator fader;
+    [SerializeField] private InfoDisplayer infoDisplayer;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
     private Queue<string> sentences;
     AudioSource audioSource;
     public static DialogueManager instance;
+    
+    [field: SerializeField] private PlayerStateMachine playerStateMachine { get; set; }
+
+    [field: SerializeField] private Image TextFieldImage {get; set; }
 
     public Language selectedLanguage = Language.german;
 
@@ -31,7 +40,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-
+        playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         sentences = new Queue<string>();
 
         if(dialogueText != null)
@@ -70,6 +79,15 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         ChangeTextstate(TextState.none, null);
+        LevelHandler.Instance.LockInteractables();
+        InteractComponent interactComponent = GetComponent<InteractComponent>();
+        
+        playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
+        
+        if (interactComponent)
+        {
+            interactComponent.Unlock();
+        }
     }
 
     private List<string> GetSentence(Dialogue d)
@@ -104,6 +122,7 @@ public class DialogueManager : MonoBehaviour
             //Start Dialogue
             if (tS == TextState.onDisplay)
             {
+                TextFieldImage.gameObject.SetActive(true);
                 dialogueText.gameObject.SetActive(true);
                 currentTextstate = tS;
                 StartDialogue(d);
@@ -115,6 +134,7 @@ public class DialogueManager : MonoBehaviour
             if (tS == TextState.none)
             {
                 dialogueText.gameObject.SetActive(false);
+                TextFieldImage.gameObject.SetActive(false);
                 dialogueText.text = "";
                 currentTextstate = tS;
 
@@ -169,6 +189,13 @@ public class DialogueManager : MonoBehaviour
     private int actionID = 0;
     private int audioID = 0;
     private int waitID = 0;
+<<<<<<< HEAD
+    
+    [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
+
+=======
+    private int charAnimID = 0;
+>>>>>>> origin/main
     private void SetNextAction(Dialogue d, int id)
     {
         Debug.Log($"Play Action {d.Actions[id]} with ID {actionID}.");
@@ -188,7 +215,7 @@ public class DialogueManager : MonoBehaviour
                 SetNextAction(d, actionID);
                 break;
             case Dialogue.Action.wait:
-                StartCoroutine(Wait(d.waitTime[waitID]));
+                StartCoroutine(waitID >= d.waitTime.Length ? Wait(DefaultWaitingtime) : Wait(d.waitTime[waitID]));
                 break;
             case Dialogue.Action.playSFX:
                 AudioClip ac = d.GetAudioClip(audioID);
@@ -204,7 +231,46 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.endDialogue:
                 EndDialogue();
                 break;
+            case Dialogue.Action.playCharAnim:
+                PlayCharacterAnimation();
+                break;
+            case Dialogue.Action.showInfoDisplay:
+                ShowInfoDisplay();
+                break;
+            case Dialogue.Action.disableInfoDisplay:
+                DisableInfoDisplay();
+                break;
+            case Dialogue.Action.loadNextScene:
+                EndDialogue();
+                int sceneID = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1;
+                Debug.Log("Loading scene of index: " + sceneID);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneID);
+                break;
         }
+    }
+
+    private void ShowInfoDisplay()
+    {
+        infoDisplayer.ShowInfo(currentDialogue.InfoText, currentDialogue.InfoDisplayTime);
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+    }
+    private void DisableInfoDisplay()
+    {
+        infoDisplayer.DisableInfo();
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+    }
+
+    private void PlayCharacterAnimation()
+    {
+        string ac = currentDialogue.characterAnim[charAnimID].name.ToString();
+        Debug.Log("Playing animation: " + ac);
+        playerAnim.Play(ac);
+        charAnimID++;
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+
     }
 
 
@@ -241,6 +307,7 @@ public class DialogueManager : MonoBehaviour
         waitID = 0;
         audioID = 0;
         actionID = 0;
+        charAnimID = 0;
     }
 
 

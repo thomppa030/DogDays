@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#17 - Corridor
+  m_EditorClassIdentifier: 
+  Title: default Title
+  <startOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 00000000000000000000000008000000
+  ger_sentences:
+  - 'XXX: Immer noch kein Zeichen von ihnen...'
+  - "XXX: Die m\xFCssen ja was wichtiges vorhaben."
+  - "XXX: Ich hoffe sie kommen bald zur\xFCck..."
+  eng_sentences:
+  - 'XXX: No sign of them, yet.'
+  - 'XXX: They must be out for some important business!'
+  - 'XXX: I sure hope they come back soon...'
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
+  <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
+  Audioclips: []
+  textToUnlock: []
+  textToEnable:
+  - {fileID: 11400000, guid: f87b9c74b37cb7b44af27390b09153af, type: 2}
+  textToDisable: []
