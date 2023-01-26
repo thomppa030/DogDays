@@ -189,13 +189,10 @@ public class DialogueManager : MonoBehaviour
     private int actionID = 0;
     private int audioID = 0;
     private int waitID = 0;
-<<<<<<< HEAD
     
     [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
 
-=======
     private int charAnimID = 0;
->>>>>>> origin/main
     private void SetNextAction(Dialogue d, int id)
     {
         Debug.Log($"Play Action {d.Actions[id]} with ID {actionID}.");
