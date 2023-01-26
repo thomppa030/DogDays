@@ -8,10 +8,11 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private Animator playerAnim;
+    private Animator playerAnim;
     [SerializeField] private Animator fader;
     [SerializeField] private InfoDisplayer infoDisplayer;
     [SerializeField] TMP_Text dialogueText;
+    [SerializeField] Image dialogueFrame;
     [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
     private Queue<string> sentences;
@@ -92,7 +93,6 @@ public class DialogueManager : MonoBehaviour
 
     private List<string> GetSentence(Dialogue d)
     {
-
         switch (selectedLanguage)
         {
             case Language.english:
@@ -184,15 +184,17 @@ public class DialogueManager : MonoBehaviour
     {
         Debug.Log("Setting TextDisplay to: " + enable);
         dialogueText.gameObject.SetActive(enable);
+        dialogueFrame.gameObject.SetActive(enable);
     }
 
     private int actionID = 0;
     private int audioID = 0;
     private int waitID = 0;
-    
+   
     [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
 
     private int charAnimID = 0;
+
     private void SetNextAction(Dialogue d, int id)
     {
         Debug.Log($"Play Action {d.Actions[id]} with ID {actionID}.");
