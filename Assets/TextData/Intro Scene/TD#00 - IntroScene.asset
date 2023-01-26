@@ -18,19 +18,24 @@ MonoBehaviour:
   ger_sentences:
   - 'Kind: Was ist mit <b>XXX</b>?'
   - 'Kind: Warum haben wir keine seiner Sachen eingepackt?'
-  - "Mum: Wir sind nicht lange weg. Er hat alles was er braucht. F\xFCr einige Zeit..."
-  - 'Dad: Wir holen ihn, wenn es sicher ist...Lasst uns jetzt gehen!'
+  - "Mutter: Wir sind nicht lange weg. Er hat alles was er braucht. F\xFCr einige
+    Zeit..."
+  - "Vater: Wir m\xFCssen sofort gehen. Wir holen ihn, wenn es sicher ist...Lasst
+    uns jetzt bitte gehen!"
   eng_sentences:
   - 'Child: What about <b>XXX</b>?'
   - 'Child: Why didn''t we pack any of his toys?'
   - 'Mom: We won''t be gone for long. He has everything he needs for a couple of
     days.'
   - 'Dad: We will pick him up when it''s safe. Now let''s go!'
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
   - 1
   - 1
   - 1
   - 1
+  <characterAnim>k__BackingField: []
   Audioclips:
   - {fileID: 8300000, guid: 7c45f285fdea76d47aeb5218d76fe917, type: 3}
   - {fileID: 8300000, guid: c2989422ed9c7734aba7209b73821ebd, type: 3}

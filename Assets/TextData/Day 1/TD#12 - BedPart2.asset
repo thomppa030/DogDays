@@ -16,7 +16,7 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 00000000000000000000000008000000
   ger_sentences:
-  - 'XXX: Das Bett sieht so weich und einladend aus...'
+  - "XXX: Das Bett sieht so weich und gem\xFCtlich aus..."
   - 'XXX: Hm...'
   - 'XXX: Aber ich darf da nicht rauf!'
   - 'XXX: Nein, ich bin ein guter Junge. Ich finde etwas anderes...'

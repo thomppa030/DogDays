@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: TD#17 - Corridor
   m_EditorClassIdentifier: 
-  Title: default Title
+  Title: Flur_niemand_da
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 00000000000000000000000008000000
   ger_sentences:
   - 'XXX: Immer noch kein Zeichen von ihnen...'
-  - "XXX: Die m\xFCssen ja was wichtiges vorhaben."
+  - 'XXX: Hoffentlich geht es ihnen gut. Die letzten Wochen waren sehr seltsam....'
   - "XXX: Ich hoffe sie kommen bald zur\xFCck..."
   eng_sentences:
   - 'XXX: No sign of them, yet.'
