@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+[RequireComponent(typeof(BoxCollider))]
 public class DialogueTrigger : MonoBehaviour
 {
     public TriggerState triggerState = TriggerState.enabled;
