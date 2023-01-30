@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4183559830516943255
+--- !u!1 &7924412583471068821
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3550293550404866861}
-  - component: {fileID: 498481986532351112}
-  - component: {fileID: 2381843383969769538}
+  - component: {fileID: 7400254141536005167}
+  - component: {fileID: 5844863607268107146}
+  - component: {fileID: 8573119976863569728}
   m_Layer: 0
-  m_Name: 'WaterStain_02 '
+  m_Name: TShirt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3550293550404866861
+--- !u!4 &7400254141536005167
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4183559830516943255}
-  m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 1.4176663, y: 0.00020828113, z: -36.730637}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_GameObject: {fileID: 7924412583471068821}
+  m_LocalRotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+  m_LocalPosition: {x: 0.95526, y: -0.14503, z: -37.032}
+  m_LocalScale: {x: 2.4275703, y: 2.4275703, z: 2.4275703}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &498481986532351112
+--- !u!33 &5844863607268107146
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4183559830516943255}
-  m_Mesh: {fileID: 5242207203415891771, guid: a06ea6cf2a61a0b4cb26bd52491c2c91, type: 3}
---- !u!23 &2381843383969769538
+  m_GameObject: {fileID: 7924412583471068821}
+  m_Mesh: {fileID: 7870561040409792893, guid: dd832dfed5822684981ae3d9540a40d2, type: 3}
+--- !u!23 &8573119976863569728
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4183559830516943255}
+  m_GameObject: {fileID: 7924412583471068821}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
