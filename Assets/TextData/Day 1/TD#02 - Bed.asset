@@ -14,15 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Bed Interaction Day 1
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 000000000000000008000000
+  <Actions>k__BackingField: 00000000000000000000000008000000
   ger_sentences:
   - Oh, sind denn alle schon wach? Wie hab' ich das denn verpasst?
   - Ich schaue mal besser nach ihnen.
+  - "Vielleicht sind sie schon in der K\xFCche....?"
   eng_sentences:
   - Oh, they are up already? How did I miss them?
   - I better look around to find them.
+  - Maybe they are in the Kitchen..?
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
   - 2
+  <characterAnim>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:
