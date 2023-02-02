@@ -10,15 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: Data 1
+  m_Name: Box#day4
   m_EditorClassIdentifier: 
-  Title: default Title
+  Title: Box_snacks#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 03000000
-  ger_sentences: []
-  eng_sentences: []
-  <waitTime>k__BackingField:
-  - 0.56
+  <Actions>k__BackingField: 0000000000000000
+  ger_sentences:
+  - "Dina: Diese Box enth\xE4lt immer gute Snacks, die sie vor mir verstecken!"
+  - 'Dina: Diesmal wohl nicht...'
+  eng_sentences:
+  - 'Dina: This box always has good snacks that they are hiding from me!'
+  - "Dina: I guess not this time\u2026"
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
+  <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

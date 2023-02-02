@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: Trash#day4
   m_EditorClassIdentifier: 
-  Title: Trash#Trigger
+  Title: TrashSTINKI#Trigger
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 
-  ger_sentences: []
-  eng_sentences: []
+  <Actions>k__BackingField: 00000000
+  ger_sentences:
+  - 'Dina: Es riecht nicht gut hier drin, irgendetwas ist schlecht geworden.'
+  eng_sentences:
+  - 'Dina: It does not smell good in here, something has gone bad'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

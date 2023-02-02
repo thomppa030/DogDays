@@ -10,19 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: unlockedTest
+  m_Name: alarm#day4
   m_EditorClassIdentifier: 
-  Title: default Title
+  Title: Luftalarm#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0500000000000000020000000700000001000000000000000400000008000000
+  <Actions>k__BackingField: 00000000
   ger_sentences:
-  - unlock the text
-  - das wars
+  - "Dina: Wenn dieses Ger\xE4usch zu h\xF6ren war, blieb meine Familie immer vom
+    Fenster weg."
   eng_sentences:
-  - 'bla bla '
-  - 'this was english '
-  Audioclips:
-  - {fileID: 8300000, guid: 5669d21937fe98943b9c3b0a30169b35, type: 3}
+  - 'Dina: Always when this sound came up,  my family would stay away from windows'
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
+  <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
+  Audioclips: []
   textToUnlock: []
   textToEnable: []
   textToDisable: []

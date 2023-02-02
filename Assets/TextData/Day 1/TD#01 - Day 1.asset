@@ -14,21 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Day 1 Beginning
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 0300000000000000000000000000000004000000030000000b00000008000000
+  <Actions>k__BackingField: 0300000000000000000000000000000004000000030000000b0000000800000008000000
   ger_sentences:
   - "Fr\xFChling 2022."
   - Irgendwo in der Ukraine.
   - zzzZz...ZZzzz...zzZz....zzZzzz
   eng_sentences:
-  - 'XXX: That squirrel got away from me this time. '
-  - 'XXX: I am gonna get it someday!'
-  - 'XXX: A fun day ahead. Time to greet my family.'
+  - Spring 2022
+  - Somewhere in the Ukraine.
+  - zzzZz...ZZzzz...zzZz....zzZzzz
   <InfoText>k__BackingField: Search the appartment.
   <InfoDisplayTime>k__BackingField: 10
   <waitTime>k__BackingField:
   - 3
   - 2
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:
