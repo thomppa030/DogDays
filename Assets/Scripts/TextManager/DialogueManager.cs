@@ -344,7 +344,9 @@ public class DialogueManager : MonoBehaviour
     IEnumerator PlaySFX(AudioClip ac, float waitTime)
     {
         Debug.Log($"Playing {ac.name} with ID ${audioID} and wait time of {waitTime} seconds.");
-        audioSource.clip = ac;      
+
+        audioSource.clip = ac;
+        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
         audioSource.Play();
         yield return new WaitForSeconds(waitTime);
         actionID++;

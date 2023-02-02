@@ -3300,12 +3300,24 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7522961385257200856}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
-  m_WholeNumbers: 1
-  m_Value: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7522961386812408916}
+        m_TargetAssemblyTypeName: MenuHandler, Assembly-CSharp
+        m_MethodName: SetAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7522961386812408915
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73e7ea331e955e9479d80fd208c66b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 7522961386774120808}
   PanelImage: {fileID: 7522961386705081039}
   MenuButtons: {fileID: 7522961386968667677}
   CreditsPanel: {fileID: 7522961385509915557}
