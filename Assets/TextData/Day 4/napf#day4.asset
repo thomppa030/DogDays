@@ -14,9 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Napf#Trigger
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 
-  ger_sentences: []
-  eng_sentences: []
+  <Actions>k__BackingField: 00000000000000000000000000000000
+  ger_sentences:
+  - "Dina: Heute gibt es kein Fr\xFChst\xFCck f\xFCr mich... schon wieder.\n"
+  - 'Dina: Es ist schon eine Weile her, dass ich eine gute Mahlzeit hatte...
+
+'
+  - "Dina: Und sie sind immer noch nicht zur\xFCck! Ich habe Angst um sie...\n"
+  - 'Dina: Ich habe Angst um mich... Ich kann hier nicht mehr bleiben!
+
+'
+  - 'Dina: Ich muss hier raus!'
+  eng_sentences:
+  - "Dina: No breakfast for me today\u2026 again.\n"
+  - "Dina: It has been a while since I had a good meal\u2026\n"
+  - "Dina: And they are still not back! I am scared for them\u2026\n"
+  - "Dina: I am scared for me\u2026 I cannot stay here anymore!\n"
+  - 'Dina: I have to get out!'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

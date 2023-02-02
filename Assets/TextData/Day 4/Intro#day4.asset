@@ -14,13 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Intro#Day4
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 050000000000000000000000
+  <Actions>k__BackingField: 0500000000000000000000000000000000000000
   ger_sentences:
   - Tag 4.
-  - 'XXX: '
+  - 'Dina: Was war das???'
+  - "Dina: Ich konnte mich nicht richtig ausruhen. Egal wie viel ich schlafe, es
+    f\xFChlt sich nicht besser an."
+  - 'Dina: Ich sollte mir etwas zu essen suchen.'
   eng_sentences:
-  - Day4.
-  - 'XXX: '
+  - Day 4.
+  - 'Dina: What was that??'
+  - "Dina: I did not get to rest properly. No matter how much I sleep, it doesn\xB4t
+    feel better."
+  - 'Dina: I should go find something to eat.'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
