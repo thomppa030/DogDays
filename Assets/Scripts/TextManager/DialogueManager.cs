@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private InfoDisplayer infoDisplayer;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] Image dialogueFrame;
+    [SerializeField] Image profileImage;
     [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
     private Queue<string> sentences;
@@ -157,6 +158,33 @@ public class DialogueManager : MonoBehaviour
             actionID++;
             SetNextAction(currentDialogue, actionID);
         }
+
+        if (waitForSentence) WaitForSentence();
+    }
+
+    float sentenceWait = 0f;
+    bool waitForSentence = false;
+    private void SetWaitTimeForSentence(float t)
+    {
+        sentenceWait = t;
+        waitForSentence = true;
+
+        DisplayNextSentence();
+
+    }
+
+    private void WaitForSentence()
+    {
+        if (currentTextstate == TextState.none) return;
+
+        Debug.Log("Waiting for sentence: " + sentenceWait);
+
+        sentenceWait -= Time.deltaTime;
+        if(sentenceWait <= 0)
+        {
+            waitForSentence = false;
+            SetNextAction(currentDialogue, actionID);
+        }
     }
 
     public void ChangeLanguage(int id)
@@ -165,9 +193,14 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Changed Language to: " + selectedLanguage);
     }
 
+    private void EnableProfileImage(bool enable)
+    {
+        profileImage.gameObject.SetActive(enable);
+    }
  
     public void StartDialogue(Dialogue d)
     {
+        EnableProfileImage(false);
         ResetIDs();
         currentDialogue = d;
         sentences.Clear();
@@ -185,11 +218,13 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Setting TextDisplay to: " + enable);
         dialogueText.gameObject.SetActive(enable);
         dialogueFrame.gameObject.SetActive(enable);
+        profileImage.gameObject.SetActive(enable);
     }
 
     private int actionID = 0;
     private int audioID = 0;
     private int waitID = 0;
+    private int profileImageID = 0;
    
     [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
 
@@ -210,6 +245,7 @@ public class DialogueManager : MonoBehaviour
                 break;
             case Dialogue.Action.disableTextDisplay:
                 EnableText(false);
+                EnableProfileImage(false);
                 actionID++;
                 SetNextAction(d, actionID);
                 break;
@@ -245,7 +281,30 @@ public class DialogueManager : MonoBehaviour
                 Debug.Log("Loading scene of index: " + sceneID);
                 UnityEngine.SceneManagement.SceneManager.LoadScene(sceneID);
                 break;
+            case Dialogue.Action.disableProfileImage:
+                EnableProfileImage(false);
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
+            case Dialogue.Action.setProfileImage:
+                SetProfileImage(d.profileImages[profileImageID]);
+                break;
+            case Dialogue.Action.nextSentenceWithWait:
+                SetWaitTimeForSentence(d.waitTime[waitID]);
+                waitID++;
+                actionID++;
+                break;
+
         }
+    }
+
+    private void SetProfileImage(Sprite s)
+    {
+        EnableProfileImage(true);
+        profileImage.sprite = s;
+        profileImageID++;
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
     }
 
     private void ShowInfoDisplay()
@@ -307,6 +366,9 @@ public class DialogueManager : MonoBehaviour
         audioID = 0;
         actionID = 0;
         charAnimID = 0;
+        profileImageID = 0;
+
+        waitForSentence = false;
     }
 
 
