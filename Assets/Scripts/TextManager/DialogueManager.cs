@@ -158,6 +158,33 @@ public class DialogueManager : MonoBehaviour
             actionID++;
             SetNextAction(currentDialogue, actionID);
         }
+
+        if (waitForSentence) WaitForSentence();
+    }
+
+    float sentenceWait = 0f;
+    bool waitForSentence = false;
+    private void SetWaitTimeForSentence(float t)
+    {
+        sentenceWait = t;
+        waitForSentence = true;
+
+        DisplayNextSentence();
+
+    }
+
+    private void WaitForSentence()
+    {
+        if (currentTextstate == TextState.none) return;
+
+        Debug.Log("Waiting for sentence: " + sentenceWait);
+
+        sentenceWait -= Time.deltaTime;
+        if(sentenceWait <= 0)
+        {
+            waitForSentence = false;
+            SetNextAction(currentDialogue, actionID);
+        }
     }
 
     public void ChangeLanguage(int id)
@@ -262,6 +289,11 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.setProfileImage:
                 SetProfileImage(d.profileImages[profileImageID]);
                 break;
+            case Dialogue.Action.nextSentenceWithWait:
+                SetWaitTimeForSentence(d.waitTime[waitID]);
+                waitID++;
+                actionID++;
+                break;
 
         }
     }
@@ -335,6 +367,8 @@ public class DialogueManager : MonoBehaviour
         actionID = 0;
         charAnimID = 0;
         profileImageID = 0;
+
+        waitForSentence = false;
     }
 
 

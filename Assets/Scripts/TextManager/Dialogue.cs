@@ -47,7 +47,8 @@ public class Dialogue : ScriptableObject
         showInfoDisplay,
         disableInfoDisplay,
         setProfileImage,
-        disableProfileImage
+        disableProfileImage,
+        nextSentenceWithWait
     }
 
     public AudioClip GetAudioClip(int id)
