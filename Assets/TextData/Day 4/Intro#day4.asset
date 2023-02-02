@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Intro#Day4
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 0500000000000000000000000000000000000000
+  <Actions>k__BackingField: 05000000000000000000000000000000000000000400000008000000
   ger_sentences:
   - Tag 4.
   - 'Dina: Was war das???'
@@ -31,6 +31,7 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

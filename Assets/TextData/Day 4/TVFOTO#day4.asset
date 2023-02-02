@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TV_Trigger#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 00000000000000000000000000000000
+  <Actions>k__BackingField: 0000000000000000000000000000000008000000
   ger_sentences:
   - 'Dina: Es war nur der Fernseher...'
   - 'Dina: Der letzte Winter war toll! Ich habe gerne mit meiner Familie im Schnee
@@ -32,6 +32,7 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

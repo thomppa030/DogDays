@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: tryhidding#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 00000000
+  <Actions>k__BackingField: 0000000008000000
   ger_sentences:
   - 'Dina: Hier kann man sich nicht verstecken!'
   eng_sentences:
@@ -23,6 +23,7 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []
