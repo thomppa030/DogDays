@@ -21,6 +21,7 @@ public class Dialogue : ScriptableObject
 
     [field: SerializeField] public float[] waitTime { get; set; }
     [field: SerializeField] public AnimationClip[] characterAnim { get; set; }
+    [field: SerializeField] public Sprite[] profileImages { get; set; }
     [Space]
     [Header("SFX")]
     [SerializeField] private AudioClip[] Audioclips;
@@ -44,7 +45,9 @@ public class Dialogue : ScriptableObject
         loadNextScene,
         playCharAnim,
         showInfoDisplay,
-        disableInfoDisplay
+        disableInfoDisplay,
+        setProfileImage,
+        disableProfileImage
     }
 
     public AudioClip GetAudioClip(int id)

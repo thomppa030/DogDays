@@ -36,6 +36,7 @@ MonoBehaviour:
   - 1
   - 1
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips:
   - {fileID: 8300000, guid: 7c45f285fdea76d47aeb5218d76fe917, type: 3}
   - {fileID: 8300000, guid: c2989422ed9c7734aba7209b73821ebd, type: 3}
