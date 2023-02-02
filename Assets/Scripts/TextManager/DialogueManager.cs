@@ -42,7 +42,11 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        if(GameState.Instance.GetCurrentState() == GameState.GameStates.Game)
+        {
+            playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        }
+
         sentences = new Queue<string>();
 
         if(dialogueText != null)
@@ -176,8 +180,7 @@ public class DialogueManager : MonoBehaviour
     private void WaitForSentence()
     {
         if (currentTextstate == TextState.none) return;
-
-        Debug.Log("Waiting for sentence: " + sentenceWait);
+        if (GameState.Instance.GetCurrentState() != GameState.GameStates.Game) return;
 
         sentenceWait -= Time.deltaTime;
         if(sentenceWait <= 0)

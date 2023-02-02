@@ -8,7 +8,6 @@ public class MenuHandler : MonoBehaviour
     [SerializeField] private Image PanelImage;
     [SerializeField] private GameObject MenuButtons;
     [SerializeField] private GameObject CreditsPanel;
-    [SerializeField] private GameObject OptionsPanel;
     [SerializeField] private GameObject InfoPanel;
 
     [SerializeField] private TMP_Text startText;
@@ -38,12 +37,6 @@ public class MenuHandler : MonoBehaviour
         startText.text = GetStartButtonText();
     }
 
-    public void OpenOptions()
-    {
-        DisableAllButtons();
-        OptionsPanel.SetActive(true);
-    }
-
     public void OpenInfo()
     {
         DisableAllButtons();
@@ -59,7 +52,6 @@ public class MenuHandler : MonoBehaviour
     private void DisableAllButtons()
     {
         CreditsPanel.SetActive(false);
-        OptionsPanel.SetActive(false);
         InfoPanel.SetActive(false);
     }
 
