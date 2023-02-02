@@ -294,9 +294,15 @@ public class DialogueManager : MonoBehaviour
                 waitID++;
                 actionID++;
                 break;
+            case Dialogue.Action.shakeCamera:
+                Debug.LogWarning("Shake Camera needs to be implemented yet!");
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
 
         }
     }
+
 
     private void SetProfileImage(Sprite s)
     {
@@ -370,6 +376,8 @@ public class DialogueManager : MonoBehaviour
 
         waitForSentence = false;
     }
+
+
 
 
 }
