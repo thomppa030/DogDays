@@ -16,9 +16,14 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - 
+  - Jeden Abend haben wir gemeinsam gegessen, in den letzten Tagen waren alle sehr
+    besorgt und traurig.
   eng_sentences:
-  - 
+  - 'Every evening we ate together, in the last days everybody was very worried and
+    sad.
+
+
+'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

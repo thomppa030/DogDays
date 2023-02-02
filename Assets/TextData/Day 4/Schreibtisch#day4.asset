@@ -14,16 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TD#day4_schreibtisch
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000008000000
+  <Actions>k__BackingField: 0d000000000000000d000000000000000e00000008000000
   ger_sentences:
-  - 
+  - "Jeden Tag sa\xDF Frauchen am Schreibtisch und schrieb Tagebuch."
+  - Sie fehlt mir so sehr...
   eng_sentences:
-  - 
+  - Sie fehlt mir so sehr...
+  - Every day, my mistress sat at her desk and wrote in her diary. I miss her so
+    much...
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
+  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable: []

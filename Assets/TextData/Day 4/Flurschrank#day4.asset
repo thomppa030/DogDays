@@ -16,9 +16,11 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - 
+  - Alles, was sie tragen konnten, haben sie mitgenommen, sie waren so in Eile, haben
+    sie mich einfach nur vergessen?
   eng_sentences:
-  - 
+  - They took everything they could carry. They were in such a hurry, did they just
+    forget about me?
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TrashSTINKI#Trigger
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000008000000
+  <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
   - 'Dina: Es riecht nicht gut hier drin, irgendetwas ist schlecht geworden.'
   eng_sentences:
@@ -23,7 +23,8 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: d9f4738d72e93d04ca32bb703888320f, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable: []

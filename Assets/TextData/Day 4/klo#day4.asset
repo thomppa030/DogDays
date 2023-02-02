@@ -16,9 +16,10 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 000000000000000008000000
   ger_sentences:
-  - 
+  - Ich muss das Wasser aus der Toilette trinken, mein Napf ist schon seit 2 Tagen
+    leer.
   eng_sentences:
-  - 
+  - I have to drink the water from the toilet, my bowl has been empty for 2 days.
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

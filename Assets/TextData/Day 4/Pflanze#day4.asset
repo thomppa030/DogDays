@@ -16,9 +16,11 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - 
+  - "Frauchen hat sich immer ganz besonders um ihre gr\xFCnen Pflanzen gek\xFCmmert,
+    warum kommt sie nicht wieder heim....?"
   eng_sentences:
-  - 
+  - My Mummy always took special care of her green plants, why doesn't she come home
+    again....?
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

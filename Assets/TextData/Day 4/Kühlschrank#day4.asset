@@ -16,9 +16,10 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - 
+  - "Bevor meine Familie gegangen ist, hat sie auch alles aus dem K\xFChlschrank
+    mitgenommen, was sie tragen konnte."
   eng_sentences:
-  - 
+  - Before my family left, they took everything they could carry from the fridge.
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
