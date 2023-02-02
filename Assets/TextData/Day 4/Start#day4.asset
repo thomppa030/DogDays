@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Start#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0400000000000000
+  <Actions>k__BackingField: 000000000000000008000000
   ger_sentences:
   - Was war das?
   - 
@@ -25,6 +25,7 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []
