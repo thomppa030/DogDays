@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: CannedFood#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000000000000
+  <Actions>k__BackingField: 000000000000000008000000
   ger_sentences:
   - "Dina: Ich wei\xDF nicht, was ich damit machen soll. \n"
   - "Dina: In letzter Zeit haben sie eine Menge davon gekauft. Sie m\xFCssen k\xF6stlich
@@ -27,6 +27,7 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []
