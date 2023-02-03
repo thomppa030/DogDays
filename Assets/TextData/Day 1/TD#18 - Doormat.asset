@@ -16,15 +16,16 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0c00000000000000020000000500000009000000
   ger_sentences:
-  - "XXX: Das ist ein guter Platz! Ich ruhe mich lieber etwas aus, bevor meine Familie
+  - "Das ist ein guter Platz! Ich ruhe mich lieber etwas aus, bevor meine Familie
     zur\xFCckkommt."
   eng_sentences:
-  - 'XXX: This is a good spot! Better get some rest before my owners come back.'
+  - This is a good spot! Better get some rest before my owners come back.
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
   - 0
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

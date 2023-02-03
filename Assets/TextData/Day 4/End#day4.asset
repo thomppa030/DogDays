@@ -16,15 +16,15 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 00000000000000000500000008000000
   ger_sentences:
-  - 'Dina: Ich muss von hier weglaufen! ICH MUSS HIER RAUS!
+  - 'Ich muss von hier weglaufen! ICH MUSS HIER RAUS!
 
 '
-  - 'Dina: HILFE!!
+  - 'HILFE!!
 
 '
   eng_sentences:
-  - 'Dina: I need to run from here! I NEED TO GET OUT!'
-  - 'Dina: HELP!!'
+  - I need to run from here! I NEED TO GET OUT!
+  - HELP!!
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

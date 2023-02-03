@@ -16,11 +16,11 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d00000000000000000000000e00000008000000
   ger_sentences:
-  - "Dina: Ich werde mich hier umsehen m\xFCssen. Vielleicht gibt es etwas, das ich
-    \xFCbersehen habe..."
+  - "Ich werde mich hier umsehen m\xFCssen. Vielleicht gibt es etwas, das ich \xFCbersehen
+    habe..."
   - 
   eng_sentences:
-  - "Dina: I will have to search this place. Maybe there is something that I missed\u2026 "
+  - "I will have to search this place. Maybe there is something that I missed\u2026 "
   - 
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

@@ -16,9 +16,9 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
-  - "Dina: KANN MICH JEMAND H\xD6REN??"
+  - "KANN MICH JEMAND H\xD6REN??"
   eng_sentences:
-  - 'Dina: CAN SOMEONE HEAR ME??'
+  - CAN SOMEONE HEAR ME??
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

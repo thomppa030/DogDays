@@ -16,18 +16,17 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d000000000000000000000000000000000000000e00000008000000
   ger_sentences:
-  - 'Dina: Es war nur der Fernseher...'
-  - 'Dina: Der letzte Winter war toll! Ich habe gerne mit meiner Familie im Schnee
-    gespielt...
+  - Es war nur der Fernseher...
+  - 'Der letzte Winter war toll! Ich habe gerne mit meiner Familie im Schnee gespielt...
 
 '
-  - "Dina: Und wo sind sie jetzt? Warum sind sie nicht zur\xFCck?\n"
-  - 'Dina: Dieser Winter ist ein Albtraum.'
+  - "Und wo sind sie jetzt? Warum sind sie nicht zur\xFCck?\n"
+  - Dieser Winter ist ein Albtraum.
   eng_sentences:
-  - "Dina: It was just the TV\u2026"
-  - "Dina: Last winter was fun! I loved playing around in the snow with my family\u2026\n"
-  - "Dina: Where are they now? Why aren\xB4t they back?\n"
-  - 'Dina: This winter is a nightmare.'
+  - "It was just the TV\u2026"
+  - "Last winter was fun! I loved playing around in the snow with my family\u2026\n"
+  - "Where are they now? Why aren\xB4t they back?\n"
+  - This winter is a nightmare.
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

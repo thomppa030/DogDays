@@ -16,9 +16,9 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
-  - 'Dina: Es riecht nicht gut hier drin, irgendetwas ist schlecht geworden.'
+  - Es riecht nicht gut hier drin, irgendetwas ist schlecht geworden.
   eng_sentences:
-  - 'Dina: It does not smell good in here, something has gone bad'
+  - It does not smell good in here, something has gone bad
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
