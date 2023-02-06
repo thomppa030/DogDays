@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1657925467128721320}
   - component: {fileID: 3523738110373862242}
   m_Layer: 0
-  m_Name: Newspaper
+  m_Name: Newspaper02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 7b2ba699e3eeced4c80ba4855683af46, type: 2}
+  m_Material: {fileID: 2100000, guid: e89f172fd6179bb42b6d70760625d5c5, type: 2}
   m_DrawDistance: 1000
   m_FadeScale: 0.9
   m_StartAngleFade: 180
