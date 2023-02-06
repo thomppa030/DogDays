@@ -14,17 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Luftalarm#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 00000000
+  <Actions>k__BackingField: 0d000000000000000e0000000700000008000000
   ger_sentences:
-  - "Dina: Wenn dieses Ger\xE4usch zu h\xF6ren war, blieb meine Familie immer vom
-    Fenster weg."
+  - " Wenn dieses Ger\xE4usch zu h\xF6ren war, blieb meine Familie immer vom Fenster
+    weg."
   eng_sentences:
-  - 'Dina: Always when this sound came up,  my family would stay away from windows'
+  - Always when this sound came up,  my family would stay away from windows
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  Audioclips: []
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
+  Audioclips:
+  - {fileID: 0}
   textToUnlock: []
   textToEnable: []
   textToDisable: []

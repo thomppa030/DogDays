@@ -16,10 +16,14 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - 'XXX: Mein Ball muss hier irgendwo sein. Ich kann es riechen!'
+  - Mein Ball muss hier irgendwo sein. Ich kann es riechen!
   eng_sentences:
-  - 'XXX: My ball must be here somewhere! I can sniff it!'
+  - My ball must be here somewhere! I can sniff it!
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:
