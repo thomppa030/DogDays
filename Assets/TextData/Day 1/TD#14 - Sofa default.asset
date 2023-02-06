@@ -16,11 +16,14 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - "XXX: Normalerweise versammeln sich hier alle und haben Spa\xDF. Wo sind sie
-    nur hin?"
+  - "Normalerweise versammeln sich hier alle und haben Spa\xDF. Wo sind sie nur hin?"
   eng_sentences:
-  - 'XXX: Usually they all gather around here...Where are they?'
+  - Usually they all gather around here...Where are they?
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

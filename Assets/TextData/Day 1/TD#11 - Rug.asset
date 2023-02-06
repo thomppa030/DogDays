@@ -16,14 +16,17 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 000000000000000008000000
   ger_sentences:
-  - 'XXX: Der Teppich ist nicht so warm wie sonst...'
-  - 'XXX: Ich habe hier immer gerne ein Nickerchen gehalten, aber so kalt wie es
-    gerade ist, wird er mich nicht warm halten.'
+  - Der Teppich ist nicht so warm wie sonst...
+  - Ich habe hier immer gerne ein Nickerchen gehalten, aber so kalt wie es gerade
+    ist, wird er mich nicht warm halten.
   eng_sentences:
-  - 'XXX: The rug is not as warm as I remember it to be...'
-  - 'XXX: I did enjoy a nice nap here in winter, but it won''t keep me warm this
-    time.'
+  - The rug is not as warm as I remember it to be...
+  - I did enjoy a nice nap here in winter, but it won't keep me warm this time.
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

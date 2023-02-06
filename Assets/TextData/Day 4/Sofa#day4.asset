@@ -14,18 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Sofa#Trigger
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000000000000
+  <Actions>k__BackingField: 000000000000000008000000
   ger_sentences:
-  - "Dina: Ich k\xF6nnte versuchen, mich dort hineinzuzw\xE4ngen! So wie ich es getan
-    habe, als ich mit ihnen gespielt habe."
-  - 'Dina: Aber ich habe nicht mehr die Kraft, es jetzt zu bewegen...'
+  - "Ich k\xF6nnte versuchen, mich dort hineinzuzw\xE4ngen! So wie ich es getan habe,
+    als ich mit ihnen gespielt habe."
+  - ' Aber ich habe nicht mehr die Kraft, es jetzt zu bewegen...'
   eng_sentences:
-  - Dina I could try to squeeze in there! Like I did when I played with them.
-  - 'Dina: But I don''t have the strength to move it now....'
+  - I could try to squeeze in there! Like I did when I played with them.
+  - But I don't have the strength to move it now....
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

@@ -16,19 +16,19 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 1
   <Actions>k__BackingField: 0c0000000000000000000000000000000b00000008000000
   ger_sentences:
-  - 'XXX: Ich finde keinen guten Schlafplatz...'
-  - "XXX: Oh, ich wei\xDF! Ich k\xF6nnte auf der Fu\xDFmatte im Flur schlafen!"
-  - "XXX: Es ist zwar etwas k\xFChl, aber so werde ich meine Familie sicher nicht
-    verpassen, wenn sie zur\xFCckkommen!"
+  - Ich finde keinen guten Schlafplatz...
+  - "Oh, ich wei\xDF! Ich k\xF6nnte auf der Fu\xDFmatte im Flur schlafen!"
+  - "Es ist zwar etwas k\xFChl, aber so werde ich meine Familie sicher nicht verpassen,
+    wenn sie zur\xFCckkommen!"
   eng_sentences:
-  - 'XXX: I couldn''t find a good spot.'
-  - 'XXX: Oh, I know! I could sleep on the doormat!'
-  - 'XXX: It is chilly, but this way I won''t miss it when my family will come back
-    home!'
+  - I couldn't find a good spot.
+  - Oh, I know! I could sleep on the doormat!
+  - It is chilly, but this way I won't miss it when my family will come back home!
   <InfoText>k__BackingField: Find the doormat.
   <InfoDisplayTime>k__BackingField: 10
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:
