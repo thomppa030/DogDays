@@ -42,11 +42,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        if(GameState.Instance.GetCurrentState() == GameState.GameStates.Game)
-        {
-            playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        }
-
+        playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         sentences = new Queue<string>();
 
         if(dialogueText != null)
@@ -180,7 +176,8 @@ public class DialogueManager : MonoBehaviour
     private void WaitForSentence()
     {
         if (currentTextstate == TextState.none) return;
-        if (GameState.Instance.GetCurrentState() != GameState.GameStates.Game) return;
+
+        Debug.Log("Waiting for sentence: " + sentenceWait);
 
         sentenceWait -= Time.deltaTime;
         if(sentenceWait <= 0)
@@ -297,15 +294,9 @@ public class DialogueManager : MonoBehaviour
                 waitID++;
                 actionID++;
                 break;
-            case Dialogue.Action.shakeCamera:
-                Debug.LogWarning("Shake Camera needs to be implemented yet!");
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
 
         }
     }
-
 
     private void SetProfileImage(Sprite s)
     {
@@ -344,9 +335,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator PlaySFX(AudioClip ac, float waitTime)
     {
         Debug.Log($"Playing {ac.name} with ID ${audioID} and wait time of {waitTime} seconds.");
-
-        audioSource.clip = ac;
-        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
+        audioSource.clip = ac;      
         audioSource.Play();
         yield return new WaitForSeconds(waitTime);
         actionID++;
@@ -381,8 +370,6 @@ public class DialogueManager : MonoBehaviour
 
         waitForSentence = false;
     }
-
-
 
 
 }

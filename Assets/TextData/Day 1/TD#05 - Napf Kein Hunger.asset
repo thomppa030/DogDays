@@ -16,16 +16,15 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - Ich habe keinen Hunger mehr.
+  - 'XXX: Ich habe keinen Hunger mehr.'
   eng_sentences:
-  - I am finished eating.
+  - 'XXX: I am finished eating.'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
   - 1
   - 2
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

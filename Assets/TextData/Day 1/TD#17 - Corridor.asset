@@ -16,18 +16,17 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 00000000000000000000000008000000
   ger_sentences:
-  - Immer noch kein Zeichen von ihnen...
-  - Hoffentlich geht es ihnen gut. Die letzten Wochen waren sehr seltsam....
-  - "Ich hoffe sie kommen bald zur\xFCck..."
+  - 'XXX: Immer noch kein Zeichen von ihnen...'
+  - 'XXX: Hoffentlich geht es ihnen gut. Die letzten Wochen waren sehr seltsam....'
+  - "XXX: Ich hoffe sie kommen bald zur\xFCck..."
   eng_sentences:
-  - No sign of them, yet.
-  - They must be out for some important business!
-  - I sure hope they come back soon...
+  - 'XXX: No sign of them, yet.'
+  - 'XXX: They must be out for some important business!'
+  - 'XXX: I sure hope they come back soon...'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:

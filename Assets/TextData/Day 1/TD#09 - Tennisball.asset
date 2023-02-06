@@ -16,14 +16,14 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b00000008000000
   ger_sentences:
-  - Da ist er ja!
-  - ' ...'
-  - Es ist schon eine Weile her, seit sie gegangen sind. Normalerweise sind sie den
-    ganzen Tag Zuhause...
-  - "Vielleicht machen sie einen Gro\xDFeinkauf? "
-  - Mmmmhh...Ich hoffe sie bringen mir was leckeres mit!
-  - Ich erinnere mich an dem Tag, als ich diesen Ball gefunden habe.
-  - Mein alter Ball ging verloren und ich war ganz traurig.
+  - 'XXX: Da ist er ja!'
+  - 'XXX: ...'
+  - 'XXX: Es ist schon eine Weile her, seit sie gegangen sind. Normalerweise sind
+    sie den ganzen Tag Zuhause...'
+  - "XXX: Vielleicht machen sie einen Gro\xDFeinkauf? "
+  - 'XXX: Mmmmhh...Ich hoffe sie bringen mir was leckeres mit!'
+  - 'XXX: Ich erinnere mich an dem Tag, als ich diesen Ball gefunden habe.'
+  - 'XXX: Mein alter Ball ging verloren und ich war ganz traurig.'
   - 'XXX: Den hier hab'' ich beim Spazieren unter einem Baum gefunden.'
   - "XXX: Ich war ganz aufgeregt. Endlich hatte ich einen neuen Ball. Meine Familie
     schien auch ganz gl\xFCcklich dar\xFCber zu sein."
@@ -49,7 +49,6 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 10
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock:
   - {fileID: 11400000, guid: df178c7cdd011e24f8a7b34008fa42ae, type: 2}

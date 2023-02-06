@@ -16,14 +16,10 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0000000008000000
   ger_sentences:
-  - Wo sind sie nur?
+  - 'XXX: Wo sind sie nur?'
   eng_sentences:
-  - I wonder where they are.
-  <InfoText>k__BackingField: 
-  <InfoDisplayTime>k__BackingField: 0
+  - 'XXX: I wonder where they are.'
   <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

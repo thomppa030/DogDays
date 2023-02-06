@@ -16,20 +16,19 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0300000000000000000000000000000008000000
   ger_sentences:
-  - "Hm.....alles ist so unordentlich und Umgesto\xDFen."
-  - "H\xE4tte ich das gemachtl  w\xE4ren sie alle sauer auf mich."
-  - "Und jetzt werfen sie selbst alles um. Hoffentlich bekomme ich daf\xFCr kein
-    \xE4rger!"
+  - "XXX: Hm.....alles ist so unordentlich und Umgesto\xDFen."
+  - "XXX: H\xE4tte ich das gemachtl  w\xE4ren sie alle sauer auf mich."
+  - "XXX: Und jetzt werfen sie selbst alles um. Hoffentlich bekomme ich daf\xFCr
+    kein \xE4rger!"
   eng_sentences:
-  - Hm...this is such a mess here.
-  - They would get angry at me for dragging things around...
-  - And now look at what they did to this place! Unfair!
+  - 'XXX: Hm...this is such a mess here.'
+  - 'XXX: They would get angry at me for dragging things around...'
+  - 'XXX: And now look at what they did to this place! Unfair!'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
   - 2
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:

@@ -16,23 +16,22 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 00000000000000000000000008000000
   ger_sentences:
-  - "In letzter Zeit haben sich alle hier am Abend versammelt, wenn die Abende k\xFChl
-    und dunkel wurden..."
-  - "...es war dunkel und kalt, aber wir waren alle zusammen. Ohne sie ist es hier
-    nicht mehr so gem\xFCtlich..."
-  - "In den letzten Wochen waren sie oft sehr traurig und besorgt, wenn sie hier
-    zusammen waren. Ich wei\xDF immer noch nicht warum!"
+  - "XXX: In letzter Zeit haben sich alle hier am Abend versammelt, wenn die Abende
+    k\xFChl und dunkel wurden..."
+  - "XXX: ...es war dunkel und kalt, aber wir waren alle zusammen. Ohne sie ist es
+    hier nicht mehr so gem\xFCtlich..."
+  - "XXX: In den letzten Wochen waren sie oft sehr traurig und besorgt, wenn sie
+    hier zusammen waren. Ich wei\xDF immer noch nicht warum!"
   eng_sentences:
-  - Recently they would gather here as the evenings got cold and dark...
-  - ...it was dark and cold, but we were all together. It is not as cozy without
-    them here...
-  - "In den letzten Wochen waren sie oft sehr traurig und besorgt, wenn sie hier
-    zusammen waren. Ich wei\xDF immer noch nicht warum!."
+  - 'XXX: Recently they would gather here as the evenings got cold and dark...'
+  - 'XXX: ...it was dark and cold, but we were all together. It is not as cozy without
+    them here...'
+  - "XXX: In den letzten Wochen waren sie oft sehr traurig und besorgt, wenn sie
+    hier zusammen waren. Ich wei\xDF immer noch nicht warum!."
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable:

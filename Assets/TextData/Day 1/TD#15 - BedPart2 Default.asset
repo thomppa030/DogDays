@@ -16,16 +16,13 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 000000000000000008000000
   ger_sentences:
-  - "Es sieht zwar gem\xFCtlich aus, aber sie m\xF6gen es nicht wenn ich hier schlafe..."
-  - Ich suche lieber einen anderen Platz.
+  - "XXX: Es sieht zwar gem\xFCtlich aus, aber sie m\xF6gen es nicht wenn ich hier
+    schlafe..."
+  - 'XXX: Ich suche lieber einen anderen Platz.'
   eng_sentences:
-  - It looks cozy, but they don't like it when I am sleeping on the bed.
-  - I should find another place.
-  <InfoText>k__BackingField: 
-  <InfoDisplayTime>k__BackingField: 0
+  - 'XXX: It looks cozy, but they don''t like it when I am sleeping on the bed.'
+  - 'XXX: I should find another place.'
   <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

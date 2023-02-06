@@ -5,22 +5,22 @@ using TMPro;
 using UnityEngine.UI;
 public class MenuHandler : MonoBehaviour
 {
-    [SerializeField] Slider slider;
     [SerializeField] private Image PanelImage;
     [SerializeField] private GameObject MenuButtons;
     [SerializeField] private GameObject CreditsPanel;
+    [SerializeField] private GameObject OptionsPanel;
     [SerializeField] private GameObject InfoPanel;
 
     [SerializeField] private TMP_Text startText;
+
     public static MenuHandler singleton;
 
     private void Awake()
     {
-        singleton = this;       
+        singleton = this;
     }
 
     #region UIHandling
-
     private void Start()
     { 
         if (GameState.Instance.GetCurrentState() == GameState.GameStates.Menu
@@ -33,9 +33,15 @@ public class MenuHandler : MonoBehaviour
             EnableMenuButtons(false);
         }
 
-        slider.value = PlayerPrefs.GetFloat("sfx", 1);
+
         DisableAllButtons();
         startText.text = GetStartButtonText();
+    }
+
+    public void OpenOptions()
+    {
+        DisableAllButtons();
+        OptionsPanel.SetActive(true);
     }
 
     public void OpenInfo()
@@ -53,13 +59,8 @@ public class MenuHandler : MonoBehaviour
     private void DisableAllButtons()
     {
         CreditsPanel.SetActive(false);
+        OptionsPanel.SetActive(false);
         InfoPanel.SetActive(false);
-    }
-
-   
-    public void SetAudio()
-    {
-        PlayerPrefs.SetFloat("sfx", slider.value);
     }
 
     public void EnableMenuButtons(bool enable)
@@ -92,11 +93,6 @@ public class MenuHandler : MonoBehaviour
             default:
                 return "Start";
         }
-    }
-    public float GetSoundVolume()
-    {
-        float sound = PlayerPrefs.GetFloat("sfx", 1);
-        return sound;
     }
 
     #endregion

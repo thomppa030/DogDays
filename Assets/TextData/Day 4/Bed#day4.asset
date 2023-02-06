@@ -14,18 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Bed#Trigger
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000d0000000e00000008000000
-  ger_sentences:
-  - "Ich bin ein gutes M\xE4dchen, ich darf nicht auf dem Bett schlafen."
-  eng_sentences:
-  - I'm a good girl, I'm not allowed to sleep on the bed.
+  <Actions>k__BackingField: 
+  ger_sentences: []
+  eng_sentences: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField:
-  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
-  - {fileID: 21300000, guid: 712436de5fbe573498c91ea163839a32, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable: []

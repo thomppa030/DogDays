@@ -14,22 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: CannedFood#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000d000000000000000e00000008000000
+  <Actions>k__BackingField: 0000000000000000
   ger_sentences:
-  - "Ich wei\xDF nicht, was ich damit machen soll. \n"
-  - "In letzter Zeit haben sie eine Menge davon gekauft. Sie m\xFCssen k\xF6stlich
+  - "Dina: Ich wei\xDF nicht, was ich damit machen soll. \n"
+  - "Dina: In letzter Zeit haben sie eine Menge davon gekauft. Sie m\xFCssen k\xF6stlich
     sein! Aber f\xFCr mich sind sie unbrauchbar!"
   eng_sentences:
-  - "Not sure what to do with these. \n"
-  - Through they did get a lot of these recently. They must be delicious! No use
-    for me though!
+  - "Dina: Not sure what to do with these. \n"
+  - 'Dina: Through they did get a lot of these recently. They must be delicious!
+    No use for me though!'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField:
-  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
-  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable: []

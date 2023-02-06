@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: Bilderrahmen#day4
   m_EditorClassIdentifier: 
-  Title: bilderrahmen2#day4
+  Title: bilderrahmen#day4
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 00000000
   ger_sentences:
@@ -23,7 +23,6 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
   textToEnable: []

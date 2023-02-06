@@ -14,18 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: "K\xFChlschrank#Trigger"
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000e00000008000000
+  <Actions>k__BackingField: 00000000
   ger_sentences:
-  - "Bevor meine Familie gegangen ist, hat sie auch alles aus dem K\xFChlschrank
-    mitgenommen, was sie tragen konnte."
+  - 
   eng_sentences:
-  - Before my family left, they took everything they could carry from the fridge.
+  - 
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField:
-  - {fileID: 21300000, guid: d9f4738d72e93d04ca32bb703888320f, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable: []
