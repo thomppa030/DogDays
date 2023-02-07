@@ -302,6 +302,10 @@ public class DialogueManager : MonoBehaviour
                 actionID++;
                 SetNextAction(d, actionID);
                 break;
+            case Dialogue.Action.playSFXImmediate:
+                AudioClip acImmediate = d.GetAudioClip(audioID);
+                PlaySFXImmediate(acImmediate);
+                break;
 
         }
     }
@@ -338,6 +342,19 @@ public class DialogueManager : MonoBehaviour
         actionID++;
         SetNextAction(currentDialogue, actionID);
 
+    }
+
+    private void PlaySFXImmediate(AudioClip ac)
+    {
+        Debug.Log($"Playing {ac.name} with ID ${audioID}.");
+
+        audioSource.clip = ac;
+        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
+        audioSource.Play();
+
+        actionID++;
+        audioID++;
+        SetNextAction(currentDialogue, actionID);
     }
 
 
