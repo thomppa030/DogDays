@@ -2791,6 +2791,7 @@ RectTransform:
   - {fileID: 7522961386100405258}
   - {fileID: 7522961386705081038}
   - {fileID: 2595716323479039015}
+  - {fileID: 7702012227786044455}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3869,6 +3870,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!1 &7964979533960686350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7702012227786044455}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7702012227786044455
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7964979533960686350}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1027.812, y: -434.95068, z: -170.91965}
+  m_LocalScale: {x: 0.8740929, y: 0.8740929, z: 0.8740929}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7522961386335902883}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2092302350064794821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3954,6 +3986,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueText
       objectReference: {fileID: 0}
+    - target: {fileID: 2976379998424736731, guid: 9f427914d302b8344871928c702f724b, type: 3}
+      propertyPath: m_margin.z
+      value: -579.75903
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432580435177096617, guid: 9f427914d302b8344871928c702f724b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3432580435177096617, guid: 9f427914d302b8344871928c702f724b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8180225454273300411, guid: 9f427914d302b8344871928c702f724b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e7b93c9392a424342add0dbb4949d3c1, type: 3}
     - target: {fileID: 8788282163221002834, guid: 9f427914d302b8344871928c702f724b, type: 3}
       propertyPath: m_RootOrder
       value: 5
