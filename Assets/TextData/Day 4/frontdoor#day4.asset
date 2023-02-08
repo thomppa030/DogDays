@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Fronntdoor#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d00000000000000070000000a0000000e00000008000000
+  <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
   - "KANN MICH JEMAND H\xD6REN??"
   eng_sentences:
@@ -22,12 +22,10 @@ MonoBehaviour:
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField:
-  - {fileID: 6718882168854523491, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:
   - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
-  Audioclips:
-  - {fileID: 8300000, guid: 978ba9573ee223e43ac0255a5cbcdd79, type: 3}
+  Audioclips: []
   textToUnlock: []
   textToEnable: []
   textToDisable: []

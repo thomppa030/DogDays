@@ -16,9 +16,9 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
-  - Hier kann man sich nicht verstecken!
+  - 'Dina: Hier kann man sich nicht verstecken!'
   eng_sentences:
-  - No where to hide here!
+  - 'Dina: No where to hide here!'
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

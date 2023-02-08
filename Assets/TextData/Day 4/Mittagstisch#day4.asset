@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TD#day4_Mittagstisch
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000d000000000000000e0000000b00000008000000
+  <Actions>k__BackingField: 0d000000000000000d000000000000000e00000008000000
   ger_sentences:
   - Jeden Abend haben sie gemeinsam gegessen!
   - In den letzten Tagen waren alle sehr besorgt und traurig.
@@ -28,9 +28,8 @@ MonoBehaviour:
 
 
 '
-  <InfoText>k__BackingField: '1 out of 4 Ukrainians suffers from mental disorders
-    caused by the war. '
-  <InfoDisplayTime>k__BackingField: 15
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:
