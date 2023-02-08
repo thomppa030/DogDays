@@ -13,6 +13,8 @@ public class Doggo_Sounds : MonoBehaviour
     private AudioClip scratch; 
     [SerializeField]
     private AudioClip[] WhineClips;
+    [SerializeField]
+    private AudioClip[] SniffClips;
     
 
     private AudioSource audioSource;
@@ -24,7 +26,7 @@ public class Doggo_Sounds : MonoBehaviour
         animation = GetComponent<Animator>();
     }
 
-    public void Step()
+   /* public void Step()
     {
         if (animation.GetFloat("Speed_f") > 0.1 && animation.GetFloat("Speed_f") < 0.6)
         {
@@ -41,7 +43,7 @@ public class Doggo_Sounds : MonoBehaviour
             AudioClip clip = GetRandomClip(StepClips);
             audioSource.PlayOneShot(clip);
         }
-    }
+    }*/
     
     public void Bark()
     {
@@ -58,6 +60,12 @@ public class Doggo_Sounds : MonoBehaviour
     public void Whining()
     {
         AudioClip clip = GetRandomClip(WhineClips);
+        audioSource.PlayOneShot(clip);
+    }
+    
+    public void Sniff()
+    {
+        AudioClip clip = GetRandomClip(SniffClips);
         audioSource.PlayOneShot(clip);
     }
 

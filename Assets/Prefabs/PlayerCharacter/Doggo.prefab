@@ -682,19 +682,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f76c4bbe08e9414080258b3e0536f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StepClips:
-  - {fileID: 8300000, guid: aef700b38b99b87429732c12b433260f, type: 3}
-  - {fileID: 8300000, guid: 681edaf4957869742901224255bfe5df, type: 3}
-  - {fileID: 8300000, guid: 1ac5dae8deff9234abbe9f7a0a0a3dd7, type: 3}
-  - {fileID: 8300000, guid: bd546a765e9e55947acc2e233f36a767, type: 3}
-  - {fileID: 8300000, guid: d19fcf7c32f71394daa16a10055afdd0, type: 3}
-  - {fileID: 8300000, guid: 27ce2477904091c4a82414a477e491e1, type: 3}
-  - {fileID: 8300000, guid: aa11e28552832cb4da79b10c8691855c, type: 3}
-  - {fileID: 8300000, guid: c2b888c43aea8164587f8b99f4048f37, type: 3}
-  - {fileID: 8300000, guid: 5682479a8115a834ebebfb0229059b51, type: 3}
-  - {fileID: 8300000, guid: 0cd201571d99a4341b169af915ddbc72, type: 3}
-  - {fileID: 8300000, guid: 4819809ab4cc0c84b9dc34c92cbb435b, type: 3}
-  - {fileID: 8300000, guid: f6b35b4fe268ccd498aec2b9feb04ed8, type: 3}
+  StepClips: []
+  BarkClips:
+  - {fileID: 8300000, guid: 15c4f1fedf430094b84d61c4c70338d8, type: 3}
+  - {fileID: 8300000, guid: e85b769a9dbfb8241b22475b05bee5d1, type: 3}
+  - {fileID: 8300000, guid: 13b5fe33e1fdbaa4da876479bdbc9c7b, type: 3}
+  - {fileID: 8300000, guid: 3f6c42ed13028d74887c0dbe27ebfdcd, type: 3}
+  scratch: {fileID: 8300000, guid: 978ba9573ee223e43ac0255a5cbcdd79, type: 3}
+  WhineClips:
+  - {fileID: 8300000, guid: fb77886b3d5590b4c98d29d0bdb1a365, type: 3}
+  - {fileID: 8300000, guid: f2bbe2b8c02d8014f9d1e4319c802ad6, type: 3}
+  - {fileID: 8300000, guid: 10de1004afc737942a506b83165f8328, type: 3}
+  SniffClips:
+  - {fileID: 8300000, guid: 6c5624519cd181e44a01c9529b5a1a6d, type: 3}
+  - {fileID: 8300000, guid: 7120999c8b52faa47ae57318b5e3a5f4, type: 3}
+  - {fileID: 8300000, guid: 831598cecfffa2f49ad80a21ceacaa80, type: 3}
 --- !u!143 &1990326144277739423
 CharacterController:
   m_ObjectHideFlags: 0
