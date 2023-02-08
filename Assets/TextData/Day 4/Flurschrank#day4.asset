@@ -14,15 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TD#day4_Flurschrank
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000e00000008000000
+  <Actions>k__BackingField: 0d000000000000000e0000000b00000008000000
   ger_sentences:
   - Alles, was sie tragen konnten, haben sie mitgenommen, sie waren so in Eile, haben
     sie mich einfach nur vergessen?
   eng_sentences:
   - They took everything they could carry. They were in such a hurry, did they just
     forget about me?
-  <InfoText>k__BackingField: 
-  <InfoDisplayTime>k__BackingField: 0
+  <InfoText>k__BackingField: "18% of the Ukrainian population is recorded as refugees
+    across Europe. That accounts for over 7.7 million people. It is far and away
+    the most significant displacement of people in Europe since World War II. Another
+    6.5 million became displaced within Ukraine\xB4s borders."
+  <InfoDisplayTime>k__BackingField: 20
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:

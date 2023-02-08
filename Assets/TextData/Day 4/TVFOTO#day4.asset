@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TV_Trigger#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000000000000000000000000000e00000008000000
+  <Actions>k__BackingField: 0d000000000000000000000000000000000000000e0000000b00000008000000
   ger_sentences:
   - Es war nur der Fernseher...
   - 'Der letzte Winter war toll! Ich habe gerne mit meiner Familie im Schnee gespielt...
@@ -27,8 +27,9 @@ MonoBehaviour:
   - "Last winter was fun! I loved playing around in the snow with my family\u2026\n"
   - "Where are they now? Why aren\xB4t they back?\n"
   - This winter is a nightmare.
-  <InfoText>k__BackingField: 
-  <InfoDisplayTime>k__BackingField: 0
+  <InfoText>k__BackingField: "According to Ukraine\xB4s Prime Minister Shmyhal, more
+    than half of Ukraine\xB4s energy facilities were damaged."
+  <InfoDisplayTime>k__BackingField: 15
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:

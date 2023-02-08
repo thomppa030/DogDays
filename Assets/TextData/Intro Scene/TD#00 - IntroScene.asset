@@ -16,14 +16,14 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 1
   <Actions>k__BackingField: 0200000005000000070000000700000007000000010000000e0000000f0000000f0000000f000000070000000f0000000200000007000000070000000700000008000000
   ger_sentences:
-  - 'Kind: Was ist mit <b>XXX</b>?'
-  - 'Kind: Warum haben wir keine seiner Sachen eingepackt?'
+  - 'Kind: Was ist mit <b>Dina</b>?'
+  - 'Kind: Warum haben wir keiner ihrer Sachen eingepackt?'
   - "Mutter: Wir sind nicht lange weg. Er hat alles was er braucht. F\xFCr einige
     Zeit..."
   - "Vater: Wir m\xFCssen sofort gehen. Wir holen ihn, wenn es sicher ist...Lasst
     uns jetzt bitte gehen!"
   eng_sentences:
-  - 'Child: What about <b>XXX</b>?'
+  - 'Child: What about <b>Dina</b>?'
   - 'Child: Why didn''t we pack any of his toys?'
   - 'Mom: We won''t be gone for long. He has everything he needs for a couple of
     days.'

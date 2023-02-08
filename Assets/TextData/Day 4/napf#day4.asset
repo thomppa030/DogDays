@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Napf#Trigger
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d00000000000000000000000000000000000000000000000e00000008000000
+  <Actions>k__BackingField: 0d000000000000000700000007000000000000000000000000000000000000000e00000008000000
   ger_sentences:
   - "Dina: Heute gibt es kein Fr\xFChst\xFCck f\xFCr mich... schon wieder.\n"
   - 'Dina: Es ist schon eine Weile her, dass ich eine gute Mahlzeit hatte...
@@ -37,7 +37,9 @@ MonoBehaviour:
   <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:
   - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
-  Audioclips: []
+  Audioclips:
+  - {fileID: 8300000, guid: 10de1004afc737942a506b83165f8328, type: 3}
+  - {fileID: 8300000, guid: fb77886b3d5590b4c98d29d0bdb1a365, type: 3}
   textToUnlock: []
   textToEnable: []
   textToDisable: []
