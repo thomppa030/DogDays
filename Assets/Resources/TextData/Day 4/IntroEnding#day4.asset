@@ -17,10 +17,10 @@ MonoBehaviour:
   <Actions>k__BackingField: 0d000000000000000b00000000000000070000000b00000008000000
   ger_sentences:
   - Oh Nein...Nein....Bitte nicht schon wieder...
-  - Oh Nein...Bitte nicht schon wieder...
+  - "Es kommt n\xE4her..."
   eng_sentences:
-  - 
-  - 
+  - Oh no...No....please not again....
+  - It's getting closer...
   <InfoText>k__BackingField: Suche Schutz + Zielanweisung
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

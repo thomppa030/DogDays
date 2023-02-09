@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: Food#day4
   m_EditorClassIdentifier: 
-  Title: Food#day4
+  Title: "Food#day4_Spielerf\xFChrung"
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
-  - 'Dina: Ich sollte mir etwas zu essen suchen!'
+  - Ich sollte mir etwas zu essen suchen! Vielleicht sollte ich noch mal im Schlafzimmer
+    suchen?
   eng_sentences:
-  - 'Dina: I should go find something to eat!'
+  - I should find something to eat! Maybe I should look in the bedroom again?
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

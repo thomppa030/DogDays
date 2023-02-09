@@ -16,9 +16,11 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
-  - 
+  - "Ich glaube nicht, dass ich heute etwas Neues finden werde, das ich essen k\xF6nnte.
+    Aber einen Versuch ist es wert."
   eng_sentences:
-  - 
+  - "Don\xB4t think I will find something new today that I could eat. But it is worth
+    a try."
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: Bilder#day4
+  m_Name: hinweis_Ending#day4
   m_EditorClassIdentifier: 
-  Title: TD#day4_bilder
+  Title: TD#day4_hinweis_ending
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000008000000
+  <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
-  - 
+  - Ich habe Angst...Was soll ich machen?....Ich sollte mich wieder verstecken!!!
   eng_sentences:
-  - 
+  - I'm scared...What should I do?....I should hide again!!!
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
