@@ -35,7 +35,7 @@ public class MenuHandler : MonoBehaviour
 
         slider.value = PlayerPrefs.GetFloat("sfx", 1);
         DisableAllButtons();
-        startText.text = GetStartButtonText();
+        SetStartButtonText();
     }
 
     public void OpenInfo()
@@ -69,6 +69,12 @@ public class MenuHandler : MonoBehaviour
         BackgroundImage.enabled = enable;
     }
 
+
+    public void SetStartButtonText()
+    {
+        startText.text = GetStartButtonText();
+    }
+
     private string GetStartButtonText()
     {
         switch (GameState.Instance.GetCurrentGameState())
@@ -76,7 +82,7 @@ public class MenuHandler : MonoBehaviour
             case GameState.GameStates.Menu:
                 return "Start";
             case GameState.GameStates.Pause:
-                return "Restart";
+                return "Return";
             default:
                 return "Start";
         }
@@ -104,6 +110,11 @@ public class MenuHandler : MonoBehaviour
     public void StartPause()
     {
         GameState.Instance.TryChangeState(GameState.GameStates.Pause);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
     #endregion
