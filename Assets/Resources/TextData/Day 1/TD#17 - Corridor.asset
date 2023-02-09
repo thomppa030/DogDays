@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Flur_niemand_da
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 00000000000000000000000008000000
+  <Actions>k__BackingField: 0d0000000f0000000f0000000f0000000e00000008000000
   ger_sentences:
   - Immer noch kein Zeichen von ihnen...
   - Hoffentlich geht es ihnen gut. Die letzten Wochen waren sehr seltsam....
@@ -25,9 +25,14 @@ MonoBehaviour:
   - I sure hope they come back soon...
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
-  <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <waitTime>k__BackingField:
+  - 3
+  - 3
+  - 3
+  <characterAnim>k__BackingField:
+  - {fileID: 0}
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable:

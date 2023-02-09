@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Bed Interaction Day 1
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 14000000010000000d00000000000000000000000d000000000000000e0000000800000001000000
+  <Actions>k__BackingField: 010000000d00000000000000000000000d000000000000000e00000008000000
   ger_sentences:
   - Oh, sind denn alle schon wach? Wie hab' ich das denn verpasst?
   - Ich schaue mal besser nach ihnen.
@@ -25,9 +25,7 @@ MonoBehaviour:
   - Maybe they are in the Kitchen..?
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
-  <waitTime>k__BackingField:
-  - 3
-  - 5
+  <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:
   - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
@@ -37,4 +35,3 @@ MonoBehaviour:
   textToEnable:
   - {fileID: 11400000, guid: c5dcdde8efaa0fa4fbe6729ed2e08479, type: 2}
   textToDisable: []
-  VideosToPlayInOrder: []

@@ -14,16 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Bedroom - Ball must be here
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000008000000
+  <Actions>k__BackingField: 0d0000000f0000000e00000008000000
   ger_sentences:
   - Mein Ball muss hier irgendwo sein. Ich kann es riechen!
   eng_sentences:
   - My ball must be here somewhere! I can sniff it!
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
-  <waitTime>k__BackingField: []
+  <waitTime>k__BackingField:
+  - 3
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable:

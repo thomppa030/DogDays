@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: No place to sleep found
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 0c0000000000000000000000000000000b00000008000000
+  <Actions>k__BackingField: 0d0000000c000000000000000d0000000a00000000000000000000000b0000000e00000008000000
   ger_sentences:
   - Ich finde keinen guten Schlafplatz...
   - "Oh, ich wei\xDF! Ich k\xF6nnte auf der Fu\xDFmatte im Flur schlafen!"
@@ -27,8 +27,11 @@ MonoBehaviour:
   <InfoText>k__BackingField: Find the doormat.
   <InfoDisplayTime>k__BackingField: 10
   <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <characterAnim>k__BackingField:
+  - {fileID: 4537692746815753182, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
+  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable:

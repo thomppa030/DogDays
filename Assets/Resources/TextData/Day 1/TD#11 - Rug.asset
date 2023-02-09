@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Rug
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 000000000000000008000000
+  <Actions>k__BackingField: 0a00000000000000000000001100000008000000
   ger_sentences:
   - Der Teppich ist nicht so warm wie sonst...
   - Ich habe hier immer gerne ein Nickerchen gehalten, aber so kalt wie es gerade
@@ -25,7 +25,9 @@ MonoBehaviour:
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
+  <characterAnim>k__BackingField:
+  - {fileID: -2729887342897051712, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  - {fileID: 30867717242668885, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
   <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
