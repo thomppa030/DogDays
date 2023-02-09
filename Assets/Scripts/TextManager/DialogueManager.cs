@@ -38,6 +38,8 @@ public class DialogueManager : MonoBehaviour
     {
         instance = this;
         audioSource = GetComponent<AudioSource>();
+
+        sentences = new Queue<string>();
     }
 
     private void Start()
@@ -46,8 +48,6 @@ public class DialogueManager : MonoBehaviour
         {
             playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         }
-
-        sentences = new Queue<string>();
 
         if(dialogueText != null)
             dialogueText.text = "";
@@ -206,6 +206,7 @@ public class DialogueManager : MonoBehaviour
         EnableProfileImage(false);
         ResetIDs();
         currentDialogue = d;
+    
         sentences.Clear();
 
         foreach (string sentence in GetSentence(d))
