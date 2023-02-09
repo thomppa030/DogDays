@@ -25,6 +25,6 @@ public class PlayerStateMachine : StateMachine
     {
         MainCameraTransform = _camera.transform;
         
-        SwitchState(new PlayerMovingState(this));
+        SwitchState(new PlayerReadingState(this));
     }
 }

@@ -5,11 +5,13 @@ using TMPro;
 using System;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class DialogueManager : MonoBehaviour
 {
     private Animator playerAnim;
     [SerializeField] private Animator fader;
+    [SerializeField] private CutSceneManager cutSceneManager;
     [SerializeField] private InfoDisplayer infoDisplayer;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] Image dialogueFrame;
@@ -88,7 +90,7 @@ public class DialogueManager : MonoBehaviour
         LevelHandler.Instance.LockInteractables();
         InteractComponent interactComponent = GetComponent<InteractComponent>();
         
-        playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
+        EnablePlayerMovement();
         
         if (interactComponent)
         {
@@ -229,6 +231,7 @@ public class DialogueManager : MonoBehaviour
     private int audioID = 0;
     private int waitID = 0;
     private int profileImageID = 0;
+    private int uiAnimID = 0;
    
     [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
 
@@ -241,6 +244,16 @@ public class DialogueManager : MonoBehaviour
         {
             case Dialogue.Action.nextSentence:
                 DisplayNextSentence();
+                break;
+            case Dialogue.Action.playNextUIAnimation:
+                FadeInAndPlayVideo();
+                uiAnimID++;
+                actionID++;
+                break;
+            case Dialogue.Action.fadeOutUIAnimation:
+                FadeOutVideo();
+                uiAnimID--;
+                actionID++;
                 break;
             case Dialogue.Action.enableTextDisplay:
                 EnableText(true);
@@ -310,10 +323,66 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.playCharAnimWithWait:
                 StartCoroutine(CharAnimWithWait());
                 break;
-
+            case Dialogue.Action.disablePlayerMovement:
+                DisablePlayerMovement();
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
+            case Dialogue.Action.enablePlayerMovement:
+                EnablePlayerMovement();
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
         }
     }
 
+    private void EnablePlayerMovement()
+    {
+        if (playerStateMachine != null)
+            playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
+    }
+
+    private void DisablePlayerMovement()
+    {
+        if (playerStateMachine != null)
+            playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
+    }
+
+    private void FadeOutVideo()
+    {
+        GetNextVideo();
+        NextVideoToPlay.GetComponent<VideoPlayer>().Stop();
+        Animator a = NextVideoToPlay.GetComponent<Animator>();
+        a.SetTrigger("FadeOut");
+        StartCoroutine(WaitForAnimationToFinish(a, "FadeOut"));
+        NextVideoToPlay.gameObject.SetActive(false);
+        SetNextAction(currentDialogue, actionID);
+    }
+
+    private IEnumerator WaitForAnimationToFinish(Animator animator, string AnimationName)
+    {
+        //Wait for the animation to finish
+        yield return new WaitUntil(() =>
+            animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationName) &&
+            animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
+    }
+
+    private void FadeInAndPlayVideo()
+    {
+        GetNextVideo();
+        NextVideoToPlay.gameObject.SetActive(true);
+        Animator a = NextVideoToPlay.GetComponent<Animator>();
+        a.SetTrigger("FadeIn");
+        NextVideoToPlay.GetComponent<VideoPlayer>().Play();
+        SetNextAction(currentDialogue, actionID);
+    }
+
+    private GameObject NextVideoToPlay { get; set; }
+    
+    private void GetNextVideo()
+    {
+        NextVideoToPlay = currentDialogue.VideosToPlayInOrder[uiAnimID];
+    }
 
     private void SetProfileImage(Sprite s)
     {
@@ -339,13 +408,13 @@ public class DialogueManager : MonoBehaviour
 
     private void PlayCharacterAnimation()
     {
+        DisablePlayerMovement();
         string ac = currentDialogue.characterAnim[charAnimID].name.ToString();
         Debug.Log("Playing animation: " + ac);
         playerAnim.Play(ac);
         charAnimID++;
         actionID++;
         SetNextAction(currentDialogue, actionID);
-
     }
 
     private void PlaySFXImmediate(AudioClip ac)
@@ -410,12 +479,9 @@ public class DialogueManager : MonoBehaviour
         actionID = 0;
         charAnimID = 0;
         profileImageID = 0;
+        uiAnimID = 0;
 
         waitForSentence = false;
     }
-
-
-
-
 }
 

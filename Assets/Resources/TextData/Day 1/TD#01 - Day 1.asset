@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Day 1 Beginning
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 030000000000000000000000000000000400000002000000110000001100000011000000030000000b00000008000000
+  <Actions>k__BackingField: 03000000000000000000000000000000040000000200000014000000110000001100000011000000030000000b00000008000000
   ger_sentences:
   - "Fr\xFChling 2022."
   - Irgendwo in der Ukraine.
@@ -39,3 +39,4 @@ MonoBehaviour:
   textToEnable:
   - {fileID: 11400000, guid: b39bd665fa8580c4aa3368f0e69e6852, type: 2}
   textToDisable: []
+  VideosToPlayInOrder: []

@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private Dialogue displayedDialogue;
     BoxCollider bc;
-
+    
     [SerializeField] private bool playOnTrigger = false;
 
     private void OnEnable()
