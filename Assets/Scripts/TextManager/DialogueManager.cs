@@ -306,6 +306,9 @@ public class DialogueManager : MonoBehaviour
                 AudioClip acImmediate = d.GetAudioClip(audioID);
                 PlaySFXImmediate(acImmediate);
                 break;
+            case Dialogue.Action.playCharAnimWithWait:
+                StartCoroutine(CharAnimWithWait());
+                break;
 
         }
     }
@@ -356,7 +359,18 @@ public class DialogueManager : MonoBehaviour
         audioID++;
         SetNextAction(currentDialogue, actionID);
     }
+    IEnumerator CharAnimWithWait()
+    {
+        string ac = currentDialogue.characterAnim[charAnimID].name.ToString();
+        Debug.Log("Playing animation: " + ac);
+        playerAnim.Play(ac);
+        float waitTime = currentDialogue.characterAnim[charAnimID].length;
+        yield return new WaitForSeconds(waitTime);
 
+        charAnimID++;
+        actionID++;
+        SetNextAction(currentDialogue, actionID);
+    }
 
     IEnumerator PlaySFX(AudioClip ac, float waitTime)
     {
