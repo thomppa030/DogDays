@@ -62,6 +62,7 @@ public class GameState : MonoBehaviour
                 Debug.Log("Change current state " + currentState + " to " + requestedState);
                 currentState = requestedState;
 
+                MenuHandler.singleton.SetStartButtonText();
                 MenuHandler.singleton.EnableMenuButtons(true);
             }
             
