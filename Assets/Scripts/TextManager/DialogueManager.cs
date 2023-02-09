@@ -383,7 +383,7 @@ public class DialogueManager : MonoBehaviour
 
     private void HideVideoPanelDay02()
     {
-        Animator anim = cutSceneManager.cutScenesDay01[0];
+        Animator anim = cutSceneManager.cutScenesDay02[0];
         Animator anim02 = cutSceneManager.cutScenesDay02[1];
         Animator anim03 = cutSceneManager.cutScenesDay02[2];
         anim.Play("FadeOut");
