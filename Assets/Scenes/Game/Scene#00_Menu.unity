@@ -725,6 +725,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7522961385534047141, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522961386100405257, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: <playerStateMachine>k__BackingField
       value: 
@@ -816,6 +820,34 @@ PrefabInstance:
     - target: {fileID: 7522961386335902895, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: m_Name
       value: BackendHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522961386974784395, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 486
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522961386974784396, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_fontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522961386974784396, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_margin.w
+      value: -96.91287
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522961386974784396, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_margin.z
+      value: -531.1983
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522961386974784396, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e19533136311f1f448ff1aed21acd8ad, type: 2}
+    - target: {fileID: 7522961386974784396, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 5782552782791637710, guid: e19533136311f1f448ff1aed21acd8ad, type: 2}
+    - target: {fileID: 7522961386974784396, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7522961387252096136, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: m_AnchorMax.x
