@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Tennisball
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b00000008000000
+  <Actions>k__BackingField: 0c0000000d0000000000000011000000000000000d000000000000000d000000000000000d000000000000000d000000000000000000000000000000000000000000000000000000000000000b0000000e00000008000000
   ger_sentences:
   - Da ist er ja!
   - ' ...'
@@ -22,34 +22,40 @@ MonoBehaviour:
     ganzen Tag Zuhause...
   - "Vielleicht machen sie einen Gro\xDFeinkauf? "
   - Mmmmhh...Ich hoffe sie bringen mir was leckeres mit!
-  - Ich erinnere mich an dem Tag, als ich diesen Ball gefunden habe.
+  - Ich erinnere mich an den Tag, als ich diesen Ball gefunden habe.
   - Mein alter Ball ging verloren und ich war ganz traurig.
-  - 'XXX: Den hier hab'' ich beim Spazieren unter einem Baum gefunden.'
-  - "XXX: Ich war ganz aufgeregt. Endlich hatte ich einen neuen Ball. Meine Familie
-    schien auch ganz gl\xFCcklich dar\xFCber zu sein."
-  - 'XXX: Hm...'
-  - "XXX: Das ganze Kauen hat mich m\xFCde gemacht, Zeit f\xFCr ein Nickerchen!"
-  - "XXX: Es ist ganz sch\xF6n <i>k\xFChl</i> geworden...Ich sollte einen <color=#ff0000ff>warmen</color>
+  - Den hier hab' ich beim Spazieren unter einem Baum gefunden.
+  - "Ich war ganz aufgeregt. Endlich hatte ich einen neuen Ball. Meine Familie schien
+    auch ganz gl\xFCcklich dar\xFCber zu sein."
+  - Hm...
+  - "Das ganze Kauen hat mich m\xFCde gemacht, Zeit f\xFCr ein Nickerchen!"
+  - "Es ist ganz sch\xF6n <i>k\xFChl</i> geworden...Ich sollte einen <color=#ff0000ff>warmen</color>
     Platz zum Schlafen suchen."
   eng_sentences:
-  - 'XXX: There it is!'
-  - 'XXX: ...'
-  - 'XXX: It''s been a while since they left. They are home the whole day usually!'
-  - 'XXX: They must be away on some big shopping... I '
-  - 'XXX: I hope they bring me some delicious bone!'
-  - 'XXX: I remember the day I got this ball.'
-  - 'XXX: My old one got lost a couple of days before and I was feeling very down.'
-  - 'XXX: This one I got found under a tree all wrapped up in some paper...'
-  - 'XXX:  I got so excited to get a new ball. My family was so happy at that moment.'
-  - 'XXX: Hm...'
-  - 'XXX: All this chewing made me tired up. A nap would be nice now!'
-  - 'XXX: But it got quite <i>chilly</i>. I should find a <color=#ff0000ff>warm</color>
-    spot to sleep.'
+  - There it is!
+  - ...
+  - It's been a while since they left. They are home the whole day usually!
+  - 'They must be away on some big shopping... I '
+  - I hope they bring me some delicious bone!
+  - I remember the day I got this ball.
+  - My old one got lost a couple of days before and I was feeling very down.
+  - This one I got found under a tree all wrapped up in some paper...
+  - I got so excited to get a new ball. My family was so happy at that moment.
+  - Hm...
+  - All this chewing made me tired up. A nap would be nice now!
+  - But it got quite <i>chilly</i>. I should find a <color=#ff0000ff>warm</color>
+    spot to sleep.
   <InfoText>k__BackingField: Find a place to sleep.
   <InfoDisplayTime>k__BackingField: 10
   <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <characterAnim>k__BackingField:
+  - {fileID: 4537692746815753182, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
+  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
+  - {fileID: 21300000, guid: 712436de5fbe573498c91ea163839a32, type: 3}
+  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
+  - {fileID: 21300000, guid: 712436de5fbe573498c91ea163839a32, type: 3}
   Audioclips: []
   textToUnlock:
   - {fileID: 11400000, guid: df178c7cdd011e24f8a7b34008fa42ae, type: 2}

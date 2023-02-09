@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: OnTrigger Kitchen
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d0000000c000000000000000000000000000000000000000b0000000e00000008000000
+  <Actions>k__BackingField: 0d0000000c0000000f0000000f0000000d0000000f0000000f0000000b0000000e00000008000000
   ger_sentences:
   - Hm...Niemand da.
   - "Vielleicht sind sie au\xDFer Haus? Sie kommen sicher bald zur\xFCck. Dann hei\xDFt
@@ -28,9 +28,14 @@ MonoBehaviour:
   - WOW... so much to eat.
   <InfoText>k__BackingField: Find something to eat.
   <InfoDisplayTime>k__BackingField: 5
-  <waitTime>k__BackingField: []
+  <waitTime>k__BackingField:
+  - 3
+  - 5
+  - 3
+  - 3
   <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: 712436de5fbe573498c91ea163839a32, type: 3}
   - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
   Audioclips: []
   textToUnlock: []

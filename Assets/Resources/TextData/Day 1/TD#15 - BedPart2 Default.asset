@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Bed default 2
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 000000000000000008000000
+  <Actions>k__BackingField: 0d00000000000000000000000e00000008000000
   ger_sentences:
   - "Es sieht zwar gem\xFCtlich aus, aber sie m\xF6gen es nicht wenn ich hier schlafe..."
   - Ich suche lieber einen anderen Platz.
@@ -25,7 +25,8 @@ MonoBehaviour:
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: 712436de5fbe573498c91ea163839a32, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable: []

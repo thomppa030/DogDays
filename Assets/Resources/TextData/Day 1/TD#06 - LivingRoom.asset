@@ -14,22 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Betreten des LR nach Napf
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0300000000000000000000000000000008000000
+  <Actions>k__BackingField: 0d0000000f0000000d0000000f0000000f0000000e00000008000000
   ger_sentences:
-  - "Hm.....alles ist so unordentlich und Umgesto\xDFen."
-  - "H\xE4tte ich das gemachtl  w\xE4ren sie alle sauer auf mich."
-  - "Und jetzt werfen sie selbst alles um. Hoffentlich bekomme ich daf\xFCr kein
-    \xE4rger!"
+  - Hm...Alles ist so unordentlich...
+  - "H\xE4tte ich das gemacht w\xE4ren sie alle sauer auf mich."
+  - "Und jetzt werfen sie selbst alles um. Hoffentlich bekomme ich daf\xFCr keinen
+    \xC4rger!"
   eng_sentences:
-  - Hm...this is such a mess here.
+  - Hm...This is such a mess here.
   - They would get angry at me for dragging things around...
   - And now look at what they did to this place! Unfair!
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField:
-  - 2
+  - 3
+  - 3
+  - 4
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: d9f4738d72e93d04ca32bb703888320f, type: 3}
+  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable:
