@@ -76,7 +76,7 @@ public class MenuHandler : MonoBehaviour
         else
         {
             Color c = PanelImage.color;
-            c.a = .5f;
+            c.a = 1f;
             PanelImage.color = c;
         }
     }
