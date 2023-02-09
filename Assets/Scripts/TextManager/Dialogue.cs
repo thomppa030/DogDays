@@ -58,6 +58,10 @@ public class Dialogue : ScriptableObject
         fadeOutUIAnimation,
         disablePlayerMovement,
         enablePlayerMovement,
+        TriggerVideoAnimationDay01,
+        TriggerVideoAnimationDay02,
+        HideVideoPanelDay01,
+        HideVideoPanelDay02,
     }
 
     public AudioClip GetAudioClip(int id)
