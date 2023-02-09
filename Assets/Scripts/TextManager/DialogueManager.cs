@@ -11,8 +11,8 @@ public class DialogueManager : MonoBehaviour
 {
     private Animator playerAnim;
     [SerializeField] private Animator fader;
-    [SerializeField] private CutSceneManager cutSceneManager;
     [SerializeField] private InfoDisplayer infoDisplayer;
+    [SerializeField] private CutSceneManager cutSceneManager;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] Image dialogueFrame;
     [SerializeField] Image profileImage;
@@ -108,7 +108,6 @@ public class DialogueManager : MonoBehaviour
                 return d.ger_sentences;
             default:
                 return d.eng_sentences;
-
         }
     }
 
@@ -245,16 +244,6 @@ public class DialogueManager : MonoBehaviour
             case Dialogue.Action.nextSentence:
                 DisplayNextSentence();
                 break;
-            case Dialogue.Action.playNextUIAnimation:
-                FadeInAndPlayVideo();
-                uiAnimID++;
-                actionID++;
-                break;
-            case Dialogue.Action.fadeOutUIAnimation:
-                FadeOutVideo();
-                uiAnimID--;
-                actionID++;
-                break;
             case Dialogue.Action.enableTextDisplay:
                 EnableText(true);
                 actionID++;
@@ -333,7 +322,59 @@ public class DialogueManager : MonoBehaviour
                 actionID++;
                 SetNextAction(d, actionID);
                 break;
+            case Dialogue.Action.TriggerVideoAnimationDay01:
+                TriggerVideoAnimationDay01();
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
+            case Dialogue.Action.HideVideoPanelDay01:
+                HideVideoPanelDay01();
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
+            case Dialogue.Action.TriggerVideoAnimationDay02:
+                TriggerVideoAnimationDay02();
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
+            case Dialogue.Action.HideVideoPanelDay02:
+                HideVideoPanelDay02();
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
         }
+    }
+
+    private void TriggerVideoAnimationDay01()
+    {
+        Animator anim = cutSceneManager.cutScenesDay01[uiAnimID];
+        anim.Play("FadeIn");
+        uiAnimID++;
+    }
+
+    private void HideVideoPanelDay01()
+    {
+        Animator anim = cutSceneManager.cutScenesDay01[0];
+        Animator anim02 = cutSceneManager.cutScenesDay01[1];
+        anim.Play("FadeOut");
+        anim02.Play("FadeOut");
+    }
+    
+    private void TriggerVideoAnimationDay02()
+    {
+        Animator anim = cutSceneManager.cutScenesDay02[uiAnimID];
+        anim.Play("FadeIn");
+        uiAnimID++;
+    }
+
+    private void HideVideoPanelDay02()
+    {
+        Animator anim = cutSceneManager.cutScenesDay01[0];
+        Animator anim02 = cutSceneManager.cutScenesDay02[1];
+        Animator anim03 = cutSceneManager.cutScenesDay02[2];
+        anim.Play("FadeOut");
+        anim02.Play("FadeOut");
+        anim03.Play("FadeOut");
     }
 
     private void EnablePlayerMovement()
@@ -346,42 +387,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (playerStateMachine != null)
             playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
-    }
-
-    private void FadeOutVideo()
-    {
-        GetNextVideo();
-        NextVideoToPlay.GetComponent<VideoPlayer>().Stop();
-        Animator a = NextVideoToPlay.GetComponent<Animator>();
-        a.SetTrigger("FadeOut");
-        StartCoroutine(WaitForAnimationToFinish(a, "FadeOut"));
-        NextVideoToPlay.gameObject.SetActive(false);
-        SetNextAction(currentDialogue, actionID);
-    }
-
-    private IEnumerator WaitForAnimationToFinish(Animator animator, string AnimationName)
-    {
-        //Wait for the animation to finish
-        yield return new WaitUntil(() =>
-            animator.GetCurrentAnimatorStateInfo(0).IsName(AnimationName) &&
-            animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f);
-    }
-
-    private void FadeInAndPlayVideo()
-    {
-        GetNextVideo();
-        NextVideoToPlay.gameObject.SetActive(true);
-        Animator a = NextVideoToPlay.GetComponent<Animator>();
-        a.SetTrigger("FadeIn");
-        NextVideoToPlay.GetComponent<VideoPlayer>().Play();
-        SetNextAction(currentDialogue, actionID);
-    }
-
-    private GameObject NextVideoToPlay { get; set; }
-    
-    private void GetNextVideo()
-    {
-        NextVideoToPlay = currentDialogue.VideosToPlayInOrder[uiAnimID];
     }
 
     private void SetProfileImage(Sprite s)
