@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TD#day4_Mittagstisch
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000d000000000000000e00000008000000
+  <Actions>k__BackingField: 0d000000000000000d000000000000000b000000030000000e00000008000000
   ger_sentences:
   - Jeden Abend haben sie gemeinsam gegessen!
   - In den letzten Tagen waren alle sehr besorgt und traurig.
@@ -28,9 +28,13 @@ MonoBehaviour:
 
 
 '
-  <InfoText>k__BackingField: 
-  <InfoDisplayTime>k__BackingField: 0
-  <waitTime>k__BackingField: []
+  <InfoText>k__BackingField: "18% of the Ukrainian population is recorded as refugees
+    across Europe. That accounts for over 7.7 million people. It is far and away
+    the most significant displacement of people in Europe since World War II. Another
+    6.5 million became displaced within Ukraine\xB4s borders. "
+  <InfoDisplayTime>k__BackingField: 14
+  <waitTime>k__BackingField:
+  - 3
   <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:
   - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}

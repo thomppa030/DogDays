@@ -14,16 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TD#day4_Flurschrank
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000e00000008000000
+  <Actions>k__BackingField: 0d00000000000000030000000b0000000e00000008000000
   ger_sentences:
   - Alles, was sie tragen konnten, haben sie mitgenommen, sie waren so in Eile, haben
     sie mich einfach nur vergessen?
   eng_sentences:
   - They took everything they could carry. They were in such a hurry, did they just
     forget about me?
-  <InfoText>k__BackingField: 
-  <InfoDisplayTime>k__BackingField: 0
-  <waitTime>k__BackingField: []
+  <InfoText>k__BackingField: Ukraine was home to some 750,000 dogs and 5.5 million
+    cats as of 2014. In the desperate rush to flee war, many of those animals were
+    left behind by their owners, especially larger dogs
+  <InfoDisplayTime>k__BackingField: 15
+  <waitTime>k__BackingField:
+  - 3
   <characterAnim>k__BackingField: []
   <profileImages>k__BackingField:
   - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
