@@ -4,22 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class WindowTrigger : MonoBehaviour
+public class ActivateTrigger : MonoBehaviour
 {
-    [field: SerializeField] private GameObject[] brokenWindows;
-    [field: SerializeField] private GameObject[] windowTape;
+    [field: SerializeField] private GameObject[] ActiveAfter;
+    [field: SerializeField] private GameObject[] ActiveBefore;
 
     private void Start()
     {
-        BatchDeactivate(brokenWindows);
+        BatchDeactivate(ActiveAfter);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            BatchDeactivate(windowTape);
-            BatchActivate(brokenWindows);
+            BatchDeactivate(ActiveBefore);
+            BatchActivate(ActiveAfter);
         }
     }
     
