@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MenuHandler : MonoBehaviour
 {
     [SerializeField] Slider slider;
-    [SerializeField] private Image PanelImage;
+    [SerializeField] private Image BackgroundImage;
     [SerializeField] private GameObject MenuButtons;
     [SerializeField] private GameObject CreditsPanel;
     [SerializeField] private GameObject InfoPanel;
@@ -66,19 +66,7 @@ public class MenuHandler : MonoBehaviour
     {
         MenuButtons.SetActive(enable);
         DisableAllButtons();
-
-        if(!enable)
-        {
-            Color c = PanelImage.color;
-            c.a = 0f;
-            PanelImage.color = c;
-        }
-        else
-        {
-            Color c = PanelImage.color;
-            c.a = 1f;
-            PanelImage.color = c;
-        }
+        BackgroundImage.enabled = enable;
     }
 
     private string GetStartButtonText()
