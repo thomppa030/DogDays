@@ -10,6 +10,8 @@ public class MenuHandler : MonoBehaviour
     [SerializeField] private GameObject MenuButtons;
     [SerializeField] private GameObject CreditsPanel;
     [SerializeField] private GameObject InfoPanel;
+    [SerializeField] private GameObject MainMenuButton;
+    [SerializeField] private GameObject RestartButton;
 
     [SerializeField] private TMP_Text startText;
     public static MenuHandler singleton;
@@ -35,7 +37,8 @@ public class MenuHandler : MonoBehaviour
 
         slider.value = PlayerPrefs.GetFloat("sfx", 1);
         DisableAllButtons();
-        startText.text = GetStartButtonText();
+        SetStartButtonText();
+        MenuHandler.singleton.GetMainMenuButton();
     }
 
     public void OpenInfo()
@@ -69,6 +72,12 @@ public class MenuHandler : MonoBehaviour
         BackgroundImage.enabled = enable;
     }
 
+
+    public void SetStartButtonText()
+    {
+        startText.text = GetStartButtonText();
+    }
+
     private string GetStartButtonText()
     {
         switch (GameState.Instance.GetCurrentGameState())
@@ -76,7 +85,7 @@ public class MenuHandler : MonoBehaviour
             case GameState.GameStates.Menu:
                 return "Start";
             case GameState.GameStates.Pause:
-                return "Restart";
+                return "Return";
             default:
                 return "Start";
         }
@@ -104,6 +113,38 @@ public class MenuHandler : MonoBehaviour
     public void StartPause()
     {
         GameState.Instance.TryChangeState(GameState.GameStates.Pause);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void ReturnToMenu()
+    {
+        GameState.Instance.currentState = GameState.GameStates.Menu;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void GetMainMenuButton()
+    {
+        if (GameState.Instance.currentState == GameState.GameStates.Menu)
+        {
+            MainMenuButton.SetActive(false);
+            RestartButton.SetActive(false);
+        }
+        else
+        {
+            MainMenuButton.SetActive(true);
+            RestartButton.SetActive(true);
+        }           
+    }
+
+    public void Restart()
+    {
+        GameState.Instance.currentState = GameState.GameStates.Game;
+        int id = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(id);
     }
 
     #endregion

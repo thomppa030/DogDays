@@ -16,15 +16,18 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
-  - Ich habe Angst...Was soll ich machen?....Ich sollte mich wieder verstecken!!!
+  - Ich habe Angst...Was soll ich machen?....Ich sollte mich wieder unter dem Tisch
+    verstecken!!!
   eng_sentences:
   - I'm scared...What should I do?....I should hide again!!!
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
   <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: d9f4738d72e93d04ca32bb703888320f, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable: []
   textToDisable: []
+  VideosToPlayInOrder: []
