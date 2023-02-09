@@ -12,6 +12,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private Dialogue displayedDialogue;
     BoxCollider bc;
+    
+    private PlayerStateMachine playerStateMachine;
 
     [SerializeField] private bool playOnTrigger = false;
 
@@ -31,6 +33,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
+        playerStateMachine = GetComponent<PlayerStateMachine>();
+        
         bc = GetComponent<BoxCollider>();
 
         if (playOnTrigger) bc.isTrigger = true;
@@ -43,6 +47,8 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
+        if (playerStateMachine != null)
+            playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
         DialogueManager.instance.ChangeTextstate(DialogueManager.TextState.onDisplay, displayedDialogue);
     }
 

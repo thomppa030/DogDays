@@ -7,13 +7,11 @@ public class TextRayCast : MonoBehaviour
     [Header("Icons")]
     [SerializeField] private GameObject interactionIcon;
     
-    private PlayerStateMachine playerStateMachine;
 
     private Camera cam;
 
     private void Start()
     {
-        playerStateMachine = GetComponent<PlayerStateMachine>();
         
         EnableIcon(false);
         cam = Camera.main;
@@ -39,9 +37,6 @@ public class TextRayCast : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (playerStateMachine != null)
-                    playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
-
                 Debug.Log("Interacting with: " + hit.collider.gameObject.name);
                 if (hit.collider.gameObject.TryGetComponent<DialogueTrigger>(out DialogueTrigger dT))
                 {
