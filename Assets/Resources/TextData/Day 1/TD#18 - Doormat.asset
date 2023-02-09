@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#18 - Doormat
+  m_EditorClassIdentifier: 
+  Title: Ending Day 1
+  <startOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 0c00000000000000020000000500000009000000
+  ger_sentences:
+  - "Das ist ein guter Platz! Ich ruhe mich lieber etwas aus, bevor meine Familie
+    zur\xFCckkommt."
+  eng_sentences:
+  - This is a good spot! Better get some rest before my owners come back.
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
+  <waitTime>k__BackingField:
+  - 0
+  <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
+  Audioclips: []
+  textToUnlock: []
+  textToEnable: []
+  textToDisable: []

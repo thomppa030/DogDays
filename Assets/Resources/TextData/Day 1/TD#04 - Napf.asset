@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#04 - Napf
+  m_EditorClassIdentifier: 
+  Title: Interaktion mit dem Napf
+  <startOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 0c00000000000000020000000a00000003000000010000000000000002000000030000000100000000000000000000000b00000008000000
+  ger_sentences:
+  - Mmmh. Mein Lieblingsfutter!
+  - Yum yum yum yum!
+  - Ah, das war so lecker!
+  - Wo ist mein Spielzeug? Ich will Ball spielen!
+  eng_sentences:
+  - My favorite!
+  - Yum yum yum yum!
+  - That was so good!
+  - Where is my toy? I wanna play with the ball!
+  <InfoText>k__BackingField: Find the ball!
+  <InfoDisplayTime>k__BackingField: 10
+  <waitTime>k__BackingField:
+  - 5
+  - 2
+  <characterAnim>k__BackingField:
+  - {fileID: -500353978738215223, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  <profileImages>k__BackingField: []
+  Audioclips: []
+  textToUnlock:
+  - {fileID: 11400000, guid: b5dc092b425abba479140bb85d751cfd, type: 2}
+  - {fileID: 11400000, guid: 51159152c45993f4ca591cb1b2f211a2, type: 2}
+  - {fileID: 11400000, guid: ecef194ce934e9a4b99172a671bdeb80, type: 2}
+  textToEnable:
+  - {fileID: 11400000, guid: 51159152c45993f4ca591cb1b2f211a2, type: 2}
+  textToDisable: []
