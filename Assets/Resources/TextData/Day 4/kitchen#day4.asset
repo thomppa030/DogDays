@@ -14,14 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Kitchen#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d00000000000000000000000e00000008000000
+  <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
   - "Ich werde mich hier umsehen m\xFCssen. Vielleicht gibt es etwas, das ich \xFCbersehen
     habe..."
-  - 
   eng_sentences:
   - "I will have to search this place. Maybe there is something that I missed\u2026 "
-  - 
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
@@ -32,3 +30,4 @@ MonoBehaviour:
   textToUnlock: []
   textToEnable: []
   textToDisable: []
+  VideosToPlayInOrder: []

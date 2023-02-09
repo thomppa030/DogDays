@@ -16,7 +16,7 @@ MonoBehaviour:
   <startOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0d000000000000000e00000008000000
   ger_sentences:
-  - "Ich wusste nicht, wo hin... meine Familie wird sehr w\xFCtend werden, wenn sie
+  - "Ich wusste nicht wo hin... meine Familie wird sehr w\xFCtend werden, wenn sie
     nach Hause kommt."
   eng_sentences:
   - I didn't know where to go... my family will be very angry when they come home.
@@ -30,3 +30,4 @@ MonoBehaviour:
   textToUnlock: []
   textToEnable: []
   textToDisable: []
+  VideosToPlayInOrder: []
