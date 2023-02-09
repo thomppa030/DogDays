@@ -64,6 +64,7 @@ public class GameState : MonoBehaviour
 
                 MenuHandler.singleton.SetStartButtonText();
                 MenuHandler.singleton.EnableMenuButtons(true);
+                MenuHandler.singleton.GetMainMenuButton();
             }
             
         }
@@ -76,7 +77,7 @@ public class GameState : MonoBehaviour
                 Debug.Log("Change current state " + currentState + " to " + requestedState);
                 currentState = requestedState;
 
-                MenuHandler.singleton.EnableMenuButtons(false);
+                MenuHandler.singleton.EnableMenuButtons(false);               
             }
             else if (requestedState == GameStates.Menu)
             {

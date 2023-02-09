@@ -10,6 +10,8 @@ public class MenuHandler : MonoBehaviour
     [SerializeField] private GameObject MenuButtons;
     [SerializeField] private GameObject CreditsPanel;
     [SerializeField] private GameObject InfoPanel;
+    [SerializeField] private GameObject MainMenuButton;
+    [SerializeField] private GameObject RestartButton;
 
     [SerializeField] private TMP_Text startText;
     public static MenuHandler singleton;
@@ -36,6 +38,7 @@ public class MenuHandler : MonoBehaviour
         slider.value = PlayerPrefs.GetFloat("sfx", 1);
         DisableAllButtons();
         SetStartButtonText();
+        MenuHandler.singleton.GetMainMenuButton();
     }
 
     public void OpenInfo()
@@ -115,6 +118,33 @@ public class MenuHandler : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ReturnToMenu()
+    {
+        GameState.Instance.currentState = GameState.GameStates.Menu;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+    }
+
+    public void GetMainMenuButton()
+    {
+        if (GameState.Instance.currentState == GameState.GameStates.Menu)
+        {
+            MainMenuButton.SetActive(false);
+            RestartButton.SetActive(false);
+        }
+        else
+        {
+            MainMenuButton.SetActive(true);
+            RestartButton.SetActive(true);
+        }           
+    }
+
+    public void Restart()
+    {
+        GameState.Instance.currentState = GameState.GameStates.Game;
+        int id = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(id);
     }
 
     #endregion
