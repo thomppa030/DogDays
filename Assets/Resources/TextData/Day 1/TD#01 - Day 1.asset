@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Day 1 Beginning
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 0300000000000000000000000000000004000000030000000b0000000800000008000000
+  <Actions>k__BackingField: 0300000000000000000000000000000004000000110000001100000011000000030000000b00000008000000
   ger_sentences:
   - "Fr\xFChling 2022."
   - Irgendwo in der Ukraine.
@@ -28,7 +28,10 @@ MonoBehaviour:
   <waitTime>k__BackingField:
   - 3
   - 2
-  <characterAnim>k__BackingField: []
+  <characterAnim>k__BackingField:
+  - {fileID: 6763395943919261652, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  - {fileID: -5501516159901774152, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  - {fileID: -7685416327518905642, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
   <profileImages>k__BackingField: []
   Audioclips: []
   textToUnlock: []
