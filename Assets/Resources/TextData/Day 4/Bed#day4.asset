@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: Bed#day4
+  m_EditorClassIdentifier: 
+  Title: Bed#Trigger
+  <startOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 0d000000000000000d0000000e00000008000000
+  ger_sentences:
+  - "Ich bin ein gutes M\xE4dchen, ich darf nicht auf dem Bett schlafen."
+  eng_sentences:
+  - I'm a good girl, I'm not allowed to sleep on the bed.
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
+  <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
+  - {fileID: 21300000, guid: 712436de5fbe573498c91ea163839a32, type: 3}
+  Audioclips: []
+  textToUnlock: []
+  textToEnable: []
+  textToDisable: []

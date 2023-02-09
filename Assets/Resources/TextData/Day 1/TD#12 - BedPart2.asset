@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#12 - BedPart2
+  m_EditorClassIdentifier: 
+  Title: Search a warm place
+  <startOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 00000000000000000000000008000000
+  ger_sentences:
+  - "Das Bett sieht so weich und gem\xFCtlich aus..."
+  - Hm...
+  - Aber ich darf da nicht rauf!
+  - Nein, ich bin ein guter Junge. Ich finde etwas anderes...
+  eng_sentences:
+  - The bed looks soft and welcoming...
+  - But I am not allowed on the bed!
+  - ...
+  - No, I am a good boy. Better find another place...
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0
+  <waitTime>k__BackingField: []
+  <characterAnim>k__BackingField: []
+  <profileImages>k__BackingField: []
+  Audioclips: []
+  textToUnlock:
+  - {fileID: 11400000, guid: 10c9d9688de18ec4a8d24c2547a122a0, type: 2}
+  textToEnable: []
+  textToDisable: []
