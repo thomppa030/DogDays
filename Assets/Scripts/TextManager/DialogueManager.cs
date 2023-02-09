@@ -327,8 +327,13 @@ public class DialogueManager : MonoBehaviour
                 actionID++;
                 SetNextAction(d, actionID);
                 break;
-            case Dialogue.Action.HideVideoPanelDay01:
-                HideVideoPanelDay01();
+            case Dialogue.Action.HideVideoPanel01Day01:
+                HideVideoPanel01Day01();
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
+            case Dialogue.Action.HideVideoPanel02Day01:
+                HideVideoPanel02Day01();
                 actionID++;
                 SetNextAction(d, actionID);
                 break;
@@ -342,6 +347,11 @@ public class DialogueManager : MonoBehaviour
                 actionID++;
                 SetNextAction(d, actionID);
                 break;
+            case Dialogue.Action.ResetAnimID:
+                uiAnimID = 0;
+                actionID++;
+                SetNextAction(d, actionID);
+                break;
         }
     }
 
@@ -352,12 +362,16 @@ public class DialogueManager : MonoBehaviour
         uiAnimID++;
     }
 
-    private void HideVideoPanelDay01()
+    private void HideVideoPanel01Day01()
     {
         Animator anim = cutSceneManager.cutScenesDay01[0];
-        Animator anim02 = cutSceneManager.cutScenesDay01[1];
         anim.Play("FadeOut");
-        anim02.Play("FadeOut");
+    }
+    
+    private void HideVideoPanel02Day01()
+    {
+        Animator anim = cutSceneManager.cutScenesDay01[1];
+        anim.Play("FadeOut");
     }
     
     private void TriggerVideoAnimationDay02()
@@ -484,7 +498,6 @@ public class DialogueManager : MonoBehaviour
         actionID = 0;
         charAnimID = 0;
         profileImageID = 0;
-        uiAnimID = 0;
 
         waitForSentence = false;
     }
