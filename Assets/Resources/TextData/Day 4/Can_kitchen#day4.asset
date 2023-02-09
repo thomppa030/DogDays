@@ -21,8 +21,7 @@ MonoBehaviour:
     sein! Aber f\xFCr mich sind sie unbrauchbar!"
   eng_sentences:
   - "Not sure what to do with these. \n"
-  - Through they did get a lot of these recently. They must be delicious! No use
-    for me though!
+  - They did get a lot of these recently. They must be delicious! No use for me though!
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
@@ -34,3 +33,4 @@ MonoBehaviour:
   textToUnlock: []
   textToEnable: []
   textToDisable: []
+  VideosToPlayInOrder: []
