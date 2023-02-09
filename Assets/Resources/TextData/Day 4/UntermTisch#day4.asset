@@ -12,16 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: UntermTisch#day4
   m_EditorClassIdentifier: 
-  Title: default Title
+  Title: TD#UntermTisch_ENDING
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 
-  ger_sentences: []
-  eng_sentences: []
+  <Actions>k__BackingField: 0d000000000000001100000011000000000000000e0000000500000008000000
+  ger_sentences:
+  - HILFE!!!
+  - HILFE...
+  eng_sentences:
+  - HELP!!!
+  - HELP...
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField: []
+  <characterAnim>k__BackingField:
+  - {fileID: -2729887342897051712, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  - {fileID: 4419572467542519676, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  <profileImages>k__BackingField:
+  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
   Audioclips: []
   textToUnlock: []
   textToEnable: []
