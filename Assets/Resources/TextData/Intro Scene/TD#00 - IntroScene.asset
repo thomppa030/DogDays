@@ -49,3 +49,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: dba75940252756e4599a6b8e0180fe8e, type: 2}
   textToEnable: []
   textToDisable: []
+  VideosToPlayInOrder: []

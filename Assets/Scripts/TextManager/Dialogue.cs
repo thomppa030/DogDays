@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Data", menuName = "NewText", order = 1)]
 [HelpURL("https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html")]
@@ -31,6 +32,8 @@ public class Dialogue : ScriptableObject
     public List<Dialogue> textToEnable = new List<Dialogue>();
     public List<Dialogue> textToDisable = new List<Dialogue>();
 
+    public List<GameObject> VideosToPlayInOrder = new List<GameObject>();
+    
     public enum Action
     {
         nextSentence,
@@ -50,7 +53,11 @@ public class Dialogue : ScriptableObject
         disableProfileImage,
         nextSentenceWithWait,
         playSFXImmediate,
-        playCharAnimWithWait
+        playCharAnimWithWait,
+        playNextUIAnimation,
+        fadeOutUIAnimation,
+        disablePlayerMovement,
+        enablePlayerMovement,
     }
 
     public AudioClip GetAudioClip(int id)

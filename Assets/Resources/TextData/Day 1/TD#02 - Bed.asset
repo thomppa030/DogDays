@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Bed Interaction Day 1
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 010000000d00000000000000000000000d000000000000000e0000000800000001000000
+  <Actions>k__BackingField: 14000000010000000d00000000000000000000000d000000000000000e0000000800000001000000
   ger_sentences:
   - Oh, sind denn alle schon wach? Wie hab' ich das denn verpasst?
   - Ich schaue mal besser nach ihnen.
@@ -37,3 +37,4 @@ MonoBehaviour:
   textToEnable:
   - {fileID: 11400000, guid: c5dcdde8efaa0fa4fbe6729ed2e08479, type: 2}
   textToDisable: []
+  VideosToPlayInOrder: []
