@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Intro Scene
   <startOnAwake>k__BackingField: 1
-  <Actions>k__BackingField: 1400000002000000050000001000000003000000010000000e0000000f0000000f0000000f000000020000000300000008000000
+  <Actions>k__BackingField: 1400000002000000050000001000000003000000010000000e000000160000000f0000000f0000000f00000018000000020000000300000008000000
   ger_sentences:
   - 'F: Bist du dir sicher, dass es Dina gut gehen wird?'
   - "M: Wir werden ja nicht lange weg sein. Sie hat alles, was sie f\xFCr ein paar

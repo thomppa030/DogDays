@@ -60,8 +60,11 @@ public class Dialogue : ScriptableObject
         enablePlayerMovement,
         TriggerVideoAnimationDay01,
         TriggerVideoAnimationDay02,
-        HideVideoPanelDay01,
+        HideVideoPanel01Day01,
         HideVideoPanelDay02,
+        ResetAnimID,
+        HideVideoPanel02Day01,
+        
     }
 
     public AudioClip GetAudioClip(int id)
