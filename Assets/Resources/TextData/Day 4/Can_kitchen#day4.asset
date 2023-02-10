@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: CannedFood#day4
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000d000000000000000e0000001100000008000000
+  <Actions>k__BackingField: 0d000000000000000d0000000000000000000000110000000e00000008000000
   ger_sentences:
   - "Ich wei\xDF nicht, was ich damit machen soll. \n"
-  - "In letzter Zeit haben sie eine Menge davon gekauft. Sie m\xFCssen k\xF6stlich
-    sein! Aber f\xFCr mich sind sie unbrauchbar!"
+  - In letzter Zeit haben sie eine Menge davon gekauft.
+  - "Sie m\xFCssen k\xF6stlich sein! Aber f\xFCr mich sind sie unbrauchbar!"
   eng_sentences:
   - "Not sure what to do with these. \n"
-  - They did get a lot of these recently. They must be delicious! No use for me though!
+  - They did get a lot of these recently.
+  - They must be delicious! No use for me though!
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
   <waitTime>k__BackingField: []
