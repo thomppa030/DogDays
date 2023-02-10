@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: TD#UntermTisch_ENDING
   <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000001100000011000000000000000e0000000500000008000000
+  <Actions>k__BackingField: 0d000000000000001100000011000000000000000e00000005000000070000000800000009000000
   ger_sentences:
   - HILFE!!!
   - HILFE...
@@ -29,7 +29,8 @@ MonoBehaviour:
   - {fileID: 4419572467542519676, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
   <profileImages>k__BackingField:
   - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
-  Audioclips: []
+  Audioclips:
+  - {fileID: 8300000, guid: 57862ca10892eec458c51f4c514358e8, type: 3}
   textToUnlock: []
   textToEnable: []
   textToDisable: []
