@@ -17,7 +17,6 @@ public class InteractionManager : MonoBehaviour
     public Interaction currentInteraction { get; set; }
     
     #region Delegate Declarations 
-
     public delegate void DialogueEndDelegate();
     public DialogueEndDelegate OnDialogueEnd;
     public delegate void DialogueStartDelegate(Dialogue d);
@@ -28,9 +27,9 @@ public class InteractionManager : MonoBehaviour
     public EnableTextDelegate OnEnableText;
     public delegate void NextSentenceDelegate();
     public NextSentenceDelegate OnNextSentence;
-    public delegate void FadeInDelegate(string animationName);
+    public delegate void FadeInDelegate();
     public FadeInDelegate OnFadeIn;
-    public delegate void FadeOutDelegate(string animationName);
+    public delegate void FadeOutDelegate();
     public FadeOutDelegate OnFadeOut;
     public delegate void EnableProfileImagedelegate();
     public EnableProfileImagedelegate OnEnableProfileImage;
@@ -43,7 +42,12 @@ public class InteractionManager : MonoBehaviour
     //TODO: Enum for ProfileImageID would need single class for ProfileImage and StateEnum?
     public delegate void SetProfileImageDelegate(Sprite Image);
     public SetProfileImageDelegate OnSetProfileImage;
-
+    public delegate void PlaySoundDelegate(AudioClip clip);
+    public PlaySoundDelegate OnPlaySound;
+    
+    public delegate void DialogueWaitDelegate(float waitingTime);
+    public DialogueWaitDelegate OnDialogueWait;
+    
     #endregion
     
     private Animator playerAnim;
@@ -55,8 +59,8 @@ public class InteractionManager : MonoBehaviour
     
     private void ShowInfoDisplay()
     {
-        infoDisplayer.ShowInfo(currentInteraction.AssignedDialogue.InfoText,
-            currentInteraction.AssignedDialogue.InfoDisplayTime);
+        infoDisplayer.ShowInfo(currentInteraction.assignedDialogue.InfoText,
+            currentInteraction.assignedDialogue.InfoDisplayTime);
         _actionID++;
         SetNextAction(currentInteraction, _actionID);
     }
@@ -88,7 +92,7 @@ public class InteractionManager : MonoBehaviour
     
     private void TriggerNextAction()
     {
-        if (currentInteraction.Actions[_actionID] == Interaction.Action.nextSentence)
+        if (currentInteraction.Actions[_actionID] == Interaction.Action.NextSentence)
         {
             _actionID++;
             SetNextAction(currentInteraction, _actionID);
@@ -101,114 +105,125 @@ public class InteractionManager : MonoBehaviour
     private int uiAnimID = 0;
     private int playerAnimID = 0;
     
+    private bool waitForSentence = false;
+    
     public void SetNextAction(Interaction i, int id)
     {
         Debug.Log($"Play Action {i.Actions[id]} with ID {_actionID}.");
         switch (i.Actions[id])
         {
-            case Interaction.Action.nextSentence:
+            case Interaction.Action.NextSentence:
                 OnNextSentence?.Invoke();
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case  Interaction.Action.enableTextDisplay:
+            case  Interaction.Action.EnableTextDisplay:
                 OnEnableText?.Invoke();
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.disableTextDisplay:
+            case Interaction.Action.DisableTextDisplay:
                 OnDisableText?.Invoke();
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.wait:
-                StartCoroutine(waitID >= i.waitTime.Length
-                    ? Wait(DefaultWaitingtime)
-                    : Wait(i.waitTime[waitID]));
-                break;
-            case Interaction.Action.playSFX:
-                AudioClip ac = i.GetAudioClip(audioID);
-                float waitTime = ac.length;
-                StartCoroutine(PlaySFX(ac, waitTime));
-                break;
-            case Interaction.Action.fadeIn:
-                OnFadeIn?.Invoke("FadeIn");
-                StartCoroutine(PlayFadeAnimation("FadeIn"));
+            case Interaction.Action.Wait:
+                OnDialogueWait?.Invoke(i.dialogueWaitingTime.waitTime[waitID]);
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.fadeOut:
-                OnFadeOut?.Invoke("FadeOut");
-                StartCoroutine(PlayFadeAnimation("FadeOut"));
+            case Interaction.Action.PlaySfx:
+                AudioClip ac = i.dialogueSounds.audioclips[audioID];
+                //TODO: PlaySoundDelegate should be refactored to a single class
+                OnPlaySound?.Invoke(ac);
+                _actionID++;
+                audioID++;
+                SetNextAction(currentInteraction, _actionID);
+                break;
+            case Interaction.Action.FadeIn:
+                OnFadeIn?.Invoke();
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.endDialogue:
+            case Interaction.Action.FadeOut:
+                OnFadeOut?.Invoke();
+                _actionID++;
+                SetNextAction(i, _actionID);
+                break;
+            case Interaction.Action.EndDialogue:
                 OnDialogueEnd?.Invoke();
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.playCharAnim:
+            case Interaction.Action.PlayCharAnim:
                 PlayCharacterAnimation();
                 playerAnimID++;
                 _actionID++;
                 SetNextAction(currentInteraction, _actionID);
                 break;
-            case Interaction.Action.showInfoDisplay:
+            case Interaction.Action.ShowInfoDisplay:
+                //TODO: Refactor to a single class
                 ShowInfoDisplay();
                 break;
-            case Interaction.Action.disableInfoDisplay:
+            case Interaction.Action.DisableInfoDisplay:
+                //TODO: Refactor to a single class
                 DisableInfoDisplay();
                 break;
-            case Interaction.Action.loadNextScene:
+            case Interaction.Action.LoadNextScene:
+                //TODO: Refactor to a single class
                 OnDialogueEnd?.Invoke();
                 int sceneID = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1;
                 Debug.Log("Loading scene of index: " + sceneID);
                 UnityEngine.SceneManagement.SceneManager.LoadScene(sceneID);
                 break;
-            case Interaction.Action.disableProfileImage:
+            case Interaction.Action.DisableProfileImage:
                 OnDisableProfileImage?.Invoke();
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.setProfileImage:
-                OnSetProfileImage?.Invoke(i.profileImages[profileImageID]);
+            case Interaction.Action.SetProfileImage:
+                OnSetProfileImage?.Invoke(i.dialogueDogFaces.dogFaces[profileImageID]);
                 _actionID++;
                 SetNextAction(currentInteraction, _actionID);
                 break;
-            case Interaction.Action.nextSentenceWithWait:
-                OnWaitforNextSentence?.Invoke(i.waitTime[waitID]);
+            case Interaction.Action.NextSentenceWithWait:
+                OnWaitforNextSentence?.Invoke(i.dialogueWaitingTime.waitTime[waitID]);
                 waitID++;
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.shakeCamera:
+            case Interaction.Action.ShakeCamera:
                 OnCameraShake?.Invoke();
                 Debug.LogWarning("Shake Camera needs to be implemented yet!");
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.playSFXImmediate:
-                AudioClip acImmediate = i.GetAudioClip(audioID);
+            case Interaction.Action.PlaySfxImmediate:
+                //TODO: Delegate and refactor
+                AudioClip acImmediate = i.dialogueSounds.audioclips[audioID];
                 PlaySFXImmediate(acImmediate);
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.playCharAnimWithWait:
+            case Interaction.Action.PlayCharAnimWithWait:
+                //TODO: Delegate and refactor
                 StartCoroutine(CharAnimWithWait());
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.disablePlayerMovement:
+            case Interaction.Action.DisablePlayerMovement:
+                //TODO: Delegate and refactor
                 DisablePlayerMovement();
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
-            case Interaction.Action.enablePlayerMovement:
+            case Interaction.Action.EnablePlayerMovement:
+                //TODO: Delegate and refactor
                 EnablePlayerMovement();
                 _actionID++;
                 SetNextAction(i, _actionID);
                 break;
+                //TODO: Make this bearable
             case Interaction.Action.TriggerVideoAnimationDay01:
                 TriggerVideoAnimationDay01();
                 _actionID++;
@@ -242,32 +257,18 @@ public class InteractionManager : MonoBehaviour
         }
     }
     
-    void DisablePlayerMovement()
+    IEnumerator PlaySFX(AudioClip ac)
     {
-        playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
+        float waitTime = ac.length;
+        
+        Debug.Log($"Playing {ac.name} with ID ${audioID} and wait time of {waitTime} seconds.");
+        
+        audioSource.clip = ac;
+        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
+        audioSource.Play();
+        yield return new WaitForSeconds(waitTime);
     }
     
-    void EnablePlayerMovement()
-    {
-        playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
-    }
-    
-    [SerializeField] private Animator fader;
-    IEnumerator PlayFadeAnimation(string animName)
-    {
-        fader.Play(animName);
-        yield return new WaitForSeconds(1);
-    }
-    
-    private void PlayCharacterAnimation()
-    {
-        DisablePlayerMovement();
-        string ac = currentInteraction.characterAnim[playerAnimID].name.ToString();
-        Debug.Log("Playing animation: " + ac);
-        playerAnim.Play(ac);
-    }
-
-    AudioSource audioSource;
     private void PlaySFXImmediate(AudioClip ac)
     {
         Debug.Log($"Playing {ac.name} with ID ${audioID}.");
@@ -279,10 +280,31 @@ public class InteractionManager : MonoBehaviour
         audioID++;
     }
     
+    void DisablePlayerMovement()
+    {
+        playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
+    }
+    
+    void EnablePlayerMovement()
+    {
+        playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
+    }
+    
+    
+    private void PlayCharacterAnimation()
+    {
+        DisablePlayerMovement();
+        string ac = currentInteraction.dialogueAnimations.characterAnim[playerAnimID].name.ToString();
+        Debug.Log("Playing animation: " + ac);
+        playerAnim.Play(ac);
+    }
+
+    AudioSource audioSource;
+    
     IEnumerator CharAnimWithWait()
     {
-        string ac = currentInteraction.characterAnim[playerAnimID].name.ToString();
-        float waitTime = currentInteraction.characterAnim[playerAnimID].length;
+        string ac = currentInteraction.dialogueAnimations.characterAnim[playerAnimID].name.ToString();
+        float waitTime = currentInteraction.dialogueAnimations.characterAnim[playerAnimID].length;
         
         Debug.Log("Playing animation: " + ac);
         
@@ -292,30 +314,12 @@ public class InteractionManager : MonoBehaviour
         playerAnimID++;
     }
 
-    IEnumerator PlaySFX(AudioClip ac, float waitTime)
-    {
-        Debug.Log($"Playing {ac.name} with ID ${audioID} and wait time of {waitTime} seconds.");
-
-        audioSource.clip = ac;
-        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
-        audioSource.Play();
-        yield return new WaitForSeconds(waitTime);
-        _actionID++;
-        audioID++;
-        SetNextAction(currentInteraction, _actionID);
-    }
 
     IEnumerator Wait(float time)
     {
-        Debug.Log($"Wait for {time} seconds.");
         yield return new WaitForSeconds(time);
     }
 
-    private void ResetIDs()
-    {
-        _actionID = 0;
-    }
-    
     public CutSceneManager cutSceneManager;
     
     private void TriggerVideoAnimationDay01()
@@ -352,5 +356,14 @@ public class InteractionManager : MonoBehaviour
         anim.Play("FadeOut");
         anim02.Play("FadeOut");
         anim03.Play("FadeOut");
+    }
+    private void ResetIDs()
+    {
+        waitID = 0;
+        audioID = 0;
+        playerAnimID = 0;
+        profileImageID = 0;
+
+        waitForSentence = false;
     }
 }

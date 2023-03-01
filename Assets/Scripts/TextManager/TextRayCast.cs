@@ -43,7 +43,7 @@ public class TextRayCast : MonoBehaviour
                     playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
 
                 Debug.Log("Interacting with: " + hit.collider.gameObject.name);
-                if (hit.collider.gameObject.TryGetComponent<DialogueTrigger>(out DialogueTrigger dT))
+                if (hit.collider.gameObject.TryGetComponent<InteractionTrigger>(out InteractionTrigger dT))
                 {
                     dT.TriggerDialogue();
                 }

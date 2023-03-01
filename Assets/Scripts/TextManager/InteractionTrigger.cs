@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(BoxCollider))]
-public class DialogueTrigger : MonoBehaviour
+public class InteractionTrigger : MonoBehaviour
 {
     public TriggerState triggerState = TriggerState.enabled;
-    public Interaction defaultDialogue;
-    public Interaction unlockedDialogue;
+    public Interaction defaultInteraction;
+    public Interaction unlockedInteraction;
 
-    private Interaction displayedDialogue;
-    BoxCollider bc;
+    private Interaction _activeInteraction;
+    BoxCollider _bc;
     
     [SerializeField] private bool playOnTrigger = false;
 
@@ -29,19 +30,18 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        bc = GetComponent<BoxCollider>();
+        _bc = GetComponent<BoxCollider>();
 
-        if (playOnTrigger) bc.isTrigger = true;
+        if (playOnTrigger) _bc.isTrigger = true;
         //Setting layer to Dialogue Layer;
         gameObject.layer = 6;
         
-
-        displayedDialogue = defaultDialogue;
+        _activeInteraction = defaultInteraction;
         SetTriggerState(triggerState);    
     }
     public void TriggerDialogue()
     {
-        DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, displayedDialogue.AssignedDialogue);
+        DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, _activeInteraction.assignedDialogue);
     }
 
     public enum TriggerState
@@ -57,23 +57,23 @@ public class DialogueTrigger : MonoBehaviour
         switch (tS)
         {
             case TriggerState.enabled:              
-                bc.enabled = true;
+                _bc.enabled = true;
                 triggerState = tS;
-                if (displayedDialogue.startOnAwake) TriggerDialogue();
+                if (_activeInteraction.StartOnAwake) TriggerDialogue();
                 break;
             case TriggerState.hidden:
-                bc.enabled = false;
+                _bc.enabled = false;
                 triggerState = tS;
                 break;
             case TriggerState.setDefaultText:
-                displayedDialogue = defaultDialogue;
+                _activeInteraction = defaultInteraction;
                 triggerState = tS;
-                if (displayedDialogue.startOnAwake) TriggerDialogue();
+                if (_activeInteraction.StartOnAwake) TriggerDialogue();
                 break;
             case TriggerState.setUnlockedText:
-                displayedDialogue = unlockedDialogue;
+                _activeInteraction = unlockedInteraction;
                 triggerState = tS;
-                if (displayedDialogue.startOnAwake) 
+                if (_activeInteraction.StartOnAwake) 
                     TriggerDialogue();
                 break;
         }
@@ -81,24 +81,22 @@ public class DialogueTrigger : MonoBehaviour
 
     private void EnableTrigger(List<Interaction> dList)
     {
-        if (dList.Contains(displayedDialogue))
+        if (dList.Contains(_activeInteraction))
             SetTriggerState(TriggerState.enabled);
     }
     private void DisableTrigger(List<Interaction> dList)
     {
-        if (dList.Contains(displayedDialogue))
+        if (dList.Contains(_activeInteraction))
             SetTriggerState(TriggerState.hidden);
     }
     private void UnlockText(List<Interaction> dList)
     {
-        
-        if (dList.Contains(unlockedDialogue))
+        if (dList.Contains(unlockedInteraction))
         {
             SetTriggerState(TriggerState.setUnlockedText);
         }
-            
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player" && playOnTrigger)

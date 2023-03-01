@@ -8,18 +8,18 @@ public class InteractComponent : MonoBehaviour
 {
     [field: SerializeField] private InteractComponent[] UnlockableInteractComponents { get; set; }
 
-    private DialogueTrigger DialogueTrigger { get; set; }
+    private InteractionTrigger InteractionTrigger { get; set; }
 
     private void Start()
     {
-        DialogueTrigger = GetComponent<DialogueTrigger>();
+        InteractionTrigger = GetComponent<InteractionTrigger>();
     }
 
     public void Lock()
     {
-        if (DialogueTrigger)
+        if (InteractionTrigger)
         {
-            DialogueTrigger.triggerState = DialogueTrigger.TriggerState.hidden;
+            InteractionTrigger.triggerState = InteractionTrigger.TriggerState.hidden;
         }
     }
 
@@ -27,7 +27,7 @@ public class InteractComponent : MonoBehaviour
     {
         foreach (var interactComponent in UnlockableInteractComponents)
         {
-            interactComponent.DialogueTrigger.triggerState = DialogueTrigger.TriggerState.enabled;
+            interactComponent.InteractionTrigger.triggerState = InteractionTrigger.TriggerState.enabled;
         }
     }
 }

@@ -73,10 +73,10 @@ public class DialogueManager : MonoBehaviour
         switch (selectedLanguage)
         {
             case Language.english:
-                Keywords = new List<string>(InteractionManager.Instance.currentInteraction.AssignedDialogue.eng_keywords);
+                Keywords = new List<string>(InteractionManager.Instance.currentInteraction.assignedDialogue.eng_keywords);
                 break;
             case Language.german:
-                Keywords = new List<string>(InteractionManager.Instance.currentInteraction.AssignedDialogue.ger_keywords);
+                Keywords = new List<string>(InteractionManager.Instance.currentInteraction.assignedDialogue.ger_keywords);
                 break;
         }
         
@@ -158,9 +158,9 @@ public class DialogueManager : MonoBehaviour
                 ResetIDs();
                 
                 // TODO: Current Interaction as a static variable in GameState?
-                EnableTextTrigger?.Invoke(InteractionManager.Instance.currentInteraction.AssignedDialogue.textToEnable);
-                DisableTextTrigger?.Invoke(InteractionManager.Instance.currentInteraction.AssignedDialogue.textToDisable);
-                UnlockText?.Invoke(InteractionManager.Instance.currentInteraction.AssignedDialogue.textToUnlock);
+                EnableTextTrigger?.Invoke(InteractionManager.Instance.currentInteraction.interactionToEnable);
+                DisableTextTrigger?.Invoke(InteractionManager.Instance.currentInteraction.interactionToDisable);
+                UnlockText?.Invoke(InteractionManager.Instance.currentInteraction.interactionToUnlock);
             }
         }
     }
@@ -173,7 +173,6 @@ public class DialogueManager : MonoBehaviour
 
         if (waitForSentence) WaitForSentence();
     }
-
 
     float sentenceWait = 0f;
     bool waitForSentence = false;
@@ -212,7 +211,7 @@ public class DialogueManager : MonoBehaviour
 
         Interaction _interaction = InteractionManager.Instance.currentInteraction;
         
-        _interaction.AssignedDialogue = d;
+        _interaction.assignedDialogue = d;
     
         sentences.Clear();
 
@@ -256,7 +255,6 @@ public class DialogueManager : MonoBehaviour
     private int profileImageID = 0;
     private int uiAnimID = 0;
    
-
     private int charAnimID = 0;
 
 
