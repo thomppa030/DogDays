@@ -6,15 +6,6 @@
             "id": "da82e770-8bbc-40ad-b16a-1dc0e0e2b5f0",
             "actions": [
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "88b107cf-c186-491c-a5f6-b1190cba8f73",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Move",
                     "type": "Value",
                     "id": "58e8ed99-c961-4005-9993-bb700b18a9b1",
@@ -31,20 +22,18 @@
                     "processors": "InvertVector2",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "TriggerInteraction",
+                    "type": "Button",
+                    "id": "baed6ab2-2ab4-451d-900b-7526ee426df1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "fd7bc63d-79d0-4fe9-878b-82c5cef85578",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "5ae29d3c-75ff-4200-85f9-fb454ff68f80",
@@ -108,6 +97,17 @@
                     "processors": "",
                     "groups": "Keyboard & Mouse",
                     "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d8b1f3a7-e91d-41d3-9fde-d4e032e26d92",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerInteraction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

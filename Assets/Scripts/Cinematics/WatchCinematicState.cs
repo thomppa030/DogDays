@@ -7,7 +7,6 @@ namespace Cinematics
          */
         public override void OnStateEnter()
         {
-            PlayerStateMachine.InputReader.SkipCinematicEvent += SkipCinematic;
         }
 
         private void SkipCinematic()

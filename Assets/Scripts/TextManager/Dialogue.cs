@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Data", menuName = "NewText", order = 1)]
 [HelpURL("https://docs.unity3d.com/Packages/com.unity.ugui@1.0/manual/StyledText.html")]
@@ -14,8 +13,10 @@ public class Dialogue : ScriptableObject
     [Header("Sentences")]
     [TextArea(3, 10)]
     public List<string> ger_sentences = new List<string>();
+    public List<string> ger_keywords = new List<string>();
     [TextArea(3, 10)]
     public List<string> eng_sentences = new List<string>();
+    public List<string> eng_keywords = new List<string>();
 
     [field: SerializeField] public string InfoText { get; set; }
     [field: SerializeField] public float InfoDisplayTime { get; set; }
@@ -71,6 +72,4 @@ public class Dialogue : ScriptableObject
     {
         return Audioclips[id];
     }
-
-    
 }

@@ -7,9 +7,7 @@ using UnityEngine.InputSystem;
     {
         public Vector2 MovementValue { get; private set; }
         
-        public event Action JumpEvent; 
-        
-        public event Action SkipCinematicEvent;
+        public event Action TriggerInteractionEvent;
 
         private DogDaysInput _input;
         private void Start()
@@ -25,23 +23,16 @@ using UnityEngine.InputSystem;
             _input.Player.Disable();
         }
         
-        public void OnJump(InputAction.CallbackContext context)
-        {
-            if (!context.performed) return;
-            
-            JumpEvent?.Invoke();
-        }
-
         public void OnMove(InputAction.CallbackContext context)
         {
              MovementValue = context.ReadValue<Vector2>();
         }
         
-        public void OnSkipCinematic(InputAction.CallbackContext context)
+        public void OnTriggerInteraction(InputAction.CallbackContext context)
         {
             if (!context.performed) return;
             
-            SkipCinematicEvent?.Invoke();
+            TriggerInteractionEvent?.Invoke();
         }
 
         public void OnLook(InputAction.CallbackContext context)

@@ -1,6 +1,4 @@
-﻿
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class PlayerStateBase : State
 {

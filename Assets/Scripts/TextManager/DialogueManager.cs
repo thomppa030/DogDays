@@ -3,32 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
-using UnityEngine.Video;
 
 public class DialogueManager : MonoBehaviour
 {
-    private Animator playerAnim;
-    [SerializeField] private Animator fader;
-    [SerializeField] private InfoDisplayer infoDisplayer;
-    [SerializeField] private CutSceneManager cutSceneManager;
+    public static DialogueManager Instance;
+    
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] Image dialogueFrame;
+    
+    [Tooltip("Container for the Face of the Dog in the Dialogue")]
     [SerializeField] Image profileImage;
     [SerializeField] float textSpeed = 0.03f;
     private TextState currentTextstate = TextState.none;
-    private Queue<string> sentences;
-    AudioSource audioSource;
-    public static DialogueManager instance;
     
+    private Queue<string> sentences;
     [field: SerializeField] private PlayerStateMachine playerStateMachine { get; set; }
-
     [field: SerializeField] private Image TextFieldImage {get; set; }
 
     public Language selectedLanguage = Language.german;
-
-    public Dialogue currentDialogue { get; set; }
 
     public enum Language
     {
@@ -38,26 +31,27 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
-        audioSource = GetComponent<AudioSource>();
+        Instance = this;
 
         sentences = new Queue<string>();
     }
 
     private void Start()
     {
-        if(GameState.Instance.GetCurrentState() == GameState.GameStates.Game)
-        {
-            playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        }
 
         if(dialogueText != null)
             dialogueText.text = "";
+        
+        InitializeInteractionEvents();
     }
 
-    public TextState GetCurrentTextState()
+    private void InitializeInteractionEvents()
     {
-        return currentTextstate;
+        InteractionManager.Instance.OnDialogueEnd += EndDialogue;
+        InteractionManager.Instance.OnDialogueStart += StartDialogue;
+        InteractionManager.Instance.OnEnableText += EnableText;
+        InteractionManager.Instance.OnDisableText += DisableText;
+        InteractionManager.Instance.OnNextSentence += DisplayNextSentence;
     }
 
     private void DisplayNextSentence()
@@ -67,9 +61,37 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = sentence;
         
         StartCoroutine(TypeSentence(sentence));
-
     }
     
+    void CheckForKeyword(string sentence)
+    {
+        // Divide sentence into words
+        string[] words = sentence.Split(' ');
+
+        List<string> Keywords = new List<string>();
+        
+        switch (selectedLanguage)
+        {
+            case Language.english:
+                Keywords = new List<string>(InteractionManager.Instance.currentDialogue.eng_keywords);
+                break;
+            case Language.german:
+                Keywords = new List<string>(InteractionManager.Instance.currentDialogue.ger_keywords);
+                break;
+        }
+        
+        // Loop through words
+        foreach (string word in words)
+        {
+            // Check if word is a keyword
+            if (Keywords.Contains(word))
+            {
+                // Replace word with bolded version
+                sentence = sentence.Replace(word, "<b><color=red>" + word + "</color></b>");
+            }
+        }
+    }
+
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
@@ -79,24 +101,13 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
         }
+        
+        CheckForKeyword(dialogueText.text);
     }
 
     public static Action<List<Dialogue>> EnableTextTrigger;
     public static Action<List<Dialogue>> DisableTextTrigger;
     public static Action<List<Dialogue>> UnlockText;
-    void EndDialogue()
-    {
-        ChangeTextstate(TextState.none, null);
-        LevelHandler.Instance.LockInteractables();
-        InteractComponent interactComponent = GetComponent<InteractComponent>();
-        
-        EnablePlayerMovement();
-        
-        if (interactComponent)
-        {
-            interactComponent.Unlock();
-        }
-    }
 
     private List<string> GetSentence(Dialogue d)
     {
@@ -146,9 +157,9 @@ public class DialogueManager : MonoBehaviour
 
                 ResetIDs();
 
-                EnableTextTrigger?.Invoke(currentDialogue.textToEnable);
-                DisableTextTrigger?.Invoke(currentDialogue.textToDisable);
-                UnlockText?.Invoke(currentDialogue.textToUnlock);
+                EnableTextTrigger?.Invoke(InteractionManager.Instance.currentDialogue.textToEnable);
+                DisableTextTrigger?.Invoke(InteractionManager.Instance.currentDialogue.textToDisable);
+                UnlockText?.Invoke(InteractionManager.Instance.currentDialogue.textToUnlock);
             }
         }
     }
@@ -157,15 +168,11 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentTextstate != TextState.onDisplay) return;
 
-        if(Input.GetButtonDown("Fire1") && 
-            currentDialogue.Actions[actionID] == Dialogue.Action.nextSentence)
-        {
-            actionID++;
-            SetNextAction(currentDialogue, actionID);
-        }
+        //TODO: Change to Inputaction
 
         if (waitForSentence) WaitForSentence();
     }
+
 
     float sentenceWait = 0f;
     bool waitForSentence = false;
@@ -187,7 +194,8 @@ public class DialogueManager : MonoBehaviour
         if(sentenceWait <= 0)
         {
             waitForSentence = false;
-            SetNextAction(currentDialogue, actionID);
+            // TODO: yeah uhm, this is a bit of a hack, will change it
+            InteractionManager.Instance.SetNextAction(InteractionManager.Instance.currentDialogue, InteractionManager.Instance._actionID);
         }
     }
 
@@ -197,16 +205,11 @@ public class DialogueManager : MonoBehaviour
         Debug.Log("Changed Language to: " + selectedLanguage);
     }
 
-    private void EnableProfileImage(bool enable)
-    {
-        profileImage.gameObject.SetActive(enable);
-    }
- 
     public void StartDialogue(Dialogue d)
     {
-        EnableProfileImage(false);
+        profileImage.gameObject.SetActive(false);
         ResetIDs();
-        currentDialogue = d;
+        InteractionManager.Instance.currentDialogue = d;
     
         sentences.Clear();
 
@@ -215,181 +218,44 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        SetNextAction(d, actionID);
+        InteractionManager.Instance.SetNextAction(d, InteractionManager.Instance._actionID);
     }
-
-    private void EnableText(bool enable)
+    
+    void EndDialogue()
     {
-        Debug.Log("Setting TextDisplay to: " + enable);
-        dialogueText.gameObject.SetActive(enable);
-        dialogueFrame.gameObject.SetActive(enable);
-        profileImage.gameObject.SetActive(enable);
+        ChangeTextstate(TextState.none, null);
+        LevelHandler.Instance.LockInteractables();
+        InteractComponent interactComponent = GetComponent<InteractComponent>();
+        
+        EnablePlayerMovement();
+        
+        if (interactComponent)
+        {
+            interactComponent.Unlock();
+        }
     }
 
-    private int actionID = 0;
+    private void EnableText()
+    {
+        dialogueText.gameObject.SetActive(true);
+        dialogueFrame.gameObject.SetActive(true);
+        profileImage.gameObject.SetActive(true);
+    }
+    private void DisableText()
+    {
+        dialogueText.gameObject.SetActive(false);
+        dialogueFrame.gameObject.SetActive(false);
+        profileImage.gameObject.SetActive(false);
+    }
+
     private int audioID = 0;
     private int waitID = 0;
     private int profileImageID = 0;
     private int uiAnimID = 0;
    
-    [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
 
     private int charAnimID = 0;
 
-    private void SetNextAction(Dialogue d, int id)
-    {
-        Debug.Log($"Play Action {d.Actions[id]} with ID {actionID}.");
-        switch (d.Actions[id])
-        {
-            case Dialogue.Action.nextSentence:
-                DisplayNextSentence();
-                break;
-            case Dialogue.Action.enableTextDisplay:
-                EnableText(true);
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.disableTextDisplay:
-                EnableText(false);
-                EnableProfileImage(false);
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.wait:
-                StartCoroutine(waitID >= d.waitTime.Length ? Wait(DefaultWaitingtime) : Wait(d.waitTime[waitID]));
-                break;
-            case Dialogue.Action.playSFX:
-                AudioClip ac = d.GetAudioClip(audioID);
-                float waitTime = ac.length;
-                StartCoroutine(PlaySFX(ac, waitTime));
-                break;
-            case Dialogue.Action.fadeIn:
-                StartCoroutine(PlayFadeAnimation("FadeIn"));
-                break;
-            case Dialogue.Action.fadeOut:
-                StartCoroutine(PlayFadeAnimation("FadeOut"));
-                break;
-            case Dialogue.Action.endDialogue:
-                EndDialogue();
-                break;
-            case Dialogue.Action.playCharAnim:
-                PlayCharacterAnimation();
-                break;
-            case Dialogue.Action.showInfoDisplay:
-                ShowInfoDisplay();
-                break;
-            case Dialogue.Action.disableInfoDisplay:
-                DisableInfoDisplay();
-                break;
-            case Dialogue.Action.loadNextScene:
-                EndDialogue();
-                int sceneID = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1;
-                Debug.Log("Loading scene of index: " + sceneID);
-                UnityEngine.SceneManagement.SceneManager.LoadScene(sceneID);
-                break;
-            case Dialogue.Action.disableProfileImage:
-                EnableProfileImage(false);
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.setProfileImage:
-                SetProfileImage(d.profileImages[profileImageID]);
-                break;
-            case Dialogue.Action.nextSentenceWithWait:
-                SetWaitTimeForSentence(d.waitTime[waitID]);
-                waitID++;
-                actionID++;
-                break;
-            case Dialogue.Action.shakeCamera:
-                Debug.LogWarning("Shake Camera needs to be implemented yet!");
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.playSFXImmediate:
-                AudioClip acImmediate = d.GetAudioClip(audioID);
-                PlaySFXImmediate(acImmediate);
-                break;
-            case Dialogue.Action.playCharAnimWithWait:
-                StartCoroutine(CharAnimWithWait());
-                break;
-            case Dialogue.Action.disablePlayerMovement:
-                DisablePlayerMovement();
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.enablePlayerMovement:
-                EnablePlayerMovement();
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.TriggerVideoAnimationDay01:
-                TriggerVideoAnimationDay01();
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.HideVideoPanel01Day01:
-                HideVideoPanel01Day01();
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.HideVideoPanel02Day01:
-                HideVideoPanel02Day01();
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.TriggerVideoAnimationDay02:
-                TriggerVideoAnimationDay02();
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.HideVideoPanelDay02:
-                HideVideoPanelDay02();
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-            case Dialogue.Action.ResetAnimID:
-                uiAnimID = 0;
-                actionID++;
-                SetNextAction(d, actionID);
-                break;
-        }
-    }
-
-    private void TriggerVideoAnimationDay01()
-    {
-        Animator anim = cutSceneManager.cutScenesDay01[uiAnimID];
-        anim.Play("FadeIn");
-        uiAnimID++;
-    }
-
-    private void HideVideoPanel01Day01()
-    {
-        Animator anim = cutSceneManager.cutScenesDay01[0];
-        anim.Play("FadeOut");
-    }
-    
-    private void HideVideoPanel02Day01()
-    {
-        Animator anim = cutSceneManager.cutScenesDay01[1];
-        anim.Play("FadeOut");
-    }
-    
-    private void TriggerVideoAnimationDay02()
-    {
-        Animator anim = cutSceneManager.cutScenesDay02[uiAnimID];
-        anim.Play("FadeIn");
-        uiAnimID++;
-    }
-
-    private void HideVideoPanelDay02()
-    {
-        Animator anim = cutSceneManager.cutScenesDay02[0];
-        Animator anim02 = cutSceneManager.cutScenesDay02[1];
-        Animator anim03 = cutSceneManager.cutScenesDay02[2];
-        anim.Play("FadeOut");
-        anim02.Play("FadeOut");
-        anim03.Play("FadeOut");
-    }
 
     private void EnablePlayerMovement()
     {
@@ -405,97 +271,25 @@ public class DialogueManager : MonoBehaviour
 
     private void SetProfileImage(Sprite s)
     {
-        EnableProfileImage(true);
+        profileImage.gameObject.SetActive(true);
         profileImage.sprite = s;
         profileImageID++;
-        actionID++;
-        SetNextAction(currentDialogue, actionID);
     }
-
-    private void ShowInfoDisplay()
+    
+    private void EnableProfileImage()
     {
-        infoDisplayer.ShowInfo(currentDialogue.InfoText, currentDialogue.InfoDisplayTime);
-        actionID++;
-        SetNextAction(currentDialogue, actionID);
+        profileImage.gameObject.SetActive(true);
     }
-    private void DisableInfoDisplay()
+    
+    private void DisableProfileImage()
     {
-        infoDisplayer.DisableInfo();
-        actionID++;
-        SetNextAction(currentDialogue, actionID);
+        profileImage.gameObject.SetActive(false);
     }
-
-    private void PlayCharacterAnimation()
-    {
-        DisablePlayerMovement();
-        string ac = currentDialogue.characterAnim[charAnimID].name.ToString();
-        Debug.Log("Playing animation: " + ac);
-        playerAnim.Play(ac);
-        charAnimID++;
-        actionID++;
-        SetNextAction(currentDialogue, actionID);
-    }
-
-    private void PlaySFXImmediate(AudioClip ac)
-    {
-        Debug.Log($"Playing {ac.name} with ID ${audioID}.");
-
-        audioSource.clip = ac;
-        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
-        audioSource.Play();
-
-        actionID++;
-        audioID++;
-        SetNextAction(currentDialogue, actionID);
-    }
-    IEnumerator CharAnimWithWait()
-    {
-        string ac = currentDialogue.characterAnim[charAnimID].name.ToString();
-        Debug.Log("Playing animation: " + ac);
-        playerAnim.Play(ac);
-        float waitTime = currentDialogue.characterAnim[charAnimID].length;
-        yield return new WaitForSeconds(waitTime);
-
-        charAnimID++;
-        actionID++;
-        SetNextAction(currentDialogue, actionID);
-    }
-
-    IEnumerator PlaySFX(AudioClip ac, float waitTime)
-    {
-        Debug.Log($"Playing {ac.name} with ID ${audioID} and wait time of {waitTime} seconds.");
-
-        audioSource.clip = ac;
-        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
-        audioSource.Play();
-        yield return new WaitForSeconds(waitTime);
-        actionID++;
-        audioID++;
-        SetNextAction(currentDialogue, actionID);
-    }
-    IEnumerator PlayFadeAnimation(string animName)
-    {
-        fader.Play(animName);
-        yield return new WaitForSeconds(1);
-        actionID++;
-        SetNextAction(currentDialogue, actionID);
-    }
-
-    IEnumerator Wait(float time)
-    {
-        Debug.Log($"Wait for {time} seconds.");
-        yield return new WaitForSeconds(time);
-        actionID++;
-        waitID++;
-        SetNextAction(currentDialogue, actionID);
-
-    }
-
+    
     private void ResetIDs()
     {
         waitID = 0;
         audioID = 0;
-        actionID = 0;
         charAnimID = 0;
         profileImageID = 0;
 

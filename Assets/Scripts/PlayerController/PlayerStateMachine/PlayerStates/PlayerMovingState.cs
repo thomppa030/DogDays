@@ -12,7 +12,6 @@ public class PlayerMovingState : PlayerStateBase
 
     public override void OnStateEnter()
     {
-        PlayerStateMachine.InputReader.JumpEvent += Jump;
         Debug.Log("Enter Player Test State");
     }
 
@@ -47,8 +46,6 @@ public class PlayerMovingState : PlayerStateBase
 
     public override void OnStateExit()
     {
-        PlayerStateMachine.InputReader.JumpEvent -= Jump;
-        Debug.Log("Exit Player Test State");
     }
     
     public Vector3 CalculateMovement()

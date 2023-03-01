@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 [RequireComponent(typeof(BoxCollider))]
 public class DialogueTrigger : MonoBehaviour
@@ -43,7 +41,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
-        DialogueManager.instance.ChangeTextstate(DialogueManager.TextState.onDisplay, displayedDialogue);
+        DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, displayedDialogue);
     }
 
     public enum TriggerState
