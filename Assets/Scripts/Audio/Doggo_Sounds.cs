@@ -47,7 +47,7 @@ public class Doggo_Sounds : MonoBehaviour
     
     public void Bark()
     {
-        AudioClip clip = GetRandomClip(BarkClips);
+        AudioClip clip = AudioUtilities.GetRandomClip(BarkClips);
             audioSource.PlayOneShot(clip);
         
     }
@@ -59,18 +59,14 @@ public class Doggo_Sounds : MonoBehaviour
 
     public void Whining()
     {
-        AudioClip clip = GetRandomClip(WhineClips);
+        AudioClip clip = AudioUtilities.GetRandomClip(WhineClips);
         audioSource.PlayOneShot(clip);
     }
     
     public void Sniff()
     {
-        AudioClip clip = GetRandomClip(SniffClips);
+        AudioClip clip = AudioUtilities.GetRandomClip(SniffClips);
         audioSource.PlayOneShot(clip);
     }
 
-    private AudioClip GetRandomClip(AudioClip[] AudioArray)
-    {
-        return AudioArray[UnityEngine.Random.Range(0, AudioArray.Length)];
-    }
 }

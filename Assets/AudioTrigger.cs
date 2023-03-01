@@ -2,18 +2,32 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AudioTrigger : MonoBehaviour
 {
-    [field: SerializeField] private AudioSource AudioSource { get; set; }
+    [Tooltip("If true, the audio clip will be played only once. If false, the audio clip will be played every time the player enters the trigger.")]
+    [field: SerializeField]
+    private bool IsOneShot { get; set; } = true;
+    
+    [field: SerializeField] private AudioClip SoundClip { get; set; }
+    
+    private AudioSource _audioSource;
+    
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log($"Play {AudioSource.clip.name} audio clip");
-            AudioSource.Play();
-            Destroy(this);
+            StartCoroutine(AudioUtilities.PlaySound(SoundClip));
+            if (IsOneShot)
+            {
+                Destroy(this);
+            }
         }
     }
 }
