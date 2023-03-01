@@ -1,5 +1,59 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &812766479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 812766480}
+  - component: {fileID: 812766481}
+  m_Layer: 5
+  m_Name: InteractionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &812766480
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812766479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7522961386335902883}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &812766481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812766479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d944a55373d3c4d8ced059d787b8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <playerStateMachine>k__BackingField: {fileID: 0}
+  <DefaultWaitingtime>k__BackingField: 1
+  _actionID: 0
+  infoDisplayer: {fileID: 483836047953948413}
+  cutSceneManager: {fileID: 7770721891757203552}
 --- !u!1 &523096455223000524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,8 +1528,8 @@ RectTransform:
   m_Father: {fileID: 7522961385392108096}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2851,9 +2905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a143e4292936d3b42a3a0fc98fd124d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fader: {fileID: 6679177142907793493}
-  infoDisplayer: {fileID: 483836047953948413}
-  cutSceneManager: {fileID: 7770721891757203552}
   dialogueText: {fileID: 7054385751355485933}
   dialogueFrame: {fileID: 4120213203208653453}
   profileImage: {fileID: 329564060742621327}
@@ -2861,7 +2912,6 @@ MonoBehaviour:
   <playerStateMachine>k__BackingField: {fileID: 0}
   <TextFieldImage>k__BackingField: {fileID: 4120213203208653453}
   selectedLanguage: 0
-  <DefaultWaitingtime>k__BackingField: 1
 --- !u!82 &2146839048179047169
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3676,6 +3726,7 @@ RectTransform:
   - {fileID: 7522961386705081038}
   - {fileID: 2595716323479039015}
   - {fileID: 7702012227786044455}
+  - {fileID: 812766480}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4035,7 +4086,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7522961386705081038
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4548,7 +4599,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

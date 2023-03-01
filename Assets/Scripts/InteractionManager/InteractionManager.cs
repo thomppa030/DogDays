@@ -11,7 +11,7 @@ public class InteractionManager : MonoBehaviour
 {
     public static InteractionManager Instance;
     
-    [field: SerializeField] private PlayerStateMachine playerStateMachine { get; }
+    [field: SerializeField] private PlayerStateMachine playerStateMachine { get; set; }
 
     //TODO: Refactor Interaction and Dialogue to adhere to the Single Responsibility Principle
     public Interaction currentInteraction { get; set; }
@@ -92,10 +92,13 @@ public class InteractionManager : MonoBehaviour
     
     private void TriggerNextAction()
     {
-        if (currentInteraction.Actions[_actionID] == Interaction.Action.NextSentence)
+        if (currentInteraction != null)
         {
-            _actionID++;
-            SetNextAction(currentInteraction, _actionID);
+            if (currentInteraction.Actions[_actionID] == Interaction.Action.NextSentence)
+            {
+                _actionID++;
+                SetNextAction(currentInteraction, _actionID);
+            }
         }
     }
 
