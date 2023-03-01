@@ -73,10 +73,10 @@ public class DialogueManager : MonoBehaviour
         switch (selectedLanguage)
         {
             case Language.english:
-                Keywords = new List<string>(InteractionManager.Instance.currentDialogue.eng_keywords);
+                Keywords = new List<string>(InteractionManager.Instance.currentInteraction.AssignedDialogue.eng_keywords);
                 break;
             case Language.german:
-                Keywords = new List<string>(InteractionManager.Instance.currentDialogue.ger_keywords);
+                Keywords = new List<string>(InteractionManager.Instance.currentInteraction.AssignedDialogue.ger_keywords);
                 break;
         }
         
@@ -105,9 +105,9 @@ public class DialogueManager : MonoBehaviour
         CheckForKeyword(dialogueText.text);
     }
 
-    public static Action<List<Dialogue>> EnableTextTrigger;
-    public static Action<List<Dialogue>> DisableTextTrigger;
-    public static Action<List<Dialogue>> UnlockText;
+    public static Action<List<Interaction>> EnableTextTrigger;
+    public static Action<List<Interaction>> DisableTextTrigger;
+    public static Action<List<Interaction>> UnlockText;
 
     private List<string> GetSentence(Dialogue d)
     {
@@ -156,10 +156,11 @@ public class DialogueManager : MonoBehaviour
                 currentTextstate = tS;
 
                 ResetIDs();
-
-                EnableTextTrigger?.Invoke(InteractionManager.Instance.currentDialogue.textToEnable);
-                DisableTextTrigger?.Invoke(InteractionManager.Instance.currentDialogue.textToDisable);
-                UnlockText?.Invoke(InteractionManager.Instance.currentDialogue.textToUnlock);
+                
+                // TODO: Current Interaction as a static variable in GameState?
+                EnableTextTrigger?.Invoke(InteractionManager.Instance.currentInteraction.AssignedDialogue.textToEnable);
+                DisableTextTrigger?.Invoke(InteractionManager.Instance.currentInteraction.AssignedDialogue.textToDisable);
+                UnlockText?.Invoke(InteractionManager.Instance.currentInteraction.AssignedDialogue.textToUnlock);
             }
         }
     }
@@ -182,7 +183,6 @@ public class DialogueManager : MonoBehaviour
         waitForSentence = true;
 
         DisplayNextSentence();
-
     }
 
     private void WaitForSentence()
@@ -195,7 +195,7 @@ public class DialogueManager : MonoBehaviour
         {
             waitForSentence = false;
             // TODO: yeah uhm, this is a bit of a hack, will change it
-            InteractionManager.Instance.SetNextAction(InteractionManager.Instance.currentDialogue, InteractionManager.Instance._actionID);
+            InteractionManager.Instance.SetNextAction(InteractionManager.Instance.currentInteraction, InteractionManager.Instance._actionID);
         }
     }
 
@@ -209,7 +209,10 @@ public class DialogueManager : MonoBehaviour
     {
         profileImage.gameObject.SetActive(false);
         ResetIDs();
-        InteractionManager.Instance.currentDialogue = d;
+
+        Interaction _interaction = InteractionManager.Instance.currentInteraction;
+        
+        _interaction.AssignedDialogue = d;
     
         sentences.Clear();
 
@@ -218,7 +221,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        InteractionManager.Instance.SetNextAction(d, InteractionManager.Instance._actionID);
+        InteractionManager.Instance.SetNextAction(_interaction, InteractionManager.Instance._actionID);
     }
     
     void EndDialogue()

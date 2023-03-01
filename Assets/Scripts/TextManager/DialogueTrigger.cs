@@ -5,10 +5,10 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public TriggerState triggerState = TriggerState.enabled;
-    public Dialogue defaultDialogue;
-    public Dialogue unlockedDialogue;
+    public Interaction defaultDialogue;
+    public Interaction unlockedDialogue;
 
-    private Dialogue displayedDialogue;
+    private Interaction displayedDialogue;
     BoxCollider bc;
     
     [SerializeField] private bool playOnTrigger = false;
@@ -41,7 +41,7 @@ public class DialogueTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
-        DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, displayedDialogue);
+        DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, displayedDialogue.AssignedDialogue);
     }
 
     public enum TriggerState
@@ -79,17 +79,17 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void EnableTrigger(List<Dialogue> dList)
+    private void EnableTrigger(List<Interaction> dList)
     {
         if (dList.Contains(displayedDialogue))
             SetTriggerState(TriggerState.enabled);
     }
-    private void DisableTrigger(List<Dialogue> dList)
+    private void DisableTrigger(List<Interaction> dList)
     {
         if (dList.Contains(displayedDialogue))
             SetTriggerState(TriggerState.hidden);
     }
-    private void UnlockText(List<Dialogue> dList)
+    private void UnlockText(List<Interaction> dList)
     {
         
         if (dList.Contains(unlockedDialogue))
