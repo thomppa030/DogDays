@@ -6,7 +6,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Doggo_Steps
+  m_Name: Doggo
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 24cba796e499c1644b5b741db3383046
   m_Children: []
@@ -15,7 +15,6 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: -5174445298245109953}
-  - {fileID: 6911018053546894944}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -107,25 +106,3 @@ AudioMixerSnapshotController:
     75418a380383f064382d3f05570c7cd8: 0.3
     1c2d07ed6462dcf47b046f771a088143: 0.72
   m_TransitionOverrides: {}
---- !u!244 &6911018053546894944
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: f71afca7b3f93814890172f98db7c6ea
-  m_EffectName: Compressor
-  m_MixLevel: b0f72c122be30dd4cb2b529e15bedcec
-  m_Parameters:
-  - m_ParameterName: Threshold
-    m_GUID: 4901170aa434ec649a27aad25d8abd6d
-  - m_ParameterName: Attack
-    m_GUID: dfa59b5170c577441aee157e31efc8c4
-  - m_ParameterName: Release
-    m_GUID: 699cdb5218dec8c48808c714154e5cc4
-  - m_ParameterName: Make up gain
-    m_GUID: 95564e1af379c3f469f94a64ff981de6
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0

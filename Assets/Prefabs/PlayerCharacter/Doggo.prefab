@@ -688,15 +688,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e85b769a9dbfb8241b22475b05bee5d1, type: 3}
   - {fileID: 8300000, guid: 13b5fe33e1fdbaa4da876479bdbc9c7b, type: 3}
   - {fileID: 8300000, guid: 3f6c42ed13028d74887c0dbe27ebfdcd, type: 3}
-  scratch: {fileID: 8300000, guid: 978ba9573ee223e43ac0255a5cbcdd79, type: 3}
   WhineClips:
   - {fileID: 8300000, guid: fb77886b3d5590b4c98d29d0bdb1a365, type: 3}
   - {fileID: 8300000, guid: f2bbe2b8c02d8014f9d1e4319c802ad6, type: 3}
   - {fileID: 8300000, guid: 10de1004afc737942a506b83165f8328, type: 3}
-  SniffClips:
-  - {fileID: 8300000, guid: 6c5624519cd181e44a01c9529b5a1a6d, type: 3}
-  - {fileID: 8300000, guid: 7120999c8b52faa47ae57318b5e3a5f4, type: 3}
-  - {fileID: 8300000, guid: 831598cecfffa2f49ad80a21ceacaa80, type: 3}
+  sniffDown: {fileID: 8300000, guid: 7b57d305ef8e2ee45bc5d7d7927d997a, type: 3}
+  sniffUp: {fileID: 8300000, guid: f21b9d87ff535484d86c153d80ecd01c, type: 3}
+  scratch: {fileID: 8300000, guid: 0f6ea2a6e51390f40b90779c17e6c11d, type: 3}
+  eat: {fileID: 8300000, guid: cdf80fb8680dded4d97e0c3899d3d5e1, type: 3}
 --- !u!143 &1990326144277739423
 CharacterController:
   m_ObjectHideFlags: 0

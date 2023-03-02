@@ -19,13 +19,13 @@ public class Doggo_Sounds : MonoBehaviour
     private AudioClip eat; 
     
 
-    private AudioSource audioSource;
-    private Animator animation;
+    private AudioSource _audioSource;
+    private Animator _animation;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-        animation = GetComponent<Animator>();
+        _audioSource = GetComponent<AudioSource>();
+        _animation = GetComponent<Animator>();
     }
 
    /* public void Step()
@@ -50,31 +50,31 @@ public class Doggo_Sounds : MonoBehaviour
     public void Bark()
     {
         AudioClip clip = AudioUtilities.GetRandomClip(BarkClips);
-        audioSource.PlayOneShot(clip);
+        _audioSource.PlayOneShot(clip);
     }
     
 
     public void Whining()
     {
         AudioClip clip = AudioUtilities.GetRandomClip(WhineClips);
-        audioSource.PlayOneShot(clip);
+        _audioSource.PlayOneShot(clip);
     }
     
     public void SniffDown()
     {
-        audioSource.PlayOneShot(sniffDown);
+        _audioSource.PlayOneShot(sniffDown);
     }
     public void SniffUp()
     {
-        audioSource.PlayOneShot(sniffUp);
+        _audioSource.PlayOneShot(sniffUp);
     }
     public void Scratching()
     {
-        audioSource.PlayOneShot(scratch);
+        _audioSource.PlayOneShot(scratch);
     }
     public void Eating()
     {
-        audioSource.PlayOneShot(eat);
+        _audioSource.PlayOneShot(eat);
     }
 
 }
