@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: TestAnimDataAsset
   m_EditorClassIdentifier: 
   characterAnim:
-  - {fileID: -8800096121142784032, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  - {fileID: 5690475035124461754, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
