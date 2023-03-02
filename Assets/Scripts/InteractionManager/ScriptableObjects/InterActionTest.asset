@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: InterActionTest
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0a00000000000000000000000000000008000000
+  <Actions>k__BackingField: 140000000a00000000000000000000000000000008000000
   assignedDialogue: {fileID: 11400000, guid: 76b9f427a57e57a48bb699b557b1c64d, type: 2}
   dialogueSounds: {fileID: 0}
   dialogueWaitingTime: {fileID: 0}
-  dialogueAnimations: {fileID: 0}
+  dialogueAnimations: {fileID: 11400000, guid: ba41029a24e618f4086e839d0eebad01, type: 2}
   dialogueDogFaces: {fileID: 0}
+  cameraFocalPoints: {fileID: 0}
   interactionToUnlock: []
   interactionToEnable: []
   interactionToDisable: []

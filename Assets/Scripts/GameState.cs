@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameState : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class GameState : MonoBehaviour
     }
     public GameStates currentState = GameStates.Menu;
     public static GameState Instance;
+    
+    public InteractionTrigger currentlyActiveInteraction;
 
     void Awake()
     {

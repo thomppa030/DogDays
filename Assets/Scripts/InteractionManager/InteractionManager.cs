@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 // TODO: Refactor this class to adhere to the Single Responsibility Principle
 /**
@@ -9,14 +10,15 @@ using UnityEngine;
 
 public class InteractionManager : MonoBehaviour
 {
+    //Singleton
     public static InteractionManager Instance;
     
-    [field: SerializeField] private PlayerStateMachine playerStateMachine { get; set; }
-
     //TODO: Refactor Interaction and Dialogue to adhere to the Single Responsibility Principle
-    public Interaction currentInteraction { get; set; }
+    public Interaction CurrentInteraction { get; set; }
     
     #region Delegate Declarations 
+    public delegate void SwitchCameraFocusDelegate();
+    public SwitchCameraFocusDelegate OnSwitchCameraFocus;
     public delegate void DialogueEndDelegate();
     public DialogueEndDelegate OnDialogueEnd;
     public delegate void DialogueStartDelegate(Dialogue d);
@@ -40,7 +42,7 @@ public class InteractionManager : MonoBehaviour
     public delegate void CameraShakeDelegate();
     public CameraShakeDelegate OnCameraShake;
     //TODO: Enum for ProfileImageID would need single class for ProfileImage and StateEnum?
-    public delegate void SetProfileImageDelegate(Sprite Image);
+    public delegate void SetProfileImageDelegate(Sprite image);
     public SetProfileImageDelegate OnSetProfileImage;
     public delegate void PlaySoundDelegate(AudioClip clip);
     public PlaySoundDelegate OnPlaySound;
@@ -50,28 +52,38 @@ public class InteractionManager : MonoBehaviour
     
     #endregion
     
-    private Animator playerAnim;
+    [field: SerializeField] private PlayerStateMachine PlayerStateMachine { get; set; }
+    private Animator _playerAnim;
     [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
 
-    public int _actionID = 0;
+    #region ID's
 
+    [field: SerializeField] public int ActionID { get; private set; } = 0;
+    private int _waitID = 0;
+    private int _audioID = 0;
+    private int _profileImageID = 0;
+    private int _uiAnimID = 0;
+    private int _playerAnimID = 0;
+    private int _cameraFocusID = 0;
+    #endregion
+    
     [SerializeField] private InfoDisplayer infoDisplayer;
     
     private void ShowInfoDisplay()
     {
-        infoDisplayer.ShowInfo(currentInteraction.assignedDialogue.InfoText,
-            currentInteraction.assignedDialogue.InfoDisplayTime);
-        _actionID++;
-        SetNextAction(currentInteraction, _actionID);
+        infoDisplayer.ShowInfo(CurrentInteraction.assignedDialogue.InfoText,
+            CurrentInteraction.assignedDialogue.InfoDisplayTime);
+        ActionID++;
+        SetNextAction(CurrentInteraction, ActionID);
     }
     private void DisableInfoDisplay()
     {
         infoDisplayer.DisableInfo();
-        _actionID++;
-        SetNextAction(currentInteraction, _actionID);
+        ActionID++;
+        SetNextAction(CurrentInteraction, ActionID);
     }
-    
-    private void Start()
+
+    private void OnEnable()
     {
         if (Instance == null)
         {
@@ -81,37 +93,35 @@ public class InteractionManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
         
         if(GameState.Instance.GetCurrentState() == GameState.GameStates.Game)
         {
-            playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+            _playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         }
         
-        playerStateMachine.InputReader.TriggerInteractionEvent += TriggerNextSentence;
+        PlayerStateMachine.InputReader.TriggerInteractionEvent += TriggerNextSentence;
     }
     
     private void TriggerNextSentence()
     {
         {
-            if (currentInteraction.Actions[_actionID] == Interaction.Action.NextSentence)
+            if (CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
             {
-                _actionID++;
-                SetNextAction(currentInteraction, _actionID);
+                ActionID++;
+                SetNextAction(CurrentInteraction, ActionID);
             }
         }
     }
-
-    private int waitID = 0;
-    private int audioID = 0;
-    private int profileImageID = 0;
-    private int uiAnimID = 0;
-    private int playerAnimID = 0;
     
-    private bool waitForSentence = false;
+    private bool _waitForSentence = false;
     
     public void SetNextAction(Interaction i, int id)
     {
-        Debug.Log($"Play Action {i.Actions[id]} with ID {_actionID}.");
+        Debug.Log($"Play Action {i.Actions[id]} with ID {ActionID}.");
         switch (i.Actions[id])
         {
             case Interaction.Action.NextSentence:
@@ -119,46 +129,47 @@ public class InteractionManager : MonoBehaviour
                 break;
             case  Interaction.Action.EnableTextDisplay:
                 OnEnableText?.Invoke();
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.DisableTextDisplay:
                 OnDisableText?.Invoke();
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.Wait:
-                OnDialogueWait?.Invoke(i.dialogueWaitingTime.waitTime[waitID]);
-                _actionID++;
-                SetNextAction(i, _actionID);
+                OnDialogueWait?.Invoke(i.dialogueWaitingTime.waitTime[_waitID]);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.PlaySfx:
-                AudioClip ac = i.dialogueSounds.audioclips[audioID];
+                AudioClip ac = i.dialogueSounds.audioclips[_audioID];
                 //TODO: PlaySoundDelegate should be refactored to a single class
                 OnPlaySound?.Invoke(ac);
-                _actionID++;
-                audioID++;
-                SetNextAction(currentInteraction, _actionID);
+                ActionID++;
+                _audioID++;
+                SetNextAction(CurrentInteraction, ActionID);
                 break;
             case Interaction.Action.FadeIn:
                 OnFadeIn?.Invoke();
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.FadeOut:
                 OnFadeOut?.Invoke();
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.EndDialogue:
+                OnSwitchCameraFocus?.Invoke();
                 OnDialogueEnd?.Invoke();
                 ResetIDs();
                 break;
             case Interaction.Action.PlayCharAnim:
                 PlayCharacterAnimation();
-                playerAnimID++;
-                _actionID++;
-                SetNextAction(currentInteraction, _actionID);
+                _playerAnimID++;
+                ActionID++;
+                SetNextAction(CurrentInteraction, ActionID);
                 break;
             case Interaction.Action.ShowInfoDisplay:
                 //TODO: Refactor to a single class
@@ -177,192 +188,130 @@ public class InteractionManager : MonoBehaviour
                 break;
             case Interaction.Action.DisableProfileImage:
                 OnDisableProfileImage?.Invoke();
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.SetProfileImage:
-                OnSetProfileImage?.Invoke(i.dialogueDogFaces.dogFaces[profileImageID]);
-                _actionID++;
-                SetNextAction(currentInteraction, _actionID);
+                OnSetProfileImage?.Invoke(i.dialogueDogFaces.dogFaces[_profileImageID]);
+                ActionID++;
+                SetNextAction(CurrentInteraction, ActionID);
                 break;
             case Interaction.Action.NextSentenceWithWait:
-                OnWaitforNextSentence?.Invoke(i.dialogueWaitingTime.waitTime[waitID]);
-                waitID++;
-                _actionID++;
-                SetNextAction(i, _actionID);
+                OnWaitforNextSentence?.Invoke(i.dialogueWaitingTime.waitTime[_waitID]);
+                _waitID++;
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.ShakeCamera:
                 OnCameraShake?.Invoke();
                 Debug.LogWarning("Shake Camera needs to be implemented yet!");
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.PlaySfxImmediate:
                 //TODO: Delegate and refactor
-                AudioClip acImmediate = i.dialogueSounds.audioclips[audioID];
+                AudioClip acImmediate = i.dialogueSounds.audioclips[_audioID];
                 PlaySFXImmediate(acImmediate);
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.PlayCharAnimWithWait:
                 //TODO: Delegate and refactor
                 StartCoroutine(CharAnimWithWait());
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.DisablePlayerMovement:
                 //TODO: Delegate and refactor
                 DisablePlayerMovement();
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.EnablePlayerMovement:
                 //TODO: Delegate and refactor
                 EnablePlayerMovement();
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
-                //TODO: Make this bearable
-            case Interaction.Action.TriggerVideoAnimationDay01:
-                TriggerVideoAnimationDay01();
-                _actionID++;
-                SetNextAction(i, _actionID);
-                break;
-            case Interaction.Action.HideVideoPanel01Day01:
-                HideVideoPanel01Day01();
-                _actionID++;
-                SetNextAction(i, _actionID);
-                break;
-            case Interaction.Action.HideVideoPanel02Day01:
-                HideVideoPanel02Day01();
-                _actionID++;
-                SetNextAction(i, _actionID);
-                break;
-            case Interaction.Action.TriggerVideoAnimationDay02:
-                TriggerVideoAnimationDay02();
-                _actionID++;
-                SetNextAction(i, _actionID);
-                break;
-            case Interaction.Action.HideVideoPanelDay02:
-                HideVideoPanelDay02();
-                _actionID++;
-                SetNextAction(i, _actionID);
-                break;
-            case Interaction.Action.ResetAnimID:
-                uiAnimID = 0;
-                _actionID++;
-                SetNextAction(i, _actionID);
+            case Interaction.Action.SwitchCameraFocus:
+                OnSwitchCameraFocus?.Invoke();
+                ActionID++;
+                SetNextAction(i, ActionID);
                 break;
         }
     }
     
+    //TODO: Refactor to a single class
+    AudioSource _audioSource;
     IEnumerator PlaySFX(AudioClip ac)
     {
         float waitTime = ac.length;
         
-        Debug.Log($"Playing {ac.name} with ID ${audioID} and wait time of {waitTime} seconds.");
+        Debug.Log($"Playing {ac.name} with ID ${_audioID} and wait time of {waitTime} seconds.");
         
-        audioSource.clip = ac;
-        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
-        audioSource.Play();
+        _audioSource.clip = ac;
+        _audioSource.volume = MenuHandler.singleton.GetSoundVolume();
+        _audioSource.Play();
         yield return new WaitForSeconds(waitTime);
     }
     
     private void PlaySFXImmediate(AudioClip ac)
     {
-        Debug.Log($"Playing {ac.name} with ID ${audioID}.");
+        Debug.Log($"Playing {ac.name} with ID ${_audioID}.");
 
-        audioSource.clip = ac;
-        audioSource.volume = MenuHandler.singleton.GetSoundVolume();
-        audioSource.Play();
+        _audioSource.clip = ac;
+        _audioSource.volume = MenuHandler.singleton.GetSoundVolume();
+        _audioSource.Play();
 
-        audioID++;
+        _audioID++;
     }
     
+    //TODO: Refactor to a single class
     void DisablePlayerMovement()
     {
-        playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
+        PlayerStateMachine.SwitchState(new PlayerInteractState(PlayerStateMachine));
     }
     
     void EnablePlayerMovement()
     {
-        playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
+        PlayerStateMachine.SwitchState(new PlayerMovingState(PlayerStateMachine));
     }
-    
     
     private void PlayCharacterAnimation()
     {
         DisablePlayerMovement();
-        string ac = currentInteraction.dialogueAnimations.characterAnim[playerAnimID].name.ToString();
+        string ac = CurrentInteraction.dialogueAnimations.characterAnim[_playerAnimID].name.ToString();
         Debug.Log("Playing animation: " + ac);
-        playerAnim.Play(ac);
+        _playerAnim.Play(ac);
     }
 
-    AudioSource audioSource;
     
     IEnumerator CharAnimWithWait()
     {
-        string ac = currentInteraction.dialogueAnimations.characterAnim[playerAnimID].name.ToString();
-        float waitTime = currentInteraction.dialogueAnimations.characterAnim[playerAnimID].length;
+        string ac = CurrentInteraction.dialogueAnimations.characterAnim[_playerAnimID].name.ToString();
+        float waitTime = CurrentInteraction.dialogueAnimations.characterAnim[_playerAnimID].length;
         
         Debug.Log("Playing animation: " + ac);
         
-        playerAnim.Play(ac);
+        _playerAnim.Play(ac);
         yield return new WaitForSeconds(waitTime);
         
-        playerAnimID++;
+        _playerAnimID++;
     }
-
 
     IEnumerator Wait(float time)
     {
         yield return new WaitForSeconds(time);
     }
 
-    public CutSceneManager cutSceneManager;
-    
-    private void TriggerVideoAnimationDay01()
-    {
-        Animator anim = cutSceneManager.cutScenesDay01[uiAnimID];
-        anim.Play("FadeIn");
-        uiAnimID++;
-    }
-
-    private void HideVideoPanel01Day01()
-    {
-        Animator anim = cutSceneManager.cutScenesDay01[0];
-        anim.Play("FadeOut");
-    }
-    
-    private void HideVideoPanel02Day01()
-    {
-        Animator anim = cutSceneManager.cutScenesDay01[1];
-        anim.Play("FadeOut");
-    }
-    
-    private void TriggerVideoAnimationDay02()
-    {
-        Animator anim = cutSceneManager.cutScenesDay02[uiAnimID];
-        anim.Play("FadeIn");
-        uiAnimID++;
-    }
-
-    private void HideVideoPanelDay02()
-    {
-        Animator anim = cutSceneManager.cutScenesDay02[0];
-        Animator anim02 = cutSceneManager.cutScenesDay02[1];
-        Animator anim03 = cutSceneManager.cutScenesDay02[2];
-        anim.Play("FadeOut");
-        anim02.Play("FadeOut");
-        anim03.Play("FadeOut");
-    }
     private void ResetIDs()
     {
-        waitID = 0;
-        audioID = 0;
-        playerAnimID = 0;
-        profileImageID = 0;
+        _waitID = 0;
+        _audioID = 0;
+        _playerAnimID = 0;
+        _profileImageID = 0;
+        _cameraFocusID = 0;
 
-        waitForSentence = false;
+        _waitForSentence = false;
     }
 }

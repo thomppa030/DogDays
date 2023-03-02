@@ -73,10 +73,10 @@ public class DialogueManager : MonoBehaviour
         switch (selectedLanguage)
         {
             case Language.english:
-                Keywords = new List<string>(InteractionManager.Instance.currentInteraction.assignedDialogue.eng_keywords);
+                Keywords = new List<string>(InteractionManager.Instance.CurrentInteraction.assignedDialogue.eng_keywords);
                 break;
             case Language.german:
-                Keywords = new List<string>(InteractionManager.Instance.currentInteraction.assignedDialogue.ger_keywords);
+                Keywords = new List<string>(InteractionManager.Instance.CurrentInteraction.assignedDialogue.ger_keywords);
                 break;
         }
         
@@ -158,9 +158,9 @@ public class DialogueManager : MonoBehaviour
                 ResetIDs();
                 
                 // TODO: Current Interaction as a static variable in GameState?
-                EnableTextTrigger?.Invoke(InteractionManager.Instance.currentInteraction.interactionToEnable);
-                DisableTextTrigger?.Invoke(InteractionManager.Instance.currentInteraction.interactionToDisable);
-                UnlockText?.Invoke(InteractionManager.Instance.currentInteraction.interactionToUnlock);
+                EnableTextTrigger?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToEnable);
+                DisableTextTrigger?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToDisable);
+                UnlockText?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToUnlock);
             }
         }
     }
@@ -194,7 +194,7 @@ public class DialogueManager : MonoBehaviour
         {
             waitForSentence = false;
             // TODO: yeah uhm, this is a bit of a hack, will change it
-            InteractionManager.Instance.SetNextAction(InteractionManager.Instance.currentInteraction, InteractionManager.Instance._actionID);
+            InteractionManager.Instance.SetNextAction(InteractionManager.Instance.CurrentInteraction, InteractionManager.Instance.ActionID);
         }
     }
 
@@ -209,7 +209,7 @@ public class DialogueManager : MonoBehaviour
         profileImage.gameObject.SetActive(false);
         ResetIDs();
 
-        Interaction _interaction = InteractionManager.Instance.currentInteraction;
+        Interaction _interaction = InteractionManager.Instance.CurrentInteraction;
         
         _interaction.assignedDialogue = d;
     
@@ -220,7 +220,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
-        InteractionManager.Instance.SetNextAction(_interaction, InteractionManager.Instance._actionID);
+        InteractionManager.Instance.SetNextAction(_interaction, InteractionManager.Instance.ActionID);
     }
     
     void EndDialogue()
@@ -263,11 +263,11 @@ public class DialogueManager : MonoBehaviour
         if (playerStateMachine != null)
             playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
     }
-
+    
     private void DisablePlayerMovement()
     {
         if (playerStateMachine != null)
-            playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
+            playerStateMachine.SwitchState(new PlayerInteractState(playerStateMachine));
     }
 
     private void SetProfileImage(Sprite s)

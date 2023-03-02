@@ -4,15 +4,13 @@ public class PlayerMovingState : PlayerStateBase
 {
     private static readonly int SpeedF = Animator.StringToHash("Speed_f");
 
-    private const float AnimationDampTime = 0.1f;
-
     public PlayerMovingState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
     {
     }
 
     public override void OnStateEnter()
     {
-        Debug.Log("Enter Player Test State");
+        Debug.Log("Enter Player Moving State");
     }
 
     public override void Tick(float deltaTime)
@@ -36,12 +34,6 @@ public class PlayerMovingState : PlayerStateBase
     {
         PlayerStateMachine.transform.rotation = Quaternion.Lerp(PlayerStateMachine.transform.rotation,
             Quaternion.LookRotation(movement), deltaTime * PlayerStateMachine.RotationDampening);
-    }
-
-
-    private void Jump()
-    {
-            
     }
 
     public override void OnStateExit()

@@ -40,11 +40,12 @@ public class TextRayCast : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 if (playerStateMachine != null)
-                    playerStateMachine.SwitchState(new PlayerReadingState(playerStateMachine));
+                    playerStateMachine.SwitchState(new PlayerInteractState(playerStateMachine));
 
                 Debug.Log("Interacting with: " + hit.collider.gameObject.name);
                 if (hit.collider.gameObject.TryGetComponent<InteractionTrigger>(out InteractionTrigger dT))
                 {
+                    GameState.Instance.currentlyActiveInteraction = dT;
                     dT.TriggerDialogue();
                 }
                 else

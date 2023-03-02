@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerReadingState : PlayerStateBase
+public class PlayerInteractState : PlayerStateBase
 {
-    public PlayerReadingState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
+    public PlayerInteractState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
     {
+        
     }
-
+    
     public override void OnStateEnter()
     {
     }

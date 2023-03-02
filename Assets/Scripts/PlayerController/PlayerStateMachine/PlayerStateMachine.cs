@@ -1,4 +1,5 @@
 ﻿using System;
+using Cinemachine;
 using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
@@ -10,6 +11,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float MovementSpeed { get; private set; }
     [field: SerializeField] public float RotationDampening { get; private set; }
     [field: SerializeField] public Transform MainCameraTransform { get; private set; }
+    
     
     private GameObject _camera;
 

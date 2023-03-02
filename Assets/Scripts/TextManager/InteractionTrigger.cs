@@ -13,7 +13,14 @@ public class InteractionTrigger : MonoBehaviour
     BoxCollider _bc;
     
     [SerializeField] private bool playOnTrigger = false;
+    
+    public Transform[] cameraFocalPoints;
 
+    /**
+     * IF in Unity a Singleton is created in awake, it will be destroyed when a new scene is loaded.
+     * If you want to keep the Singleton between scenes, you need to use the OnEnable and OnDisable methods.
+     * 
+     */
     private void OnEnable()
     {
         DialogueManager.EnableTextTrigger += EnableTrigger;
@@ -41,7 +48,7 @@ public class InteractionTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
-        InteractionManager.Instance.currentInteraction = _activeInteraction;
+        InteractionManager.Instance.CurrentInteraction = _activeInteraction;
         DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, _activeInteraction.assignedDialogue);
     }
 
