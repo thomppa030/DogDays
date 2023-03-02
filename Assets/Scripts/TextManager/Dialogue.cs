@@ -19,5 +19,4 @@ public class Dialogue : ScriptableObject
 
     [field: SerializeField] public string InfoText { get; set; }
     [field: SerializeField] public float InfoDisplayTime { get; set; }
-
 }

@@ -41,6 +41,7 @@ public class InteractionTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
+        InteractionManager.Instance.currentInteraction = _activeInteraction;
         DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, _activeInteraction.assignedDialogue);
     }
 

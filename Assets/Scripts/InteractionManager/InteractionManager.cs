@@ -87,12 +87,11 @@ public class InteractionManager : MonoBehaviour
             playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         }
         
-        playerStateMachine.InputReader.TriggerInteractionEvent += TriggerNextAction;
+        playerStateMachine.InputReader.TriggerInteractionEvent += TriggerNextSentence;
     }
     
-    private void TriggerNextAction()
+    private void TriggerNextSentence()
     {
-        if (currentInteraction != null)
         {
             if (currentInteraction.Actions[_actionID] == Interaction.Action.NextSentence)
             {
@@ -117,8 +116,6 @@ public class InteractionManager : MonoBehaviour
         {
             case Interaction.Action.NextSentence:
                 OnNextSentence?.Invoke();
-                _actionID++;
-                SetNextAction(i, _actionID);
                 break;
             case  Interaction.Action.EnableTextDisplay:
                 OnEnableText?.Invoke();
@@ -155,8 +152,7 @@ public class InteractionManager : MonoBehaviour
                 break;
             case Interaction.Action.EndDialogue:
                 OnDialogueEnd?.Invoke();
-                _actionID++;
-                SetNextAction(i, _actionID);
+                ResetIDs();
                 break;
             case Interaction.Action.PlayCharAnim:
                 PlayCharacterAnimation();

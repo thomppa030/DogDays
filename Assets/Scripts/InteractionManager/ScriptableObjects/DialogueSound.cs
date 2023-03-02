@@ -17,12 +17,6 @@ public class DialogueSound : ScriptableObject
     public AudioClip[] audioclips;
 }
 
-[CreateAssetMenu(fileName = "Data", menuName = "new DialogueAnimations Asset", order = 4)]
-public class DialogueAnimations : ScriptableObject
-{
-    [Header("Animations")] [SerializeField]
-    public AnimationClip[] characterAnim;
-}
 
 [CreateAssetMenu(fileName = "Data", menuName = "new DialogueDogFaces Asset", order = 5)]
 public class DialogueDogFaces : ScriptableObject
