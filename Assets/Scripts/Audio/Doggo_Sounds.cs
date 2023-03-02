@@ -8,11 +8,15 @@ public class Doggo_Sounds : MonoBehaviour
     [SerializeField]
     private AudioClip[] BarkClips;
     [SerializeField]
-    private AudioClip scratch; 
-    [SerializeField]
     private AudioClip[] WhineClips;
     [SerializeField]
-    private AudioClip[] SniffClips;
+    private AudioClip sniffDown;
+    [SerializeField]
+    private AudioClip sniffUp;
+    [SerializeField]
+    private AudioClip scratch; 
+    [SerializeField]
+    private AudioClip eat; 
     
 
     private AudioSource audioSource;
@@ -46,14 +50,9 @@ public class Doggo_Sounds : MonoBehaviour
     public void Bark()
     {
         AudioClip clip = AudioUtilities.GetRandomClip(BarkClips);
-            audioSource.PlayOneShot(clip);
-        
+        audioSource.PlayOneShot(clip);
     }
-
-    public void Scratching()
-    {
-        audioSource.PlayOneShot(scratch);
-    }
+    
 
     public void Whining()
     {
@@ -61,10 +60,21 @@ public class Doggo_Sounds : MonoBehaviour
         audioSource.PlayOneShot(clip);
     }
     
-    public void Sniff()
+    public void SniffDown()
     {
-        AudioClip clip = AudioUtilities.GetRandomClip(SniffClips);
-        audioSource.PlayOneShot(clip);
+        audioSource.PlayOneShot(sniffDown);
+    }
+    public void SniffUp()
+    {
+        audioSource.PlayOneShot(sniffUp);
+    }
+    public void Scratching()
+    {
+        audioSource.PlayOneShot(scratch);
+    }
+    public void Eating()
+    {
+        audioSource.PlayOneShot(eat);
     }
 
 }

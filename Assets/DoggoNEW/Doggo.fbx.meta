@@ -92,14 +92,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.14792925
-        functionName: Sniff
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.58777106
-        functionName: Sniff
+        functionName: SniffDown
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -108,7 +101,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+      additiveReferencePoseFrame: 3
     - serializedVersion: 16
       name: SniffUp
       takeName: Scene
@@ -135,7 +128,7 @@ ModelImporter:
       curves: []
       events:
       - time: 0.22879665
-        functionName: Sniff
+        functionName: SniffUp
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
@@ -509,7 +502,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.28068256
+        functionName: Eating
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
