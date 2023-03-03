@@ -726,7 +726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5f17936ea3401baeb83d805731b352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InputReader>k__BackingField: {fileID: 0}
+  <Bark>k__BackingField: {fileID: 8648652658064668642, guid: 55328b72f2a103943ad1f463bf9edc03, type: 3}
+  <InputReader>k__BackingField: {fileID: 4809704768593245595, guid: 960c42c6f1cbecf429d79fa9d4e5729f, type: 3}
   <Controller>k__BackingField: {fileID: 1990326144277739423}
   <ForceReceiver>k__BackingField: {fileID: 4946270562110072564}
   <Animator>k__BackingField: {fileID: 1990326144191762594}
