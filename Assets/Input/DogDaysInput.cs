@@ -46,9 +46,18 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""TriggerInteraction"",
+                    ""name"": ""SkipSentence"",
                     ""type"": ""Button"",
                     ""id"": ""baed6ab2-2ab4-451d-900b-7526ee426df1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""3d4fee90-6380-4db9-808c-dfff64fbf321"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -129,7 +138,18 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""TriggerInteraction"",
+                    ""action"": ""SkipSentence"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5db29ce1-f34b-4996-b0a8-bb44f21efb52"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -159,7 +179,8 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
-        m_Player_TriggerInteraction = m_Player.FindAction("TriggerInteraction", throwIfNotFound: true);
+        m_Player_SkipSentence = m_Player.FindAction("SkipSentence", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -221,14 +242,16 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Look;
-    private readonly InputAction m_Player_TriggerInteraction;
+    private readonly InputAction m_Player_SkipSentence;
+    private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @DogDaysInput m_Wrapper;
         public PlayerActions(@DogDaysInput wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Look => m_Wrapper.m_Player_Look;
-        public InputAction @TriggerInteraction => m_Wrapper.m_Player_TriggerInteraction;
+        public InputAction @SkipSentence => m_Wrapper.m_Player_SkipSentence;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -244,9 +267,12 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
                 @Look.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
                 @Look.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLook;
-                @TriggerInteraction.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTriggerInteraction;
-                @TriggerInteraction.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTriggerInteraction;
-                @TriggerInteraction.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTriggerInteraction;
+                @SkipSentence.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkipSentence;
+                @SkipSentence.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkipSentence;
+                @SkipSentence.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSkipSentence;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -257,9 +283,12 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
                 @Look.started += instance.OnLook;
                 @Look.performed += instance.OnLook;
                 @Look.canceled += instance.OnLook;
-                @TriggerInteraction.started += instance.OnTriggerInteraction;
-                @TriggerInteraction.performed += instance.OnTriggerInteraction;
-                @TriggerInteraction.canceled += instance.OnTriggerInteraction;
+                @SkipSentence.started += instance.OnSkipSentence;
+                @SkipSentence.performed += instance.OnSkipSentence;
+                @SkipSentence.canceled += instance.OnSkipSentence;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -277,6 +306,7 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnTriggerInteraction(InputAction.CallbackContext context);
+        void OnSkipSentence(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
