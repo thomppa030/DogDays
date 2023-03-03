@@ -764,15 +764,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6749993999958164297, guid: c70ac26b467b6604e907ae51e7149309, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1735307
+      value: 0.17353068
       objectReference: {fileID: 0}
     - target: {fileID: 6749993999958164297, guid: c70ac26b467b6604e907ae51e7149309, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.16848442
+      value: 0.16848436
       objectReference: {fileID: 0}
     - target: {fileID: 6749993999958164297, guid: c70ac26b467b6604e907ae51e7149309, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.030146405
+      value: -0.030146392
       objectReference: {fileID: 0}
     - target: {fileID: 6749993999958164297, guid: c70ac26b467b6604e907ae51e7149309, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1150,11 +1150,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5776464791018071818, guid: aa2eae9e646a61b418d04cc236e5af9b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.16848439
+      value: 0.16848436
       objectReference: {fileID: 0}
     - target: {fileID: 5776464791018071818, guid: aa2eae9e646a61b418d04cc236e5af9b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.030146398
+      value: -0.03014639
       objectReference: {fileID: 0}
     - target: {fileID: 5776464791388464560, guid: aa2eae9e646a61b418d04cc236e5af9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1994,6 +1994,10 @@ PrefabInstance:
       propertyPath: <Bark>k__BackingField
       value: 
       objectReference: {fileID: 8648652658064668642, guid: 55328b72f2a103943ad1f463bf9edc03, type: 3}
+    - target: {fileID: 3106571228400802251, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
+      propertyPath: <BarkAnim>k__BackingField
+      value: 
+      objectReference: {fileID: -8800096121142784032, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
     - target: {fileID: 3106571228400802251, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
       propertyPath: <InputReader>k__BackingField
       value: 
@@ -3852,5 +3856,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8648652658064668642, guid: 55328b72f2a103943ad1f463bf9edc03, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 55328b72f2a103943ad1f463bf9edc03, type: 3}

@@ -10,7 +10,8 @@ public class PlayerBarkingstate : PlayerStateBase
 
     public override void OnStateEnter()
     {
-        PlayerStateMachine.Bark.TriggerBark();
+        Bark bark = new Bark(PlayerStateMachine, PlayerStateMachine.Animator, PlayerStateMachine.BarkAnim);
+        bark.TriggerBark();
     }
 
     public override void Tick(float deltaTime)

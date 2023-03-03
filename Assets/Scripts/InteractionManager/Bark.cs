@@ -3,35 +3,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bark : MonoBehaviour
+public class Bark
 {
     private PlayerStateMachine playerStateMachine;
     private Animator anim;
-    [field: SerializeField] private AnimationClip Barkanim { get; set; }
-    private void Start()
+    private AnimationClip Barkanim;
+
+    public Bark(PlayerStateMachine psm, Animator a, AnimationClip barkAnimation)
     {
-        playerStateMachine = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStateMachine>();
-        anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
+        playerStateMachine = psm;
+        anim = a;
+        Barkanim = barkAnimation;
     }
     public void TriggerBark()
     {
-        if (Barkanim != null)
-        {
-            anim.Play(Barkanim.name);
-            //check if the animation is playing
-            if (anim.GetCurrentAnimatorStateInfo(0).IsName(Barkanim.name))
-            {
-                //check if the animation is playing
-                if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
-                {
-                    //animation is done playing
-                    playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
-                }
-            }
-        }
-        else
-        {
-            Debug.Log("No bark animation found!");
-        }
+        playerStateMachine.StartCoroutine(PlayBarkAnim());
+    }
+    
+    IEnumerator PlayBarkAnim()
+    {
+        anim.Play(Barkanim.name);
+        yield return new WaitForSeconds(Barkanim.length);
+        playerStateMachine.SwitchState(new PlayerMovingState(playerStateMachine));
     }
 }

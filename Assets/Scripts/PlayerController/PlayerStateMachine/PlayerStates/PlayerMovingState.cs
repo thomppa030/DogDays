@@ -2,6 +2,7 @@
 
 public class PlayerMovingState : PlayerStateBase
 {
+    Vector3 _movement;
     private static readonly int SpeedF = Animator.StringToHash("Speed_f");
 
     public PlayerMovingState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
@@ -10,6 +11,8 @@ public class PlayerMovingState : PlayerStateBase
 
     public override void OnStateEnter()
     {
+        _movement = Vector3.zero;
+        
         Debug.Log("Enter Player Moving State");
         
         PlayerStateMachine.InputReader.InteractEvent += Interact;
@@ -17,9 +20,9 @@ public class PlayerMovingState : PlayerStateBase
 
     public override void Tick(float deltaTime)
     {
-        Vector3 movement = CalculateMovement();
+        _movement = CalculateMovement();
         
-        Move(movement * PlayerStateMachine.MovementSpeed, deltaTime);
+        Move(_movement * PlayerStateMachine.MovementSpeed, deltaTime);
 
         if (PlayerStateMachine.InputReader.MovementValue == Vector2.zero)
         {
@@ -29,7 +32,7 @@ public class PlayerMovingState : PlayerStateBase
         
         PlayerStateMachine.Animator.SetFloat(SpeedF,1, 0.1f, deltaTime);
         
-        FaceMovementDirection(movement, deltaTime);
+        FaceMovementDirection(_movement, deltaTime);
     }
 
     private void FaceMovementDirection(Vector3 movement, float deltaTime)

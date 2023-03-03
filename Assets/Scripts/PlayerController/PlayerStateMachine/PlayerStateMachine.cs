@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerStateMachine : StateMachine
 {
-    [field: SerializeField] public Bark Bark { get; private set; }
     [field: SerializeField] public InputReader InputReader { get; private set; }
     [field: SerializeField] public CharacterController Controller { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
@@ -13,6 +12,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float RotationDampening { get; private set; }
     [field: SerializeField] public Transform MainCameraTransform { get; private set; }
     public InteractionCheckRayCast InteractionCheckRayCast { get; private set; }
+    [field: SerializeField] public AnimationClip BarkAnim { get; set; }
     
     private GameObject _camera;
 

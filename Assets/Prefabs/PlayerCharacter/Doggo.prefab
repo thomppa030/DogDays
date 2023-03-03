@@ -733,6 +733,7 @@ MonoBehaviour:
   <MovementSpeed>k__BackingField: 3
   <RotationDampening>k__BackingField: 10
   <MainCameraTransform>k__BackingField: {fileID: 0}
+  <BarkAnim>k__BackingField: {fileID: -8800096121142784032, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
 --- !u!114 &4946270562110072564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1923,7 +1924,6 @@ GameObject:
   m_Component:
   - component: {fileID: 727546334768617298}
   - component: {fileID: 618806309086331399}
-  - component: {fileID: 2121648176204812182}
   m_Layer: 0
   m_Name: Interact
   m_TagString: Untagged
@@ -1998,18 +1998,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2121648176204812182
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4520480655629563287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef13910bb5946f8468cf8e240f23bce6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8252317105005391829
 GameObject:
   m_ObjectHideFlags: 0
