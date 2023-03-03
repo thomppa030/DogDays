@@ -52,7 +52,7 @@ public class PlayerMovingState : PlayerStateBase
         }
         else
         {
-            PlayerStateMachine.Bark.TriggerBark();
+            PlayerStateMachine.SwitchState(new PlayerBarkingstate(PlayerStateMachine));
         }
     }
     
