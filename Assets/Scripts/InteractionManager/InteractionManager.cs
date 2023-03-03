@@ -53,6 +53,7 @@ public class InteractionManager : MonoBehaviour
     #endregion
     
     [field: SerializeField] private PlayerStateMachine PlayerStateMachine { get; set; }
+    
     private Animator _playerAnim;
     [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
 
@@ -102,11 +103,9 @@ public class InteractionManager : MonoBehaviour
         {
             _playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         }
-        
-        PlayerStateMachine.InputReader.TriggerInteractionEvent += TriggerNextSentence;
     }
     
-    private void TriggerNextSentence()
+    public void TriggerNextSentence()
     {
         {
             if (CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)

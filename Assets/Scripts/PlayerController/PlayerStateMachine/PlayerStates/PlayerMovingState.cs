@@ -11,6 +11,8 @@ public class PlayerMovingState : PlayerStateBase
     public override void OnStateEnter()
     {
         Debug.Log("Enter Player Moving State");
+        
+        PlayerStateMachine.InputReader.InteractEvent += Interact;
     }
 
     public override void Tick(float deltaTime)
@@ -38,6 +40,40 @@ public class PlayerMovingState : PlayerStateBase
 
     public override void OnStateExit()
     {
+    }
+
+    void Interact()
+    {
+        bool interActionIsInRange = PlayerStateMachine.InteractionCheckRayCast.InteractionInRange();
+        
+        if (interActionIsInRange)
+        {
+            StartInteraction();
+        }
+        else
+        {
+            PlayerStateMachine.Bark.TriggerBark();
+        }
+    }
+    
+    private void StartInteraction()
+    {
+        RaycastHit hit;
+        hit = PlayerStateMachine.InteractionCheckRayCast.hit;
+        
+        if (PlayerStateMachine != null)
+            PlayerStateMachine.SwitchState(new PlayerInteractState(PlayerStateMachine));
+
+        Debug.Log("Interacting with: " + hit.collider.gameObject.name);
+        if (hit.collider.gameObject.TryGetComponent<InteractionTrigger>(out InteractionTrigger dT))
+        {
+            GameState.Instance.currentlyActiveInteraction = dT;
+            dT.TriggerDialogue();
+        }
+        else
+        {
+            Debug.LogError("No Dialogue attached to: " + hit.collider.gameObject.name);
+        }
     }
     
     public Vector3 CalculateMovement()

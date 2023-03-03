@@ -7,8 +7,9 @@ using UnityEngine.InputSystem;
     {
         public Vector2 MovementValue { get; private set; }
         
-        public event Action TriggerInteractionEvent;
-
+        public event Action SkipSentenceEvent;
+        public event Action InteractEvent;
+        
         private DogDaysInput _input;
         private void Start()
         {
@@ -28,14 +29,21 @@ using UnityEngine.InputSystem;
              MovementValue = context.ReadValue<Vector2>();
         }
         
-        public void OnTriggerInteraction(InputAction.CallbackContext context)
+        public void OnLook(InputAction.CallbackContext context)
+        {
+        }
+
+        public void OnSkipSentence(InputAction.CallbackContext context)
         {
             if (!context.performed) return;
             
-            TriggerInteractionEvent?.Invoke();
+            SkipSentenceEvent?.Invoke();
         }
 
-        public void OnLook(InputAction.CallbackContext context)
+        public void OnInteract(InputAction.CallbackContext context)
         {
+            if (!context.performed) return;
+            
+            InteractEvent?.Invoke();
         }
     }
