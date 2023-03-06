@@ -211,7 +211,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5a3559dc71a3dee46a71f5627f48bb36, type: 2}
+  - {fileID: 2100000, guid: f999dd3f55d049447a4e1e3fdaff17e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -726,7 +726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5f17936ea3401baeb83d805731b352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Bark>k__BackingField: {fileID: 8648652658064668642, guid: 55328b72f2a103943ad1f463bf9edc03, type: 3}
   <InputReader>k__BackingField: {fileID: 4809704768593245595, guid: 960c42c6f1cbecf429d79fa9d4e5729f, type: 3}
   <Controller>k__BackingField: {fileID: 1990326144277739423}
   <ForceReceiver>k__BackingField: {fileID: 4946270562110072564}
