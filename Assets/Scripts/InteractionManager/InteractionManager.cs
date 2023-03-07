@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
+using CameraShake;
+
 // TODO: Refactor this class to adhere to the Single Responsibility Principle
 /**
  * The responsibility of this class is to manage the individual interaction in the game.
@@ -165,6 +167,7 @@ public class InteractionManager : MonoBehaviour
                 ResetIDs();
                 break;
             case Interaction.Action.PlayCharAnim:
+                CameraShaker.Presets.ShortShake3D();
                 PlayCharacterAnimation();
                 _playerAnimID++;
                 ActionID++;

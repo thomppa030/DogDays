@@ -20,7 +20,8 @@ public class PlayerMovingState : PlayerStateBase
 
     public override void Tick(float deltaTime)
     {
-        _movement = CalculateMovement();
+        _movement = CalculateRotation(PlayerStateMachine.InputReader.MovementValue.x,
+            PlayerStateMachine.InputReader.MovementValue.y);
         
         Move(_movement * PlayerStateMachine.MovementSpeed, deltaTime);
 
@@ -77,6 +78,20 @@ public class PlayerMovingState : PlayerStateBase
         {
             Debug.LogError("No Dialogue attached to: " + hit.collider.gameObject.name);
         }
+    }
+    
+    Vector3 CalculateRotation(float horizontal, float vertical)
+    {
+        Vector3 forward = PlayerStateMachine.MainCameraTransform.forward;
+        
+        forward.y = 0;
+        forward = forward.normalized;
+        
+        Vector3 right = new Vector3(forward.z, 0, -forward.x);
+        Vector3 targetDirection;
+        targetDirection = forward * vertical + right * horizontal;
+        
+        return targetDirection;
     }
     
     public Vector3 CalculateMovement()

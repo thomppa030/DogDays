@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.Serialization;
 
 namespace CameraShake 
@@ -10,11 +11,15 @@ namespace CameraShake
     {
         public static CameraShaker Instance;
         public static CameraShakePresets Presets;
+        public static bool IsShaking;
         
         readonly List<ICameraShake> _activeShakes = new List<ICameraShake>();
         
         [SerializeField]
         Transform cameraTransform;
+        
+        [SerializeField]
+        FollowCamera followCamera;
         
         [Range(0,1)]
         [SerializeField]
@@ -46,6 +51,7 @@ namespace CameraShake
             Instance = this;
             ShakePresets = new CameraShakePresets(this);
             Presets = ShakePresets;
+            IsShaking = false;
             if (cameraTransform == null)
                 cameraTransform = transform;
         }
@@ -57,20 +63,24 @@ namespace CameraShake
                 return;
             }
             
+            IsShaking = _activeShakes.Count > 0;
+            
             Displacement cameraDisplacement = Displacement.Zero;
             
             for (int i = _activeShakes.Count - 1; i >= 0; i--)
             {
-                ICameraShake shake = _activeShakes[i];
-                shake.Update(Time.deltaTime, cameraTransform.position, cameraTransform.rotation);
-                cameraDisplacement += shake.CurrentDisplacement;
-                
-                if (shake.IsFinished)
+                if (_activeShakes[i].IsFinished)
                 {
                     _activeShakes.RemoveAt(i);
                 }
+                else
+                {
+                    _activeShakes[i].Update(Time.deltaTime, cameraTransform.position, cameraTransform.rotation);
+                    cameraDisplacement += _activeShakes[i].CurrentDisplacement;
+                }
             }
-            cameraTransform.localPosition = cameraDisplacement.Position * strengthMultiplier;
+            //TODO: Does not work as intended here
+            cameraTransform.localPosition += cameraDisplacement.Position * strengthMultiplier;
             cameraTransform.localRotation = Quaternion.Euler(cameraDisplacement.EulerAngles * strengthMultiplier);
         }
 

@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
     {
         public Vector2 MovementValue { get; private set; }
         
+        public Vector2 LookValue { get; private set; }
         public event Action SkipSentenceEvent;
         public event Action InteractEvent;
         
@@ -31,6 +32,7 @@ using UnityEngine.InputSystem;
         
         public void OnLook(InputAction.CallbackContext context)
         {
+            LookValue = context.ReadValue<Vector2>();
         }
 
         public void OnSkipSentence(InputAction.CallbackContext context)
