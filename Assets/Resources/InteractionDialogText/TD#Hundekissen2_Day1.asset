@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: TD#Hundekissen_Day1
+  m_Name: TD#Hundekissen2_Day1
   m_EditorClassIdentifier: 
-  Title: Interaction Hundekissen
+  Title: Interaktion Hundekissen2 Day1
   ger_sentences:
-  - 1 Test
-  - ' 2 Test'
+  - "Jimmy ist mein bester Freund! Er geht mit mir \xFCberall hin!"
   ger_keywords: []
   eng_sentences:
-  - test
-  - test2
+  - "Jimmy ist mein bester Freund! Er geht mit mir \xFCberall hin!"
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

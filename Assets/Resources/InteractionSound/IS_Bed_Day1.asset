@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9dc0997fa493a4eb97b3704de128e4, type: 3}
   m_Name: IS_Bed_Day1
   m_EditorClassIdentifier: 
-  audioclips:
-  - {fileID: 8300000, guid: 13b5fe33e1fdbaa4da876479bdbc9c7b, type: 3}
+  audioclips: []

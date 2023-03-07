@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5527433222530436506, guid: 6019764bf5bc92a4c8db673174f7597f, type: 3}
       propertyPath: m_Name
-      value: TD##01Bed
+      value: Station#01Bed
       objectReference: {fileID: 0}
     - target: {fileID: 5527433222530436506, guid: 6019764bf5bc92a4c8db673174f7597f, type: 3}
       propertyPath: m_Layer
@@ -109,6 +109,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 1168ecd6a21a69b46bf0079de433489d, type: 2}
-  unlockedInteraction: {fileID: 11400000, guid: 7899ffb421d51884f8f9c6028560b53c, type: 2}
+  unlockedInteraction: {fileID: 0}
   playOnTrigger: 0
   cameraFocalPoints: []

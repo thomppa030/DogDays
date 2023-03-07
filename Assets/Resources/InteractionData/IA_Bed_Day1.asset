@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: IA_Bed_Day1
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d000000000000000000000000000000000000000e00000008000000
-  assignedDialogue: {fileID: 11400000, guid: 1a5ed03d6deb4c44591524ee7bd9633b, type: 2}
+  <Actions>k__BackingField: 0000000000000000000000000000000008000000
+  assignedDialogue: {fileID: 11400000, guid: 926f920a8f2a0454ab5d1a266f8f571a, type: 2}
   dialogueSounds: {fileID: 11400000, guid: 1341f2f570aca004599d5037a6fc5ffa, type: 2}
   dialogueWaitingTime: {fileID: 11400000, guid: e23c3361eb666784c86a1001d6609c3e, type: 2}
   dialogueAnimations: {fileID: 11400000, guid: 5ab2f6f9ddab09d4ab77bad27d10a1e0, type: 2}
   dialogueDogFaces: {fileID: 11400000, guid: 861c323263f0ea943bcf6d7f32fa0538, type: 2}
-  cameraFocalPoints: {fileID: 0}
+  cameraFocalPoints: {fileID: 11400000, guid: 1847dbef154a2464fa716e72eaa5cb09, type: 2}
   interactionToUnlock: []
   interactionToEnable: []
   interactionToDisable: []
