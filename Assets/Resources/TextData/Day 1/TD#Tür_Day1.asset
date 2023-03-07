@@ -10,20 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: Bed#day4
+  m_Name: "TD#T\xFCr_Day1"
   m_EditorClassIdentifier: 
-  Title: Bed#Trigger
+  Title: "T\xFCt Interaction Day 1"
   ger_sentences:
-  - "Aufwachen ihr Schlafm\xFCtzen!"
-  - Ein toller Tag erwartet uns!
-  - Nanu?
-  - Sind denn alle schon wach?
+  - Test
   ger_keywords: []
   eng_sentences:
-  - I'm a good girl, I'm not allowed to sleep on the bed.
-  - I'm a good girl, I'm not allowed to sleep on the bed.
-  - I'm a good girl, I'm not allowed to sleep on the bed.
-  - I'm a good girl, I'm not allowed to sleep on the bed.
+  - TEst
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

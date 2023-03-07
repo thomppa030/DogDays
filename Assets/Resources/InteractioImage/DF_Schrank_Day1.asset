@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17c1a689324a1aa49bd89d99dc621128, type: 3}
-  m_Name: DF_Bed_Day1
+  m_Name: DF_Schrank_Day1
   m_EditorClassIdentifier: 
   dogFaces:
-  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
   - {fileID: 21300000, guid: d9f4738d72e93d04ca32bb703888320f, type: 3}
+  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
