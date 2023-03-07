@@ -13,21 +13,20 @@ MonoBehaviour:
   m_Name: schrank#day4
   m_EditorClassIdentifier: 
   Title: TD#day_schrank
-  <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d00000000000000000000000e00000008000000
   ger_sentences:
-  - "Ich glaube nicht, dass ich heute etwas Neues finden werde, das ich essen k\xF6nnte."
-  - Aber einen Versuch ist es wert.
+  - "Was f\xFCr eine Unordnung..."
+  - Hm...Hier fehlen doch einige Sachen...
+  - Fahren wir etwa in den Urlaub?!
+  - "Ich wei\xDF noch wie wir das letzte mal am Strand stundenlang am Wasser gespielt
+    haben!"
+  - "Diesmal m\xFCssen sie Jimmy aber mitnehmen!\nNochmal gehe ich nicht ohne ihn!"
+  ger_keywords: []
   eng_sentences:
   - "Don\xB4t think I will find something new today that I could eat."
   - But it is worth a try.
+  - But it is worth a try.
+  - But it is worth a try.
+  - But it is worth a try.
+  eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
-  <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField:
-  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
-  Audioclips: []
-  textToUnlock: []
-  textToEnable: []
-  textToDisable: []

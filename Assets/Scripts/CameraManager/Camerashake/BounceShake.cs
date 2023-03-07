@@ -38,7 +38,7 @@ namespace CameraShake
         
         public void Initialize(Vector3 cameraPosition, Quaternion cameraRotation)
         {
-            attenuation = _sourcePosition.HasValue
+            attenuation = _sourcePosition == null
                 ? 1
                 : Attenuator.Strength(_params.attenuation, _sourcePosition.Value, cameraPosition);
             currentWaypoint = attenuation * direction.ScaleBy(_params.PositionStrength, _params.RotationStrength);

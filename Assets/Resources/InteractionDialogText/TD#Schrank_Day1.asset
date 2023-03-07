@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
+  m_Name: TD#Schrank_Day1
+  m_EditorClassIdentifier: 
+  Title: Text Schrank Day 1
+  ger_sentences:
+  - "Was f\xFCr eine Unordnung..."
+  - Hm...Hier fehlen doch einige Sachen...
+  - Fahren wir etwa in den Urlaub?!
+  - "Ich wei\xDF noch wie wir das letzte mal am Strand stundenlang am Wasser gespielt
+    haben!"
+  - "Diesmal m\xFCssen sie Jimmy aber mitnehmen!\nNochmal gehe ich nicht ohne ihn!"
+  ger_keywords: []
+  eng_sentences:
+  - 1
+  - 2
+  - 3
+  - 3
+  - 3
+  eng_keywords: []
+  <InfoText>k__BackingField: 
+  <InfoDisplayTime>k__BackingField: 0

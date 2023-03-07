@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb5108ba8aa834c8e3a8129da2599b, type: 3}
+  m_Name: IA_HundeKissen_Day1
+  m_EditorClassIdentifier: 
+  <StartOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 0d00000000000000000000000e00000008000000
+  assignedDialogue: {fileID: 11400000, guid: 50f14d1fa6d9d2b4e8ce8326384518ce, type: 2}
+  dialogueSounds: {fileID: 11400000, guid: e68f4a76fbc33e4499bdf10fa8d69a21, type: 2}
+  dialogueWaitingTime: {fileID: 11400000, guid: d8df05defbab57f4ab8acac2bdec3b79, type: 2}
+  dialogueAnimations: {fileID: 11400000, guid: 9c47f489fd86e9c4bb959cd4218f4099, type: 2}
+  dialogueDogFaces: {fileID: 11400000, guid: a99e5d0ff1900b7489517dfa6c89a34f, type: 2}
+  cameraFocalPoints: {fileID: 0}
+  interactionToUnlock: []
+  interactionToEnable: []
+  interactionToDisable: []
