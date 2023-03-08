@@ -100,17 +100,17 @@ public class InteractionManager : MonoBehaviour
 
     private void Start()
     {
-        
         if(GameState.Instance.GetCurrentState() == GameState.GameStates.Game)
         {
             _playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         }
+        OnPlaySound += PlaySound;
     }
     
     public void TriggerNextSentence()
     {
         {
-            if (CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
+            if (CurrentInteraction != null && CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
             {
                 ActionID++;
                 SetNextAction(CurrentInteraction, ActionID);
@@ -167,7 +167,6 @@ public class InteractionManager : MonoBehaviour
                 ResetIDs();
                 break;
             case Interaction.Action.PlayCharAnim:
-                CameraShaker.Presets.ShortShake3D();
                 PlayCharacterAnimation();
                 _playerAnimID++;
                 ActionID++;
@@ -242,6 +241,11 @@ public class InteractionManager : MonoBehaviour
                 break;
         }
     }
+
+    void PlaySound(AudioClip ac)
+    {
+        StartCoroutine(PlaySFX(ac));
+    }
     
     //TODO: Refactor to a single class
     AudioSource _audioSource;
@@ -251,9 +255,11 @@ public class InteractionManager : MonoBehaviour
         
         Debug.Log($"Playing {ac.name} with ID ${_audioID} and wait time of {waitTime} seconds.");
         
+        _audioSource = gameObject.AddComponent<AudioSource>();
         _audioSource.clip = ac;
         _audioSource.volume = MenuHandler.singleton.GetSoundVolume();
         _audioSource.Play();
+        
         yield return new WaitForSeconds(waitTime);
     }
     
@@ -308,7 +314,6 @@ public class InteractionManager : MonoBehaviour
 
     private void ResetIDs()
     {
-        CurrentInteraction = null;
         _waitID = 0;
         _audioID = 0;
         _playerAnimID = 0;

@@ -18,9 +18,6 @@ namespace CameraShake
         [SerializeField]
         Transform cameraTransform;
         
-        [SerializeField]
-        FollowCamera followCamera;
-        
         [Range(0,1)]
         [SerializeField]
         public float strengthMultiplier = 1;

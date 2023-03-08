@@ -52,6 +52,9 @@ public class DialogueManager : MonoBehaviour
         InteractionManager.Instance.OnEnableText += EnableText;
         InteractionManager.Instance.OnDisableText += DisableText;
         InteractionManager.Instance.OnNextSentence += DisplayNextSentence;
+        InteractionManager.Instance.OnEnableProfileImage += EnableProfileImage;
+        InteractionManager.Instance.OnDisableProfileImage += DisableProfileImage;
+        InteractionManager.Instance.OnSetProfileImage += SetProfileImage;
     }
 
     private void DisplayNextSentence()
@@ -226,15 +229,8 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         ChangeTextstate(TextState.none, null);
-        LevelHandler.Instance.LockInteractables();
-        InteractComponent interactComponent = GetComponent<InteractComponent>();
-        
+        DisableProfileImage();   
         EnablePlayerMovement();
-        
-        if (interactComponent)
-        {
-            interactComponent.Unlock();
-        }
     }
 
     private void EnableText()
@@ -272,6 +268,10 @@ public class DialogueManager : MonoBehaviour
 
     private void SetProfileImage(Sprite s)
     {
+        if (!profileImage.gameObject.activeSelf)
+        {
+            EnableProfileImage();
+        }
         profileImage.gameObject.SetActive(true);
         profileImage.sprite = s;
         profileImageID++;
