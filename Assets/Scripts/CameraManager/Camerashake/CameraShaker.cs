@@ -48,13 +48,23 @@ namespace CameraShake
 
         private void Awake()
         {
-            Instance = this;
             ShakePresets = new CameraShakePresets(this);
             Presets = ShakePresets;
         }
 
         private void Start()
         {
+            if (Instance != null)
+            {
+                Debug.LogError("Multiple CameraShaker instances in scene. Destroying duplicate.");
+                Destroy(this);
+                return;
+            }
+            else
+            {
+                Instance = this;    
+            }
+            
             IsShaking = false;
             if (cameraTransform == null)
                 cameraTransform = transform;
