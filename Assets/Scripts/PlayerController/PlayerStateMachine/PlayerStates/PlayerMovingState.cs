@@ -31,7 +31,8 @@ public class PlayerMovingState : PlayerStateBase
             return;
         }
         
-        PlayerStateMachine.Animator.SetFloat(SpeedF,1, 0.1f, deltaTime);
+        //Acceleration here for Animation
+        PlayerStateMachine.Animator.SetFloat(SpeedF, PlayerStateMachine.InputReader.MovementValue.magnitude, 0.1f, deltaTime);
         
         FaceMovementDirection(_movement, deltaTime);
     }
@@ -71,7 +72,8 @@ public class PlayerMovingState : PlayerStateBase
         Debug.Log("Interacting with: " + hit.collider.gameObject.name);
         if (hit.collider.gameObject.TryGetComponent<InteractionTrigger>(out InteractionTrigger dT))
         {
-            GameState.Instance.currentlyActiveInteraction = dT;
+            //TODO: Chose between default or unlocked interaction, maybe add an Enum to the InteractionTrigger
+            InteractionManager.Instance.CurrentInteraction = dT.defaultInteraction;
             dT.TriggerDialogue();
         }
         else
@@ -82,7 +84,7 @@ public class PlayerMovingState : PlayerStateBase
     
     Vector3 CalculateRotation(float horizontal, float vertical)
     {
-        Vector3 forward = PlayerStateMachine.MainCameraTransform.forward;
+        Vector3 forward = PlayerStateMachine.MainCameraTransform.TransformDirection(Vector3.forward);
         
         forward.y = 0;
         forward = forward.normalized;
@@ -91,20 +93,9 @@ public class PlayerMovingState : PlayerStateBase
         Vector3 targetDirection;
         targetDirection = forward * vertical + right * horizontal;
         
+        // Add the View Direction to the target direction
+        // targetDirection = PlayerStateMachine.transform.TransformDirection(targetDirection);
+
         return targetDirection;
-    }
-    
-    public Vector3 CalculateMovement()
-    {
-        Vector3 CameraForward = PlayerStateMachine.MainCameraTransform.forward;
-        Vector3 CameraRight = PlayerStateMachine.MainCameraTransform.right;
-        
-        CameraForward.y = 0;
-        CameraRight.y = 0;
-        
-        CameraForward.Normalize();
-        CameraRight.Normalize();
-     
-        return CameraForward * PlayerStateMachine.InputReader.MovementValue.y + CameraRight * PlayerStateMachine.InputReader.MovementValue.x;
     }
 }

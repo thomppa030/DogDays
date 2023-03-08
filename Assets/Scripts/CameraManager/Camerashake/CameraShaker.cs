@@ -51,6 +51,10 @@ namespace CameraShake
             Instance = this;
             ShakePresets = new CameraShakePresets(this);
             Presets = ShakePresets;
+        }
+
+        private void Start()
+        {
             IsShaking = false;
             if (cameraTransform == null)
                 cameraTransform = transform;

@@ -30,7 +30,7 @@ public class FollowCamera : MonoBehaviour
     
     public float GetH { get { return angleH; } }
 
-    private void Awake()
+    private void Start()
     {
         cameraTransform = transform;
         cameraTransform.position = player.position + Quaternion.identity * pivotOffset + Quaternion.identity * cameraOffset;
