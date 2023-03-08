@@ -54,8 +54,6 @@ public class FollowCamera : MonoBehaviour
 
 	void Update()
 	{
-		if (!CameraShaker.IsShaking)
-		{
 			// Get mouse movement to orbit the camera.
 			// Mouse:
 			angleH += Mathf.Clamp(playerStateMachine.InputReader.LookValue.x, -1,1) * horizontalAimingSpeed;
@@ -101,7 +99,6 @@ public class FollowCamera : MonoBehaviour
 
 			cameraTransform.position =
 				player.position + camYRotation * smoothPivotOffset + aimRotation * smoothCameraOffset;
-		}
 	}
 
 	// Set camera offsets to custom values.
