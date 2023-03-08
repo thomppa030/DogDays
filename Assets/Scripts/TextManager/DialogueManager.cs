@@ -246,14 +246,6 @@ public class DialogueManager : MonoBehaviour
         profileImage.gameObject.SetActive(false);
     }
 
-    private int audioID = 0;
-    private int waitID = 0;
-    private int profileImageID = 0;
-    private int uiAnimID = 0;
-   
-    private int charAnimID = 0;
-
-
     private void EnablePlayerMovement()
     {
         if (playerStateMachine != null)
@@ -272,9 +264,7 @@ public class DialogueManager : MonoBehaviour
         {
             EnableProfileImage();
         }
-        profileImage.gameObject.SetActive(true);
         profileImage.sprite = s;
-        profileImageID++;
     }
     
     private void EnableProfileImage()
@@ -289,11 +279,6 @@ public class DialogueManager : MonoBehaviour
     
     private void ResetIDs()
     {
-        waitID = 0;
-        audioID = 0;
-        charAnimID = 0;
-        profileImageID = 0;
-
         waitForSentence = false;
     }
 }

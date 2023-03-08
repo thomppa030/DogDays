@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9dc0997fa493a4eb97b3704de128e4, type: 3}
   m_Name: IS_Test
   m_EditorClassIdentifier: 
-  audioclips: []
+  audioclips:
+  - {fileID: 8300000, guid: a4b591e2d8cd3f046a7641ba4b95c481, type: 3}

@@ -194,6 +194,7 @@ public class InteractionManager : MonoBehaviour
                 break;
             case Interaction.Action.SetProfileImage:
                 OnSetProfileImage?.Invoke(i.dialogueDogFaces.dogFaces[_profileImageID]);
+                _profileImageID++;
                 ActionID++;
                 SetNextAction(CurrentInteraction, ActionID);
                 break;
