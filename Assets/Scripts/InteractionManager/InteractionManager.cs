@@ -308,6 +308,7 @@ public class InteractionManager : MonoBehaviour
 
     private void ResetIDs()
     {
+        CurrentInteraction = null;
         _waitID = 0;
         _audioID = 0;
         _playerAnimID = 0;

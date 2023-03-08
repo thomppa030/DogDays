@@ -80,7 +80,7 @@ namespace CameraShake
                 }
             }
             //TODO: Does not work as intended here
-            cameraTransform.localPosition += cameraDisplacement.Position * strengthMultiplier;
+            cameraTransform.localPosition = cameraDisplacement.Position * strengthMultiplier;
             cameraTransform.localRotation = Quaternion.Euler(cameraDisplacement.EulerAngles * strengthMultiplier);
         }
 

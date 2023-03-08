@@ -726,12 +726,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d5f17936ea3401baeb83d805731b352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InputReader>k__BackingField: {fileID: 4809704768593245595, guid: 960c42c6f1cbecf429d79fa9d4e5729f, type: 3}
+  <InputReader>k__BackingField: {fileID: 0}
   <Controller>k__BackingField: {fileID: 1990326144277739423}
   <ForceReceiver>k__BackingField: {fileID: 4946270562110072564}
   <Animator>k__BackingField: {fileID: 1990326144191762594}
   <MovementSpeed>k__BackingField: 3
-  <RotationDampening>k__BackingField: 10
+  <RotationDampening>k__BackingField: 5
   <MainCameraTransform>k__BackingField: {fileID: 0}
   <BarkAnim>k__BackingField: {fileID: -8800096121142784032, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
 --- !u!114 &4946270562110072564

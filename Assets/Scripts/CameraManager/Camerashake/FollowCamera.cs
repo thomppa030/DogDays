@@ -14,8 +14,6 @@ public class FollowCamera : MonoBehaviour
     public float maxVerticalAngle = 30.0f;
     public float minVerticalAngle = -60.0f;
     
-    public Transform currentCameraTransform;
-    
     private float angleH = 0;
     private float angleV = 0;
     private Transform cameraTransform;
@@ -43,8 +41,6 @@ public class FollowCamera : MonoBehaviour
         defaultFOV = cameraTransform.GetComponent<Camera>().fieldOfView;
         angleH = player.eulerAngles.y;
         
-        currentCameraTransform = cameraTransform;
-        
         ResetTargetOffsets();
         ResetFOV();
         ResetMaxVerticalAngle();
@@ -62,11 +58,11 @@ public class FollowCamera : MonoBehaviour
 		{
 			// Get mouse movement to orbit the camera.
 			// Mouse:
-			angleH += playerStateMachine.InputReader.LookValue.x * horizontalAimingSpeed;
-			angleV += playerStateMachine.InputReader.LookValue.y * verticalAimingSpeed;
+			angleH += Mathf.Clamp(playerStateMachine.InputReader.LookValue.x, -1,1) * horizontalAimingSpeed;
+			angleV += Mathf.Clamp(playerStateMachine.InputReader.LookValue.y,-1,1) * verticalAimingSpeed;
 			// Joystick:
-			angleH += playerStateMachine.InputReader.MovementValue.x * 60 * horizontalAimingSpeed * Time.deltaTime;
-			angleV += playerStateMachine.InputReader.MovementValue.y * 60 * verticalAimingSpeed * Time.deltaTime;
+			// angleH += playerStateMachine.InputReader.MovementValue.x * 60 * horizontalAimingSpeed * Time.deltaTime;
+			// angleV += playerStateMachine.InputReader.MovementValue.y * 60 * verticalAimingSpeed * Time.deltaTime;
 
 			// Set vertical movement limit.
 			angleV = Mathf.Clamp(angleV, minVerticalAngle, targetMaxVerticalAngle);
@@ -103,7 +99,6 @@ public class FollowCamera : MonoBehaviour
 			smoothCameraOffset = Vector3.Lerp(smoothCameraOffset,
 				customOffsetCollision ? Vector3.zero : noCollisionOffset, smooth * Time.deltaTime);
 
-			// if the Camera is shaking, we don't want to move it around
 			cameraTransform.position =
 				player.position + camYRotation * smoothPivotOffset + aimRotation * smoothCameraOffset;
 		}
