@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -53,6 +54,13 @@ public class InteractionManager : MonoBehaviour
     public DialogueWaitDelegate OnDialogueWait;
     
     #endregion
+    
+    private List<InLevelTrigger> _animationTriggers;
+    
+    public void SetEndTrigger(List<InLevelTrigger> animationTriggers)
+    {
+        _animationTriggers = animationTriggers;
+    }
     
     [field: SerializeField] private PlayerStateMachine PlayerStateMachine { get; set; }
     
@@ -164,6 +172,7 @@ public class InteractionManager : MonoBehaviour
                 //OnSwitchCameraFocus?.Invoke();
                 OnDialogueEnd?.Invoke();
                 ResetIDs();
+                TriggerEndTrigger();
                 break;
             case Interaction.Action.PlayCharAnim:
                 PlayCharacterAnimation();
@@ -239,6 +248,14 @@ public class InteractionManager : MonoBehaviour
                 ActionID++;
                 SetNextAction(i, ActionID);
                 break;
+        }
+    }
+
+    private void TriggerEndTrigger()
+    {
+        foreach (var trigger in _animationTriggers)
+        {
+            trigger.Trigger();
         }
     }
 

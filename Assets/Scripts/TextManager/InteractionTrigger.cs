@@ -12,7 +12,9 @@ public class InteractionTrigger : MonoBehaviour
     private Interaction _activeInteraction;
 
     private Dialogue _displayedDialogue;
-    
+
+    public List<InLevelTrigger> triggers;
+
     BoxCollider _bc;
     
     [SerializeField] private bool playOnTrigger = false;
@@ -39,6 +41,7 @@ public class InteractionTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, InteractionManager.Instance.CurrentInteraction.assignedDialogue);
+        InteractionManager.Instance.SetEndTrigger(triggers);
     }
 
     public enum TriggerState
