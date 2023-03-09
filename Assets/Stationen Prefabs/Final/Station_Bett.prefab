@@ -810,7 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerState: 1
-  defaultInteraction: {fileID: 11400000, guid: 1168ecd6a21a69b46bf0079de433489d, type: 2}
+  defaultInteraction: {fileID: 11400000, guid: 71de7b1fd440f3746bf96c10fc6cfbf4, type: 2}
   unlockedInteraction: {fileID: 0}
   playOnTrigger: 0
   cameraFocalPoints: []
