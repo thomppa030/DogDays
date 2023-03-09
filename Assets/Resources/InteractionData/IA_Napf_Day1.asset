@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb5108ba8aa834c8e3a8129da2599b, type: 3}
+  m_Name: IA_Napf_Day1
+  m_EditorClassIdentifier: 
+  <StartOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 010000000a0000000d000000000000000d000000000000000d000000000000000d000000000000000d000000000000000e00000008000000
+  assignedDialogue: {fileID: 11400000, guid: 21f511c4baaba694c9a8083e16fdf1be, type: 2}
+  dialogueSounds: {fileID: 11400000, guid: c0466af02bb86d8428208a85a8259554, type: 2}
+  dialogueWaitingTime: {fileID: 11400000, guid: 8da7b9fbd4ef6ab45bd1dd9020b4241b, type: 2}
+  dialogueAnimations: {fileID: 11400000, guid: f034286711867ab40ba6577b0a0c557f, type: 2}
+  dialogueDogFaces: {fileID: 11400000, guid: c94d7391bf9b74d41acb167285f8f394, type: 2}
+  cameraFocalPoints: {fileID: 0}
+  interactionToUnlock: []
+  interactionToEnable: []
+  interactionToDisable: []
