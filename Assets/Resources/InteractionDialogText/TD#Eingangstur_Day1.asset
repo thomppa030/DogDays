@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Ending Day1
   ger_sentences:
-  - 
+  - 1
+  - 2
   ger_keywords: []
   eng_sentences:
-  - 
+  - 1
+  - 2
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
