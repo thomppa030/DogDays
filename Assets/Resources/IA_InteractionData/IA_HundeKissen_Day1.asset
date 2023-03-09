@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IA_HundeKissen_Day1
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 010000000d00000000000000000000000e00000008000000
+  <Actions>k__BackingField: 0d00000000000000000000000e00000008000000
   assignedDialogue: {fileID: 11400000, guid: 50f14d1fa6d9d2b4e8ce8326384518ce, type: 2}
   dialogueSounds: {fileID: 11400000, guid: e68f4a76fbc33e4499bdf10fa8d69a21, type: 2}
   dialogueWaitingTime: {fileID: 11400000, guid: d8df05defbab57f4ab8acac2bdec3b79, type: 2}
