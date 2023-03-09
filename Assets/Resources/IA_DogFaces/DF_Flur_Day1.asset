@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e9dc0997fa493a4eb97b3704de128e4, type: 3}
-  m_Name: IS_Napf_Day1
+  m_Script: {fileID: 11500000, guid: 17c1a689324a1aa49bd89d99dc621128, type: 3}
+  m_Name: DF_Flur_Day1
   m_EditorClassIdentifier: 
-  audioclips:
-  - {fileID: 8300000, guid: cdf80fb8680dded4d97e0c3899d3d5e1, type: 3}
-  - {fileID: 8300000, guid: e85b769a9dbfb8241b22475b05bee5d1, type: 3}
+  dogFaces: []
