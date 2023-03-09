@@ -8,13 +8,6 @@ public class AudioTrigger : MonoBehaviour
     
     [field: SerializeField] private AudioClip SoundClip { get; set; }
     
-    private AudioSource _audioSource;
-    
-    private void Awake()
-    {
-        _audioSource = GetComponent<AudioSource>();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

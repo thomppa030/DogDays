@@ -52,6 +52,9 @@ public class DialogueManager : MonoBehaviour
         InteractionManager.Instance.OnEnableText += EnableText;
         InteractionManager.Instance.OnDisableText += DisableText;
         InteractionManager.Instance.OnNextSentence += DisplayNextSentence;
+        InteractionManager.Instance.OnEnableProfileImage += EnableProfileImage;
+        InteractionManager.Instance.OnDisableProfileImage += DisableProfileImage;
+        InteractionManager.Instance.OnSetProfileImage += SetProfileImage;
     }
 
     private void DisplayNextSentence()
@@ -226,15 +229,8 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         ChangeTextstate(TextState.none, null);
-        LevelHandler.Instance.LockInteractables();
-        InteractComponent interactComponent = GetComponent<InteractComponent>();
-        
+        DisableProfileImage();   
         EnablePlayerMovement();
-        
-        if (interactComponent)
-        {
-            interactComponent.Unlock();
-        }
     }
 
     private void EnableText()
@@ -250,14 +246,6 @@ public class DialogueManager : MonoBehaviour
         profileImage.gameObject.SetActive(false);
     }
 
-    private int audioID = 0;
-    private int waitID = 0;
-    private int profileImageID = 0;
-    private int uiAnimID = 0;
-   
-    private int charAnimID = 0;
-
-
     private void EnablePlayerMovement()
     {
         if (playerStateMachine != null)
@@ -272,9 +260,11 @@ public class DialogueManager : MonoBehaviour
 
     private void SetProfileImage(Sprite s)
     {
-        profileImage.gameObject.SetActive(true);
+        if (!profileImage.gameObject.activeSelf)
+        {
+            EnableProfileImage();
+        }
         profileImage.sprite = s;
-        profileImageID++;
     }
     
     private void EnableProfileImage()
@@ -289,11 +279,6 @@ public class DialogueManager : MonoBehaviour
     
     private void ResetIDs()
     {
-        waitID = 0;
-        audioID = 0;
-        charAnimID = 0;
-        profileImageID = 0;
-
         waitForSentence = false;
     }
 }
