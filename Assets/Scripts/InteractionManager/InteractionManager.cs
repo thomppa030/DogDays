@@ -107,17 +107,15 @@ public class InteractionManager : MonoBehaviour
         OnPlaySound += PlaySound;
     }
     
-    public void TriggerNextSentence()
+    private void Update()
     {
+        if (Input.GetButtonDown("Fire1") && CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
         {
-            if (CurrentInteraction != null && CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
-            {
-                ActionID++;
-                SetNextAction(CurrentInteraction, ActionID);
-            }
+            ActionID++;
+            SetNextAction(CurrentInteraction, ActionID);
         }
     }
-    
+
     private bool _waitForSentence = false;
     
     public void SetNextAction(Interaction i, int id)
@@ -162,7 +160,8 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.EndDialogue:
-                OnSwitchCameraFocus?.Invoke();
+                //TODO: Make Camera Switch
+                //OnSwitchCameraFocus?.Invoke();
                 OnDialogueEnd?.Invoke();
                 ResetIDs();
                 break;
@@ -313,10 +312,11 @@ public class InteractionManager : MonoBehaviour
         yield return new WaitForSeconds(time);
     }
 
-    private void ResetIDs()
+    public void ResetIDs()
     {
         _waitID = 0;
         _audioID = 0;
+        ActionID = 0;
         _playerAnimID = 0;
         _profileImageID = 0;
         _cameraFocusID = 0;

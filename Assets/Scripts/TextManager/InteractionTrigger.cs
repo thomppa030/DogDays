@@ -10,6 +10,9 @@ public class InteractionTrigger : MonoBehaviour
     public Interaction unlockedInteraction;
 
     private Interaction _activeInteraction;
+
+    private Dialogue _displayedDialogue;
+    
     BoxCollider _bc;
     
     [SerializeField] private bool playOnTrigger = false;
@@ -21,19 +24,6 @@ public class InteractionTrigger : MonoBehaviour
      * If you want to keep the Singleton between scenes, you need to use the OnEnable and OnDisable methods.
      * 
      */
-    private void OnEnable()
-    {
-        DialogueManager.EnableTextTrigger += EnableTrigger;
-        DialogueManager.DisableTextTrigger += DisableTrigger;
-        DialogueManager.UnlockText += UnlockText;
-    }
-
-    private void OnDisable()
-    {
-        DialogueManager.EnableTextTrigger -= EnableTrigger;
-        DialogueManager.DisableTextTrigger -= DisableTrigger;
-        DialogueManager.UnlockText -= UnlockText;
-    }
 
     private void Start()
     {
@@ -73,12 +63,12 @@ public class InteractionTrigger : MonoBehaviour
                 triggerState = tS;
                 break;
             case TriggerState.setDefaultText:
-                _activeInteraction = defaultInteraction;
+                _displayedDialogue = defaultInteraction.assignedDialogue;
                 triggerState = tS;
                 if (_activeInteraction.StartOnAwake) TriggerDialogue();
                 break;
             case TriggerState.setUnlockedText:
-                _activeInteraction = unlockedInteraction;
+                _displayedDialogue = unlockedInteraction.assignedDialogue;
                 triggerState = tS;
                 if (_activeInteraction.StartOnAwake) 
                     TriggerDialogue();
@@ -86,20 +76,58 @@ public class InteractionTrigger : MonoBehaviour
         }
     }
 
-    private void EnableTrigger(List<Interaction> dList)
+    private void OnEnable()
     {
-        if (dList.Contains(_activeInteraction))
-            SetTriggerState(TriggerState.enabled);
+        DialogueManager.EnableTextTrigger += EnableTrigger;
+        DialogueManager.DisableTextTrigger += DisableTrigger;
+        DialogueManager.UnlockText += UnlockText;
     }
-    private void DisableTrigger(List<Interaction> dList)
+
+    private void OnDisable()
     {
-        if (dList.Contains(_activeInteraction))
-            SetTriggerState(TriggerState.hidden);
+        DialogueManager.EnableTextTrigger -= EnableTrigger;
+        DialogueManager.DisableTextTrigger -= DisableTrigger;
+        DialogueManager.UnlockText -= UnlockText;
     }
-    private void UnlockText(List<Interaction> dList)
+    
+    private void EnableTrigger(List<Interaction> iList)
     {
-        if (dList.Contains(unlockedInteraction))
+        List<Dialogue> dList = new List<Dialogue>();
+        foreach (var i in iList)
         {
+            dList.Add(i.assignedDialogue);
+        }
+
+        if (dList.Contains(_displayedDialogue))
+        {
+            Debug.Log("Enabling Trigger");
+            SetTriggerState(TriggerState.enabled);
+        }
+    }
+    private void DisableTrigger(List<Interaction> iList)
+    {
+        List<Dialogue> dList = new List<Dialogue>();
+        foreach (var i in iList)
+        {
+            dList.Add(i.assignedDialogue);
+        }
+
+        if (dList.Contains(_displayedDialogue))
+        {
+            Debug.Log("Disabling Trigger");
+            SetTriggerState(TriggerState.hidden);
+        }
+    }
+    private void UnlockText(List<Interaction> iList)
+    {
+        List<Dialogue> dList = new List<Dialogue>();
+        foreach (var i in iList)
+        {
+            dList.Add(i.assignedDialogue);
+        }
+        if (dList.Contains(_displayedDialogue))
+        {
+            Debug.Log("Unlocking Text");
             SetTriggerState(TriggerState.setUnlockedText);
         }
     }

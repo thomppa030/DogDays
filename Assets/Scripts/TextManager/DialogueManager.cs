@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
     [Tooltip("Container for the Face of the Dog in the Dialogue")]
     [SerializeField] Image profileImage;
     [SerializeField] float textSpeed = 0.03f;
-    private TextState currentTextstate = TextState.none;
+    public TextState currentTextstate { get; private set; } = TextState.none;
     
     private Queue<string> sentences;
     [field: SerializeField] private PlayerStateMachine playerStateMachine { get; set; }
@@ -23,6 +23,8 @@ public class DialogueManager : MonoBehaviour
 
     public Language selectedLanguage = Language.german;
 
+    public Dialogue _displayedDialogue { get; set; }
+    
     public enum Language
     {
         german,
@@ -36,29 +38,51 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    private void OnEnable()
+    {
+        SubscribeInteractionEvents();
+    }
+
+    private void OnDisable()
+    {
+        UnsubscribeInteractionEvents();
+    }
+
     private void Start()
     {
 
         if(dialogueText != null)
             dialogueText.text = "";
         
-        InitializeInteractionEvents();
     }
 
-    private void InitializeInteractionEvents()
+    private void SubscribeInteractionEvents()
     {
         InteractionManager.Instance.OnDialogueEnd += EndDialogue;
         InteractionManager.Instance.OnDialogueStart += StartDialogue;
-        InteractionManager.Instance.OnEnableText += EnableText;
-        InteractionManager.Instance.OnDisableText += DisableText;
+        InteractionManager.Instance.OnEnableText += EnableTextFrame;
+        InteractionManager.Instance.OnDisableText += DisableTextFrame;
         InteractionManager.Instance.OnNextSentence += DisplayNextSentence;
         InteractionManager.Instance.OnEnableProfileImage += EnableProfileImage;
         InteractionManager.Instance.OnDisableProfileImage += DisableProfileImage;
         InteractionManager.Instance.OnSetProfileImage += SetProfileImage;
     }
 
-    private void DisplayNextSentence()
+    private void UnsubscribeInteractionEvents()
     {
+        InteractionManager.Instance.OnDialogueEnd -= EndDialogue;
+        InteractionManager.Instance.OnDialogueStart -= StartDialogue;
+        InteractionManager.Instance.OnEnableText -= EnableTextFrame;
+        InteractionManager.Instance.OnDisableText -= DisableTextFrame;
+        InteractionManager.Instance.OnNextSentence -= DisplayNextSentence;
+        InteractionManager.Instance.OnEnableProfileImage -= EnableProfileImage;
+        InteractionManager.Instance.OnDisableProfileImage -= DisableProfileImage;
+        InteractionManager.Instance.OnSetProfileImage -= SetProfileImage;
+    }
+
+    public void DisplayNextSentence()
+    {
+        Debug.Log("Queue size before DisplayingNextSentence: " + sentences.Count);
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         dialogueText.text = sentence;
@@ -104,8 +128,6 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(textSpeed);
         }
-        
-        CheckForKeyword(dialogueText.text);
     }
 
     public static Action<List<Interaction>> EnableTextTrigger;
@@ -160,7 +182,6 @@ public class DialogueManager : MonoBehaviour
 
                 ResetIDs();
                 
-                // TODO: Current Interaction as a static variable in GameState?
                 EnableTextTrigger?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToEnable);
                 DisableTextTrigger?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToDisable);
                 UnlockText?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToUnlock);
@@ -210,18 +231,23 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue d)
     {
         profileImage.gameObject.SetActive(false);
-        ResetIDs();
-
+        InteractionManager.Instance.ResetIDs();
+        
+        _displayedDialogue = d;
+        
         Interaction _interaction = InteractionManager.Instance.CurrentInteraction;
         
         _interaction.assignedDialogue = d;
-    
+        
+        Debug.Log("Size of sentences in StartDialogue before Clearing " + sentences.Count);
         sentences.Clear();
+        Debug.Log("Size of sentences in StartDialogue after Clearing " + sentences.Count);
 
         foreach (string sentence in GetSentence(d))
         {
             sentences.Enqueue(sentence);
         }
+        Debug.Log("Size of sentences in StartDialogue after Enqueuing " + sentences.Count);
 
         InteractionManager.Instance.SetNextAction(_interaction, InteractionManager.Instance.ActionID);
     }
@@ -229,21 +255,21 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         ChangeTextstate(TextState.none, null);
-        DisableProfileImage();   
+        DisableTextFrame();
         EnablePlayerMovement();
     }
 
-    private void EnableText()
+    private void EnableTextFrame()
     {
         dialogueText.gameObject.SetActive(true);
         dialogueFrame.gameObject.SetActive(true);
-        profileImage.gameObject.SetActive(true);
+        EnableProfileImage();
     }
-    private void DisableText()
+    private void DisableTextFrame()
     {
         dialogueText.gameObject.SetActive(false);
         dialogueFrame.gameObject.SetActive(false);
-        profileImage.gameObject.SetActive(false);
+        DisableProfileImage();
     }
 
     private void EnablePlayerMovement()
