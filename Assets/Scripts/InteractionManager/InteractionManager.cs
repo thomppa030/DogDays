@@ -56,6 +56,8 @@ public class InteractionManager : MonoBehaviour
     #endregion
     
     private List<InLevelTrigger> _animationTriggers;
+
+    public InteractionTrigger LastUsedInteractionTrigger { get; set; }
     
     public void SetEndTrigger(List<InLevelTrigger> animationTriggers)
     {
@@ -117,11 +119,12 @@ public class InteractionManager : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") && CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
-        {
-            ActionID++;
-            SetNextAction(CurrentInteraction, ActionID);
-        }
+            if (Input.GetButtonDown("Fire1") && CurrentInteraction != null &&
+                CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
+            {
+                ActionID++;
+                SetNextAction(CurrentInteraction, ActionID);
+            }
     }
 
     private bool _waitForSentence = false;

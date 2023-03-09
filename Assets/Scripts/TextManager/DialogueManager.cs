@@ -132,7 +132,7 @@ public class DialogueManager : MonoBehaviour
 
     public static Action<List<Interaction>> EnableTextTrigger;
     public static Action<List<Interaction>> DisableTextTrigger;
-    public static Action<List<Interaction>> UnlockText;
+    public static Action<Interaction> UnlockText;
 
     private List<string> GetSentence(Dialogue d)
     {
@@ -184,7 +184,7 @@ public class DialogueManager : MonoBehaviour
                 
                 EnableTextTrigger?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToEnable);
                 DisableTextTrigger?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToDisable);
-                UnlockText?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToUnlock);
+                UnlockText?.Invoke(InteractionManager.Instance.LastUsedInteractionTrigger.unlockedInteraction);
             }
         }
     }

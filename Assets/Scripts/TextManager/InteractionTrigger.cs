@@ -9,7 +9,7 @@ public class InteractionTrigger : MonoBehaviour
     public Interaction defaultInteraction;
     public Interaction unlockedInteraction;
 
-    private Interaction _activeInteraction;
+    public Interaction ActiveInteraction { get; private set; }
 
     private Dialogue _displayedDialogue;
 
@@ -35,11 +35,12 @@ public class InteractionTrigger : MonoBehaviour
         //Setting layer to Dialogue Layer;
         gameObject.layer = 6;
         
-        _activeInteraction = defaultInteraction;
+        ActiveInteraction = defaultInteraction;
         SetTriggerState(triggerState);    
     }
     public void TriggerDialogue()
     {
+        InteractionManager.Instance.LastUsedInteractionTrigger = this;
         DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay, InteractionManager.Instance.CurrentInteraction.assignedDialogue);
         InteractionManager.Instance.SetEndTrigger(triggers);
     }
@@ -59,21 +60,21 @@ public class InteractionTrigger : MonoBehaviour
             case TriggerState.enabled:              
                 _bc.enabled = true;
                 triggerState = tS;
-                if (_activeInteraction.StartOnAwake) TriggerDialogue();
+                if (ActiveInteraction.StartOnAwake) TriggerDialogue();
                 break;
             case TriggerState.hidden:
                 _bc.enabled = false;
                 triggerState = tS;
                 break;
             case TriggerState.setDefaultText:
-                _displayedDialogue = defaultInteraction.assignedDialogue;
+                ActiveInteraction = defaultInteraction;
                 triggerState = tS;
-                if (_activeInteraction.StartOnAwake) TriggerDialogue();
+                if (ActiveInteraction.StartOnAwake) TriggerDialogue();
                 break;
             case TriggerState.setUnlockedText:
-                _displayedDialogue = unlockedInteraction.assignedDialogue;
+                ActiveInteraction = unlockedInteraction;
                 triggerState = tS;
-                if (_activeInteraction.StartOnAwake) 
+                if (ActiveInteraction.StartOnAwake) 
                     TriggerDialogue();
                 break;
         }
@@ -121,14 +122,9 @@ public class InteractionTrigger : MonoBehaviour
             SetTriggerState(TriggerState.hidden);
         }
     }
-    private void UnlockText(List<Interaction> iList)
+    private void UnlockText(Interaction i)
     {
-        List<Dialogue> dList = new List<Dialogue>();
-        foreach (var i in iList)
-        {
-            dList.Add(i.assignedDialogue);
-        }
-        if (dList.Contains(_displayedDialogue))
+        if (i == unlockedInteraction)
         {
             Debug.Log("Unlocking Text");
             SetTriggerState(TriggerState.setUnlockedText);
