@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: "TD#T\xFCr_Day1"
+  m_Name: TD#Start_Day3
   m_EditorClassIdentifier: 
-  Title: "T\xFCt Interaction Day 1"
-  ger_sentences:
-  - Test
-  - Test
+  Title: default Title
+  ger_sentences: []
   ger_keywords: []
-  eng_sentences:
-  - TEst
-  - TEst
+  eng_sentences: []
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

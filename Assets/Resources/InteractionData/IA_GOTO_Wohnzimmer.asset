@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb5108ba8aa834c8e3a8129da2599b, type: 3}
+  m_Name: IA_GOTO_Wohnzimmer
+  m_EditorClassIdentifier: 
+  <StartOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 
+  assignedDialogue: {fileID: 11400000, guid: 3457fa02fea9adb47b90cf186240810b, type: 2}
+  dialogueSounds: {fileID: 11400000, guid: 43525a04b4ea1a1448f1e72ecd943c8b, type: 2}
+  dialogueWaitingTime: {fileID: 11400000, guid: 9eae17c03e82d0e4688fdbd8f4b711bd, type: 2}
+  dialogueAnimations: {fileID: 11400000, guid: 5f88871e357db014f945c40abf5c10aa, type: 2}
+  dialogueDogFaces: {fileID: 11400000, guid: b69c6db0f172e6649b4880903a5f4dca, type: 2}
+  cameraFocalPoints: {fileID: 0}
+  interactionToUnlock: []
+  interactionToEnable: []
+  interactionToDisable: []
