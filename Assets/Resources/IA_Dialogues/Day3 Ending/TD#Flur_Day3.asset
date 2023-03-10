@@ -10,16 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
-  m_Name: TD#Start_Day3
+  m_Name: TD#Flur_Day3
   m_EditorClassIdentifier: 
-  Title: Start
+  Title: Flur  + Bomb
   ger_sentences:
-  - Was war das schon wieder?
-  - Was geht hier vor sich?
+  - Oh Nein...Nein....Bitte nicht schon wieder...
   ger_keywords: []
   eng_sentences:
   - 1
-  - 2
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

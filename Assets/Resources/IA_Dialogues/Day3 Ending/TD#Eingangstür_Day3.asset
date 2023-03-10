@@ -12,10 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913924d14623b874f9dfcf4054e506e4, type: 3}
   m_Name: "TD#Eingangst\xFCr_Day3"
   m_EditorClassIdentifier: 
-  Title: default Title
-  ger_sentences: []
+  Title: ENDING
+  ger_sentences:
+  - Hilfe...
+  - Bitte rettet mich...
+  - Ich muss hier raus...
   ger_keywords: []
-  eng_sentences: []
+  eng_sentences:
+  - 
+  - 
+  - 
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

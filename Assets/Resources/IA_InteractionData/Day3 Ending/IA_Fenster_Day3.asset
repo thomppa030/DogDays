@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb5108ba8aa834c8e3a8129da2599b, type: 3}
+  m_Name: IA_Fenster_Day3
+  m_EditorClassIdentifier: 
+  <StartOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 010000000d000000000000000000000000000000000000000e00000008000000
+  assignedDialogue: {fileID: 11400000, guid: 367d5958714b6324da207f47140efa25, type: 2}
+  dialogueSounds: {fileID: 11400000, guid: 762022c7b3778d242a3be335362ac409, type: 2}
+  dialogueWaitingTime: {fileID: 0}
+  dialogueAnimations: {fileID: 11400000, guid: e0de6842ceb3ff04d82c3fe9c266d080, type: 2}
+  dialogueDogFaces: {fileID: 11400000, guid: 0253c4afb87075540a1effad905173ee, type: 2}
+  cameraFocalPoints: {fileID: 0}
+  interactionToEnable: []
+  interactionToDisable: []
