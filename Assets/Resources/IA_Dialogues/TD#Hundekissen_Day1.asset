@@ -21,10 +21,13 @@ MonoBehaviour:
   - Da hat sich selbst der Vogel auf der Fensterbank erschrocken, haha!
   ger_keywords: []
   eng_sentences:
-  - 1
-  - 2
-  - 2
-  - 2
+  - "\rGood morning Jimmy!"
+  - 'As sleepy as always!
+
+    Typical!'
+  - "\rDad and I will wake you up later, only this time you won't fly out of my window
+    like last time!"
+  - Even the bird on the window sill was startled, haha!
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: AN_Napf_Day1
   m_EditorClassIdentifier: 
   characterAnim:
+  - {fileID: 4537692746815753182, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
   - {fileID: -500353978738215223, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  - {fileID: 4537692746815753182, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}

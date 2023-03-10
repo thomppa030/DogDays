@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: IA_Schrank_Day1
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 01000000000000000000000000000000000000000000000008000000
+  <Actions>k__BackingField: 010000000d0000000a00000000000000000000000d000000000000000a000000000000000d0000000a0000000000000008000000
   assignedDialogue: {fileID: 11400000, guid: 95665ed3586f79340a6e106d398f0cb7, type: 2}
   dialogueSounds: {fileID: 11400000, guid: 7f6cdeb9fcc56d140944a13ad22efc5b, type: 2}
   dialogueWaitingTime: {fileID: 11400000, guid: 697da5509fcf4c54f812e396d7117948, type: 2}
   dialogueAnimations: {fileID: 11400000, guid: 740ea751c90c54a408a3ba62deea54e9, type: 2}
   dialogueDogFaces: {fileID: 11400000, guid: 1d2bf3187c299fa4495d74ef1dce205f, type: 2}
   cameraFocalPoints: {fileID: 0}
-  interactionToUnlock: []
   interactionToEnable: []
   interactionToDisable: []
