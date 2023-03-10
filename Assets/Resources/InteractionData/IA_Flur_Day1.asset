@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: IA_Flur_Day1
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 
-  assignedDialogue: {fileID: 0}
-  dialogueSounds: {fileID: 0}
+  <Actions>k__BackingField: 010000000d000000000000000d000000000000000d000000000000000e00000008000000
+  assignedDialogue: {fileID: 11400000, guid: fb7b3e7050bfc284cb4cf8d640fb1099, type: 2}
+  dialogueSounds: {fileID: 11400000, guid: 43525a04b4ea1a1448f1e72ecd943c8b, type: 2}
   dialogueWaitingTime: {fileID: 0}
   dialogueAnimations: {fileID: 0}
-  dialogueDogFaces: {fileID: 0}
+  dialogueDogFaces: {fileID: 11400000, guid: a015c94aa376b284780bebb4a6a161b1, type: 2}
   cameraFocalPoints: {fileID: 0}
   interactionToUnlock: []
   interactionToEnable: []

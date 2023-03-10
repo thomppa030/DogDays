@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IA_GOTO_Wohnzimmer
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000000000000
+  <Actions>k__BackingField: 010000000d000000000000000d000000000000000d000000000000000d0000000000000008000000
   assignedDialogue: {fileID: 11400000, guid: 3457fa02fea9adb47b90cf186240810b, type: 2}
   dialogueSounds: {fileID: 11400000, guid: 43525a04b4ea1a1448f1e72ecd943c8b, type: 2}
   dialogueWaitingTime: {fileID: 11400000, guid: 9eae17c03e82d0e4688fdbd8f4b711bd, type: 2}

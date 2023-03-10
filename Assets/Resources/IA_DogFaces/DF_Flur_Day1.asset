@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c1a689324a1aa49bd89d99dc621128, type: 3}
   m_Name: DF_Flur_Day1
   m_EditorClassIdentifier: 
-  dogFaces: []
+  dogFaces:
+  - {fileID: 21300000, guid: 9cd9e773cd9f2e14a9aa1dae824853bb, type: 3}
+  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
+  - {fileID: 21300000, guid: d9f4738d72e93d04ca32bb703888320f, type: 3}
