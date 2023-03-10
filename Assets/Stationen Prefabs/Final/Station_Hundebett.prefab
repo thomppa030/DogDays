@@ -78,7 +78,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 28bb2b6cf33d5de4f90d1a3286190891, type: 2}
-  unlockedInteraction: {fileID: 0}
+  unlockedInteraction: {fileID: 11400000, guid: 77e3c3e1987a9ae4e946168ac07bbc9c, type: 2}
+  triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
 --- !u!1001 &1653862580367564615
@@ -1499,8 +1500,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerState: 1
+  triggerState: 3
   defaultInteraction: {fileID: 11400000, guid: 28bb2b6cf33d5de4f90d1a3286190891, type: 2}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []

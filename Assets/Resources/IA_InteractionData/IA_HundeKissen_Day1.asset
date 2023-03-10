@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: IA_HundeKissen_Day1
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 010000000d00000000000000000000000e00000008000000
-  assignedDialogue: {fileID: 11400000, guid: 50f14d1fa6d9d2b4e8ce8326384518ce, type: 2}
-  dialogueSounds: {fileID: 11400000, guid: e68f4a76fbc33e4499bdf10fa8d69a21, type: 2}
+  <Actions>k__BackingField: 010000000d000000000000000d00000000000000000000000000000008000000
+  assignedDialogue: {fileID: 11400000, guid: 818aa54782838cc42b085c09cb0bb510, type: 2}
+  dialogueSounds: {fileID: 0}
   dialogueWaitingTime: {fileID: 11400000, guid: d8df05defbab57f4ab8acac2bdec3b79, type: 2}
-  dialogueAnimations: {fileID: 11400000, guid: 9c47f489fd86e9c4bb959cd4218f4099, type: 2}
+  dialogueAnimations: {fileID: 0}
   dialogueDogFaces: {fileID: 11400000, guid: a99e5d0ff1900b7489517dfa6c89a34f, type: 2}
   cameraFocalPoints: {fileID: 0}
-  interactionToUnlock: []
   interactionToEnable: []
   interactionToDisable: []
