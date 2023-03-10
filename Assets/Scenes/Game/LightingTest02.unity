@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &1190832
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.968827
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.69202095
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -42.316086
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.17218982
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.98506385
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 199.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296877815560, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5008902296878041896, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+      propertyPath: m_Name
+      value: AnimatedDoor
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bac3b715dec477d43bb6f20615274126, type: 3}
 --- !u!1001 &1203158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1328,6 +1385,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 1
   cameraFocalPoints: []
 --- !u!1 &62801353
@@ -2001,6 +2059,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
 --- !u!65 &109141428
@@ -2272,7 +2331,7 @@ Transform:
   - {fileID: 442093754}
   - {fileID: 458896274}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &153917559
 PrefabInstance:
@@ -4038,7 +4097,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &230115038
 GameObject:
@@ -6221,7 +6280,7 @@ Transform:
   - {fileID: 976570647}
   - {fileID: 344436635}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &365785012
 PrefabInstance:
@@ -8901,6 +8960,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
 --- !u!1001 &522167635
@@ -10396,7 +10456,7 @@ Transform:
   - {fileID: 216735220}
   - {fileID: 1246794785}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &654766954
 PrefabInstance:
@@ -13046,7 +13106,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &804250424
 PrefabInstance:
@@ -13323,7 +13383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990326144182666858, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1990326144182666858, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14453,6 +14513,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 1
   cameraFocalPoints: []
 --- !u!65 &887924733
@@ -14625,7 +14686,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &907224455
 PrefabInstance:
@@ -15497,7 +15558,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &943673490
 PrefabInstance:
@@ -16072,7 +16133,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1001195553
 GameObject:
@@ -19519,7 +19580,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1256303174 stripped
 GameObject:
@@ -20124,6 +20185,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7522961386100405256, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522961386100405257, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: <playerStateMachine>k__BackingField
       value: 
@@ -20138,7 +20203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7522961386335902883, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7522961386335902883, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -22018,7 +22083,7 @@ Transform:
   - {fileID: 983934682}
   - {fileID: 1074688302}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1476379175
 PrefabInstance:
@@ -22965,6 +23030,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 1
   cameraFocalPoints: []
 --- !u!1001 &1515420548
@@ -23088,6 +23154,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 1
   cameraFocalPoints: []
 --- !u!65 &1516891052
@@ -24051,6 +24118,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8440723929608046638, guid: 53cd360ee6af9b74692aa560db75063c, type: 3}
   m_PrefabInstance: {fileID: 1572393616}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1575468968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5008902296878041896, guid: bac3b715dec477d43bb6f20615274126, type: 3}
+  m_PrefabInstance: {fileID: 1190832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1575468969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575468968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db41e1a31d274c849a913db763c6b766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOneShot: 1
+  <AnimationClip>k__BackingField: {fileID: 7400000, guid: e6113055609a03545893e43901f498c5, type: 2}
 --- !u!1001 &1575673745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25581,6 +25667,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
 --- !u!65 &1734890174
@@ -27583,6 +27670,7 @@ MonoBehaviour:
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 6b0addcadd8c8c0449e01dbf4be368f6, type: 2}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
 --- !u!4 &1851616433
@@ -29952,6 +30040,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
 --- !u!65 &1976149938
@@ -30997,6 +31086,7 @@ MonoBehaviour:
   triggerState: 0
   defaultInteraction: {fileID: 0}
   unlockedInteraction: {fileID: 0}
+  triggers: []
   playOnTrigger: 1
   cameraFocalPoints: []
 --- !u!65 &2062244310
@@ -31455,7 +31545,7 @@ Transform:
   - {fileID: 318794988}
   - {fileID: 313291530}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2103308822
 PrefabInstance:
@@ -31871,7 +31961,7 @@ Transform:
   - {fileID: 1082368740}
   - {fileID: 401548846}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2125483966
 PrefabInstance:
@@ -32350,8 +32440,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerState: 1
-  defaultInteraction: {fileID: 11400000, guid: a6e83793f1b3b9d4bbe8b3aa209708ee, type: 2}
-  unlockedInteraction: {fileID: 0}
+  defaultInteraction: {fileID: 11400000, guid: 28bb2b6cf33d5de4f90d1a3286190891, type: 2}
+  unlockedInteraction: {fileID: 11400000, guid: 6b0addcadd8c8c0449e01dbf4be368f6, type: 2}
+  triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
 --- !u!4 &543450652038983406 stripped
@@ -32381,9 +32472,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerState: 1
+  triggerState: 2
   defaultInteraction: {fileID: 11400000, guid: a6e83793f1b3b9d4bbe8b3aa209708ee, type: 2}
   unlockedInteraction: {fileID: 0}
+  triggers:
+  - {fileID: 1575468969}
   playOnTrigger: 0
   cameraFocalPoints: []
 --- !u!1001 &895380169729581566
@@ -32533,7 +32626,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3951840247995570090, guid: 46794b5fd7911c743bca273338bd0a6a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3951840247995570090, guid: 46794b5fd7911c743bca273338bd0a6a, type: 3}
       propertyPath: m_LocalPosition.x

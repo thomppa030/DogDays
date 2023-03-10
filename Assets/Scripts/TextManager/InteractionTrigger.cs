@@ -72,10 +72,8 @@ public class InteractionTrigger : MonoBehaviour
                 if (ActiveInteraction.StartOnAwake) TriggerDialogue();
                 break;
             case TriggerState.setUnlockedText:
-                ActiveInteraction = unlockedInteraction;
+                ActiveInteraction = unlockedInteraction ? unlockedInteraction : defaultInteraction;
                 triggerState = tS;
-                if (ActiveInteraction.StartOnAwake) 
-                    TriggerDialogue();
                 break;
         }
     }
