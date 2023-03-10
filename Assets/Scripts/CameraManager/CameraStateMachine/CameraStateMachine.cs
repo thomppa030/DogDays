@@ -9,6 +9,7 @@ public class CameraStateMachine : StateMachine
     
     public GameObject camera;
 
+	[Header("Follow Camera Settings")]
     public Transform player;
     public Vector3 pivotOffset = new Vector3(0.0f,1.7f,0.0f);
     public Vector3 cameraOffset = new Vector3(0.0f,0.0f,-3.0f);
