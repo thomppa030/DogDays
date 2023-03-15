@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9dc0997fa493a4eb97b3704de128e4, type: 3}
   m_Name: IS_Wirtschaftsraum_Day3
   m_EditorClassIdentifier: 
-  audioclips: []
+  audioclips:
+  - {fileID: 8300000, guid: e023e344d36af0440ad5a0ca6488c166, type: 3}
+  - {fileID: 8300000, guid: c917e29588c34bf4eb5ca3520fec918c, type: 3}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IA_Eingangstur_Day3
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 010000000d0000000000000000000000000000000e0000000500000005000000
+  <Actions>k__BackingField: 010000000d00000007000000070000000a0000000000000007000000070000000a00000000000000070000000a00000000000000070000000e00000005000000
   assignedDialogue: {fileID: 11400000, guid: c7833ca0c72cf9346b21a750f0746b81, type: 2}
   dialogueSounds: {fileID: 11400000, guid: a4bb5c90266e38f42b9a89d4db0e3a91, type: 2}
   dialogueWaitingTime: {fileID: 11400000, guid: 61ab51175c38b87409eb87561bd2960c, type: 2}

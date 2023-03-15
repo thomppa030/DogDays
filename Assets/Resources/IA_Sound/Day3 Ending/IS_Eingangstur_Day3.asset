@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9dc0997fa493a4eb97b3704de128e4, type: 3}
   m_Name: IS_Eingangstur_Day3
   m_EditorClassIdentifier: 
-  audioclips: []
+  audioclips:
+  - {fileID: 8300000, guid: e85b769a9dbfb8241b22475b05bee5d1, type: 3}
+  - {fileID: 8300000, guid: f9d61a5e07809544f86c79d34c09ca0f, type: 3}
+  - {fileID: 8300000, guid: fb77886b3d5590b4c98d29d0bdb1a365, type: 3}
+  - {fileID: 8300000, guid: 281afb2f4a228b14f893cdb4c5e6899d, type: 3}
+  - {fileID: 8300000, guid: c917e29588c34bf4eb5ca3520fec918c, type: 3}
+  - {fileID: 8300000, guid: ea5f0a552a5fa5a4486883224349338c, type: 3}
