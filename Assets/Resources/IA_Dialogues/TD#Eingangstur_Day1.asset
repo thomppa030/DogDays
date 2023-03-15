@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Ending Day1
   ger_sentences:
-  - "Das ist ein guter Platz! Ich ruhe mich lieber etwas aus, bevor alle  zur\xFCckkommt."
+  - "Das ist ein guter Platz! Ich ruhe mich lieber etwas aus, bevor alle  zur\xFCckkommen."
   - "Es ist zwar etwas k\xFChl, aber so werde ich meine Familie sicher nicht verpassen,
     wenn sie zur\xFCckkommen!"
   ger_keywords: []
