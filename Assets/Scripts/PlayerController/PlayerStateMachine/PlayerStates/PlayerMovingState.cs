@@ -73,7 +73,7 @@ public class PlayerMovingState : PlayerStateBase
         if (hit.collider.gameObject.TryGetComponent<InteractionTrigger>(out InteractionTrigger dT))
         {
             //TODO: Chose between default or unlocked interaction, maybe add an Enum to the InteractionTrigger
-            InteractionManager.Instance.CurrentInteraction = dT.ActiveInteraction;
+            InteractionManager.Instance.CurrentInteraction = dT.defaultInteraction;
             dT.TriggerDialogue();
         }
         else

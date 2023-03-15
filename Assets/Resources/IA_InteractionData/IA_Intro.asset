@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3bb5108ba8aa834c8e3a8129da2599b, type: 3}
   m_Name: IA_Intro
   m_EditorClassIdentifier: 
-  <StartOnAwake>k__BackingField: 1
+  <StartOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 0500000001000000070000000300000000000000030000000000000003000000000000000400000008000000
   assignedDialogue: {fileID: 11400000, guid: 0819b188a1a739143a03c589399d1d6a, type: 2}
   dialogueSounds: {fileID: 11400000, guid: 17fcb9a53b1522e489ffbedd6e6e0767, type: 2}
@@ -20,5 +20,6 @@ MonoBehaviour:
   dialogueAnimations: {fileID: 0}
   dialogueDogFaces: {fileID: 0}
   cameraFocalPoints: {fileID: 0}
+  interactionToUnlock: []
   interactionToEnable: []
   interactionToDisable: []
