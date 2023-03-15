@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb0a84a323f75540b2766ad8fac4f6e, type: 3}
   m_Name: AN_Schrank_Day1
   m_EditorClassIdentifier: 
-  characterAnim:
-  - {fileID: -8800096121142784032, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
-  - {fileID: 4537692746815753182, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
-  - {fileID: -8800096121142784032, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  characterAnim: []

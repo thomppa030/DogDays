@@ -51,7 +51,7 @@ public partial class @DogDaysInput : IInputActionCollection2, IDisposable
                     ""id"": ""baed6ab2-2ab4-451d-900b-7526ee426df1"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": ""Press"",
+                    ""interactions"": """",
                     ""initialStateCheck"": false
                 },
                 {

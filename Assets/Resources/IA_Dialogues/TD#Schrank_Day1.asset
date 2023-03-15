@@ -22,11 +22,11 @@ MonoBehaviour:
   - "Diesmal m\xFCssen sie Jimmy aber mitnehmen!\nNochmal gehe ich nicht ohne ihn!"
   ger_keywords: []
   eng_sentences:
-  - What a mess...
-  - "\rHm...some things are missing..."
-  - "\rAre we going on vacation?!"
-  - "\rI remember the last time we played on the beach for hours by the water!"
-  - "\rBut this time we have to take Jimmy too!\r\nI'm not leaving without him again!"
+  - 1
+  - 2
+  - 3
+  - 3
+  - 3
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

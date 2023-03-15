@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Bed Interaction2 Day 1
   ger_sentences:
-  - Sind denn alle schon wach?
+  - Test
+  - test
   ger_keywords: []
   eng_sentences:
-  - Sind denn alle schon wach?
+  - test
+  - terstr
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

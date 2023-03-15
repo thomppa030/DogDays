@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -55,15 +54,6 @@ public class InteractionManager : MonoBehaviour
     
     #endregion
     
-    private List<InLevelTrigger> _animationTriggers;
-
-    public InteractionTrigger LastUsedInteractionTrigger { get; set; }
-    
-    public void SetEndTrigger(List<InLevelTrigger> animationTriggers)
-    {
-        _animationTriggers = animationTriggers;
-    }
-    
     [field: SerializeField] private PlayerStateMachine PlayerStateMachine { get; set; }
     
     private Animator _playerAnim;
@@ -117,16 +107,17 @@ public class InteractionManager : MonoBehaviour
         OnPlaySound += PlaySound;
     }
     
-    private void Update()
+    public void TriggerNextSentence()
     {
-            if (Input.GetButtonDown("Fire1") && CurrentInteraction != null &&
-                CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
+        {
+            if (CurrentInteraction != null && CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
             {
                 ActionID++;
                 SetNextAction(CurrentInteraction, ActionID);
             }
+        }
     }
-
+    
     private bool _waitForSentence = false;
     
     public void SetNextAction(Interaction i, int id)
@@ -171,11 +162,9 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.EndDialogue:
-                //TODO: Make Camera Switch
-                //OnSwitchCameraFocus?.Invoke();
+                OnSwitchCameraFocus?.Invoke();
                 OnDialogueEnd?.Invoke();
                 ResetIDs();
-                TriggerEndTrigger();
                 break;
             case Interaction.Action.PlayCharAnim:
                 PlayCharacterAnimation();
@@ -254,14 +243,6 @@ public class InteractionManager : MonoBehaviour
         }
     }
 
-    private void TriggerEndTrigger()
-    {
-        foreach (var trigger in _animationTriggers)
-        {
-            trigger.Trigger();
-        }
-    }
-
     void PlaySound(AudioClip ac)
     {
         StartCoroutine(PlaySFX(ac));
@@ -332,11 +313,10 @@ public class InteractionManager : MonoBehaviour
         yield return new WaitForSeconds(time);
     }
 
-    public void ResetIDs()
+    private void ResetIDs()
     {
         _waitID = 0;
         _audioID = 0;
-        ActionID = 0;
         _playerAnimID = 0;
         _profileImageID = 0;
         _cameraFocusID = 0;
