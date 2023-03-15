@@ -20,10 +20,10 @@ MonoBehaviour:
   - Sind denn alle schon wach?
   ger_keywords: []
   eng_sentences:
-  - 1
-  - 2
-  - 3
-  - 4
+  - "\rWake up!"
+  - "\rA great day awaits us!"
+  - Oh?
+  - "\rIs everyone awake yet?"
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

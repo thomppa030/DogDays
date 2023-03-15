@@ -13,23 +13,19 @@ MonoBehaviour:
   m_Name: Fenster#day4
   m_EditorClassIdentifier: 
   Title: Fenster#day4
-  <startOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0d00000000000000000000000b0000000e00000008000000
   ger_sentences:
-  - "Immer wenn dieses Ger\xE4usch zu h\xF6ren war, hielt sich meine Familie von
-    den Fenstern fern.\n"
-  - Das sollte ich auch.
+  - "Immer wenn dieses Ger\xE4usch zu h\xF6ren war, hielt ich mich von den Fenstern
+    fern.\n"
+  - Das sollte ich...
+  - Das sollte ich...
+  - Das sollte ich...
+  ger_keywords: []
   eng_sentences:
-  - Always when this sound came up,  my family would stay away from windows.
+  - Always when this sound came up, i would stay away from windows.
   - I should too.
+  - I should too.
+  - I should too.
+  eng_keywords: []
   <InfoText>k__BackingField: 97% of the targets for russian missiles are civilian
     objects. Over 15 000 missile strikes were launched on Ukraine by russia.
   <InfoDisplayTime>k__BackingField: 10
-  <waitTime>k__BackingField: []
-  <characterAnim>k__BackingField: []
-  <profileImages>k__BackingField:
-  - {fileID: 21300000, guid: b10068eb1d2f3b54b9c4f014c4dad353, type: 3}
-  Audioclips: []
-  textToUnlock: []
-  textToEnable: []
-  textToDisable: []

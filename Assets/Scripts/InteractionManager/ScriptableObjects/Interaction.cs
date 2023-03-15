@@ -47,8 +47,6 @@ public class Interaction : ScriptableObject
         ResetAnimID,
         HideVideoPanel02Day01,
     }
-    
-    public List<Interaction> interactionToUnlock = new List<Interaction>();
     public List<Interaction> interactionToEnable = new List<Interaction>();
     public List<Interaction> interactionToDisable = new List<Interaction>();
 }

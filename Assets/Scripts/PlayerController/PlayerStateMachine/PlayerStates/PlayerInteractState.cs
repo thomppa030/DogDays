@@ -11,14 +11,8 @@ public class PlayerInteractState : PlayerStateBase
     
     public override void OnStateEnter()
     {
-        PlayerStateMachine.InputReader.SkipSentenceEvent += SkipSentence;
     }
 
-    void SkipSentence()
-    {
-        InteractionManager.Instance.TriggerNextSentence();
-    }
-    
     public override void Tick(float deltaTime)
     {
     }

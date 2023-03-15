@@ -13,13 +13,12 @@ MonoBehaviour:
   m_Name: "IA_T\xFCr_Day1"
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 0000000008000000
+  <Actions>k__BackingField: 010000000d0000000a0000000000000008000000
   assignedDialogue: {fileID: 11400000, guid: a26fe1e55a9a34844b24372d90b4dc0a, type: 2}
-  dialogueSounds: {fileID: 11400000, guid: 010fe76f58b0bb04d9bbdc1c6c006c8b, type: 2}
-  dialogueWaitingTime: {fileID: 11400000, guid: 8dc7b21fa923c8e4dbeb02a9f78ce885, type: 2}
+  dialogueSounds: {fileID: 0}
+  dialogueWaitingTime: {fileID: 0}
   dialogueAnimations: {fileID: 11400000, guid: 8d2818753b69df9438f9e57e407b06df, type: 2}
   dialogueDogFaces: {fileID: 11400000, guid: b0abaf84b9a401c4995bba850d7e33e5, type: 2}
   cameraFocalPoints: {fileID: 0}
-  interactionToUnlock: []
   interactionToEnable: []
   interactionToDisable: []
