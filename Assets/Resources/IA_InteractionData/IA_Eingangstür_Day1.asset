@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb5108ba8aa834c8e3a8129da2599b, type: 3}
+  m_Name: "IA_Eingangst\xFCr_Day1"
+  m_EditorClassIdentifier: 
+  <StartOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 010000000d000000000000000d000000000000000800000009000000
+  assignedDialogue: {fileID: 11400000, guid: 402d976594ca5e74d8e521a08b1c459f, type: 2}
+  dialogueSounds: {fileID: 11400000, guid: 7b97d74b87c10314b9a0ef80101017cf, type: 2}
+  dialogueWaitingTime: {fileID: 11400000, guid: 72e4cf84cb5e49145a7b456c6d5eae3b, type: 2}
+  dialogueAnimations: {fileID: 11400000, guid: d01cace6d0514704fbccca3d11620b2d, type: 2}
+  dialogueDogFaces: {fileID: 11400000, guid: a087eb6788f7c5346844092afc53514a, type: 2}
+  cameraFocalPoints: {fileID: 0}
+  interactionToUnlock: []
+  interactionToEnable: []
+  interactionToDisable: []

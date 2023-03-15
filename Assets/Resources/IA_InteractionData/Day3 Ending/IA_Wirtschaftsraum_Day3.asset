@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb5108ba8aa834c8e3a8129da2599b, type: 3}
+  m_Name: IA_Wirtschaftsraum_Day3
+  m_EditorClassIdentifier: 
+  <StartOnAwake>k__BackingField: 0
+  <Actions>k__BackingField: 0000000000000000
+  assignedDialogue: {fileID: 11400000, guid: 57066f7d3f0d0664190f08a10fe749dc, type: 2}
+  dialogueSounds: {fileID: 11400000, guid: 63c46cd164281fe468f133f8c8bbef28, type: 2}
+  dialogueWaitingTime: {fileID: 0}
+  dialogueAnimations: {fileID: 0}
+  dialogueDogFaces: {fileID: 11400000, guid: d3265557ab37b464a9757169014f1a04, type: 2}
+  cameraFocalPoints: {fileID: 0}
+  interactionToEnable: []
+  interactionToDisable: []
