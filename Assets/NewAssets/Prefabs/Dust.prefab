@@ -49,7 +49,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
   looping: 1
-  prewarm: 0
+  prewarm: 1
   playOnAwake: 1
   useUnscaledTime: 0
   autoRandomSeed: 1
@@ -116,7 +116,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 7
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -223,7 +223,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.7264151, g: 0.6335046, b: 0.56537026, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -284,8 +284,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
+      minMaxState: 3
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -337,7 +337,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -390,7 +390,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -737,7 +737,7 @@ ParticleSystem:
     m_UseMeshMaterialIndex: 0
     m_UseMeshColors: 1
     alignToDirection: 0
-    m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+    m_Texture: {fileID: 0}
     m_TextureClipChannel: 3
     m_TextureClipThreshold: 0
     m_TextureUVChannel: 0
@@ -973,7 +973,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -985,20 +985,29 @@ ParticleSystem:
         - serializedVersion: 3
           time: 0
           value: 0
-          inSlope: 0
-          outSlope: 1
+          inSlope: 1.7364423
+          outSlope: 1.7364423
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.21942246
+        - serializedVersion: 3
+          time: 0.41339412
+          value: 0.9103211
+          inSlope: 0.99999994
+          outSlope: 0.99999994
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 0
+          value: 0
+          inSlope: -1.8017653
+          outSlope: -1.8017653
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.1282314
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -3220,7 +3229,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   SizeBySpeedModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -4761,7 +4770,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 119ae62dcab60df4a914bc155efaf4fd, type: 2}
+  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
