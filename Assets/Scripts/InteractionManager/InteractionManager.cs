@@ -71,7 +71,7 @@ public class InteractionManager : MonoBehaviour
 
     #region ID's
 
-    [field: SerializeField] public int ActionID { get; private set; } = 0;
+    [field: SerializeField] public int ActionID { get; set; } = 0;
     private int _waitID = 0;
     private int _audioID = 0;
     private int _profileImageID = 0;

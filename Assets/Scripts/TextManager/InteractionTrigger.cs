@@ -45,9 +45,9 @@ public class InteractionTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
-        InteractionManager.Instance.LastUsedInteractionTrigger = this;
         DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay,
-            InteractionManager.Instance.CurrentInteraction.assignedDialogue);
+            ActiveInteraction.assignedDialogue);
+        InteractionManager.Instance.LastUsedInteractionTrigger = this;
         InteractionManager.Instance.SetEndTrigger(triggers);
     }
 
