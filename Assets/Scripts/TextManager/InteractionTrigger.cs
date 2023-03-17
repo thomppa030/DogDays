@@ -9,6 +9,9 @@ public class InteractionTrigger : MonoBehaviour
     public Interaction defaultInteraction;
     public Interaction unlockedInteraction;
 
+    [Tooltip("One Shot Interactions will be destroyed when done")]
+    public bool isOneShot;
+    
     public Interaction ActiveInteraction { get; private set; }
 
     private Dialogue _displayedDialogue;
@@ -21,12 +24,6 @@ public class InteractionTrigger : MonoBehaviour
     
     public Transform[] cameraFocalPoints;
     
-    /**
-     * IF in Unity a Singleton is created in awake, it will be destroyed when a new scene is loaded.
-     * If you want to keep the Singleton between scenes, you need to use the OnEnable and OnDisable methods.
-     * 
-     */
-
     private void Start()
     {
         _bc = GetComponent<BoxCollider>();
@@ -137,12 +134,11 @@ public class InteractionTrigger : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && playOnTrigger)
+        if(other.gameObject.CompareTag("Player") && playOnTrigger)
         {
             TriggerDialogue();
         }
     }
-
     public TriggerState GetTriggerState()
     {
         return triggerState;
