@@ -21,7 +21,7 @@ public class AnimationTrigger : InLevelTrigger
         
         if (IsOneShot)
         {
-            Destroy(this);
+            Destroy(this, AnimationClip.length);
         }
     }
 
