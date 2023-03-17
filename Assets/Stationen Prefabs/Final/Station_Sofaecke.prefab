@@ -484,14 +484,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5267916242443727242}
-  m_LocalRotation: {x: 1, y: 0, z: -0, w: 0.000000021855694}
-  m_LocalPosition: {x: 0.28, y: 0.452, z: -0.27}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.28, y: 0.4251, z: -0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4006159387371448768}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &641421398030297434
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -499,7 +499,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5267916242443727242}
-  m_Mesh: {fileID: 3049172315057216404, guid: 8e0a7d23edd44bc4d8c90e75702af970, type: 3}
+  m_Mesh: {fileID: -3505643557329460165, guid: 0caec8a160420c94199661e4059e0ee5, type: 3}
 --- !u!23 &5722849400470548982
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -520,7 +520,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 35a3ba3617aa6214c97000ad3165c7a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -553,8 +553,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.4010292, y: 0.9294881, z: 0.73382527}
-  m_Center: {x: -0.031033605, y: 0.036075674, z: 0.07841406}
+  m_Size: {x: 0.4010292, y: 0.62910974, z: 1.3648722}
+  m_Center: {x: -0.03103357, y: -0.11411393, z: -0.024976855}
 --- !u!114 &8307153948397446760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +570,7 @@ MonoBehaviour:
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 20f66a7261c54db4e929586aa77cda95, type: 2}
   unlockedInteraction: {fileID: 0}
+  isOneShot: 0
   triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
@@ -771,6 +772,7 @@ MonoBehaviour:
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 728c2de880e939c49bd55b61e521ca71, type: 2}
   unlockedInteraction: {fileID: 0}
+  isOneShot: 0
   triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
@@ -1068,6 +1070,7 @@ MonoBehaviour:
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 79357be75d51c03498ac88e60d051236, type: 2}
   unlockedInteraction: {fileID: 0}
+  isOneShot: 0
   triggers: []
   playOnTrigger: 0
   cameraFocalPoints: []
