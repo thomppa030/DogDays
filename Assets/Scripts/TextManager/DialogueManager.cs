@@ -235,9 +235,7 @@ public class DialogueManager : MonoBehaviour
         
         _displayedDialogue = d;
         
-        Interaction _interaction = InteractionManager.Instance.CurrentInteraction;
-        
-        _interaction.assignedDialogue = d;
+        Interaction interaction = InteractionManager.Instance.CurrentInteraction;
         
         Debug.Log("Size of sentences in StartDialogue before Clearing " + sentences.Count);
         sentences.Clear();
@@ -249,7 +247,7 @@ public class DialogueManager : MonoBehaviour
         }
         Debug.Log("Size of sentences in StartDialogue after Enqueuing " + sentences.Count);
 
-        InteractionManager.Instance.SetNextAction(_interaction, InteractionManager.Instance.ActionID);
+        InteractionManager.Instance.SetNextAction(interaction, InteractionManager.Instance.ActionID);
     }
     
     void EndDialogue()
