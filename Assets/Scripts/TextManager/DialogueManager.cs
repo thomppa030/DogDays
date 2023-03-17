@@ -255,6 +255,11 @@ public class DialogueManager : MonoBehaviour
         ChangeTextstate(TextState.none, null);
         DisableTextFrame();
         EnablePlayerMovement();
+
+        if (InteractionManager.Instance.LastUsedInteractionTrigger.isOneShot)
+        {
+            Destroy(InteractionManager.Instance.LastUsedInteractionTrigger);
+        }
     }
 
     private void EnableTextFrame()
