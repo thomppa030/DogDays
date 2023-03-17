@@ -65,6 +65,7 @@ public class InteractionManager : MonoBehaviour
     }
     
     [field: SerializeField] private PlayerStateMachine PlayerStateMachine { get; set; }
+    [field: SerializeField] private CameraStateMachine CameraStateMachine { get; set; }
     
     private Animator _playerAnim;
     [field: SerializeField] public float DefaultWaitingtime { get; private set; } = 1f;
@@ -119,12 +120,12 @@ public class InteractionManager : MonoBehaviour
     
     private void Update()
     {
-            if (Input.GetButtonDown("Fire1") && CurrentInteraction != null &&
-                CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
-            {
-                ActionID++;
-                SetNextAction(CurrentInteraction, ActionID);
-            }
+        if (Input.GetButtonDown("Fire1") && CurrentInteraction != null &&
+            CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
+        {
+            ActionID++;
+            SetNextAction(CurrentInteraction, ActionID);
+        }
     }
 
     private bool _waitForSentence = false;
@@ -247,7 +248,8 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.SwitchCameraFocus:
-                OnSwitchCameraFocus?.Invoke();
+                CameraStateMachine.SwitchState(new CameraFocusState(CameraStateMachine,
+                    LastUsedInteractionTrigger.cameraLerpPosition, LastUsedInteractionTrigger.cameraFocusPoint));
                 ActionID++;
                 SetNextAction(i, ActionID);
                 break;

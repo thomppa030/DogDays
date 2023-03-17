@@ -45,8 +45,6 @@ public class CameraFreelookState : CameraStateBase
             Debug.LogWarning("Vertical Cam Offset (Y) will be ignored during collisions!\n" +
                              "It is recommended to set all vertical offset in Pivot Offset.");
         }
-
-        throw new System.NotImplementedException();
     }
 
     public override void Tick(float deltaTime)
@@ -103,7 +101,6 @@ public class CameraFreelookState : CameraStateBase
 
     public override void OnStateExit()
     {
-        throw new System.NotImplementedException();
     }
 
     // Set camera offsets to custom values.

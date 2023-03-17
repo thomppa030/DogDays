@@ -22,7 +22,10 @@ public class InteractionTrigger : MonoBehaviour
     
     [SerializeField] private bool playOnTrigger = false;
     
-    public Transform[] cameraFocalPoints;
+    [Tooltip("Point to focus camera on")]
+    public Transform cameraFocusPoint;
+    [Tooltip("Position to lerp camera to")]
+    public Transform cameraLerpPosition;
     
     private void Start()
     {
@@ -42,9 +45,9 @@ public class InteractionTrigger : MonoBehaviour
     }
     public void TriggerDialogue()
     {
+        InteractionManager.Instance.LastUsedInteractionTrigger = this;
         DialogueManager.Instance.ChangeTextstate(DialogueManager.TextState.onDisplay,
             ActiveInteraction.assignedDialogue);
-        InteractionManager.Instance.LastUsedInteractionTrigger = this;
         InteractionManager.Instance.SetEndTrigger(triggers);
     }
 
