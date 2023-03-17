@@ -14,4 +14,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterAnim:
   - {fileID: 4492889366653965390, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
-  - {fileID: 6763395943919261652, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}

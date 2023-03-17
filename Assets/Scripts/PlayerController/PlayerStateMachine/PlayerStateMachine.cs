@@ -30,6 +30,6 @@ public class PlayerStateMachine : StateMachine
         
         InteractionCheckRayCast = GetComponent<InteractionCheckRayCast>();
 
-        SwitchState(new PlayerMovingState(this));
+        SwitchState(new PlayerInteractState(this));
     }
 }
