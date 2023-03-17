@@ -22,6 +22,8 @@ public class InteractionManager : MonoBehaviour
     #region Delegate Declarations 
     public delegate void SwitchCameraFocusDelegate();
     public SwitchCameraFocusDelegate OnSwitchCameraFocus;
+    public delegate void ResetCameraFocusDelegate();
+    public ResetCameraFocusDelegate OnResetCameraFocus;
     public delegate void DialogueEndDelegate();
     public DialogueEndDelegate OnDialogueEnd;
     public delegate void DialogueStartDelegate(Dialogue d);
@@ -250,6 +252,11 @@ public class InteractionManager : MonoBehaviour
             case Interaction.Action.SwitchCameraFocus:
                 CameraStateMachine.SwitchState(new CameraFocusState(CameraStateMachine,
                     LastUsedInteractionTrigger.cameraLerpPosition, LastUsedInteractionTrigger.cameraFocusPoint));
+                ActionID++;
+                SetNextAction(i, ActionID);
+                break;
+            case Interaction.Action.ResetCameraFocus:
+                OnResetCameraFocus?.Invoke();
                 ActionID++;
                 SetNextAction(i, ActionID);
                 break;

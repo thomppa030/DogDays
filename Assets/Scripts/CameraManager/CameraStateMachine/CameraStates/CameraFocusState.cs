@@ -23,7 +23,7 @@ public class CameraFocusState : CameraStateBase
     {
         _cachedCameraPosition = CameraStateMachine.camera.transform;
         
-        InteractionManager.Instance.OnResetCameraFocus += ResetFocus();
+        InteractionManager.Instance.OnResetCameraFocus += ResetFocus;
     }
 
     public override void Tick(float deltaTime)
@@ -39,6 +39,19 @@ public class CameraFocusState : CameraStateBase
     {
         _focusPoint = null;
         _newCameraPosition = null;
+        
+        //Check if the distance between the camera and the cached position is greater than 0.1f
+        if (Vector3.Distance(CameraStateMachine.camera.transform.position, _cachedCameraPosition.position) > 0.1f)
+        {
+            //Reset camera position
+            CameraStateMachine.camera.transform.position = Vector3.Lerp(CameraStateMachine.camera.transform.position,
+                _cachedCameraPosition.position, Time.deltaTime);
+        }
+        else
+        {
+            //Switch back to freelook state
+            CameraStateMachine.SwitchState(new CameraFreelookState(CameraStateMachine));
+        }
     }
 
     void Focus()
