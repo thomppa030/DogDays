@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AudioTrigger : InLevelTrigger
 {
-    [Tooltip("If true, the audio clip will be played only once. If false, the audio clip will be played every time the player enters the trigger.")]
     
-    [field: SerializeField] private AudioClip SoundClip { get; set; }
+    [SerializeField]
+    private Sound soundClip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,11 +18,11 @@ public class AudioTrigger : InLevelTrigger
 
     public override void Trigger()
     {
-        AudioUtilities.PlaySound(SoundClip);
+        soundClip.Play();
         
         if (isOneShot)
         {
-            Destroy(this, SoundClip.length);
+            Destroy(this, soundClip.clip.length);
         }
     }
 }

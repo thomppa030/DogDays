@@ -9,7 +9,6 @@ using NaughtyAttributes;
 public class Sound
 {
     public AudioMixerGroup audioMixerGroup;
-
     private AudioSource source;
 
     public string clipName;
