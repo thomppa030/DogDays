@@ -1920,8 +1920,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd42cc317d37e4b44b1ecabbaec7606a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <IsOneShot>k__BackingField: 1
-  <SoundClip>k__BackingField: {fileID: 8300000, guid: 3b363140629080345a99e29789fe7574, type: 3}
+  isOneShot: 0
+  soundClip:
+    audioMixerGroup: {fileID: 0}
+    clipName: 
+    clip: {fileID: 0}
+    volume: 0
+    loop: 0
+    playOnAwake: 0
 --- !u!1001 &100699968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29083,7 +29089,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: dd77d4d7b056d064b9dc7c8da2608467, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b54e62b16dae1884aadb561da750ca21, type: 2}
+      objectReference: {fileID: 2100000, guid: 50c2d40155783444fbc923591668088c, type: 2}
     - target: {fileID: 919132149155446097, guid: dd77d4d7b056d064b9dc7c8da2608467, type: 3}
       propertyPath: m_Name
       value: SM_Floormat
@@ -51379,7 +51385,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: dd77d4d7b056d064b9dc7c8da2608467, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 768679f40fc530047923154099236e3e, type: 2}
+      objectReference: {fileID: 2100000, guid: 96af3fbb0058f154caf1ba5b6f4b863a, type: 2}
     - target: {fileID: 919132149155446097, guid: dd77d4d7b056d064b9dc7c8da2608467, type: 3}
       propertyPath: m_Name
       value: SM_Floormat
