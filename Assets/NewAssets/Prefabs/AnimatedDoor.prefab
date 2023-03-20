@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4002842736424831419}
   - component: {fileID: 3994429723791556114}
   - component: {fileID: 8281031964340088248}
+  - component: {fileID: 914340093392678513}
+  - component: {fileID: 728920338017367416}
   m_Layer: 0
   m_Name: AnimatedDoor
   m_TagString: Untagged
@@ -134,3 +136,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isOneShot: 1
   <AnimationClip>k__BackingField: {fileID: 7400000, guid: e6113055609a03545893e43901f498c5, type: 2}
+--- !u!65 &914340093392678513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008902296878041896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9150821, y: 2.0389848, z: 0.3129573}
+  m_Center: {x: 0.43029916, y: 1.0207198, z: 0.0007477631}
+--- !u!114 &728920338017367416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008902296878041896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerState: 1
+  defaultInteraction: {fileID: 11400000, guid: 7899ffb421d51884f8f9c6028560b53c, type: 2}
+  unlockedInteraction: {fileID: 0}
+  isOneShot: 0
+  triggers: []
+  playOnTrigger: 0
+  cameraFocusPoint: {fileID: 0}
+  cameraLerpPosition: {fileID: 0}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
   <Actions>k__BackingField: 010000000d0000000a0000000000000008000000
-  assignedDialogue: {fileID: 11400000, guid: a26fe1e55a9a34844b24372d90b4dc0a, type: 2}
+  assignedDialogue: {fileID: 11400000, guid: 7ae685cc2592f32478332ee63763038b, type: 2}
   dialogueSounds: {fileID: 0}
   dialogueWaitingTime: {fileID: 0}
   dialogueAnimations: {fileID: 11400000, guid: 8d2818753b69df9438f9e57e407b06df, type: 2}
