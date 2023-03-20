@@ -174,8 +174,6 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.EndDialogue:
-                //TODO: Make Camera Switch
-                //OnSwitchCameraFocus?.Invoke();
                 OnDialogueEnd?.Invoke();
                 ResetIDs();
                 TriggerEndTrigger();
@@ -321,7 +319,6 @@ public class InteractionManager : MonoBehaviour
         Debug.Log("Playing animation: " + ac);
         _playerAnim.Play(ac);
     }
-
     
     IEnumerator CharAnimWithWait()
     {
