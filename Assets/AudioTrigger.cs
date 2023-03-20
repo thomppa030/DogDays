@@ -6,7 +6,7 @@ public class AudioTrigger : InLevelTrigger
 {
     
     [SerializeField]
-    private Sound soundClip;
+    private AudioSource soundSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -18,11 +18,11 @@ public class AudioTrigger : InLevelTrigger
 
     public override void Trigger()
     {
-        soundClip.Play();
+        soundSource.Play();
         
         if (isOneShot)
         {
-            Destroy(this, soundClip.clip.length);
+            Destroy(this, soundSource.clip.length);
         }
     }
 }
