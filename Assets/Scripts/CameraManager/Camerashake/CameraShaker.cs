@@ -13,6 +13,9 @@ namespace CameraShake
         public static CameraShakePresets Presets;
         public static bool IsShaking;
         
+        [SerializeField]
+        private CameraStateMachine stateMachine;
+        
         readonly List<ICameraShake> _activeShakes = new List<ICameraShake>();
         
         [SerializeField]
@@ -74,8 +77,6 @@ namespace CameraShake
                 return;
             }
             
-            IsShaking = _activeShakes.Count > 0;
-            
             Displacement cameraDisplacement = Displacement.Zero;
             
             for (int i = _activeShakes.Count - 1; i >= 0; i--)
@@ -83,14 +84,15 @@ namespace CameraShake
                 if (_activeShakes[i].IsFinished)
                 {
                     _activeShakes.RemoveAt(i);
+                    stateMachine.SwitchState(new CameraFreelookState(stateMachine));
                 }
                 else
                 {
+                    stateMachine.SwitchState(new CameraShakeState(stateMachine));
                     _activeShakes[i].Update(Time.deltaTime, cameraTransform.position, cameraTransform.rotation);
                     cameraDisplacement += _activeShakes[i].CurrentDisplacement;
                 }
             }
-            //TODO: Does not work as intended here
             cameraTransform.localPosition = cameraDisplacement.Position * strengthMultiplier;
             cameraTransform.localRotation = Quaternion.Euler(cameraDisplacement.EulerAngles * strengthMultiplier);
         }
