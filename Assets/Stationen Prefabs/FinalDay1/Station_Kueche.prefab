@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5152960221540420377
+--- !u!1 &2744321548147727864
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,59 +8,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2616093515299748551}
-  - component: {fileID: 6234774914351689034}
-  - component: {fileID: 986502474806555509}
+  - component: {fileID: 2744321548147727867}
+  - component: {fileID: 2744321548147727869}
+  - component: {fileID: 2744321548147727866}
   m_Layer: 0
-  m_Name: Station_WohnzimmerTrigger
+  m_Name: Station_Kueche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2616093515299748551
+--- !u!4 &2744321548147727867
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152960221540420377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 4.67}
+  m_GameObject: {fileID: 2744321548147727864}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.398606, y: 0.29612738, z: 21.302906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6234774914351689034
+--- !u!65 &2744321548147727869
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152960221540420377}
+  m_GameObject: {fileID: 2744321548147727864}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.4015288, y: 2.113437, z: 3.0017433}
-  m_Center: {x: 0.4081757, y: 0.55671847, z: 1.0008717}
---- !u!114 &986502474806555509
+  m_Size: {x: 1.9790852, y: 2.2472432, z: 2.9319382}
+  m_Center: {x: -0.1269244, y: -0.19984615, z: 0.12862968}
+--- !u!114 &2744321548147727866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152960221540420377}
+  m_GameObject: {fileID: 2744321548147727864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   triggerState: 1
-  defaultInteraction: {fileID: 11400000, guid: b40e8919e7dd0ad4eb471372e8ca48a2, type: 2}
+  defaultInteraction: {fileID: 11400000, guid: 7a3f29d77345cf3438af2e7e02e15abf, type: 2}
   unlockedInteraction: {fileID: 0}
+  isOneShot: 1
   triggers: []
   playOnTrigger: 1
-  cameraFocalPoints: []
+  cameraFocusPoint: {fileID: 0}
+  cameraLerpPosition: {fileID: 0}

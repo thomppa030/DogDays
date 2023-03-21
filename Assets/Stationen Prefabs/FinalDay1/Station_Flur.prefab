@@ -61,6 +61,8 @@ MonoBehaviour:
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: dd809f3dd2b0bed49a7be2413a2c7c9f, type: 2}
   unlockedInteraction: {fileID: 0}
+  isOneShot: 1
   triggers: []
   playOnTrigger: 1
-  cameraFocalPoints: []
+  cameraFocusPoint: {fileID: 0}
+  cameraLerpPosition: {fileID: 0}
