@@ -151,9 +151,7 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.Wait:
-                OnDialogueWait?.Invoke(i.dialogueWaitingTime.waitTime[_waitID]);
-                ActionID++;
-                SetNextAction(i, ActionID);
+                StartCoroutine(Wait(i.dialogueWaitingTime.waitTime[_waitID]));
                 break;
             case Interaction.Action.PlaySfx:
                 AudioClip ac = i.dialogueSounds.audioclips[_audioID];
@@ -294,6 +292,7 @@ public class InteractionManager : MonoBehaviour
     {
         Debug.Log($"Playing {ac.name} with ID ${_audioID}.");
 
+        _audioSource = gameObject.AddComponent<AudioSource>();
         _audioSource.clip = ac;
         _audioSource.volume = MenuHandler.singleton.GetSoundVolume();
         _audioSource.Play();
@@ -336,6 +335,9 @@ public class InteractionManager : MonoBehaviour
     IEnumerator Wait(float time)
     {
         yield return new WaitForSeconds(time);
+        _waitID++;
+        ActionID++;
+        SetNextAction(CurrentInteraction, ActionID);
     }
 
     public void ResetIDs()
