@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: AN_Start_Day3
   m_EditorClassIdentifier: 
   characterAnim:
+  - {fileID: 6763395943919261652, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
+  - {fileID: 30867717242668885, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
   - {fileID: -6545883061796769282, guid: ccaa8db87adcb1347b272ce00c6fd9b4, type: 3}
