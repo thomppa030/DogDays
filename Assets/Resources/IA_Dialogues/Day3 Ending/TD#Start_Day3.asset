@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Start
   ger_sentences:
-  - Was war das schon wieder?
+  - ' Was war das schon wieder?'
   - Was geht hier vor sich?
   ger_keywords: []
   eng_sentences:
