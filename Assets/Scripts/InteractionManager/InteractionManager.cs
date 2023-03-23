@@ -230,8 +230,6 @@ public class InteractionManager : MonoBehaviour
             case Interaction.Action.PlayCharAnimWithWait:
                 //TODO: Delegate and refactor
                 StartCoroutine(CharAnimWithWait());
-                ActionID++;
-                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.DisablePlayerMovement:
                 //TODO: Delegate and refactor
@@ -330,6 +328,8 @@ public class InteractionManager : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         
         _playerAnimID++;
+        ActionID++;
+        SetNextAction(i, ActionID);
     }
 
     IEnumerator Wait(float time)
