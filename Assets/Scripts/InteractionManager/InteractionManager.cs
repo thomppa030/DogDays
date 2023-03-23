@@ -329,7 +329,7 @@ public class InteractionManager : MonoBehaviour
         
         _playerAnimID++;
         ActionID++;
-        SetNextAction(i, ActionID);
+        SetNextAction(CurrentInteraction, ActionID);
     }
 
     IEnumerator Wait(float time)
