@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &648241293318772450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8054464694589520379}
+  m_Layer: 0
+  m_Name: SCHRANK_FocusPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8054464694589520379
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648241293318772450}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.466, y: -0.388099, z: 1.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6052113027538993108}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5818948477034226803
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2151033375298421268}
+  m_Layer: 0
+  m_Name: SCHRANK_CameraFocusPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2151033375298421268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5818948477034226803}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.375, y: 1.957, z: 1.96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6052113027538993108}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6052113027538993111
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +92,8 @@ Transform:
   m_Children:
   - {fileID: 6086568471520998449}
   - {fileID: 6086568470817123154}
+  - {fileID: 8054464694589520379}
+  - {fileID: 2151033375298421268}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -336,9 +400,11 @@ MonoBehaviour:
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 7dacf207a59465f47883e900c825fd33, type: 2}
   unlockedInteraction: {fileID: 0}
+  isOneShot: 0
   triggers: []
   playOnTrigger: 0
-  cameraFocalPoints: []
+  cameraFocusPoint: {fileID: 0}
+  cameraLerpPosition: {fileID: 0}
 --- !u!4 &6086568470817123154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 43ecf3b0f695731498bb4e15cf82611d, type: 3}
@@ -377,6 +443,8 @@ MonoBehaviour:
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 7dacf207a59465f47883e900c825fd33, type: 2}
   unlockedInteraction: {fileID: 11400000, guid: 6179350054531dc48a85de3faaee32e7, type: 2}
+  isOneShot: 0
   triggers: []
   playOnTrigger: 0
-  cameraFocalPoints: []
+  cameraFocusPoint: {fileID: 8054464694589520379}
+  cameraLerpPosition: {fileID: 2151033375298421268}
