@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: IWT_Eingangstur_Day1
   m_EditorClassIdentifier: 
   waitTime:
-  - 0
+  - 4.2

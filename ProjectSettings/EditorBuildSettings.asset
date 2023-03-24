@@ -6,16 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game/Scene#00_Menu.unity
-    guid: 7305756f168716f4ebedaf7694a6a755
-  - enabled: 1
-    path: Assets/Scenes/Game/Scene#01_Day1Version2.unity
-    guid: 51aadeb49be8e234f90e227263065a0b
+    path: Assets/Scenes/DogDaysBuildScenes/Scene#00_Menu.unity
+    guid: 21496640f27da494984a59073ed04389
   - enabled: 1
     path: Assets/Scenes/DogDaysBuildScenes/Scene#01Day1.unity
     guid: e20fee7bd6f26884a8706847b13fe601
   - enabled: 1
-    path: Assets/Scenes/Game/Scene#02_Game_Day4.unity
-    guid: 311a4cfa93b2d544193745111c6ecf13
+    path: Assets/Scenes/DogDaysBuildScenes/Scene#01Day2.unity
+    guid: 583d466be838a5c4cb32526b40971fc7
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3888fd7beaf010d00aa73ad9b34cbbbf, type: 2}

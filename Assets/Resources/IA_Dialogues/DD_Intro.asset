@@ -18,12 +18,18 @@ MonoBehaviour:
   - "M: Wir werden ja nicht lange weg sein. Sie hat alles, was sie f\xFCr ein paar
     Tage braucht."
   - "\rF: Okay, wir holen sie, sobald es wieder sicher ist. Dann lass uns jetzt losgehen!"
+  - Da hab ich aber lange geschlafen!
+  - "Ich glaube das wird ein sch\xF6ner Tag!"
+  - Schauen wir mal, wer schon alles wach ist!
   ger_keywords: []
   eng_sentences:
   - 'F: Are you sure Dina will be fine? '
   - "M: We won\xB4t be gone for long. She has everything she needs for a couple of
     days."
   - "F: Okay, we\xB4ll pick her up when it\xB4s safe. Let\xB4s go!"
+  - I slept so well!
+  - "\rI think it's going to be a nice day!"
+  - "\rLet's see who's awake already!"
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
