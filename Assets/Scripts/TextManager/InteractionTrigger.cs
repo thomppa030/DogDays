@@ -32,8 +32,8 @@ public class InteractionTrigger : MonoBehaviour
         _bc = GetComponent<BoxCollider>();
 
         if (playOnTrigger) _bc.isTrigger = true;
-        //Setting layer to Dialogue Layer;
-        gameObject.layer = 6;
+        // //Setting layer to Dialogue Layer - moved to OnEnable;
+        // gameObject.layer = 6;
 
         
         ActiveInteraction = defaultInteraction;
@@ -89,6 +89,8 @@ public class InteractionTrigger : MonoBehaviour
         DialogueManager.EnableTextTrigger += EnableTrigger;
         DialogueManager.DisableTextTrigger += DisableTrigger;
         DialogueManager.UnlockText += UnlockText;
+        
+        gameObject.layer = 6;
     }
 
     private void OnDisable()
@@ -96,6 +98,8 @@ public class InteractionTrigger : MonoBehaviour
         DialogueManager.EnableTextTrigger -= EnableTrigger;
         DialogueManager.DisableTextTrigger -= DisableTrigger;
         DialogueManager.UnlockText -= UnlockText;
+        
+        gameObject.layer = 0;
     }
     
     private void EnableTrigger(List<Interaction> iList)
