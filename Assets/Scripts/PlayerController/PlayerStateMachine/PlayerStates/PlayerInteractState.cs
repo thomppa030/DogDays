@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInteractState : PlayerStateBase
 {
+    private static readonly int SpeedF = Animator.StringToHash("Speed_f");
+    
     public PlayerInteractState(PlayerStateMachine playerStateMachine) : base(playerStateMachine)
     {
         
@@ -11,6 +13,7 @@ public class PlayerInteractState : PlayerStateBase
     
     public override void OnStateEnter()
     {
+        PlayerStateMachine.Animator.SetFloat(SpeedF, 0.0f, 0.0f, 0.0f);
     }
 
     public override void Tick(float deltaTime)
