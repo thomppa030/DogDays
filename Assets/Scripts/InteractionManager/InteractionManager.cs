@@ -120,17 +120,45 @@ public class InteractionManager : MonoBehaviour
         OnPlaySound += PlaySound;
     }
     
+    float sentenceWait = 0f;
+    bool waitForSentence = false;
+    
+    private void SetWaitTimeForSentence(float t)
+    {
+        sentenceWait = t;
+        waitForSentence = true;
+        
+        DialogueManager.Instance.DisplayNextSentence();
+    }
+    
     private void Update()
     {
+        
         if (Input.GetButtonDown("Fire1") && CurrentInteraction != null &&
             CurrentInteraction.Actions[ActionID] == Interaction.Action.NextSentence)
         {
             ActionID++;
             SetNextAction(CurrentInteraction, ActionID);
         }
+        
+        if (waitForSentence) WaitForSentence();
+    }
+    
+    private void WaitForSentence()
+    {
+        if (GameState.Instance.GetCurrentState() != GameState.GameStates.Game)
+            return;
+
+        sentenceWait -= Time.deltaTime;
+        
+        if(sentenceWait <= 0)
+        {
+            waitForSentence = false;
+            // TODO: yeah uhm, this is a bit of a hack, will change it
+            SetNextAction(CurrentInteraction, ActionID);
+        }
     }
 
-    private bool _waitForSentence = false;
     
     public void SetNextAction(Interaction i, int id)
     {
@@ -209,10 +237,9 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(CurrentInteraction, ActionID);
                 break;
             case Interaction.Action.NextSentenceWithWait:
-                OnWaitforNextSentence?.Invoke(i.dialogueWaitingTime.waitTime[_waitID]);
+                SetWaitTimeForSentence(CurrentInteraction.dialogueWaitingTime.waitTime[_waitID]);
                 _waitID++;
                 ActionID++;
-                SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.ShakeCamera:
                 OnCameraShake?.Invoke();
@@ -349,6 +376,6 @@ public class InteractionManager : MonoBehaviour
         _profileImageID = 0;
         _cameraFocusID = 0;
 
-        _waitForSentence = false;
+        waitForSentence = false;
     }
 }

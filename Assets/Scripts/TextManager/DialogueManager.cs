@@ -193,34 +193,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentTextstate != TextState.onDisplay) return;
 
-        //TODO: Change to Inputaction
-
-        if (waitForSentence) WaitForSentence();
     }
 
-    float sentenceWait = 0f;
-    bool waitForSentence = false;
-    private void SetWaitTimeForSentence(float t)
-    {
-        sentenceWait = t;
-        waitForSentence = true;
-
-        DisplayNextSentence();
-    }
-
-    private void WaitForSentence()
-    {
-        if (currentTextstate == TextState.none) return;
-        if (GameState.Instance.GetCurrentState() != GameState.GameStates.Game) return;
-
-        sentenceWait -= Time.deltaTime;
-        if(sentenceWait <= 0)
-        {
-            waitForSentence = false;
-            // TODO: yeah uhm, this is a bit of a hack, will change it
-            InteractionManager.Instance.SetNextAction(InteractionManager.Instance.CurrentInteraction, InteractionManager.Instance.ActionID);
-        }
-    }
 
     public void ChangeLanguage(int id)
     {        
@@ -308,7 +282,6 @@ public class DialogueManager : MonoBehaviour
     
     private void ResetIDs()
     {
-        waitForSentence = false;
     }
 }
 
