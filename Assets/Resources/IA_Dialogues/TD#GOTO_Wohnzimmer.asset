@@ -20,10 +20,10 @@ MonoBehaviour:
   - Mmmh! Jetzt krieg' ich Hunger!
   ger_keywords: []
   eng_sentences:
-  - 1
-  - 2
-  - 3
-  - 4
+  - "\rThere's no one here either..."
+  - Maybe they are in the kitchen?
+  - It always smells so delicious there in the morning!
+  - "\rMmmm! Now I'm getting hungry!"
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0

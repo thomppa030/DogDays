@@ -10983,11 +10983,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1990326144182666858, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.798
+      value: -0.299
       objectReference: {fileID: 0}
     - target: {fileID: 1990326144182666858, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -44.576
+      value: -46.007
       objectReference: {fileID: 0}
     - target: {fileID: 1990326144182666858, guid: 1bf38ee2fc35a1b4fa286707a55e7afd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -23443,7 +23443,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 4fb29f9a25e83834389bfcde2a9a0e4a, type: 2}
   m_audioClip: {fileID: 8300000, guid: a955c4d7464438b46a9f44a7aabd2b81, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -27222,7 +27222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd42cc317d37e4b44b1ecabbaec7606a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isOneShot: 0
+  isOneShot: 1
   soundSource: {fileID: 801954629}
 --- !u!65 &919995675
 BoxCollider:

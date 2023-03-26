@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: DW_Intro
   m_EditorClassIdentifier: 
   waitTime:
-  - 4
-  - 2
   - 5
+  - 4
+  - 5
+  - 15
+  - 3
+  - 2
+  - 4.6
