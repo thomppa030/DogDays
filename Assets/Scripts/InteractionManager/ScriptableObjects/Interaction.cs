@@ -42,6 +42,4 @@ public class Interaction : ScriptableObject
         SwitchCameraFocus = 20,
         Wait = 3,
     }
-    public List<Interaction> interactionToEnable = new List<Interaction>();
-    public List<Interaction> interactionToDisable = new List<Interaction>();
 }

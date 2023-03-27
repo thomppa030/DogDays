@@ -259,7 +259,6 @@ public class InteractionManager : MonoBehaviour
                 StartCoroutine(CharAnimWithWait());
                 break;
             case Interaction.Action.DisablePlayerMovement:
-                //TODO: Delegate and refactor
                 DisablePlayerMovement();
                 ActionID++;
                 SetNextAction(i, ActionID);

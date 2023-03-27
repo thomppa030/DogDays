@@ -27,6 +27,9 @@ public class InteractionTrigger : MonoBehaviour
     [Tooltip("Position to lerp camera to")]
     public Transform cameraLerpPosition;
     
+    public List<InteractionTrigger> interactionToEnable = new List<InteractionTrigger>();
+    public List<InteractionTrigger> interactionToDisable = new List<InteractionTrigger>();
+    
     private void Start()
     {
         _bc = GetComponent<BoxCollider>();
@@ -66,11 +69,13 @@ public class InteractionTrigger : MonoBehaviour
             case TriggerState.enabled:              
                 _bc.enabled = true;
                 triggerState = tS;
+                gameObject.layer = 6;
                 if (ActiveInteraction.StartOnAwake) TriggerDialogue();
                 break;
             case TriggerState.hidden:
                 _bc.enabled = false;
                 triggerState = tS;
+                gameObject.layer = 0;
                 break;
             case TriggerState.setDefaultText:
                 ActiveInteraction = defaultInteraction;
@@ -89,7 +94,6 @@ public class InteractionTrigger : MonoBehaviour
         DialogueManager.EnableTextTrigger += EnableTrigger;
         DialogueManager.DisableTextTrigger += DisableTrigger;
         DialogueManager.UnlockText += UnlockText;
-        
         gameObject.layer = 6;
     }
 
@@ -98,36 +102,23 @@ public class InteractionTrigger : MonoBehaviour
         DialogueManager.EnableTextTrigger -= EnableTrigger;
         DialogueManager.DisableTextTrigger -= DisableTrigger;
         DialogueManager.UnlockText -= UnlockText;
-        
         gameObject.layer = 0;
     }
     
-    private void EnableTrigger(List<Interaction> iList)
+    private void EnableTrigger(List<InteractionTrigger> iList)
     {
-        List<Dialogue> dList = new List<Dialogue>();
         foreach (var i in iList)
-        {
-            dList.Add(i.assignedDialogue);
-        }
-
-        if (dList.Contains(_displayedDialogue))
         {
             Debug.Log("Enabling Trigger");
-            SetTriggerState(TriggerState.enabled);
+            i.SetTriggerState(TriggerState.enabled);
         }
     }
-    private void DisableTrigger(List<Interaction> iList)
+    private void DisableTrigger(List<InteractionTrigger> iList)
     {
-        List<Dialogue> dList = new List<Dialogue>();
         foreach (var i in iList)
         {
-            dList.Add(i.assignedDialogue);
-        }
-
-        if (dList.Contains(_displayedDialogue))
-        {
-            Debug.Log("Disabling Trigger");
-            SetTriggerState(TriggerState.hidden);
+            Debug.Log("Enabling Trigger");
+            i.SetTriggerState(TriggerState.enabled);
         }
     }
     private void UnlockText(Interaction i)

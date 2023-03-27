@@ -130,8 +130,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public static Action<List<Interaction>> EnableTextTrigger;
-    public static Action<List<Interaction>> DisableTextTrigger;
+    public static Action<List<InteractionTrigger>> EnableTextTrigger;
+    public static Action<List<InteractionTrigger>> DisableTextTrigger;
     public static Action<Interaction> UnlockText;
 
     private List<string> GetSentence(Dialogue d)
@@ -182,9 +182,6 @@ public class DialogueManager : MonoBehaviour
 
                 ResetIDs();
                 
-                EnableTextTrigger?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToEnable);
-                DisableTextTrigger?.Invoke(InteractionManager.Instance.CurrentInteraction.interactionToDisable);
-                UnlockText?.Invoke(InteractionManager.Instance.LastUsedInteractionTrigger.unlockedInteraction);
             }
         }
     }
@@ -234,13 +231,16 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(InteractionManager.Instance.LastUsedInteractionTrigger);
         }
+        
+        EnableTextTrigger?.Invoke(InteractionManager.Instance.LastUsedInteractionTrigger.interactionToEnable);
+        DisableTextTrigger?.Invoke(InteractionManager.Instance.LastUsedInteractionTrigger.interactionToDisable);
+        UnlockText?.Invoke(InteractionManager.Instance.LastUsedInteractionTrigger.unlockedInteraction);
     }
 
     private void EnableTextFrame()
     {
         dialogueText.gameObject.SetActive(true);
         dialogueFrame.gameObject.SetActive(true);
-        EnableProfileImage();
     }
     private void DisableTextFrame()
     {
