@@ -385,6 +385,37 @@ MonoBehaviour:
   m_Offset: {x: -0.03378439, y: -0.097195834, z: 0.5}
   m_Size: {x: 0.505702, y: 0.80560833, z: 1}
   m_FadeFactor: 1
+--- !u!1 &3970876266353138032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 154506671381193256}
+  m_Layer: 0
+  m_Name: TuerDay3_CameraFocusPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &154506671381193256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970876266353138032}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.75554997, y: -0.142, z: 0.434}
+  m_LocalScale: {x: 0.52651584, y: 0.52651584, z: 0.52651584}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4507530868199680814}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4507530868199680813
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +467,8 @@ Transform:
   - {fileID: 5865346303168932048}
   - {fileID: 6913436725579652859}
   - {fileID: 5818745836138573009}
+  - {fileID: 8674414818278050648}
+  - {fileID: 154506671381193256}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -494,6 +527,37 @@ MonoBehaviour:
   m_Offset: {x: -0.03378439, y: -0.097195834, z: 0.5}
   m_Size: {x: 0.505702, y: 0.80560833, z: 1}
   m_FadeFactor: 1
+--- !u!1 &4593574760809463003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8674414818278050648}
+  m_Layer: 0
+  m_Name: TuerDay3_FocusPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8674414818278050648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4593574760809463003}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.7, y: -0.91, z: -0.22}
+  m_LocalScale: {x: 0.52651584, y: 0.52651584, z: 0.52651584}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4507530868199680814}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6505252913374935035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1445,8 +1509,8 @@ MonoBehaviour:
   isOneShot: 0
   triggers: []
   playOnTrigger: 0
-  cameraFocusPoint: {fileID: 0}
-  cameraLerpPosition: {fileID: 0}
+  cameraFocusPoint: {fileID: 8674414818278050648}
+  cameraLerpPosition: {fileID: 154506671381193256}
 --- !u!4 &4109338999074524561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd77d4d7b056d064b9dc7c8da2608467, type: 3}
