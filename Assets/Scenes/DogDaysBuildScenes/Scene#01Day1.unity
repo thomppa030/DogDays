@@ -23276,6 +23276,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5549077403010820687, guid: 9b6aed1405ca3a04f8ca5177d21d1706, type: 3}
   m_PrefabInstance: {fileID: 791432087}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &792828648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6192938735568416918, guid: 7d1a35d37072f2d4593a0aed73a7f7f6, type: 3}
+  m_PrefabInstance: {fileID: 2012487967}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &792828650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792828648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c473906f40ac94a89b8578f73f3163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 2012487970}
+  cameraTransform: {fileID: 0}
+  strengthMultiplier: 1
+  ShakePresets: {fileID: 0}
 --- !u!1001 &793222544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44291,6 +44312,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcee60bf92be97f45bcd757fe68c58e9, type: 3}
+--- !u!114 &1521595560 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6887823299199717826, guid: 73186c8a2d4bc934c8af703c53a36468, type: 3}
+  m_PrefabInstance: {fileID: 1704278770}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1523154560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49373,6 +49405,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4507530868199680814, guid: 73186c8a2d4bc934c8af703c53a36468, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887823299199717826, guid: 73186c8a2d4bc934c8af703c53a36468, type: 3}
+      propertyPath: triggerState
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -62169,6 +62205,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1471392403}
     m_Modifications:
+    - target: {fileID: 1004350104123124274, guid: 7afb1c2f5ab710a4ab83bfb0e8728770, type: 3}
+      propertyPath: interactionToEnable.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1004350104123124274, guid: 7afb1c2f5ab710a4ab83bfb0e8728770, type: 3}
+      propertyPath: interactionToEnable.Array.data[0]
+      value: 
+      objectReference: {fileID: 1521595560}
     - target: {fileID: 1230224465673642073, guid: 7afb1c2f5ab710a4ab83bfb0e8728770, type: 3}
       propertyPath: m_RootOrder
       value: 9
