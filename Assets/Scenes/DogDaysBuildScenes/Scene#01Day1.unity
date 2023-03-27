@@ -39815,6 +39815,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 812766481, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
+      propertyPath: <CameraStateMachine>k__BackingField
+      value: 
+      objectReference: {fileID: 2012487970}
+    - target: {fileID: 812766481, guid: bac580151dd1a8d4db4f2009b17dcf5d, type: 3}
       propertyPath: <PlayerStateMachine>k__BackingField
       value: 
       objectReference: {fileID: 412657108}
@@ -57395,6 +57399,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 602768973694526367, guid: 7d1a35d37072f2d4593a0aed73a7f7f6, type: 3}
   m_PrefabInstance: {fileID: 2012487967}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2012487970 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4986996247578948987, guid: 7d1a35d37072f2d4593a0aed73a7f7f6, type: 3}
+  m_PrefabInstance: {fileID: 2012487967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2012487968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dbeab3220fa9554abeb48a02d4451a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2012508918
 PrefabInstance:
   m_ObjectHideFlags: 0

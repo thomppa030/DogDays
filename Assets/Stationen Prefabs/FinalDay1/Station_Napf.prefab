@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875346597170439797}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.026, y: -0.938, z: -0.681}
+  m_LocalPosition: {x: 8.356, y: -0.938, z: -0.452}
   m_LocalScale: {x: 0.52651584, y: 0.52651584, z: 0.52651584}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209147147843280847}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.19, y: -0.769, z: -0.508}
+  m_LocalPosition: {x: 7.254, y: -0.09, z: -1.517}
   m_LocalScale: {x: 0.52651584, y: 0.52651584, z: 0.52651584}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerState: 1
   defaultInteraction: {fileID: 11400000, guid: 1b1bf699d8ddf484eac3c2614e82e16f, type: 2}
-  unlockedInteraction: {fileID: 0}
+  unlockedInteraction: {fileID: 11400000, guid: 4bfbfcf39ad5e65409672fb57fe25748, type: 2}
   isOneShot: 0
   triggers: []
   playOnTrigger: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "IA_T\xFCr_Day1"
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 010000000d0000000a0000000000000008000000
+  <Actions>k__BackingField: 010000000d000000110000000000000008000000
   assignedDialogue: {fileID: 11400000, guid: 7ae685cc2592f32478332ee63763038b, type: 2}
   dialogueSounds: {fileID: 0}
   dialogueWaitingTime: {fileID: 0}

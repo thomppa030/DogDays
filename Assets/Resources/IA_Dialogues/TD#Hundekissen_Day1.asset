@@ -16,8 +16,8 @@ MonoBehaviour:
   ger_sentences:
   - Guten Morgen Jimmy!
   - "'Ne Schlafm\xFCtze wie immer! Typisch!"
-  - Papa und ich kriegen dich nachher schon wach, nur dass du mir diesmal nicht aus
-    dem Fenster fliegst, so wie letztes Mal!
+  - Papa und ich kriegen dich nachher schon wach.
+  - Nur dass du mir diesmal nicht aus dem Fenster fliegst, so wie letztes Mal!
   - Da hat sich selbst der Vogel auf der Fensterbank erschrocken, haha!
   ger_keywords: []
   eng_sentences:
@@ -25,8 +25,9 @@ MonoBehaviour:
   - 'As sleepy as always!
 
     Typical!'
-  - "\rDad and I will wake you up later, only this time you won't fly out of my window
+  - "\rDad and I will wake you up later. Only this time you won't fly out of my window
     like last time!"
+  - Only this time you won't fly out of my window like last time!
   - Even the bird on the window sill was startled, haha!
   eng_keywords: []
   <InfoText>k__BackingField: 

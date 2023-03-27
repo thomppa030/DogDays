@@ -12,5 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47a834c50d906f04cbca00c318fcd5d7, type: 3}
   m_Name: IWT_Eingangstur_Day1
   m_EditorClassIdentifier: 
-  waitTime:
-  - 4.2
+  waitTime: []

@@ -403,8 +403,8 @@ MonoBehaviour:
   isOneShot: 0
   triggers: []
   playOnTrigger: 0
-  cameraFocusPoint: {fileID: 0}
-  cameraLerpPosition: {fileID: 0}
+  cameraFocusPoint: {fileID: 8054464694589520379}
+  cameraLerpPosition: {fileID: 2151033375298421268}
 --- !u!4 &6086568470817123154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 43ecf3b0f695731498bb4e15cf82611d, type: 3}
