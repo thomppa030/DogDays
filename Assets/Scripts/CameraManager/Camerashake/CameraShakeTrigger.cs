@@ -23,13 +23,13 @@ public class CameraShakeTrigger : MonoBehaviour
             switch (shakeType)
             {
                 case ShakeType.Explosion:
-                    Debug.Log("Explosion");
+                    CameraShaker.Presets.ShortShake3D(5,10,20);
                     break;
                 case ShakeType.ShortShake3D:
-                    CameraShaker.Presets.ShortShake3D(10,10,10);
+                    CameraShaker.Presets.ShortShake3D(4,7,10);
                     break;
                 case ShakeType.StrongShake3D:
-                    CameraShaker.Presets.ShortShake3D(10,5,10);
+                    CameraShaker.Presets.ShortShake3D(6,5,10);
                     break;
                 case ShakeType.Rumble:
                     CameraShaker.Presets.ShortShake3D(5,7,10);

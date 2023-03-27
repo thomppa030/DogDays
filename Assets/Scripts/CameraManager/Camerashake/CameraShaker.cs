@@ -76,7 +76,7 @@ namespace CameraShake
             {
                 return;
             }
-            
+
             Displacement cameraDisplacement = Displacement.Zero;
             
             for (int i = _activeShakes.Count - 1; i >= 0; i--)
@@ -93,8 +93,8 @@ namespace CameraShake
                     cameraDisplacement += _activeShakes[i].CurrentDisplacement;
                 }
             }
-            cameraTransform.localPosition = cameraDisplacement.Position * strengthMultiplier;
-            cameraTransform.localRotation = Quaternion.Euler(cameraDisplacement.EulerAngles * strengthMultiplier);
+        cameraTransform.position = stateMachine.player.position + new Vector3(0,2.0f,-3.0f);
+        cameraTransform.localRotation = Quaternion.Euler(cameraDisplacement.EulerAngles * strengthMultiplier);
         }
 
         private static bool IsInstanceNull()
