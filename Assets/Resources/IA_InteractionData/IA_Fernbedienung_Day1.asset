@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IA_Fernbedienung_Day1
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 010000000d0000000a0000000300000000000000000000000d0000000a0000000000000008000000
+  <Actions>k__BackingField: 010000000d0000000a00000000000000000000000d000000110000000000000008000000
   assignedDialogue: {fileID: 11400000, guid: 32a679e4fb284ca4d87f0b2d48f85348, type: 2}
   dialogueSounds: {fileID: 0}
   dialogueWaitingTime: {fileID: 11400000, guid: eed14efa653234243a85d53b0c0a978a, type: 2}

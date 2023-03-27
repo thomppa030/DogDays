@@ -1543,23 +1543,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.3822459, y: 0.3604563, z: 1.2162216}
   m_Center: {x: -0.10213077, y: 0.20318398, z: -0.20970686}
---- !u!114 &2170352157466590625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1887811509528143144}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerState: 3
-  defaultInteraction: {fileID: 11400000, guid: 28bb2b6cf33d5de4f90d1a3286190891, type: 2}
-  unlockedInteraction: {fileID: 0}
-  isOneShot: 0
-  triggers: []
-  playOnTrigger: 0
-  cameraFocusPoint: {fileID: 0}
-  cameraLerpPosition: {fileID: 0}
