@@ -15,6 +15,7 @@ public class Interaction : ScriptableObject
     public DialogueWaitingTime dialogueWaitingTime;
     public DialogueAnimations dialogueAnimations;
     public DialogueDogFaces dialogueDogFaces;
+    public DialogueComics dialogueComics;
     public CameraFocalPointData cameraFocalPoints;
     
     public enum Action
@@ -41,5 +42,7 @@ public class Interaction : ScriptableObject
         ShowInfoDisplay = 11,
         SwitchCameraFocus = 20,
         Wait = 3,
+        ToggleNextVideo = 22,
+        DisableCurrentlyActiveVideos = 23,
     }
 }

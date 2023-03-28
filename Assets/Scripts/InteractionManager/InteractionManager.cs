@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 using CameraShake;
+using ComicLogic;
 
 // TODO: Refactor this class to adhere to the Single Responsibility Principle
 /**
@@ -58,6 +60,8 @@ public class InteractionManager : MonoBehaviour
     #endregion
     
     private List<InLevelTrigger> _animationTriggers;
+    
+    public List<ComicClip> currentlyActiveComicClips = new List<ComicClip>();
 
     public InteractionTrigger LastUsedInteractionTrigger { get; set; }
     
@@ -80,6 +84,7 @@ public class InteractionManager : MonoBehaviour
     private int _profileImageID = 0;
     private int _uiAnimID = 0;
     private int _playerAnimID = 0;
+    private int _comicClipID = 0;
     private int _cameraFocusID = 0;
     #endregion
     
@@ -280,7 +285,23 @@ public class InteractionManager : MonoBehaviour
                 ActionID++;
                 SetNextAction(i, ActionID);
                 break;
+            case Interaction.Action.ToggleNextVideo:
+                SpawnComicClip();
+                _comicClipID++;
+                ActionID++;
+                SetNextAction(i, ActionID);
+                break;
+            case Interaction.Action.DisableCurrentlyActiveVideos:
+                DisableCurrentlyActiveVideos();
+                ActionID++;
+                SetNextAction(i, ActionID);
+                break;
         }
+    }
+
+    private void DisableCurrentlyActiveVideos()
+    {
+        FindObjectsOfType<ComicClip>().ToList().ForEach(x => x.gameObject.SetActive(false));
     }
 
     private void TriggerEndTrigger()
@@ -289,6 +310,16 @@ public class InteractionManager : MonoBehaviour
         {
             trigger.Trigger();
         }
+    }
+    
+    private void SpawnComicClip()
+    {
+        if (_comicClipID >= CurrentInteraction.dialogueComics.comicClips.Length)
+        {
+            Debug.Log("No more comic clips to spawn.");
+            return;
+        }
+        var comicClip = Instantiate(CurrentInteraction.dialogueComics.comicClips[_comicClipID], GameObject.Find("Canvas").transform, false);
     }
 
     void PlaySound(AudioClip ac)
@@ -371,6 +402,7 @@ public class InteractionManager : MonoBehaviour
         _waitID = 0;
         _audioID = 0;
         ActionID = 0;
+        _comicClipID = 0;
         _playerAnimID = 0;
         _profileImageID = 0;
         _cameraFocusID = 0;
