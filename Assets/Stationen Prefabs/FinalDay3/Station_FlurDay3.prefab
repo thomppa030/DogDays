@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5581201788523611603}
   - component: {fileID: 5581201788523611601}
   - component: {fileID: 5581201788523611600}
+  - component: {fileID: -3049253777941632062}
+  - component: {fileID: -968588970976064588}
   m_Layer: 0
   m_Name: Station_FlurDay3
   m_TagString: Untagged
@@ -66,3 +68,31 @@ MonoBehaviour:
   playOnTrigger: 0
   cameraFocusPoint: {fileID: 0}
   cameraLerpPosition: {fileID: 0}
+  interactionToEnable: []
+  interactionToDisable: []
+--- !u!114 &-3049253777941632062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581201788523611602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccb9351d49c6c240844578e30b00b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeType: 2
+--- !u!114 &-968588970976064588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581201788523611602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccb9351d49c6c240844578e30b00b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeType: 3

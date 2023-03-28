@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Title: Interaktion Hundekissen Day1
   ger_sentences:
-  - Guten Morgen Jimmy!
+  - Guten Morgen Mykyta!
   - "'Ne Schlafm\xFCtze wie immer! Typisch!"
   - Papa und ich kriegen dich nachher schon wach.
   - Nur dass du mir diesmal nicht aus dem Fenster fliegst, so wie letztes Mal!
   - Da hat sich selbst der Vogel auf der Fensterbank erschrocken, haha!
   ger_keywords: []
   eng_sentences:
-  - "\rGood morning Jimmy!"
+  - "\rGood morning Mykyta!"
   - 'As sleepy as always!
 
     Typical!'

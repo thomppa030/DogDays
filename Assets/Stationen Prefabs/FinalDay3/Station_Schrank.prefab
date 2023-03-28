@@ -344,7 +344,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251722409836273870}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
   m_Name: 
@@ -357,6 +357,8 @@ MonoBehaviour:
   playOnTrigger: 0
   cameraFocusPoint: {fileID: 0}
   cameraLerpPosition: {fileID: 0}
+  interactionToEnable: []
+  interactionToDisable: []
 --- !u!4 &6086568470817123154 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 43ecf3b0f695731498bb4e15cf82611d, type: 3}

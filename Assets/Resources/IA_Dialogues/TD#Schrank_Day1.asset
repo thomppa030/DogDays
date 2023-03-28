@@ -19,14 +19,14 @@ MonoBehaviour:
   - Fahren wir etwa in den Urlaub?!
   - "Ich wei\xDF noch wie wir das letzte mal am Strand stundenlang am Wasser gespielt
     haben!"
-  - "Diesmal m\xFCssen sie Jimmy aber mitnehmen!\nNochmal gehe ich nicht ohne ihn!"
+  - "Diesmal m\xFCssen sie Mykyta aber mitnehmen!\nNochmal gehe ich nicht ohne ihn!"
   ger_keywords: []
   eng_sentences:
   - What a mess...
   - "\rHm...some things are missing..."
   - "\rAre we going on vacation?!"
   - "\rI remember the last time we played on the beach for hours by the water!"
-  - "\rBut this time we have to take Jimmy too!\r\nI'm not leaving without him again!"
+  - "\rBut this time we have to take Mykyta too!\r\nI'm not leaving without him again!"
   eng_keywords: []
   <InfoText>k__BackingField: 
   <InfoDisplayTime>k__BackingField: 0
