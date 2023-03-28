@@ -17,6 +17,8 @@ public class Doggo_Sounds : MonoBehaviour
     private AudioClip scratch; 
     [SerializeField]
     private AudioClip eat; 
+    [SerializeField]
+    private AudioClip yawn; 
     
 
     private AudioSource _audioSource;
@@ -75,6 +77,10 @@ public class Doggo_Sounds : MonoBehaviour
     public void Eating()
     {
         _audioSource.PlayOneShot(eat);
+    }
+    public void Yawn()
+    {
+        _audioSource.PlayOneShot(yawn);
     }
 
 }
