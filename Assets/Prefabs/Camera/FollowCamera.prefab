@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6192938735568416913}
+  - component: {fileID: 792828650}
   m_Layer: 0
   m_Name: FollowCamera
   m_TagString: Untagged
@@ -32,6 +33,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &792828650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192938735568416918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c473906f40ac94a89b8578f73f3163, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateMachine: {fileID: 4986996247578948987}
+  cameraTransform: {fileID: 0}
+  strengthMultiplier: 1
+  ShakePresets: {fileID: 0}
 --- !u!1001 &6192938734694310122
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReader: {fileID: 0}
-  camera: {fileID: 0}
+  camera: {fileID: 602768973694526367}
   player: {fileID: 0}
   pivotOffset: {x: 0, y: 1.7, z: 0}
   cameraOffset: {x: 0, y: 0, z: -3}
