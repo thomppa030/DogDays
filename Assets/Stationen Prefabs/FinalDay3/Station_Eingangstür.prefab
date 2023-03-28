@@ -1503,7 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerState: 1
+  triggerState: 3
   defaultInteraction: {fileID: 11400000, guid: 359415b77d9aa5944b3fe1c55bd75cd5, type: 2}
   unlockedInteraction: {fileID: 0}
   isOneShot: 0
