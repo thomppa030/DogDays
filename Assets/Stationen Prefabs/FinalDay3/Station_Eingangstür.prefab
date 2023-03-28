@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3970876266353138032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75554997, y: -0.142, z: 0.434}
+  m_LocalPosition: {x: 0.266, y: 0.727, z: -1.01}
   m_LocalScale: {x: 0.52651584, y: 0.52651584, z: 0.52651584}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1511,6 +1511,8 @@ MonoBehaviour:
   playOnTrigger: 0
   cameraFocusPoint: {fileID: 8674414818278050648}
   cameraLerpPosition: {fileID: 154506671381193256}
+  interactionToEnable: []
+  interactionToDisable: []
 --- !u!4 &4109338999074524561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: dd77d4d7b056d064b9dc7c8da2608467, type: 3}
