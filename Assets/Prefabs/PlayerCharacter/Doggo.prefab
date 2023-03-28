@@ -696,6 +696,7 @@ MonoBehaviour:
   sniffUp: {fileID: 8300000, guid: f21b9d87ff535484d86c153d80ecd01c, type: 3}
   scratch: {fileID: 8300000, guid: 0f6ea2a6e51390f40b90779c17e6c11d, type: 3}
   eat: {fileID: 8300000, guid: cdf80fb8680dded4d97e0c3899d3d5e1, type: 3}
+  yawn: {fileID: 8300000, guid: a48f8ad4fa576aa4c8d7de53d4593cc7, type: 3}
 --- !u!143 &1990326144277739423
 CharacterController:
   m_ObjectHideFlags: 0
