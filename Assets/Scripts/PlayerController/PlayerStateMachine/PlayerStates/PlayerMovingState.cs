@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.PackageManager.UI;
+using UnityEngine;
 
 public class PlayerMovingState : PlayerStateBase
 {
@@ -73,9 +74,12 @@ public class PlayerMovingState : PlayerStateBase
         Debug.Log("Interacting with: " + hit.collider.gameObject.name);
         if (hit.collider.gameObject.TryGetComponent<InteractionTrigger>(out InteractionTrigger dT))
         {
-            //TODO: Chose between default or unlocked interaction, maybe add an Enum to the InteractionTrigger
             InteractionManager.Instance.CurrentInteraction = dT.ActiveInteraction;
             dT.TriggerDialogue();
+        }
+        else if (hit.collider.gameObject.TryGetComponent<WindowTrigger>(out WindowTrigger wt))
+        {
+            wt.Trigger();
         }
         else
         {

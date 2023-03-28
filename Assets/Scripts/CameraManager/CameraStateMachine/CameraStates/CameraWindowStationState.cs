@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraWindowStationState : CameraStateBase
+public class CameraWindowStationState : CameraFocusState
 {
     private float _angleY;
     private float _angleH;
@@ -13,10 +13,11 @@ public class CameraWindowStationState : CameraStateBase
     public CameraWindowStationState(CameraStateMachine cameraStateMachine) : base(cameraStateMachine)
     {
     }
-    
-    public CameraWindowStationState(CameraStateMachine cameraStateMachine, Transform cameraPos) : base(cameraStateMachine)
+
+    public CameraWindowStationState(CameraStateMachine cameraStateMachine, Transform newCameraPosition, Transform focusPoint) : base(cameraStateMachine, newCameraPosition, focusPoint)
     {
-        _cameraPos = cameraPos;
+        _focusPoint = focusPoint;
+        _newCameraPosition = newCameraPosition;
     }
 
     public override void OnStateEnter()
@@ -24,19 +25,16 @@ public class CameraWindowStationState : CameraStateBase
         Cursor.visible = true;
         
         _camera = CameraStateMachine.camera.GetComponent<Camera>();
-        
-        _camera.orthographic = true;
     }
 
     public override void Tick(float deltaTime)
     {
-        ClampCameraRotation();
+        Focus();
     }
 
     public override void OnStateExit()
     {
         Cursor.visible = false;
-        _camera.orthographic = false;
     }
     
     // May not be useful with orthographic camera
@@ -50,5 +48,16 @@ public class CameraWindowStationState : CameraStateBase
         var camYRotation = Quaternion.Euler(0, _angleH, 0);
         var camAimRotation = Quaternion.Euler(-_angleY, _angleH, 0);
         CameraStateMachine.transform.rotation = camYRotation;
+    }
+    
+protected override void Focus()
+    {
+            //Check if the distance between the camera and the new position is greater than 0.1f
+            if (Vector3.Distance(CameraStateMachine.camera.transform.position, _newCameraPosition.position) > 0.1f)
+            {
+                //Move camera to new position
+                CameraStateMachine.camera.transform.position = Vector3.Lerp(CameraStateMachine.camera.transform.position,
+                    _newCameraPosition.position, Time.deltaTime);
+            }
     }
 }

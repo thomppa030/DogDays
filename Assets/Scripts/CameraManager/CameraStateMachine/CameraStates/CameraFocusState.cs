@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class CameraFocusState : CameraStateBase
 {
-    private Transform _focusPoint;
-    private Transform _newCameraPosition;
+    protected Transform _focusPoint;
+    protected Transform _newCameraPosition;
 
-    private Transform _cachedCameraPosition;
+    protected Transform _cachedCameraPosition;
 
     public CameraFocusState(CameraStateMachine cameraStateMachine) : base(cameraStateMachine)
     {
@@ -54,11 +54,11 @@ public class CameraFocusState : CameraStateBase
         }
     }
 
-    void Focus()
+    protected virtual void Focus()
     {
         if (_focusPoint == null)
         {
-            //Reset camera position
+            //ResetIDs camera position
             CameraStateMachine.camera.transform.position = Vector3.Lerp(CameraStateMachine.camera.transform.position,
                 _cachedCameraPosition.position, Time.deltaTime);
         }

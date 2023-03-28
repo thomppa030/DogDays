@@ -43,7 +43,8 @@ public class InteractionCheckRayCast : MonoBehaviour
     public bool InteractionInRange()
     {
         //ObjectLayers
-        int layerMask = 1 << 6;
+        int layerMask = 1 << 6 ^ 1 << 10;
+        
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, rayDistance, layerMask))
         {

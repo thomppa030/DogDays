@@ -59,11 +59,9 @@ public class DialogueManager : MonoBehaviour
     private void SubscribeInteractionEvents()
     {
         InteractionManager.Instance.OnDialogueEnd += EndDialogue;
-        InteractionManager.Instance.OnDialogueStart += StartDialogue;
         InteractionManager.Instance.OnEnableText += EnableTextFrame;
         InteractionManager.Instance.OnDisableText += DisableTextFrame;
         InteractionManager.Instance.OnNextSentence += DisplayNextSentence;
-        InteractionManager.Instance.OnEnableProfileImage += EnableProfileImage;
         InteractionManager.Instance.OnDisableProfileImage += DisableProfileImage;
         InteractionManager.Instance.OnSetProfileImage += SetProfileImage;
     }
@@ -71,11 +69,9 @@ public class DialogueManager : MonoBehaviour
     private void UnsubscribeInteractionEvents()
     {
         InteractionManager.Instance.OnDialogueEnd -= EndDialogue;
-        InteractionManager.Instance.OnDialogueStart -= StartDialogue;
         InteractionManager.Instance.OnEnableText -= EnableTextFrame;
         InteractionManager.Instance.OnDisableText -= DisableTextFrame;
         InteractionManager.Instance.OnNextSentence -= DisplayNextSentence;
-        InteractionManager.Instance.OnEnableProfileImage -= EnableProfileImage;
         InteractionManager.Instance.OnDisableProfileImage -= DisableProfileImage;
         InteractionManager.Instance.OnSetProfileImage -= SetProfileImage;
     }
