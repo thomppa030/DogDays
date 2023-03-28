@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2194335001098850242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -574.215, y: -312.88, z: -35.63}
+  m_LocalPosition: {x: -575.231, y: -312.88, z: -35.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -190,8 +190,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9220198, y: 1.0310758, z: 0.3506132}
-  m_Center: {x: -0.050335675, y: -0.19050752, z: -0.13853313}
+  m_Size: {x: 0.584507, y: 0.69231665, z: 0.43382505}
+  m_Center: {x: 0.11842039, y: -0.021132128, z: -0.18013941}
 --- !u!114 &9134618482777584879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +214,20 @@ MonoBehaviour:
   cameraLerpPosition: {fileID: 14033558362249487}
   interactionToEnable: []
   interactionToDisable: []
+--- !u!114 &1545382763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1113245273836530658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd42cc317d37e4b44b1ecabbaec7606a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOneShot: 0
+  soundSource: {fileID: 0}
 --- !u!1001 &4991533755149162652
 PrefabInstance:
   m_ObjectHideFlags: 0
