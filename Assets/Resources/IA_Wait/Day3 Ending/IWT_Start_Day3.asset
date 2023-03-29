@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: IWT_Start_Day3
   m_EditorClassIdentifier: 
   waitTime:
+  - 3
+  - 3
+  - 3
+  - 4
   - 5.7
