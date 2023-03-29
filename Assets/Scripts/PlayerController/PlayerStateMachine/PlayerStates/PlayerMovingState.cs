@@ -73,16 +73,15 @@ public class PlayerMovingState : PlayerStateBase
         Debug.Log("Interacting with: " + hit.collider.gameObject.name);
         if (hit.collider.gameObject.TryGetComponent<InteractionTrigger>(out InteractionTrigger dT))
         {
-            InteractionManager.Instance.CurrentInteraction = dT.ActiveInteraction;
-            dT.TriggerDialogue();
+            if (dT.playOnTrigger == false)
+            {
+                InteractionManager.Instance.CurrentInteraction = dT.ActiveInteraction;
+                dT.TriggerDialogue();
+            }
         }
         else if (hit.collider.gameObject.TryGetComponent<WindowTrigger>(out WindowTrigger wt))
         {
             wt.Trigger();
-        }
-        else
-        {
-            Debug.LogError("No Dialogue attached to: " + hit.collider.gameObject.name);
         }
     }
     
