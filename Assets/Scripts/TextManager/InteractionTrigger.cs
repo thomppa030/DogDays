@@ -134,6 +134,7 @@ public class InteractionTrigger : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player") && playOnTrigger)
         {
+            InteractionManager.Instance.CurrentInteraction = ActiveInteraction;
             TriggerDialogue();
         }
     }
