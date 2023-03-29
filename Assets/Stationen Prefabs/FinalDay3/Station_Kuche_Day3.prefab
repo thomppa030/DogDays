@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7987816141456753544}
   - component: {fileID: 3774255612213435410}
   - component: {fileID: -228683597659364838}
+  - component: {fileID: 6739143225315036537}
   m_Layer: 0
   m_Name: Station_Kuche_Day3
   m_TagString: Untagged
@@ -59,3 +60,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeType: 0
+--- !u!114 &6739143225315036537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851111476862621538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerState: 1
+  defaultInteraction: {fileID: 11400000, guid: 05d270c65af37164cbd0988743c6e0f4, type: 2}
+  unlockedInteraction: {fileID: 0}
+  isOneShot: 1
+  triggers:
+  - {fileID: 0}
+  playOnTrigger: 0
+  cameraFocusPoint: {fileID: 0}
+  cameraLerpPosition: {fileID: 0}
+  interactionToEnable: []
+  interactionToDisable: []
