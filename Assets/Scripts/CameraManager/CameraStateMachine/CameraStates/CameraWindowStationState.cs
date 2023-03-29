@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class CameraWindowStationState : CameraFocusState
 {
@@ -10,19 +11,28 @@ public class CameraWindowStationState : CameraFocusState
     private Transform _cameraPos;
     private Camera _camera;
     
+    PlayerStateMachine _playerStateMachine;
+    
     public CameraWindowStationState(CameraStateMachine cameraStateMachine) : base(cameraStateMachine)
     {
     }
 
-    public CameraWindowStationState(CameraStateMachine cameraStateMachine, Transform newCameraPosition, Transform focusPoint) : base(cameraStateMachine, newCameraPosition, focusPoint)
+    public CameraWindowStationState(CameraStateMachine cameraStateMachine, PlayerStateMachine playerStateMachine, Transform newCameraPosition, Transform focusPoint) : base(cameraStateMachine, newCameraPosition, focusPoint)
     {
         _focusPoint = focusPoint;
         _newCameraPosition = newCameraPosition;
+        _playerStateMachine = playerStateMachine;
     }
 
     public override void OnStateEnter()
     {
         Cursor.visible = true;
+
+        _playerStateMachine.InputReader.InteractEvent += () =>
+        {
+            CameraStateMachine.SwitchState(new CameraFreelookState(CameraStateMachine));
+            _playerStateMachine.SwitchState(new PlayerMovingState(_playerStateMachine));
+        };
         
         _camera = CameraStateMachine.camera.GetComponent<Camera>();
     }
@@ -52,12 +62,13 @@ public class CameraWindowStationState : CameraFocusState
     
 protected override void Focus()
     {
-            //Check if the distance between the camera and the new position is greater than 0.1f
-            if (Vector3.Distance(CameraStateMachine.camera.transform.position, _newCameraPosition.position) > 0.1f)
-            {
-                //Move camera to new position
-                CameraStateMachine.camera.transform.position = Vector3.Lerp(CameraStateMachine.camera.transform.position,
-                    _newCameraPosition.position, Time.deltaTime);
-            }
+        //Check if the distance between the camera and the new position is greater than 0.1f
+        if (Vector3.Distance(CameraStateMachine.camera.transform.position, _newCameraPosition.position) > 0.1f)
+        {
+            CameraStateMachine.camera.transform.LookAt(_focusPoint);
+            //Move camera to new position
+            CameraStateMachine.camera.transform.position = Vector3.Lerp(CameraStateMachine.camera.transform.position,
+                _newCameraPosition.position, Time.deltaTime);
+        }
     }
 }

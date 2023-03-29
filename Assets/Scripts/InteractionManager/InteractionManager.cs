@@ -22,14 +22,10 @@ public class InteractionManager : MonoBehaviour
     public Interaction CurrentInteraction { get; set; }
     
     #region Delegate Declarations 
-    public delegate void SwitchCameraFocusDelegate();
-    public SwitchCameraFocusDelegate OnSwitchCameraFocus;
     public delegate void ResetCameraFocusDelegate();
     public ResetCameraFocusDelegate OnResetCameraFocus;
     public delegate void DialogueEndDelegate();
     public DialogueEndDelegate OnDialogueEnd;
-    public delegate void DialogueStartDelegate(Dialogue d);
-    public DialogueStartDelegate OnDialogueStart;
     public delegate void DisableTextDelegate();
     public DisableTextDelegate OnDisableText;
     public delegate void EnableTextDelegate();
@@ -40,12 +36,8 @@ public class InteractionManager : MonoBehaviour
     public FadeInDelegate OnFadeIn;
     public delegate void FadeOutDelegate();
     public FadeOutDelegate OnFadeOut;
-    public delegate void EnableProfileImagedelegate();
-    public EnableProfileImagedelegate OnEnableProfileImage;
     public delegate void DisableProfileImagedelegate();
     public DisableProfileImagedelegate OnDisableProfileImage;
-    public delegate void WaitforNextSentenceDelegate(float waitingTime);
-    public WaitforNextSentenceDelegate OnWaitforNextSentence;
     public delegate void CameraShakeDelegate();
     public CameraShakeDelegate OnCameraShake;
     //TODO: Enum for ProfileImageID would need single class for ProfileImage and StateEnum?
@@ -53,10 +45,6 @@ public class InteractionManager : MonoBehaviour
     public SetProfileImageDelegate OnSetProfileImage;
     public delegate void PlaySoundDelegate(AudioClip clip);
     public PlaySoundDelegate OnPlaySound;
-    
-    public delegate void DialogueWaitDelegate(float waitingTime);
-    public DialogueWaitDelegate OnDialogueWait;
-    
     #endregion
     
     private List<InLevelTrigger> _animationTriggers;
@@ -159,7 +147,6 @@ public class InteractionManager : MonoBehaviour
         if(sentenceWait <= 0)
         {
             waitForSentence = false;
-            // TODO: yeah uhm, this is a bit of a hack, will change it
             SetNextAction(CurrentInteraction, ActionID);
         }
     }
@@ -188,7 +175,6 @@ public class InteractionManager : MonoBehaviour
                 break;
             case Interaction.Action.PlaySfx:
                 AudioClip ac = i.dialogueSounds.audioclips[_audioID];
-                //TODO: PlaySoundDelegate should be refactored to a single class
                 OnPlaySound?.Invoke(ac);
                 ActionID++;
                 _audioID++;
@@ -216,15 +202,12 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(CurrentInteraction, ActionID);
                 break;
             case Interaction.Action.ShowInfoDisplay:
-                //TODO: Refactor to a single class
                 ShowInfoDisplay();
                 break;
             case Interaction.Action.DisableInfoDisplay:
-                //TODO: Refactor to a single class
                 DisableInfoDisplay();
                 break;
             case Interaction.Action.LoadNextScene:
-                //TODO: Refactor to a single class
                 OnDialogueEnd?.Invoke();
                 int sceneID = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1;
                 Debug.Log("Loading scene of index: " + sceneID);
@@ -253,14 +236,12 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.PlaySfxImmediate:
-                //TODO: Delegate and refactor
                 AudioClip acImmediate = i.dialogueSounds.audioclips[_audioID];
                 PlaySFXImmediate(acImmediate);
                 ActionID++;
                 SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.PlayCharAnimWithWait:
-                //TODO: Delegate and refactor
                 StartCoroutine(CharAnimWithWait());
                 break;
             case Interaction.Action.DisablePlayerMovement:
@@ -269,7 +250,6 @@ public class InteractionManager : MonoBehaviour
                 SetNextAction(i, ActionID);
                 break;
             case Interaction.Action.EnablePlayerMovement:
-                //TODO: Delegate and refactor
                 EnablePlayerMovement();
                 ActionID++;
                 SetNextAction(i, ActionID);
@@ -327,7 +307,6 @@ public class InteractionManager : MonoBehaviour
         StartCoroutine(PlaySFX(ac));
     }
     
-    //TODO: Refactor to a single class
     AudioSource _audioSource;
     IEnumerator PlaySFX(AudioClip ac)
     {
@@ -355,7 +334,6 @@ public class InteractionManager : MonoBehaviour
         _audioID++;
     }
     
-    //TODO: Refactor to a single class
     void DisablePlayerMovement()
     {
         PlayerStateMachine.SwitchState(new PlayerInteractState(PlayerStateMachine));
