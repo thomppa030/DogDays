@@ -65,7 +65,7 @@ MonoBehaviour:
   unlockedInteraction: {fileID: 0}
   isOneShot: 1
   triggers: []
-  playOnTrigger: 0
+  playOnTrigger: 1
   cameraFocusPoint: {fileID: 0}
   cameraLerpPosition: {fileID: 0}
   interactionToEnable: []

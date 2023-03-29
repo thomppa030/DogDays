@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 4357024894235271504}
   - component: {fileID: 8472502076607120443}
   - component: {fileID: -5206142777684909695}
+  - component: {fileID: 3087569954588565111}
+  - component: {fileID: 3087569954588565113}
+  - component: {fileID: 3087569954588565116}
   m_Layer: 0
   m_Name: Station_WohnzimmerDay3
   m_TagString: Untagged
@@ -41,7 +44,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3209502530103503861}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.4859676, y: 1, z: 2.6126633}
@@ -59,3 +62,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeType: 0
+--- !u!114 &3087569954588565111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209502530103503861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cccb9351d49c6c240844578e30b00b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeType: 0
+--- !u!114 &3087569954588565113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209502530103503861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd42cc317d37e4b44b1ecabbaec7606a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOneShot: 1
+  soundSource: {fileID: 0}
+--- !u!114 &3087569954588565116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3209502530103503861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70d17cb518fdeb42813613712e48cca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerState: 1
+  defaultInteraction: {fileID: 11400000, guid: cd3775772a7aba849ab291bfd580e4dd, type: 2}
+  unlockedInteraction: {fileID: 0}
+  isOneShot: 1
+  triggers:
+  - {fileID: 0}
+  playOnTrigger: 1
+  cameraFocusPoint: {fileID: 0}
+  cameraLerpPosition: {fileID: 0}
+  interactionToEnable: []
+  interactionToDisable: []

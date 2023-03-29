@@ -1,5 +1,4 @@
-﻿using UnityEditor.PackageManager.UI;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovingState : PlayerStateBase
 {
@@ -98,9 +97,6 @@ public class PlayerMovingState : PlayerStateBase
         Vector3 targetDirection;
         targetDirection = forward * vertical + right * horizontal;
         
-        // Add the View Direction to the target direction
-        // targetDirection = PlayerStateMachine.transform.TransformDirection(targetDirection);
-
         return targetDirection;
     }
 }

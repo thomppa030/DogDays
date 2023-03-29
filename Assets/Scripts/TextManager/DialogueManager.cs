@@ -50,15 +50,14 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-
         if(dialogueText != null)
             dialogueText.text = "";
-        
     }
 
     private void SubscribeInteractionEvents()
     {
         InteractionManager.Instance.OnDialogueEnd += EndDialogue;
+        InteractionManager.Instance.OnDialogueEnd += ResetIDs;
         InteractionManager.Instance.OnEnableText += EnableTextFrame;
         InteractionManager.Instance.OnDisableText += DisableTextFrame;
         InteractionManager.Instance.OnNextSentence += DisplayNextSentence;
@@ -79,11 +78,15 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         Debug.Log("Queue size before DisplayingNextSentence: " + sentences.Count);
-        string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        dialogueText.text = sentence;
-        
-        StartCoroutine(TypeSentence(sentence));
+        string sentence;
+        if (sentences.Count > 0)
+        {
+            sentence = sentences.Dequeue();
+            StopAllCoroutines();
+            dialogueText.text = sentence;
+
+            StartCoroutine(TypeSentence(sentence));
+        }
     }
     
     void CheckForKeyword(string sentence)
@@ -177,7 +180,6 @@ public class DialogueManager : MonoBehaviour
                 currentTextstate = tS;
 
                 ResetIDs();
-                
             }
         }
     }
@@ -278,6 +280,7 @@ public class DialogueManager : MonoBehaviour
     
     private void ResetIDs()
     {
+        sentences.Clear();
     }
 }
 
