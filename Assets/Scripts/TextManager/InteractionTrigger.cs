@@ -20,7 +20,7 @@ public class InteractionTrigger : MonoBehaviour
 
     BoxCollider _bc;
     
-    [SerializeField] private bool playOnTrigger = false;
+    [SerializeField] public bool playOnTrigger = false;
     
     [Tooltip("Point to focus camera on")]
     public Transform cameraFocusPoint;
@@ -46,6 +46,7 @@ public class InteractionTrigger : MonoBehaviour
         
         SetTriggerState(triggerState);    
     }
+    
     public void TriggerDialogue()
     {
         InteractionManager.Instance.LastUsedInteractionTrigger = this;
