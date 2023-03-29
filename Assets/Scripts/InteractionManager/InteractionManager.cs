@@ -67,14 +67,14 @@ public class InteractionManager : MonoBehaviour
 
     #region ID's
 
-    [field: SerializeField] public int ActionID { get; set; } = 0;
-    private int _waitID = 0;
-    private int _audioID = 0;
-    private int _profileImageID = 0;
-    private int _uiAnimID = 0;
-    private int _playerAnimID = 0;
-    private int _comicClipID = 0;
-    private int _cameraFocusID = 0;
+    [field: SerializeField] public int ActionID { get; set; }
+    private int _waitID;
+    private int _audioID;
+    private int _profileImageID;
+    private int _uiAnimID;
+    private int _playerAnimID;
+    private int _comicClipID;
+    private int _cameraFocusID;
     #endregion
     
     [SerializeField] private InfoDisplayer infoDisplayer;
@@ -112,6 +112,14 @@ public class InteractionManager : MonoBehaviour
             _playerAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         }
         OnPlaySound += PlaySound;
+
+        _waitID = 0;
+        _audioID = 0;
+        _profileImageID = 0;
+        _uiAnimID = 0;
+        _playerAnimID = 0;
+        _comicClipID = 0;
+        _cameraFocusID = 0;
     }
     
     float sentenceWait = 0f;
