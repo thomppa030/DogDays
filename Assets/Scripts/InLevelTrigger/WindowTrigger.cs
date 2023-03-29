@@ -13,8 +13,11 @@ public class WindowTrigger : MonoBehaviour
     [SerializeField]
     private Transform cameraFocusPosition;
     
+    [SerializeField]
+    private PlayerStateMachine playerStateMachine;
+    
     public void Trigger()
     {
-        cameraStateMachine.SwitchState(new CameraWindowStationState(cameraStateMachine, cameraFocusPosition, cameraFocusPoint));
+        cameraStateMachine.SwitchState(new CameraWindowStationState(cameraStateMachine, playerStateMachine, cameraFocusPosition, cameraFocusPoint));
     }
 }

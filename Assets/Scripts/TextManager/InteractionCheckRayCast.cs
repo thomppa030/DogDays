@@ -9,13 +9,13 @@ public class InteractionCheckRayCast : MonoBehaviour
     
     public RaycastHit hit;
     
-    private PlayerStateMachine playerStateMachine;
+    private PlayerStateMachine _playerStateMachine;
 
     private Camera cam;
 
     private void Start()
     {
-        playerStateMachine = GetComponent<PlayerStateMachine>();
+        _playerStateMachine = GetComponent<PlayerStateMachine>();
         
         EnableIcon(false);
         cam = Camera.main;

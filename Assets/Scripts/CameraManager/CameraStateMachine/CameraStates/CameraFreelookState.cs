@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CameraShake;
+using UnityEngine;
 
 public class CameraFreelookState : CameraStateBase
 {
@@ -66,6 +67,11 @@ public class CameraFreelookState : CameraStateBase
         Quaternion camYRotation = Quaternion.Euler(0, _angleH, 0);
         Quaternion aimRotation = Quaternion.Euler(-_angleV, _angleH, 0);
         _cameraTransform.rotation = aimRotation;
+
+        if (CameraShaker.Instance.IsShaking)    
+        {
+            _cameraTransform.localRotation *= CameraShaker.Instance.DisplacementRotation;
+        }
 
         // Set FOV.
         _cameraTransform.GetComponent<Camera>().fieldOfView =
