@@ -11,7 +11,6 @@ namespace CameraShake
     {
         public static CameraShaker Instance;
         public static CameraShakePresets Presets;
-        public static bool IsShaking;
         
         [SerializeField]
         private CameraStateMachine stateMachine;
@@ -26,6 +25,10 @@ namespace CameraShake
         public float strengthMultiplier = 1;
 
         public CameraShakePresets ShakePresets;
+        
+        public bool IsShaking => _activeShakes.Count > 0;
+        
+        public Quaternion DisplacementRotation { get; set; }
         
         public static void Shake(ICameraShake shake)
         {
@@ -65,7 +68,6 @@ namespace CameraShake
                 Instance = this;    
             }
             
-            IsShaking = false;
             if (cameraTransform == null)
                 cameraTransform = transform;
         }
@@ -84,18 +86,17 @@ namespace CameraShake
                 if (_activeShakes[i].IsFinished)
                 {
                     _activeShakes.RemoveAt(i);
-                    stateMachine.SwitchState(new CameraFreelookState(stateMachine));
                 }
                 else
                 {
-                    stateMachine.SwitchState(new CameraShakeState(stateMachine));
                     _activeShakes[i].Update(Time.deltaTime, cameraTransform.position, cameraTransform.rotation);
                     cameraDisplacement += _activeShakes[i].CurrentDisplacement;
                 }
             }
         cameraTransform.position = stateMachine.player.position + new Vector3(0,2.0f,-3.0f);
-        cameraTransform.localRotation = Quaternion.Euler(cameraDisplacement.EulerAngles * strengthMultiplier);
+        DisplacementRotation = Quaternion.Euler(cameraDisplacement.EulerAngles * strengthMultiplier);
         }
+
 
         private static bool IsInstanceNull()
         {

@@ -15,6 +15,7 @@ using ComicLogic;
 
 public class InteractionManager : MonoBehaviour
 {
+    ComicManager comicManager;
     //Singleton
     public static InteractionManager Instance;
     
@@ -294,12 +295,15 @@ public class InteractionManager : MonoBehaviour
     
     private void SpawnComicClip()
     {
-        if (_comicClipID >= CurrentInteraction.dialogueComics.comicClips.Length)
+        if (comicManager == null)
         {
-            Debug.Log("No more comic clips to spawn.");
-            return;
+            comicManager = FindObjectOfType<ComicManager>();
+            comicManager.NextClip(_comicClipID);
         }
-        var comicClip = Instantiate(CurrentInteraction.dialogueComics.comicClips[_comicClipID], GameObject.Find("Canvas").transform, false);
+        else
+        {
+            comicManager.NextClip(_comicClipID);
+        }
     }
 
     void PlaySound(AudioClip ac)
