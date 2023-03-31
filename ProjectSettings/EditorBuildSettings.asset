@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DogDaysBuildScenes/Scene#01Day2.unity
     guid: 583d466be838a5c4cb32526b40971fc7
+  - enabled: 1
+    path: Assets/Scenes/DogDaysBuildScenes/Scene#03End.unity
+    guid: d6ebfb96bcde7204aac684eb99a21fad
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3888fd7beaf010d00aa73ad9b34cbbbf, type: 2}

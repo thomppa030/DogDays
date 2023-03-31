@@ -62,6 +62,10 @@ public class DialogueManager : MonoBehaviour
         InteractionManager.Instance.OnDisableText += DisableTextFrame;
         InteractionManager.Instance.OnNextSentence += DisplayNextSentence;
         InteractionManager.Instance.OnDisableProfileImage += DisableProfileImage;
+        InteractionManager.Instance.OnDisableTextImage += () =>
+        {
+            dialogueFrame.gameObject.SetActive(false);
+        };
         InteractionManager.Instance.OnSetProfileImage += SetProfileImage;
     }
 

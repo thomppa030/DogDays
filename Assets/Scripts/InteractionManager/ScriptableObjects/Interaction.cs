@@ -44,5 +44,7 @@ public class Interaction : ScriptableObject
         Wait = 3,
         ToggleNextVideo = 22,
         DisableCurrentlyActiveVideos = 23,
+        LoadMainMenu = 24,
+        DisableTextImage = 25,
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: IA_Kuche_Day1
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 0
-  <Actions>k__BackingField: 01000000110000000d000000000000000d000000000000000d000000000000000d00000000000000000000000e00000008000000
+  <Actions>k__BackingField: 0100000012000000110000000d000000000000000d000000000000000d000000000000000d00000000000000000000000e00000008000000
   assignedDialogue: {fileID: 11400000, guid: 343c8baad5e27b4469ec81de52ac93bb, type: 2}
   dialogueSounds: {fileID: 11400000, guid: 70b000d540f02604c9c04e04e18ae69c, type: 2}
   dialogueWaitingTime: {fileID: 11400000, guid: 4d8ac3f73c7334c4785f01aecdeec0df, type: 2}

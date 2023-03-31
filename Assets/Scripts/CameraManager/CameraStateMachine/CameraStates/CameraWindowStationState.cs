@@ -23,8 +23,6 @@ public class CameraWindowStationState : CameraFocusState
 
     public override void OnStateEnter()
     {
-        Cursor.visible = true;
-
         _playerStateMachine.InputReader.InteractEvent += () =>
         {
             CameraStateMachine.SwitchState(new CameraFreelookState(CameraStateMachine));
@@ -41,7 +39,6 @@ public class CameraWindowStationState : CameraFocusState
 
     public override void OnStateExit()
     {
-        Cursor.visible = false;
     }
     
     // May not be useful with orthographic camera

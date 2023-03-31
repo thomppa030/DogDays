@@ -124,6 +124,7 @@ public class MenuHandler : MonoBehaviour
     {
         GameState.Instance.currentState = GameState.GameStates.Menu;
         UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        GameState.Instance.TryChangeState(GameState.GameStates.Menu);
     }
 
     public void GetMainMenuButton()

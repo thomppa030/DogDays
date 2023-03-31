@@ -46,6 +46,9 @@ public class InteractionManager : MonoBehaviour
     public SetProfileImageDelegate OnSetProfileImage;
     public delegate void PlaySoundDelegate(AudioClip clip);
     public PlaySoundDelegate OnPlaySound;
+
+    public delegate void DisableTextImageDelegate();
+    public DisableTextImageDelegate OnDisableTextImage;
     #endregion
     
     private List<InLevelTrigger> _animationTriggers;
@@ -282,6 +285,16 @@ public class InteractionManager : MonoBehaviour
                 break;
             case Interaction.Action.DisableCurrentlyActiveVideos:
                 DisableCurrentlyActiveVideos();
+                ActionID++;
+                SetNextAction(i, ActionID);
+                break;
+            case Interaction.Action.LoadMainMenu:
+                OnDialogueEnd?.Invoke();
+                GameState.Instance.TryChangeState(GameState.GameStates.Menu);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+                break;
+            case Interaction.Action.DisableTextImage:
+                OnDisableTextImage.Invoke();
                 ActionID++;
                 SetNextAction(i, ActionID);
                 break;
