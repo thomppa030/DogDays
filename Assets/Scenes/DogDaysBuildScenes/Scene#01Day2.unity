@@ -45654,7 +45654,7 @@ Transform:
   m_GameObject: {fileID: 1563000844}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 3.01, y: 0.004, z: -16.746}
-  m_LocalScale: {x: 1, y: 1, z: 2.0069535}
+  m_LocalScale: {x: 1, y: 1, z: 3.9530962}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -54714,7 +54714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1411754236841608935, guid: 866662877bcd661468431501da0a5322, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.91
+      value: -2.943
       objectReference: {fileID: 0}
     - target: {fileID: 1411754236841608935, guid: 866662877bcd661468431501da0a5322, type: 3}
       propertyPath: m_LocalPosition.y
@@ -57502,11 +57502,11 @@ MonoBehaviour:
   m_FadeScale: 0.9
   m_StartAngleFade: 180
   m_EndAngleFade: 180
-  m_UVScale: {x: 1, y: 1}
+  m_UVScale: {x: 1, y: 0.90296084}
   m_UVBias: {x: 0, y: 0}
   m_ScaleMode: 0
-  m_Offset: {x: 0, y: 0, z: 0.11}
-  m_Size: {x: 14.04, y: 3.69, z: 0.22}
+  m_Offset: {x: 0, y: -0.17903775, z: 0.11}
+  m_Size: {x: 14.04, y: 3.3319244, z: 0.22}
   m_FadeFactor: 0.34
 --- !u!1001 &1987283612
 PrefabInstance:
