@@ -21,7 +21,7 @@ public class DialogueManager : MonoBehaviour
     [field: SerializeField] private PlayerStateMachine playerStateMachine { get; set; }
     [field: SerializeField] private Image TextFieldImage {get; set; }
 
-    public Language selectedLanguage = Language.german;
+    private Language selectedLanguage;
 
     public Dialogue _displayedDialogue { get; set; }
     
@@ -36,6 +36,9 @@ public class DialogueManager : MonoBehaviour
         Instance = this;
 
         sentences = new Queue<string>();
+        sentences.Clear();
+
+        selectedLanguage = Language.english;
     }
 
     private void OnEnable()
@@ -139,6 +142,7 @@ public class DialogueManager : MonoBehaviour
 
     private List<string> GetSentence(Dialogue d)
     {
+        Debug.Log(selectedLanguage);
         switch (selectedLanguage)
         {
             case Language.english:
@@ -210,15 +214,12 @@ public class DialogueManager : MonoBehaviour
         
         Interaction interaction = InteractionManager.Instance.CurrentInteraction;
         
-        Debug.Log("Size of sentences in StartDialogue before Clearing " + sentences.Count);
         sentences.Clear();
-        Debug.Log("Size of sentences in StartDialogue after Clearing " + sentences.Count);
 
         foreach (string sentence in GetSentence(d))
         {
             sentences.Enqueue(sentence);
         }
-        Debug.Log("Size of sentences in StartDialogue after Enqueuing " + sentences.Count);
 
         InteractionManager.Instance.SetNextAction(interaction, InteractionManager.Instance.ActionID);
     }
