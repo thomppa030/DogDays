@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <StartOnAwake>k__BackingField: 1
   <Actions>k__BackingField: 0200000003000000160000000300000016000000030000001600000003000000160000000300000016000000030000001700000001000000190000000f0000000f0000000f0000000f0000000000000008000000
-  assignedDialogue: {fileID: 11400000, guid: 83d0806da65442b40a7d02228fd984da, type: 2}
+  assignedDialogue: {fileID: 11400000, guid: e6804325261e21341b5861417974519d, type: 2}
   dialogueSounds: {fileID: 0}
-  dialogueWaitingTime: {fileID: 11400000, guid: ec9b3c7ce0fed7c4d9c29f324fec61a2, type: 2}
+  dialogueWaitingTime: {fileID: 11400000, guid: 7be10f29076fe304295009be6e89b25d, type: 2}
   dialogueAnimations: {fileID: 0}
   dialogueDogFaces: {fileID: 0}
   dialogueComics: {fileID: 0}
