@@ -46,6 +46,7 @@ public class PlayerMovingState : PlayerStateBase
     public override void OnStateExit()
     {
         _movement = Vector3.zero;
+        PlayerStateMachine.InputReader.InteractEvent -= Interact;
     }
 
     void Interact()

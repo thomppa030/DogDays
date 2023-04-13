@@ -136,6 +136,11 @@ public class InteractionTrigger : MonoBehaviour
         if(other.gameObject.CompareTag("Player") && playOnTrigger)
         {
             InteractionManager.Instance.CurrentInteraction = ActiveInteraction;
+            var psm = other.GetComponent<PlayerStateMachine>();
+            if (psm)
+            {
+                psm.SwitchState(new PlayerInteractState(psm));
+            }
             TriggerDialogue();
         }
     }
